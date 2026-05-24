@@ -91,6 +91,10 @@ const content = {
     packageLabel: "Plans & Pricing",
     packageTitle: "先看常見方案，再用功能勾選估算自己的版本",
     packageText: "下方三個版本是常見合作範圍；如果需求介於不同版本之間，可以再用功能模組勾選器抓大概預算。",
+    cooperationNotes: [
+      ["學生開發者，真實案例驗證", "目前由學生開發者接案與交付，已有公廁 Bot、Dashboard 與 LINE 系統實際上線經驗。合作前會先確認範圍、時程、付款與驗收方式。"],
+      ["UI 設計可彈性處理", "可由我協助做基礎介面與簡單視覺整理；若需要更完整品牌視覺、插圖或高階設計，也可由客戶提供設計稿或另找設計師。若需配合外部設計，開發時程可能會略微延長。"],
+    ],
     packages: [
       { name: "基礎導入版", price: "NT$ 30,000 起", timeline: "開發時程：約 1 個月", subtitle: "適合把初步想法做成第一個可用版本", items: ["LINE 基礎入口", "基本流程設計", "簡易資料/資訊頁", "表單或外部連結整合"] },
       { name: "標準查詢版", price: "NT$ 50,000–90,000 起", timeline: "開發時程：約 2–3 個月", subtitle: "適合需要查詢流程、資料管理或後台的專案", items: ["LINE Bot 客製流程", "資料查詢或定位搜尋", "基礎後台資料管理", "測試、上線與操作說明"], featured: true },
@@ -208,6 +212,10 @@ const content = {
     packageLabel: "Plans & Pricing",
     packageTitle: "Start from common plans, then estimate your own version with feature modules",
     packageText: "The three plans below show common cooperation scopes. If your needs fall between plans, use the feature estimator to estimate a rough budget.",
+    cooperationNotes: [
+      ["Student developer with real cases", "The project is handled and delivered by a student developer with real public Toilet Bot, dashboard, and LINE system launch experience. Scope, timeline, payment, and acceptance criteria will be confirmed before development."],
+      ["Flexible UI design options", "Basic interface layout and simple visual refinement can be included. If a more complete brand identity, illustration, or advanced UI design is needed, the client may provide design files or work with an external designer. Coordinating with external design may slightly extend the timeline."],
+    ],
     packages: [
       { name: "Starter Version", price: "From NT$ 30,000", timeline: "Development time: about 1 month", subtitle: "For turning an initial idea into the first usable version", items: ["LINE basic entry", "Basic flow design", "Simple data/info page", "Form or external link integration"] },
       { name: "Standard Search Version", price: "From NT$ 50,000–90,000", timeline: "Development time: about 2–3 months", subtitle: "For projects needing search flows, data management, or an admin panel", items: ["Custom LINE Bot flow", "Data search or location search", "Basic admin panel", "Testing, launch, and documentation"], featured: true },
@@ -424,6 +432,15 @@ export default function App() {
                   <p className="mt-2 text-2xl font-bold leading-tight text-cyan-200">{item.price}</p>
                   <p className="mt-4 text-sm leading-6 text-slate-300">{item.subtitle}</p>
                   <div className="my-6 h-px bg-white/10" /><ul className="space-y-3 text-sm leading-6 text-slate-300">{item.items.map((feature) => <li key={feature} className="flex gap-2"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" /><span>{feature}</span></li>)}</ul></CardContent></Card>)}</div>
+
+          <div className="mb-12 grid gap-5 md:grid-cols-2">
+            {t.cooperationNotes.map(([title, text]) => (
+              <div key={title} className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
+                <p className="text-sm font-semibold text-cyan-300">{title}</p>
+                <p className="mt-3 text-sm leading-7 text-slate-300">{text}</p>
+              </div>
+            ))}
+          </div>
 
           <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"><div className="max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.estimatorLabel}</p><h3 className="mt-3 text-2xl font-bold text-white md:text-3xl">{t.estimatorTitle}</h3><p className="mt-4 leading-7 text-slate-300">{t.estimatorText}</p></div><button type="button" onClick={clearEstimate} className="w-fit rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-3 text-sm text-slate-200 transition hover:border-cyan-300/30 hover:bg-cyan-300/10">{t.clearAll}</button></div>
           <div className="grid gap-6 lg:grid-cols-[1.25fr_0.75fr]">
