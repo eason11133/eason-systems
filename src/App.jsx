@@ -524,7 +524,7 @@ export default function App() {
                     <p className="mt-2 text-xl font-bold text-cyan-200">{item.price}</p>
                     <p className="mt-3 text-sm leading-6 text-slate-300">{item.subtitle}</p>
                     <div className="my-4 h-px bg-white/10" />
-                    <ul className="space-y-2 text-sm leading-6 text-slate-300">
+                    <ul className="space-y-3 text-sm leading-6 text-slate-300">
                       {item.items.map((feature) => (
                         <li key={feature} className="flex gap-2"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" /><span>{feature}</span></li>
                       ))}
@@ -575,14 +575,14 @@ export default function App() {
             </div>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               {t.maintenancePlans.map((plan) => (
-                <div key={plan.name} className="flex h-full min-h-[520px] flex-col rounded-2xl border border-white/10 bg-white/[0.05] p-5">
-                  <div className="min-h-[150px]">
-                    <p className="min-h-[52px] text-base font-semibold leading-7 text-white">{plan.name}</p>
-                    <p className="mt-2 min-h-[72px] text-lg font-bold leading-9 text-cyan-200">{plan.price}</p>
-                    <p className="mt-2 text-sm leading-6 text-slate-400">{plan.subtitle}</p>
+                <div key={plan.name} className="flex h-full min-h-[540px] flex-col rounded-2xl border border-white/10 bg-white/[0.05] p-5">
+                  <div>
+                    <p className="flex h-[56px] items-start text-base font-semibold leading-7 text-white">{plan.name}</p>
+                    <p className="mt-2 flex h-[108px] items-start text-lg font-bold leading-9 text-cyan-200">{plan.price}</p>
+                    <p className="mt-2 flex h-[72px] items-start text-sm leading-6 text-slate-400">{plan.subtitle}</p>
                   </div>
                   <div className="my-4 h-px bg-white/10" />
-                  <ul className="space-y-2 text-sm leading-6 text-slate-300">
+                  <ul className="min-h-[156px] space-y-2 text-sm leading-6 text-slate-300">
                     {plan.items.map((item) => (
                       <li key={item} className="flex gap-2"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" /><span>{item}</span></li>
                     ))}
