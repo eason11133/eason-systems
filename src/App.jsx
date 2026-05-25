@@ -575,18 +575,20 @@ export default function App() {
             </div>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               {t.maintenancePlans.map((plan) => (
-                <div key={plan.name} className="rounded-2xl border border-white/10 bg-white/[0.05] p-5">
-                  <p className="text-base font-semibold text-white">{plan.name}</p>
-                  <p className="mt-2 text-lg font-bold text-cyan-200">{plan.price}</p>
-                  <p className="mt-2 text-sm leading-6 text-slate-400">{plan.subtitle}</p>
+                <div key={plan.name} className="flex h-full min-h-[520px] flex-col rounded-2xl border border-white/10 bg-white/[0.05] p-5">
+                  <div className="min-h-[150px]">
+                    <p className="min-h-[52px] text-base font-semibold leading-7 text-white">{plan.name}</p>
+                    <p className="mt-2 min-h-[72px] text-lg font-bold leading-9 text-cyan-200">{plan.price}</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-400">{plan.subtitle}</p>
+                  </div>
                   <div className="my-4 h-px bg-white/10" />
                   <ul className="space-y-2 text-sm leading-6 text-slate-300">
                     {plan.items.map((item) => (
                       <li key={item} className="flex gap-2"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" /><span>{item}</span></li>
                     ))}
                   </ul>
-                  <a href={buildMaintenancePlanMailto(plan)} className="mt-5 block">
-                    <Button className="w-full text-sm">{t.maintenancePlanButton} <ExternalLink className="ml-2 h-4 w-4" /></Button>
+                  <a href={buildMaintenancePlanMailto(plan)} className="mt-auto block pt-6">
+                    <Button className="min-h-[72px] w-full text-sm leading-6">{t.maintenancePlanButton} <ExternalLink className="ml-2 h-4 w-4 shrink-0" /></Button>
                   </a>
                 </div>
               ))}
