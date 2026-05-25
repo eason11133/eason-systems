@@ -101,6 +101,18 @@ const content = {
       { name: "小型 FAQ / 資訊整理版", price: "NT$ 8,000–15,000", subtitle: "適合重複詢問很多，但暫時不需要後台的單位", items: ["5–10 個常見問題整理", "基本分流與按鈕導覽", "外部連結整合", "基礎測試與操作說明"] },
     ],
     upgradeNote: "小方案不包含客製後台、資料庫、Dashboard、定位查詢或複雜流程。若後續需要完整系統，可直接延伸成下方基礎 / 標準 / 進階版本。",
+    smallPlanButton: "選這個方案來信討論",
+    smallPlanMailSubject: "小方案合作詢問｜",
+    maintenanceLabel: "Maintenance Options",
+    maintenanceTitle: "上線後也可以選擇單次修改或每月維護",
+    maintenanceText: "小方案或完整系統完成後，如果需要後續調整、內容更新、穩定代管或使用數據整理，可以依需求選擇單次維護或月維護。維護費不等於主機費，主機、資料庫或外部平台費用會依實際使用另計。",
+    maintenancePlans: [
+      { name: "單次修改 / 小維護", price: "NT$ 1,000–3,000 起 / 次", subtitle: "適合偶爾改文字、連結、圖片或小功能", items: ["文字、連結、FAQ 小幅更新", "表單或按鈕連結調整", "簡單錯誤修正", "不含大型功能重做"] },
+      { name: "每月基礎維護", price: "NT$ 1,000–5,000 起 / 月", subtitle: "適合希望系統有人定期檢查與小幅調整", items: ["每月小幅內容更新", "基礎問題排查", "簡易使用狀況整理", "LINE / 網站連結與功能檢查"] },
+      { name: "月報 / 資料更新維護", price: "NT$ 2,000–8,000 起 / 月", subtitle: "適合有後台、活動資料或 Dashboard 的系統", items: ["協助更新資料或活動資訊", "整理查詢、點擊或表單紀錄", "簡易月報或成果摘要", "依資料量與更新頻率調整"] },
+      { name: "主機與系統代管", price: "主機約 US$7 / 月起，服務費另議", subtitle: "適合需要系統長期穩定運行的專案", items: ["Render / Vercel / 資料庫代管協助", "基本部署與環境檢查", "主機費由實際平台收取", "不包含在一次性開發費內"] },
+    ],
+    maintenanceNote: "實際維護範圍會在合作前確認。若只是靜態一頁式網頁，通常不一定需要月維護；若有後台、資料庫、LINE Bot、Dashboard 或長期活動資料更新，建議至少保留基本維護與主機費預算。",
     cooperationNotes: [
       ["學生開發者，真實案例驗證", "目前由學生開發者接案與交付，已有公廁 Bot、Dashboard 與 LINE 系統實際上線經驗。合作前會先確認範圍、時程、付款與驗收方式。"],
       ["UI 設計可彈性處理", "可由我協助做基礎介面與簡單視覺整理；若需要更完整品牌視覺、插圖或高階設計，也可由客戶提供設計稿或另找設計師。若需配合外部設計，開發時程可能會略微延長。"],
@@ -233,6 +245,18 @@ const content = {
       { name: "Small FAQ / info cleanup", price: "NT$ 8,000–15,000", subtitle: "For teams with repeated questions but no need for admin panels yet", items: ["5–10 common questions", "Basic flow and button navigation", "External link integration", "Basic testing and usage guide"] },
     ],
     upgradeNote: "Small plans do not include custom admin panels, databases, dashboards, location search, or complex workflows. If needed, they can later be extended into the starter, standard, or advanced system plans below.",
+    smallPlanButton: "Email about this plan",
+    smallPlanMailSubject: "Small plan inquiry｜",
+    maintenanceLabel: "Maintenance Options",
+    maintenanceTitle: "After launch, choose one-time edits or monthly maintenance",
+    maintenanceText: "After a small plan or full system is delivered, follow-up edits, content updates, stable hosting, or usage summaries can be handled through one-time maintenance or monthly maintenance. Maintenance fees are separate from hosting, database, or third-party platform costs.",
+    maintenancePlans: [
+      { name: "One-time edit / small maintenance", price: "From NT$ 1,000–3,000 / time", subtitle: "For occasional text, link, image, or small feature updates", items: ["Small text, link, or FAQ updates", "Form or button link changes", "Simple bug fixes", "Does not include major feature rebuilds"] },
+      { name: "Basic monthly maintenance", price: "From NT$ 1,000–5,000 / month", subtitle: "For teams that want regular checks and minor updates", items: ["Monthly small content updates", "Basic issue checks", "Simple usage summary", "LINE / website link and function checks"] },
+      { name: "Monthly report / data maintenance", price: "From NT$ 2,000–8,000 / month", subtitle: "For systems with admin panels, event data, or dashboards", items: ["Update data or event information", "Organize query, click, or form records", "Simple monthly report or outcome summary", "Adjusted by data volume and update frequency"] },
+      { name: "Hosting and system management", price: "Hosting from about US$7/month, service fee separate", subtitle: "For projects that need long-term stable operation", items: ["Render / Vercel / database hosting support", "Basic deployment and environment checks", "Hosting fee is charged by the platform", "Not included in one-time development fees"] },
+    ],
+    maintenanceNote: "The actual maintenance scope will be confirmed before cooperation. Static one-page websites may not need monthly maintenance, while admin panels, databases, LINE Bots, dashboards, or long-term content updates should reserve a basic maintenance and hosting budget.",
     cooperationNotes: [
       ["Student developer with real cases", "The project is handled and delivered by a student developer with real public Toilet Bot, dashboard, and LINE system launch experience. Scope, timeline, payment, and acceptance criteria will be confirmed before development."],
       ["Flexible UI design options", "Basic interface layout and simple visual refinement can be included. If a more complete brand identity, illustration, or advanced UI design is needed, the client may provide design files or work with an external designer. Coordinating with external design may slightly extend the timeline."],
@@ -329,6 +353,26 @@ export default function App() {
   const mailSubject = encodeURIComponent(t.mailSubject);
   const mailBody = `${t.mailHello}%0D%0A%0D%0A${t.mailSelected}%0D%0A${selectedFeatureText || "- 尚未勾選功能"}${otherFeatureText}%0D%0A%0D%0A${t.mailSubtotal}${subtotal === 0 ? "尚未估算" : `NT$ ${subtotal.toLocaleString()}`}%0D%0A${t.mailEstimate}${estimateLabel}%0D%0A${t.mailMonthly}${monthlyCostLabel}%0D%0A%0D%0A${t.mailBrief}%0D%0A${t.mailPlaceholder}`;
   const estimateMailto = `mailto:easonlsy1019@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+
+  const buildSmallPlanMailto = (plan) => {
+    const subject = encodeURIComponent(`${t.smallPlanMailSubject}${plan.name}`);
+    const body = encodeURIComponent(
+      `${t.mailHello}
+
+` +
+      `${isEnglish ? "Selected small plan" : "我想詢問的小方案"}：${plan.name}
+` +
+      `${isEnglish ? "Price range" : "方案價格"}：${plan.price}
+` +
+      `${isEnglish ? "Suitable for" : "適合情境"}：${plan.subtitle}
+
+` +
+      `${isEnglish ? "Brief description of my need" : "我想做的內容簡述"}：
+` +
+      `${t.mailPlaceholder}`
+    );
+    return `mailto:easonlsy1019@gmail.com?subject=${subject}&body=${body}`;
+  };
 
   const toggleOption = (id) => {
     setSelected((current) =>
@@ -457,6 +501,9 @@ export default function App() {
                         <li key={feature} className="flex gap-2"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" /><span>{feature}</span></li>
                       ))}
                     </ul>
+                    <a href={buildSmallPlanMailto(item)} className="mt-auto pt-5">
+                      <Button className="w-full text-sm">{t.smallPlanButton} <ExternalLink className="ml-2 h-4 w-4" /></Button>
+                    </a>
                   </CardContent>
                 </Card>
               ))}
@@ -490,6 +537,30 @@ export default function App() {
                 <p className="mt-3 text-sm leading-7 text-slate-300">{text}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mb-12 rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:p-8">
+            <div className="mb-6 max-w-3xl">
+              <p className="text-sm font-semibold text-cyan-300">{t.maintenanceLabel}</p>
+              <h3 className="mt-3 text-2xl font-bold text-white md:text-3xl">{t.maintenanceTitle}</h3>
+              <p className="mt-4 text-sm leading-7 text-slate-300">{t.maintenanceText}</p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              {t.maintenancePlans.map((plan) => (
+                <div key={plan.name} className="rounded-2xl border border-white/10 bg-white/[0.05] p-5">
+                  <p className="text-base font-semibold text-white">{plan.name}</p>
+                  <p className="mt-2 text-lg font-bold text-cyan-200">{plan.price}</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-400">{plan.subtitle}</p>
+                  <div className="my-4 h-px bg-white/10" />
+                  <ul className="space-y-2 text-sm leading-6 text-slate-300">
+                    {plan.items.map((item) => (
+                      <li key={item} className="flex gap-2"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" /><span>{item}</span></li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4 text-sm leading-6 text-cyan-50">{t.maintenanceNote}</p>
           </div>
 
           <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"><div className="max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.estimatorLabel}</p><h3 className="mt-3 text-2xl font-bold text-white md:text-3xl">{t.estimatorTitle}</h3><p className="mt-4 leading-7 text-slate-300">{t.estimatorText}</p></div><button type="button" onClick={clearEstimate} className="w-fit rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-3 text-sm text-slate-200 transition hover:border-cyan-300/30 hover:bg-cyan-300/10">{t.clearAll}</button></div>
