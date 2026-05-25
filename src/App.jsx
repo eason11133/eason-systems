@@ -112,7 +112,7 @@ const content = {
       { name: "單次修改 / 小維護", price: "學生價 NT$ 1,000–5,000 起 / 次", subtitle: "適合偶爾改文字、連結、圖片或小功能", items: ["文字、連結、FAQ 小幅更新", "表單或按鈕連結調整", "簡單錯誤修正", "不含大型功能重做"] },
       { name: "每月基礎維護", price: "學生價 NT$ 1,500–6,000 起 / 月", subtitle: "適合希望系統有人定期檢查與小幅調整", items: ["每月小幅內容更新", "基礎問題排查", "簡易使用狀況整理", "LINE / 網站連結與功能檢查"] },
       { name: "月報 / 資料更新維護", price: "學生價 NT$ 2,000–8,000 起 / 月", subtitle: "適合有後台、活動資料或 Dashboard 的系統", items: ["協助更新資料或活動資訊", "整理查詢、點擊或表單紀錄", "簡易月報或成果摘要", "依資料量與更新頻率調整"] },
-      { name: "主機與系統代管", price: "學生價 NT$ 300–500 / 月起，主機費另計", subtitle: "適合需要長期穩定上線的系統", items: ["部署與環境設定協助", "每月基本上線檢查", "小型異常判斷與重啟協助", "平台費用另計，不含新增功能"] },
+      { name: "主機與系統代管", price: "學生價 NT$ 300–500 起 / 月", subtitle: "主機費另計，適合需要長期穩定上線的系統", items: ["部署與環境設定協助", "每月基本上線檢查", "小型異常判斷與重啟協助", "平台費用另計，不含新增功能"] },
     ],
     maintenanceNote: "實際維護範圍會在合作前確認。以上為學生開發者優惠價，會比一般市場行情低一些；若合作滿意，也希望能提供推薦語、推薦信或案例回饋。若只是靜態一頁式網頁，通常不一定需要月維護；若有後台、資料庫、LINE Bot、Dashboard 或長期活動資料更新，建議至少保留基本維護與主機費預算。主機代管服務費通常是協助部署、檢查、重啟與基本問題排查，不等於平台本身收取的主機費。",
     cooperationNotes: [
@@ -259,7 +259,7 @@ const content = {
       { name: "One-time edit / small maintenance", price: "Student rate from NT$ 1,000–5,000 / time", subtitle: "For occasional text, link, image, or small feature updates", items: ["Small text, link, or FAQ updates", "Form or button link changes", "Simple bug fixes", "Does not include major feature rebuilds"] },
       { name: "Basic monthly maintenance", price: "Student rate from NT$ 1,500–6,000 / month", subtitle: "For teams that want regular checks and minor updates", items: ["Monthly small content updates", "Basic issue checks", "Simple usage summary", "LINE / website link and function checks"] },
       { name: "Monthly report / data maintenance", price: "Student rate from NT$ 2,000–8,000 / month", subtitle: "For systems with admin panels, event data, or dashboards", items: ["Update data or event information", "Organize query, click, or form records", "Simple monthly report or outcome summary", "Adjusted by data volume and update frequency"] },
-      { name: "Hosting and system management", price: "Student rate NT$ 300–500/month, hosting fee separate", subtitle: "For LINE Bots, admin panels, dashboards, or database systems that need stable long-term operation", items: ["Render / Vercel / database deployment and basic setup support", "Monthly basic uptime and environment checks", "Small incident diagnosis and restart / redeploy assistance", "Hosting, database, and third-party platform fees are charged separately by the platform", "Does not include new features, major redesigns, or large data updates"] },
+      { name: "Hosting and system management", price: "Student rate NT$ 300–500/month", subtitle: "Hosting fee separate. For systems that need stable long-term operation", items: ["Render / Vercel / database deployment and basic setup support", "Monthly basic uptime and environment checks", "Small incident diagnosis and restart / redeploy assistance", "Hosting, database, and third-party platform fees are charged separately by the platform", "Does not include new features, major redesigns, or large data updates"] },
     ],
     maintenanceNote: "The actual maintenance scope will be confirmed before cooperation. These are student-developer rates, slightly lower than typical market pricing. If the cooperation goes well, a testimonial, recommendation letter, or case feedback would be appreciated. Static one-page websites may not need monthly maintenance, while admin panels, databases, LINE Bots, dashboards, or long-term content updates should reserve a basic maintenance and hosting budget. Hosting management service fees usually cover deployment support, checks, restarts, and basic issue diagnosis, not the platform hosting fee itself.",
     cooperationNotes: [
@@ -575,20 +575,20 @@ export default function App() {
             </div>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               {t.maintenancePlans.map((plan) => (
-                <div key={plan.name} className="flex h-full min-h-[540px] flex-col rounded-2xl border border-white/10 bg-white/[0.05] p-5">
-                  <div>
-                    <p className="flex h-[56px] items-start text-base font-semibold leading-7 text-white">{plan.name}</p>
-                    <p className="mt-2 flex h-[108px] items-start text-lg font-bold leading-9 text-cyan-200">{plan.price}</p>
-                    <p className="mt-2 flex h-[72px] items-start text-sm leading-6 text-slate-400">{plan.subtitle}</p>
+                <div key={plan.name} className="flex h-full min-h-[430px] flex-col rounded-2xl border border-white/10 bg-white/[0.05] p-5">
+                  <div className="space-y-4">
+                    <p className="text-base font-semibold leading-7 text-white">{plan.name}</p>
+                    <p className="text-lg font-bold leading-8 text-cyan-200">{plan.price}</p>
+                    <p className="text-sm leading-6 text-slate-400">{plan.subtitle}</p>
                   </div>
-                  <div className="my-4 h-px bg-white/10" />
-                  <ul className="min-h-[156px] space-y-2 text-sm leading-6 text-slate-300">
+                  <div className="my-5 h-px bg-white/10" />
+                  <ul className="space-y-2 text-sm leading-6 text-slate-300">
                     {plan.items.map((item) => (
                       <li key={item} className="flex gap-2"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" /><span>{item}</span></li>
                     ))}
                   </ul>
                   <a href={buildMaintenancePlanMailto(plan)} className="mt-auto block pt-6">
-                    <Button className="min-h-[72px] w-full text-sm leading-6">{t.maintenancePlanButton} <ExternalLink className="ml-2 h-4 w-4 shrink-0" /></Button>
+                    <Button className="min-h-[64px] w-full text-sm leading-6">{t.maintenancePlanButton} <ExternalLink className="ml-2 h-4 w-4 shrink-0" /></Button>
                   </a>
                 </div>
               ))}
