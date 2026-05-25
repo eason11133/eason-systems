@@ -112,7 +112,7 @@ const content = {
       { name: "單次修改 / 小維護", price: "NT$ 1,000–3,000 起 / 次", subtitle: "適合偶爾改文字、連結、圖片或小功能", items: ["文字、連結、FAQ 小幅更新", "表單或按鈕連結調整", "簡單錯誤修正", "不含大型功能重做"] },
       { name: "每月基礎維護", price: "NT$ 1,000–5,000 起 / 月", subtitle: "適合希望系統有人定期檢查與小幅調整", items: ["每月小幅內容更新", "基礎問題排查", "簡易使用狀況整理", "LINE / 網站連結與功能檢查"] },
       { name: "月報 / 資料更新維護", price: "NT$ 2,000–8,000 起 / 月", subtitle: "適合有後台、活動資料或 Dashboard 的系統", items: ["協助更新資料或活動資訊", "整理查詢、點擊或表單紀錄", "簡易月報或成果摘要", "依資料量與更新頻率調整"] },
-      { name: "主機與系統代管", price: "NT$ 300-500 / 月起", subtitle: "適合需要系統長期穩定運行的專案", items: ["Render / Vercel / 資料庫代管協助", "基本部署與環境檢查", "主機費由實際平台收取", "不包含在一次性開發費內"] },
+      { name: "主機與系統代管", price: "NT$ 300–500 / 月起", subtitle: "適合需要系統長期穩定運行的專案", items: ["Render / Vercel / 資料庫代管協助", "基本部署與環境檢查", "主機費由實際平台收取", "不包含在一次性開發費內"] },
     ],
     maintenanceNote: "實際維護範圍會在合作前確認。若只是靜態一頁式網頁，通常不一定需要月維護；若有後台、資料庫、LINE Bot、Dashboard 或長期活動資料更新，建議至少保留基本維護與主機費預算。",
     cooperationNotes: [
@@ -258,7 +258,7 @@ const content = {
       { name: "One-time edit / small maintenance", price: "From NT$ 1,000–3,000 / time", subtitle: "For occasional text, link, image, or small feature updates", items: ["Small text, link, or FAQ updates", "Form or button link changes", "Simple bug fixes", "Does not include major feature rebuilds"] },
       { name: "Basic monthly maintenance", price: "From NT$ 1,000–5,000 / month", subtitle: "For teams that want regular checks and minor updates", items: ["Monthly small content updates", "Basic issue checks", "Simple usage summary", "LINE / website link and function checks"] },
       { name: "Monthly report / data maintenance", price: "From NT$ 2,000–8,000 / month", subtitle: "For systems with admin panels, event data, or dashboards", items: ["Update data or event information", "Organize query, click, or form records", "Simple monthly report or outcome summary", "Adjusted by data volume and update frequency"] },
-      { name: "Hosting and system management", price: "Hosting from about US$7/month, service fee separate", subtitle: "For projects that need long-term stable operation", items: ["Render / Vercel / database hosting support", "Basic deployment and environment checks", "Hosting fee is charged by the platform", "Not included in one-time development fees"] },
+      { name: "Hosting and system management", price: "NT$ 300–500/month, hosting fee separate", subtitle: "For projects that need long-term stable operation", items: ["Render / Vercel / database hosting support", "Basic deployment and environment checks", "Hosting fee is charged by the platform", "Not included in one-time development fees"] },
     ],
     maintenanceNote: "The actual maintenance scope will be confirmed before cooperation. Static one-page websites may not need monthly maintenance, while admin panels, databases, LINE Bots, dashboards, or long-term content updates should reserve a basic maintenance and hosting budget.",
     cooperationNotes: [
