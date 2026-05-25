@@ -112,7 +112,7 @@ const content = {
     crmExplainText: "不用把它想得很企業。它可以只是把名單、Email、狀態、日期、方案、預計收入、實際收款與每日任務放在同一個畫面，讓你不用一直翻表格或忘記追蹤。",
     crmPreviewTitle: "實例預覽：接案名單追蹤系統",
     crmPreviewText: "可做成像接案工作台一樣：上方看總收益與進度，中間用日期滾輪看今天要寄信、追蹤或交付什麼，下方再用名單一覽管理每位客戶。",
-    crmPreviewStats: [["52", "客戶名單"], ["4", "已寄信"], ["50K", "預計收益"], ["今日", "任務檢查"]],
+    crmPreviewStats: [["100", "客戶名單"], ["100", "已寄信"], ["500K", "預計收益"], ["今日", "任務檢查"]],
     crmPreviewRows: ["日期滾輪：寄信 / 追蹤 / 工作 / 交付", "名單一覽：狀態、方案、Email、下一步", "每日任務：達成或未達成延到明天"],
     crmPlans: [
       { name: "個人本機管理工具", price: "學生價 NT$ 15,000 起", subtitle: "適合個人接案者、學生或小型業務自己使用", items: ["客戶名單與狀態追蹤", "日期滾輪與每日事項", "預計收益 / 實際收款", "資料存在使用者瀏覽器"] },
@@ -276,7 +276,7 @@ const content = {
     crmExplainText: "It does not have to be an enterprise system. It can simply put leads, emails, statuses, dates, plans, estimated revenue, received payments, and daily tasks in one place so you do not need to keep switching spreadsheets.",
     crmPreviewTitle: "Example preview: freelance lead tracker",
     crmPreviewText: "It can work like a small business dashboard: top cards show progress and revenue, a date wheel shows today's emails, follow-ups, work, and delivery items, and the lead table manages each client.",
-    crmPreviewStats: [["52", "Leads"], ["4", "Emailed"], ["50K", "Projected"], ["Today", "Tasks"]],
+    crmPreviewStats: [["100", "Leads"], ["100", "Emailed"], ["500K", "Projected"], ["Today", "Tasks"]],
     crmPreviewRows: ["Date wheel: email / follow-up / work / delivery", "Lead table: status, plan, email, next step", "Daily tasks: done or move unfinished work to tomorrow"],
     crmPlans: [
       { name: "Personal local manager", price: "Student rate from NT$ 15,000", subtitle: "For individual freelancers, students, or small sales workflows", items: ["Lead and status tracking", "Date wheel and daily tasks", "Estimated / received revenue", "Data stored in the user's browser"] },
