@@ -89,8 +89,18 @@ const content = {
     ],
     outcomes: ["把模糊想法整理成清楚功能與流程", "讓使用者能真的在線上完成查詢或操作", "讓資料或內容可以由管理者自己維護", "讓系統未來能累積使用紀錄與成果數據"],
     packageLabel: "Plans & Pricing",
-    packageTitle: "先看常見方案，再用功能勾選估算自己的版本",
-    packageText: "下方三個版本是常見合作範圍；如果需求介於不同版本之間，可以再用功能模組勾選器抓大概預算。",
+    packageTitle: "可以先從小網頁 / LINE 整理開始，再升級成完整系統",
+    packageText: "不一定一開始就做 3 萬以上的大系統。若只是想讓活動資訊更清楚、整理 LINE 官方帳號、放報名表與 FAQ，也可以先從 NT$3,000 起的小方案開始。下方也保留完整系統方案與功能估算器，方便之後升級。",
+    smallPlanLabel: "Small Starter Plans",
+    smallPlanTitle: "低門檻小方案，適合先改善現有流程",
+    smallPlanText: "這些方案適合還不確定要不要做完整系統的客戶。先把網頁、LINE、FAQ、表單與資訊整理好，後續若需要資料查詢、後台或 Dashboard，再升級成完整系統。",
+    smallPlans: [
+      { name: "一頁式活動 / 課程網頁", price: "NT$ 3,000–8,000", subtitle: "適合活動、課程、營隊、講座、工作坊", items: ["活動介紹與重點整理", "報名連結 / 表單整合", "時間地點與注意事項", "FAQ 與聯絡資訊"] },
+      { name: "LINE 官方帳號整理", price: "NT$ 3,000–6,000", subtitle: "適合已經有 LINE，但資訊分散或選單不好用", items: ["圖文選單規劃", "常見問題分類", "表單 / 官網 / 社群連結整理", "基礎回覆文字整理"] },
+      { name: "小型品牌 / 服務介紹頁", price: "NT$ 5,000–12,000", subtitle: "適合小店、個人品牌、服務頁或作品頁", items: ["品牌與服務介紹", "作品 / 案例區塊", "聯絡方式與社群連結", "基礎 RWD 版面"] },
+      { name: "小型 FAQ / 資訊整理版", price: "NT$ 8,000–15,000", subtitle: "適合重複詢問很多，但暫時不需要後台的單位", items: ["5–10 個常見問題整理", "基本分流與按鈕導覽", "外部連結整合", "基礎測試與操作說明"] },
+    ],
+    upgradeNote: "小方案不包含客製後台、資料庫、Dashboard、定位查詢或複雜流程。若後續需要完整系統，可直接延伸成下方基礎 / 標準 / 進階版本。",
     cooperationNotes: [
       ["學生開發者，真實案例驗證", "目前由學生開發者接案與交付，已有公廁 Bot、Dashboard 與 LINE 系統實際上線經驗。合作前會先確認範圍、時程、付款與驗收方式。"],
       ["UI 設計可彈性處理", "可由我協助做基礎介面與簡單視覺整理；若需要更完整品牌視覺、插圖或高階設計，也可由客戶提供設計稿或另找設計師。若需配合外部設計，開發時程可能會略微延長。"],
@@ -107,6 +117,7 @@ const content = {
     estimateOptions: [
       ["line-entry", "LINE Bot 基礎入口", 6000, "Webhook、基本訊息回覆、LINE 官方帳號串接"],
       ["menu-flow", "圖文選單 / 基本導覽流程", 4000, "讓使用者能用按鈕進入主要功能"],
+      ["one-page-web", "一頁式網頁 / 活動頁", 5000, "活動、課程、服務或品牌介紹頁，可放報名連結、FAQ 與聯絡方式"],
       ["faq", "FAQ / 分類引導流程", 5000, "把常見問題或服務流程整理成可操作選單"],
       ["custom-form", "客製化表單", 2000, "簡易欄位設計、填寫流程、資料紀錄或表單結果整理" ],
       ["external-link", "外部連結 / 表單串接", 1000, "加入 Google Form、報名表、網站、地圖或其他外部頁面連結" ],
@@ -210,8 +221,18 @@ const content = {
     ],
     outcomes: ["Turn vague ideas into clear features and flows", "Let users complete real actions online", "Allow admins to maintain content and data", "Let the system accumulate usage and outcome data"],
     packageLabel: "Plans & Pricing",
-    packageTitle: "Start from common plans, then estimate your own version with feature modules",
-    packageText: "The three plans below show common cooperation scopes. If your needs fall between plans, use the feature estimator to estimate a rough budget.",
+    packageTitle: "Start with a small web / LINE cleanup plan, then upgrade into a full system",
+    packageText: "You do not need to start with a NT$30,000+ system. If you only need clearer event information, LINE official account cleanup, registration links, and FAQs, you can start with a small plan from NT$3,000. Full system plans and the feature estimator are still available for future upgrades.",
+    smallPlanLabel: "Small Starter Plans",
+    smallPlanTitle: "Low-entry plans for improving your current workflow first",
+    smallPlanText: "These plans are suitable for clients who are not sure whether they need a full system yet. Start by organizing a webpage, LINE menu, FAQs, forms, and information. Later, it can be upgraded into data search, admin panels, or dashboards.",
+    smallPlans: [
+      { name: "One-page event / course page", price: "NT$ 3,000–8,000", subtitle: "For events, courses, camps, lectures, and workshops", items: ["Event introduction and key information", "Registration link / form integration", "Time, location, and reminders", "FAQ and contact information"] },
+      { name: "LINE official account cleanup", price: "NT$ 3,000–6,000", subtitle: "For existing LINE accounts with scattered information or unclear menus", items: ["Rich menu planning", "FAQ categorization", "Form / website / social link organization", "Basic reply text cleanup"] },
+      { name: "Small brand / service page", price: "NT$ 5,000–12,000", subtitle: "For small shops, personal brands, service pages, or portfolio pages", items: ["Brand and service introduction", "Works / case section", "Contact and social links", "Basic responsive layout"] },
+      { name: "Small FAQ / info cleanup", price: "NT$ 8,000–15,000", subtitle: "For teams with repeated questions but no need for admin panels yet", items: ["5–10 common questions", "Basic flow and button navigation", "External link integration", "Basic testing and usage guide"] },
+    ],
+    upgradeNote: "Small plans do not include custom admin panels, databases, dashboards, location search, or complex workflows. If needed, they can later be extended into the starter, standard, or advanced system plans below.",
     cooperationNotes: [
       ["Student developer with real cases", "The project is handled and delivered by a student developer with real public Toilet Bot, dashboard, and LINE system launch experience. Scope, timeline, payment, and acceptance criteria will be confirmed before development."],
       ["Flexible UI design options", "Basic interface layout and simple visual refinement can be included. If a more complete brand identity, illustration, or advanced UI design is needed, the client may provide design files or work with an external designer. Coordinating with external design may slightly extend the timeline."],
@@ -228,6 +249,7 @@ const content = {
     estimateOptions: [
       ["line-entry", "LINE Bot basic entry", 6000, "Webhook, basic replies, LINE official account integration"],
       ["menu-flow", "Rich menu / basic navigation", 4000, "Let users enter main functions through buttons"],
+      ["one-page-web", "One-page website / event page", 5000, "For events, courses, services, or brand pages with registration links, FAQs, and contact info"],
       ["faq", "FAQ / category flow", 5000, "Turn common questions or service flows into menus"],
       ["custom-form", "Custom form", 2000, "Simple field setup, submission flow, data records, or form result organization" ],
       ["external-link", "External link / form integration", 1000, "Add Google Forms, registration forms, websites, maps, or other external page links" ],
@@ -415,6 +437,34 @@ export default function App() {
 
         <section id="packages" className="mx-auto max-w-6xl px-6 py-20">
           <div className="mb-10 max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.packageLabel}</p><h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.packageTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.packageText}</p></div>
+
+          <div className="mb-12 rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-6 md:p-8">
+            <div className="mb-7 max-w-3xl">
+              <p className="text-sm font-semibold text-cyan-200">{t.smallPlanLabel}</p>
+              <h3 className="mt-3 text-2xl font-bold text-white md:text-3xl">{t.smallPlanTitle}</h3>
+              <p className="mt-4 leading-7 text-slate-300">{t.smallPlanText}</p>
+            </div>
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+              {t.smallPlans.map((item) => (
+                <Card key={item.name} className="bg-slate-950/35">
+                  <CardContent className="flex h-full flex-col p-5">
+                    <h4 className="text-lg font-bold text-white">{item.name}</h4>
+                    <p className="mt-2 text-xl font-bold text-cyan-200">{item.price}</p>
+                    <p className="mt-3 text-sm leading-6 text-slate-300">{item.subtitle}</p>
+                    <div className="my-4 h-px bg-white/10" />
+                    <ul className="space-y-2 text-sm leading-6 text-slate-300">
+                      {item.items.map((feature) => (
+                        <li key={feature} className="flex gap-2"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" /><span>{feature}</span></li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <p className="mt-6 rounded-2xl border border-white/10 bg-slate-950/40 p-4 text-sm leading-6 text-slate-300">{t.upgradeNote}</p>
+          </div>
+
+          <div className="mb-6 max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{isEnglish ? "Full System Plans" : "完整系統方案"}</p><h3 className="mt-3 text-2xl font-bold text-white md:text-3xl">{isEnglish ? "Full system plans" : "完整系統方案"}</h3></div>
           <div className="mb-12 grid gap-6 md:grid-cols-3">{t.packages.map((item) => <Card key={item.name} className={item.featured ? "border-cyan-300/30 bg-cyan-300/10 shadow-2xl shadow-cyan-950/30" : "bg-slate-900/70"}><CardContent className="flex h-full min-h-[390px] flex-col p-7">
                   <div className="mb-6 flex min-h-8 items-center justify-between gap-3">
                     <div>
