@@ -106,14 +106,20 @@ const content = {
     crmPlanButton: "選這個 CRM 方案來信討論",
     crmMailSubject: "接案 CRM / 管理系統詢問｜",
     crmLabel: "CRM / Internal Tools",
-    crmTitle: "也可以客製個人工作管理或接案 CRM",
-    crmText: "除了對外網頁與 LINE 系統，也可以協助個人接案者、小型工作室或業務團隊做內部管理工具。適合用來追蹤潛在客戶、寄信進度、回覆狀態、預計收益、實際收款、每日準備事項與交付日期。",
+    crmTitle: "也可以客製接案追蹤、客戶管理或內部工作系統",
+    crmText: "如果你平常用 Excel、Google Sheet 或記事本追蹤客戶、寄信、回覆、金額與交付日期，也可以做成一套自己的管理工具。CRM 簡單來說就是客戶與工作進度管理系統，幫你知道誰還沒聯絡、誰要追蹤、哪一案有機會成交、今天該做什麼。",
+    crmExplainTitle: "CRM 是什麼？",
+    crmExplainText: "不用把它想得很企業。它可以只是把名單、Email、狀態、日期、方案、預計收入、實際收款與每日任務放在同一個畫面，讓你不用一直翻表格或忘記追蹤。",
+    crmPreviewTitle: "實例預覽：接案名單追蹤系統",
+    crmPreviewText: "可做成像接案工作台一樣：上方看總收益與進度，中間用日期滾輪看今天要寄信、追蹤或交付什麼，下方再用名單一覽管理每位客戶。",
+    crmPreviewStats: [["52", "客戶名單"], ["4", "已寄信"], ["50K", "預計收益"], ["今日", "任務檢查"]],
+    crmPreviewRows: ["日期滾輪：寄信 / 追蹤 / 工作 / 交付", "名單一覽：狀態、方案、Email、下一步", "每日任務：達成或未達成延到明天"],
     crmPlans: [
-      { name: "個人本機 CRM", price: "學生價 NT$ 15,000 起", subtitle: "適合個人接案者、學生或小型業務自己使用", items: ["潛在客戶與狀態追蹤", "日期滾輪與每日事項", "預計收益 / 實際收款", "資料存在使用者瀏覽器"] },
-      { name: "客製欄位 CRM", price: "學生價 NT$ 25,000–40,000 起", subtitle: "適合有固定流程、欄位與追蹤需求的工作室", items: ["客製狀態與欄位", "批量貼上與搜尋篩選", "進行中工作與交付日期", "依實際流程調整版面"] },
-      { name: "雲端團隊 CRM", price: "學生價 NT$ 50,000 起，依需求評估", subtitle: "適合多人共用，需要登入、資料庫或權限管理", items: ["登入與雲端資料庫", "多人共用與權限規劃", "備份與資料管理", "可加 Dashboard / 統計分析"] },
+      { name: "個人本機管理工具", price: "學生價 NT$ 15,000 起", subtitle: "適合個人接案者、學生或小型業務自己使用", items: ["客戶名單與狀態追蹤", "日期滾輪與每日事項", "預計收益 / 實際收款", "資料存在使用者瀏覽器"] },
+      { name: "客製欄位管理工具", price: "學生價 NT$ 25,000–40,000 起", subtitle: "適合有固定流程、欄位與追蹤需求的工作室", items: ["客製狀態與欄位", "批量貼上與搜尋篩選", "進行中工作與交付日期", "依實際流程調整版面"] },
+      { name: "雲端團隊管理工具", price: "學生價 NT$ 50,000 起，依需求評估", subtitle: "適合多人共用，需要登入、資料庫或權限管理", items: ["登入與雲端資料庫", "多人共用與權限規劃", "備份與資料管理", "可加 Dashboard / 統計分析"] },
     ],
-    crmNote: "個人本機版適合自己使用，價格較低，但資料主要存在同一台電腦與瀏覽器。若需要多人登入、雲端同步、權限、正式資料庫或長期維護，會建議改做雲端團隊版，價格也會依需求提高。",
+    crmNote: "個人本機版適合自己使用，價格較低，但資料主要存在同一台電腦與瀏覽器。若需要多人登入、雲端同步、權限、正式資料庫、備份或長期維護，會建議改做雲端團隊版，價格也會依需求提高。",
     maintenancePlanButton: "選這個維護方案來信討論",
     maintenanceMailSubject: "維護方案詢問｜",
     maintenanceLabel: "Maintenance Options",
@@ -264,14 +270,20 @@ const content = {
     crmPlanButton: "Email about this CRM plan",
     crmMailSubject: "CRM / internal tool inquiry｜",
     crmLabel: "CRM / Internal Tools",
-    crmTitle: "Custom personal workflow or freelance CRM systems are also available",
-    crmText: "In addition to public websites and LINE systems, I can also build internal tools for freelancers, small studios, or sales workflows. These can track leads, email status, replies, estimated revenue, received payments, daily tasks, and delivery deadlines.",
+    crmTitle: "Custom lead tracking, client management, or internal workflow tools",
+    crmText: "If you currently use Excel, Google Sheets, or notes to track leads, emails, replies, revenue, and delivery dates, this can be turned into a simple internal tool. CRM simply means a client and workflow management system that helps you see who has not been contacted, who needs follow-up, which deal may close, and what needs to be done today.",
+    crmExplainTitle: "What is a CRM?",
+    crmExplainText: "It does not have to be an enterprise system. It can simply put leads, emails, statuses, dates, plans, estimated revenue, received payments, and daily tasks in one place so you do not need to keep switching spreadsheets.",
+    crmPreviewTitle: "Example preview: freelance lead tracker",
+    crmPreviewText: "It can work like a small business dashboard: top cards show progress and revenue, a date wheel shows today's emails, follow-ups, work, and delivery items, and the lead table manages each client.",
+    crmPreviewStats: [["52", "Leads"], ["4", "Emailed"], ["50K", "Projected"], ["Today", "Tasks"]],
+    crmPreviewRows: ["Date wheel: email / follow-up / work / delivery", "Lead table: status, plan, email, next step", "Daily tasks: done or move unfinished work to tomorrow"],
     crmPlans: [
-      { name: "Personal local CRM", price: "Student rate from NT$ 15,000", subtitle: "For individual freelancers, students, or small sales workflows", items: ["Lead and status tracking", "Date wheel and daily tasks", "Estimated / received revenue", "Data stored in the user's browser"] },
-      { name: "Custom-field CRM", price: "Student rate from NT$ 25,000–40,000", subtitle: "For studios with fixed fields, processes, and tracking needs", items: ["Custom statuses and fields", "Bulk paste, search, and filters", "Work tasks and delivery dates", "Layout adjusted to the actual workflow"] },
-      { name: "Cloud team CRM", price: "Student rate from NT$ 50,000, evaluated by scope", subtitle: "For teams that need login, cloud database, or permission management", items: ["Login and cloud database", "Team access and permission planning", "Backup and data management", "Optional dashboard / analytics"] },
+      { name: "Personal local manager", price: "Student rate from NT$ 15,000", subtitle: "For individual freelancers, students, or small sales workflows", items: ["Lead and status tracking", "Date wheel and daily tasks", "Estimated / received revenue", "Data stored in the user's browser"] },
+      { name: "Custom-field manager", price: "Student rate from NT$ 25,000–40,000", subtitle: "For studios with fixed fields, processes, and tracking needs", items: ["Custom statuses and fields", "Bulk paste, search, and filters", "Work tasks and delivery dates", "Layout adjusted to the actual workflow"] },
+      { name: "Cloud team manager", price: "Student rate from NT$ 50,000, evaluated by scope", subtitle: "For teams that need login, cloud database, or permission management", items: ["Login and cloud database", "Team access and permission planning", "Backup and data management", "Optional dashboard / analytics"] },
     ],
-    crmNote: "The personal local version is suitable for individual use and costs less, but the data is mainly stored in the same computer and browser. If you need team login, cloud sync, permissions, a formal database, or long-term maintenance, the cloud team version is recommended and will be priced by scope.",
+    crmNote: "The personal local version is suitable for individual use and costs less, but the data is mainly stored in the same computer and browser. If you need team login, cloud sync, permissions, a formal database, backups, or long-term maintenance, the cloud team version is recommended and will be priced by scope.",
     maintenancePlanButton: "Email about this maintenance plan",
     maintenanceMailSubject: "Maintenance plan inquiry｜",
     maintenanceLabel: "Maintenance Options",
@@ -584,12 +596,45 @@ export default function App() {
           </div>
 
           <div className="mb-12 rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:p-8">
-            <div className="mb-7 max-w-3xl">
-              <p className="text-sm font-semibold text-cyan-300">{t.crmLabel}</p>
-              <h3 className="mt-3 text-2xl font-bold text-white md:text-3xl">{t.crmTitle}</h3>
-              <p className="mt-4 leading-7 text-slate-300">{t.crmText}</p>
+            <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+              <div>
+                <p className="text-sm font-semibold text-cyan-300">{t.crmLabel}</p>
+                <h3 className="mt-3 text-2xl font-bold leading-tight text-white md:text-3xl">{t.crmTitle}</h3>
+                <p className="mt-4 leading-7 text-slate-300">{t.crmText}</p>
+
+                <div className="mt-6 rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-5">
+                  <p className="text-sm font-semibold text-cyan-100">{t.crmExplainTitle}</p>
+                  <p className="mt-2 text-sm leading-7 text-slate-200">{t.crmExplainText}</p>
+                </div>
+              </div>
+
+              <div className="rounded-3xl border border-white/10 bg-slate-950/45 p-5 shadow-2xl shadow-slate-950/30">
+                <div className="mb-4 flex items-center justify-between gap-3">
+                  <div>
+                    <p className="text-sm font-semibold text-cyan-200">{t.crmPreviewTitle}</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-400">{t.crmPreviewText}</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+                  {t.crmPreviewStats.map(([value, label]) => (
+                    <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.06] p-3">
+                      <p className="text-xl font-bold text-white">{value}</p>
+                      <p className="mt-1 text-xs text-slate-400">{label}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 space-y-2">
+                  {t.crmPreviewRows.map((row) => (
+                    <div key={row} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm text-slate-300">
+                      <span className="h-2 w-2 shrink-0 rounded-full bg-cyan-300" />
+                      <span>{row}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-            <div className="grid gap-5 md:grid-cols-3">
+
+            <div className="mt-8 grid gap-5 md:grid-cols-3">
               {t.crmPlans.map((plan) => (
                 <Card key={plan.name} className="bg-white/[0.05]">
                   <CardContent className="flex h-full flex-col p-6">
