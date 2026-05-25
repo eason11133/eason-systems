@@ -103,6 +103,17 @@ const content = {
     upgradeNote: "小方案不包含客製後台、資料庫、Dashboard、定位查詢或複雜流程。價格為學生開發者優惠價，範圍會在合作前確認；若後續需要完整系統，可直接延伸成下方基礎 / 標準 / 進階版本。",
     smallPlanButton: "選這個方案來信討論",
     smallPlanMailSubject: "小方案合作詢問｜",
+    crmPlanButton: "選這個 CRM 方案來信討論",
+    crmMailSubject: "接案 CRM / 管理系統詢問｜",
+    crmLabel: "CRM / Internal Tools",
+    crmTitle: "也可以客製個人工作管理或接案 CRM",
+    crmText: "除了對外網頁與 LINE 系統，也可以協助個人接案者、小型工作室或業務團隊做內部管理工具。適合用來追蹤潛在客戶、寄信進度、回覆狀態、預計收益、實際收款、每日準備事項與交付日期。",
+    crmPlans: [
+      { name: "個人本機 CRM", price: "學生價 NT$ 15,000 起", subtitle: "適合個人接案者、學生或小型業務自己使用", items: ["潛在客戶與狀態追蹤", "日期滾輪與每日事項", "預計收益 / 實際收款", "資料存在使用者瀏覽器"] },
+      { name: "客製欄位 CRM", price: "學生價 NT$ 25,000–40,000 起", subtitle: "適合有固定流程、欄位與追蹤需求的工作室", items: ["客製狀態與欄位", "批量貼上與搜尋篩選", "進行中工作與交付日期", "依實際流程調整版面"] },
+      { name: "雲端團隊 CRM", price: "學生價 NT$ 50,000 起，依需求評估", subtitle: "適合多人共用，需要登入、資料庫或權限管理", items: ["登入與雲端資料庫", "多人共用與權限規劃", "備份與資料管理", "可加 Dashboard / 統計分析"] },
+    ],
+    crmNote: "個人本機版適合自己使用，價格較低，但資料主要存在同一台電腦與瀏覽器。若需要多人登入、雲端同步、權限、正式資料庫或長期維護，會建議改做雲端團隊版，價格也會依需求提高。",
     maintenancePlanButton: "選這個維護方案來信討論",
     maintenanceMailSubject: "維護方案詢問｜",
     maintenanceLabel: "Maintenance Options",
@@ -250,6 +261,17 @@ const content = {
     upgradeNote: "Small plans do not include custom admin panels, databases, dashboards, location search, or complex workflows. Pricing is a student-developer rate and the exact scope will be confirmed before cooperation. If needed, these plans can later be extended into the starter, standard, or advanced system plans below.",
     smallPlanButton: "Email about this plan",
     smallPlanMailSubject: "Small plan inquiry｜",
+    crmPlanButton: "Email about this CRM plan",
+    crmMailSubject: "CRM / internal tool inquiry｜",
+    crmLabel: "CRM / Internal Tools",
+    crmTitle: "Custom personal workflow or freelance CRM systems are also available",
+    crmText: "In addition to public websites and LINE systems, I can also build internal tools for freelancers, small studios, or sales workflows. These can track leads, email status, replies, estimated revenue, received payments, daily tasks, and delivery deadlines.",
+    crmPlans: [
+      { name: "Personal local CRM", price: "Student rate from NT$ 15,000", subtitle: "For individual freelancers, students, or small sales workflows", items: ["Lead and status tracking", "Date wheel and daily tasks", "Estimated / received revenue", "Data stored in the user's browser"] },
+      { name: "Custom-field CRM", price: "Student rate from NT$ 25,000–40,000", subtitle: "For studios with fixed fields, processes, and tracking needs", items: ["Custom statuses and fields", "Bulk paste, search, and filters", "Work tasks and delivery dates", "Layout adjusted to the actual workflow"] },
+      { name: "Cloud team CRM", price: "Student rate from NT$ 50,000, evaluated by scope", subtitle: "For teams that need login, cloud database, or permission management", items: ["Login and cloud database", "Team access and permission planning", "Backup and data management", "Optional dashboard / analytics"] },
+    ],
+    crmNote: "The personal local version is suitable for individual use and costs less, but the data is mainly stored in the same computer and browser. If you need team login, cloud sync, permissions, a formal database, or long-term maintenance, the cloud team version is recommended and will be priced by scope.",
     maintenancePlanButton: "Email about this maintenance plan",
     maintenanceMailSubject: "Maintenance plan inquiry｜",
     maintenanceLabel: "Maintenance Options",
@@ -378,6 +400,28 @@ export default function App() {
       `${isEnglish ? "Brief description of my need" : "我想做的內容簡述"}：
 ` +
       `${t.mailPlaceholder}`
+    );
+    return `mailto:easonlsy1019@gmail.com?subject=${subject}&body=${body}`;
+  };
+
+  const buildCrmPlanMailto = (plan) => {
+    const subject = encodeURIComponent(`${t.crmMailSubject}${plan.name}`);
+    const body = encodeURIComponent(
+      `${t.mailHello}
+
+` +
+      `${isEnglish ? "Selected CRM / internal tool plan" : "我想詢問的 CRM / 內部管理系統方案"}：${plan.name}
+` +
+      `${isEnglish ? "Price range" : "方案價格"}：${plan.price}
+` +
+      `${isEnglish ? "Suitable for" : "適合情境"}：${plan.subtitle}
+` +
+      `${isEnglish ? "Student-rate note" : "學生價說明"}：${isEnglish ? "This is a student-developer rate. If the cooperation goes well, a testimonial, recommendation letter, or case feedback would be appreciated." : "目前為學生開發者優惠價，若合作滿意，也希望能提供推薦語、推薦信或案例回饋。"}
+
+` +
+      `${isEnglish ? "Current workflow / tracking needs" : "目前想管理的流程或欄位"}：
+` +
+      `${isEnglish ? "(Please describe what you want to track, who will use it, and whether it needs cloud sync or login.)" : "（請簡單說明想追蹤什麼、誰會使用、是否需要雲端同步或登入）"}`
     );
     return `mailto:easonlsy1019@gmail.com?subject=${subject}&body=${body}`;
   };
@@ -537,6 +581,35 @@ export default function App() {
               ))}
             </div>
             <p className="mt-6 rounded-2xl border border-white/10 bg-slate-950/40 p-4 text-sm leading-6 text-slate-300">{t.upgradeNote}</p>
+          </div>
+
+          <div className="mb-12 rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:p-8">
+            <div className="mb-7 max-w-3xl">
+              <p className="text-sm font-semibold text-cyan-300">{t.crmLabel}</p>
+              <h3 className="mt-3 text-2xl font-bold text-white md:text-3xl">{t.crmTitle}</h3>
+              <p className="mt-4 leading-7 text-slate-300">{t.crmText}</p>
+            </div>
+            <div className="grid gap-5 md:grid-cols-3">
+              {t.crmPlans.map((plan) => (
+                <Card key={plan.name} className="bg-white/[0.05]">
+                  <CardContent className="flex h-full flex-col p-6">
+                    <h4 className="text-xl font-bold text-white">{plan.name}</h4>
+                    <p className="mt-2 text-2xl font-bold leading-tight text-cyan-200">{plan.price}</p>
+                    <p className="mt-4 text-sm leading-6 text-slate-300">{plan.subtitle}</p>
+                    <div className="my-5 h-px bg-white/10" />
+                    <ul className="space-y-3 text-sm leading-6 text-slate-300">
+                      {plan.items.map((feature) => (
+                        <li key={feature} className="flex gap-2"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" /><span>{feature}</span></li>
+                      ))}
+                    </ul>
+                    <a href={buildCrmPlanMailto(plan)} className="mt-auto pt-5">
+                      <Button className="w-full text-sm">{t.crmPlanButton} <ExternalLink className="ml-2 h-4 w-4" /></Button>
+                    </a>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <p className="mt-6 rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4 text-sm leading-6 text-cyan-50">{t.crmNote}</p>
           </div>
 
           <div className="mb-6 max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{isEnglish ? "Full System Plans" : "完整系統方案"}</p><h3 className="mt-3 text-2xl font-bold text-white md:text-3xl">{isEnglish ? "Full system plans" : "完整系統方案"}</h3></div>
