@@ -112,7 +112,7 @@ const content = {
     crmExplainText: "不用把它想得很企業。它可以只是把名單、Email、狀態、日期、方案、預計收入、實際收款與每日任務放在同一個畫面，讓你不用一直翻表格或忘記追蹤。",
     crmPreviewTitle: "實例預覽：接案名單追蹤系統",
     crmPreviewText: "可做成像接案工作台一樣：上方看總收益與進度，中間用日期滾輪看今天要寄信、追蹤或交付什麼，下方再用名單一覽管理每位客戶。",
-    crmPreviewStats: [["100", "客戶名單"], ["100", "已寄信"], ["500K", "預計收益"], ["今日", "任務檢查"]],
+    crmPreviewStats: [["52", "客戶名單"], ["4", "已寄信"], ["50K", "預計收益"], ["今日", "任務檢查"]],
     crmPreviewRows: ["日期滾輪：寄信 / 追蹤 / 工作 / 交付", "名單一覽：狀態、方案、Email、下一步", "每日任務：達成或未達成延到明天"],
     crmPlans: [
       { name: "個人本機管理工具", price: "學生價 NT$ 15,000 起", subtitle: "適合個人接案者、學生或小型業務自己使用", items: ["客戶名單與狀態追蹤", "日期滾輪與每日事項", "預計收益 / 實際收款", "資料存在使用者瀏覽器"] },
@@ -133,7 +133,7 @@ const content = {
     ],
     maintenanceNote: "實際維護範圍會在合作前確認。以上為學生開發者優惠價，會比一般市場行情低一些；若合作滿意，也希望能提供推薦語、推薦信或案例回饋。若只是靜態一頁式網頁，通常不一定需要月維護；若有後台、資料庫、LINE Bot、Dashboard 或長期活動資料更新，建議至少保留基本維護與主機費預算。主機代管服務費通常是協助部署、檢查、重啟與基本問題排查，不等於平台本身收取的主機費。",
     cooperationNotes: [
-      ["學生開發者，真實案例驗證", "目前由學生開發者接案與交付，已有公廁 Bot、Dashboard 與 LINE 系統實際上線經驗。價格會比一般市場客製行情低一些，但合作前仍會先確認範圍、時程、付款與驗收方式。"],
+      ["學生開發者，真實案例驗證", "目前由學生開發者接案與交付，已有公廁 Bot、Dashboard 與 LINE 系統實際上線經驗；其他規劃中專案會清楚標示為實作經驗，不會誤寫成完成案例。價格會比一般市場客製行情低一些，但合作前仍會先確認範圍、時程、付款與驗收方式。"],
       ["學生價與推薦回饋", "因目前屬於學生開發者優惠價與作品累積階段，若合作過程滿意，歡迎提供推薦語、推薦信、案例回饋或介紹其他可能需要協助的單位。"],
       ["UI 設計可彈性處理", "可由我協助做基礎介面與簡單視覺整理；若需要更完整品牌視覺、插圖或高階設計，也可由客戶提供設計稿或另找設計師。若需配合外部設計，開發時程可能會略微延長。"],
     ],
@@ -178,12 +178,12 @@ const content = {
     reminder: "提醒：這裡比較像功能配件表，用來抓預算量級；不是每個功能獨立成案的價格。以上為學生開發者優惠價，若合作滿意，歡迎提供推薦語或案例回饋。正式成案仍需把功能範圍、資料量、交付內容、測試期與後續維護一起確認。若系統需要穩定長期運行，主機費通常至少約 US$7 / 月起，屬於每月固定成本，與一次性開發費分開計算。",
     discussButton: "帶著已選功能來討論",
     resultsLabel: "Real Results",
-    resultsTitle: "先看實際成果，再討論你的版本",
-    resultsText: "潛在合作方可以先看公廁 Bot 的公開介紹網站、實際 Dashboard 介面，以及已上線 LINE Bot 的使用方式，確認這不是單純展示作品，而是有真實使用與後台資料的系統。",
+    resultsTitle: "先看已上線成果與實作經驗，再討論你的版本",
+    resultsText: "這裡優先放在前面，讓合作方先確認我有實際上線經驗。公廁 Bot 與 Dashboard 是已公開的真實使用成果；其他尚未正式完成的專案會標示為實作規劃經驗，不會包裝成已完成合作案例。",
     cases: [
       { title: "公廁 Bot：公共服務據點查詢系統", tag: "真實使用者案例", text: "以 LINE 作為入口，整合定位查詢、公共廁所資料、候選點篩選與 NTS / Trust Score 版本比較，讓使用者不只找到附近地點，也能讓系統後台累積查詢、點擊與排序表現資料。", links: [["查看公廁介紹網站", "https://ytpeter777.github.io/ToiletMVP.DEV/"], ["查看 Dashboard", "https://school-i9co.onrender.com/dashboard"]] },
-      { title: "LINE Bot 實際上線入口", tag: "實際使用成果", text: "可提供已上線 LINE Bot 入口，讓潛在客戶直接體驗使用者如何透過 LINE 完成查詢、定位與結果回傳。", links: [["加入 / 體驗 LINE Bot", "https://line.me/R/ti/p/@439avyvf"]] },
-      { title: "野生動物救傷 LINE Bot", tag: "公益單位建置案", text: "協助救傷單位規劃 LINE Bot 流程，整合動物分類、外來種判斷、救傷資訊、位置查詢與基礎資料管理，作為小型組織數位服務導入案例。", links: [] },
+      { title: "LINE Bot 實際上線入口", tag: "實際使用入口", text: "這是公廁 Bot 的實際上線入口，可讓潛在客戶直接體驗使用者如何透過 LINE 完成查詢、定位與結果回傳。", links: [["加入 / 體驗 LINE Bot", "https://line.me/R/ti/p/@439avyvf"]] },
+      { title: "野生動物救傷 LINE Bot", tag: "實作規劃經驗", text: "目前屬於需求討論與流程規劃中的公益單位系統方向，包含動物分類、外來種判斷、救傷資訊、位置查詢與基礎資料管理。此處作為相關實作規劃經驗，不標示為已完成合作案例。", links: [] },
     ],
     contactLabel: "Start With a Process Check",
     contactTitle: "你不需要先知道要做什麼系統，只要先告訴我你現在想做什麼",
@@ -297,7 +297,7 @@ const content = {
     ],
     maintenanceNote: "The actual maintenance scope will be confirmed before cooperation. These are student-developer rates, slightly lower than typical market pricing. If the cooperation goes well, a testimonial, recommendation letter, or case feedback would be appreciated. Static one-page websites may not need monthly maintenance, while admin panels, databases, LINE Bots, dashboards, or long-term content updates should reserve a basic maintenance and hosting budget. Hosting management service fees usually cover deployment support, checks, restarts, and basic issue diagnosis, not the platform hosting fee itself.",
     cooperationNotes: [
-      ["Student developer with real cases", "The project is handled and delivered by a student developer with real public Toilet Bot, dashboard, and LINE system launch experience. Pricing is slightly lower than typical custom development market pricing, but scope, timeline, payment, and acceptance criteria will still be confirmed before development."],
+      ["Student developer with real cases", "The project is handled and delivered by a student developer with real public Toilet Bot, dashboard, and LINE system launch experience; projects still in planning will be clearly labeled as implementation experience rather than completed cases. Pricing is slightly lower than typical custom development market pricing, but scope, timeline, payment, and acceptance criteria will still be confirmed before development."],
       ["Student rate and testimonial feedback", "Because this is a student-developer rate and part of portfolio building, a testimonial, recommendation letter, case feedback, or referral would be appreciated if the cooperation goes well."],
       ["Flexible UI design options", "Basic interface layout and simple visual refinement can be included. If a more complete brand identity, illustration, or advanced UI design is needed, the client may provide design files or work with an external designer. Coordinating with external design may slightly extend the timeline."],
     ],
@@ -342,12 +342,12 @@ const content = {
     reminder: "Reminder: this is a feature-module estimate for budgeting, not a standalone price for each feature. These are student-developer rates; if the cooperation goes well, a testimonial or case feedback would be appreciated. Final projects still need scope, data volume, deliverables, testing period, and maintenance terms confirmed. Stable long-term systems usually require hosting costs from about US$7/month, separate from one-time development fees.",
     discussButton: "Discuss with selected features",
     resultsLabel: "Real Results",
-    resultsTitle: "View real results before discussing your version",
-    resultsText: "Potential partners can view the public toilet Bot landing page, dashboard interface, and live LINE Bot usage to confirm this is not only a demo, but a real system with users and backend data.",
+    resultsTitle: "View launched results and implementation experience first",
+    resultsText: "This section is moved earlier so potential partners can first see real launch experience. The public toilet Bot and dashboard are public real-use results; projects that are not formally completed yet are labeled as implementation planning experience rather than completed client cases.",
     cases: [
       { title: "Public Toilet Bot: public service location search system", tag: "Real-user case", text: "Using LINE as the entry, the system combines location search, public toilet data, candidate filtering, and NTS / Trust Score version comparison. It also accumulates query, click, and ranking performance data in the backend.", links: [["View toilet Bot site", "https://ytpeter777.github.io/ToiletMVP.DEV/"], ["View Dashboard", "https://school-i9co.onrender.com/dashboard"]] },
-      { title: "Live LINE Bot entry", tag: "Live result", text: "A live LINE Bot entry can be provided so potential clients can directly experience how users complete search, location sharing, and result retrieval in LINE.", links: [["Add / try the LINE Bot", "https://line.me/R/ti/p/@439avyvf"]] },
-      { title: "Wildlife rescue LINE Bot", tag: "Nonprofit implementation", text: "A LINE Bot flow for wildlife rescue, including animal category guidance, invasive species logic, rescue information, location search, and basic data management.", links: [] },
+      { title: "Live LINE Bot entry", tag: "Live system entry", text: "This is the public toilet Bot live entry, where potential clients can directly experience how users complete search, location sharing, and result retrieval in LINE.", links: [["Add / try the LINE Bot", "https://line.me/R/ti/p/@439avyvf"]] },
+      { title: "Wildlife rescue LINE Bot", tag: "Implementation planning experience", text: "This is currently a nonprofit system direction under requirement discussion and process planning, including animal category guidance, invasive species logic, rescue information, location search, and basic data management. It is presented as implementation planning experience, not as a completed client case.", links: [] },
     ],
     contactLabel: "Start With a Process Check",
     contactTitle: "You do not need to know the whole system yet — just tell me what you want to build",
@@ -557,6 +557,8 @@ export default function App() {
           </motion.div>
         </section>
 
+        <section className="mx-auto max-w-6xl px-6 pb-20"><div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:p-8"><div className="mb-8 max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.resultsLabel}</p><h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.resultsTitle}</h2><p className="mt-4 leading-7 text-slate-300">{t.resultsText}</p></div><div className="grid gap-5 md:grid-cols-3">{t.cases.map((item) => <Card key={item.title} className="bg-white/[0.05]"><CardContent className="flex h-full flex-col p-6"><div className="mb-4 inline-flex w-fit rounded-full bg-cyan-300/10 px-3 py-1 text-xs font-medium text-cyan-200">{item.tag}</div><h3 className="text-xl font-bold text-white">{item.title}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{item.text}</p><div className="mt-auto pt-5 space-y-2">{item.links?.map(([label, href]) => <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm text-slate-200 transition hover:border-cyan-300/30 hover:bg-cyan-300/10"><span>{label}</span><ExternalLink className="h-4 w-4 text-cyan-200" /></a>)}</div></CardContent></Card>)}</div></div></section>
+
         <section className="border-y border-white/10 bg-white/[0.03]"><div className="mx-auto max-w-6xl px-6 py-16"><div className="max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.problemLabel}</p><h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.problemTitle}</h2></div><div className="mt-8 grid gap-3 md:grid-cols-3">{t.painPoints.map((item) => <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-slate-300">{item}</div>)}</div></div></section>
 
         <section id="solution" className="mx-auto max-w-6xl px-6 py-20"><div className="mb-10 max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.buildLabel}</p><h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.buildTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.buildText}</p></div><div className="grid gap-5 md:grid-cols-4">{t.features.map((feature) => { const Icon = feature.icon; return <Card key={feature.title}><CardContent className="p-6"><div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/10"><Icon className="h-6 w-6 text-cyan-300" /></div><h3 className="text-lg font-semibold text-white">{feature.title}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{feature.text}</p></CardContent></Card>; })}</div></section>
@@ -724,8 +726,6 @@ export default function App() {
             <Card className="border-cyan-300/25 bg-cyan-300/10 shadow-2xl shadow-cyan-950/30"><CardContent className="sticky top-6 p-6 md:p-8"><p className="text-sm font-semibold text-cyan-200">{t.estimateTitle}</p><h3 className="mt-3 text-4xl font-bold text-white">{estimateLabel}</h3><p className="mt-4 text-sm leading-6 text-slate-300">{t.estimateDesc}</p><div className="my-6 h-px bg-white/10" /><div className="rounded-2xl border border-white/10 bg-slate-950/40 p-4"><div className="flex items-center justify-between gap-4"><span className="text-sm text-slate-300">{t.subtotal}</span><span className="text-lg font-bold text-cyan-200">{subtotal === 0 ? "—" : `NT$ ${subtotal.toLocaleString()}`}</span></div><p className="mt-2 text-xs leading-5 text-slate-500">{t.rangeNote}</p></div><div className="my-6 h-px bg-white/10" /><div className="mb-6 rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4"><p className="text-sm font-semibold text-cyan-100">{t.monthlyTitle}</p><p className="mt-2 text-sm leading-6 text-slate-200">{monthlyCostLabel}</p><p className="mt-1 text-xs leading-5 text-slate-400">{t.monthlyDesc}</p></div><p className="text-sm font-semibold text-white">{t.selectedTitle}</p><div className="mt-4 space-y-3">{selectedItems.length === 0 && !otherEnabled ? <p className="text-sm text-slate-400">{t.noneSelected}</p> : <>{selectedItems.map((item) => <div key={item.id} className="flex justify-between gap-4 text-sm text-slate-300"><span>{item.label}</span><span className="shrink-0 text-cyan-200">{item.price.toLocaleString()}</span></div>)}{otherEnabled && <div className="flex justify-between gap-4 text-sm text-slate-300"><span>{t.otherCustom}</span><span className="shrink-0 text-cyan-200">6,000+</span></div>}</>}</div><div className="mt-8 rounded-2xl border border-white/10 bg-slate-950/50 p-4 text-sm leading-6 text-slate-300">{t.reminder}</div><a href={estimateMailto}><Button className="mt-6 w-full">{t.discussButton} <ExternalLink className="ml-2 h-4 w-4" /></Button></a></CardContent></Card>
           </div>
         </section>
-
-        <section className="mx-auto max-w-6xl px-6 pb-20"><div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:p-8"><div className="mb-8 max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.resultsLabel}</p><h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.resultsTitle}</h2><p className="mt-4 leading-7 text-slate-300">{t.resultsText}</p></div><div className="grid gap-5 md:grid-cols-3">{t.cases.map((item) => <Card key={item.title} className="bg-white/[0.05]"><CardContent className="flex h-full flex-col p-6"><div className="mb-4 inline-flex w-fit rounded-full bg-cyan-300/10 px-3 py-1 text-xs font-medium text-cyan-200">{item.tag}</div><h3 className="text-xl font-bold text-white">{item.title}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{item.text}</p><div className="mt-auto pt-5 space-y-2">{item.links?.map(([label, href]) => <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm text-slate-200 transition hover:border-cyan-300/30 hover:bg-cyan-300/10"><span>{label}</span><ExternalLink className="h-4 w-4 text-cyan-200" /></a>)}</div></CardContent></Card>)}</div></div></section>
 
         <section id="contact" className="mx-auto max-w-6xl px-6 pb-24"><div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-8 md:p-10"><div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center"><div><p className="text-sm font-semibold text-cyan-200">{t.contactLabel}</p><h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.contactTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.contactText}</p></div><div className="rounded-3xl bg-slate-950/60 p-6 ring-1 ring-white/10"><p className="text-sm text-slate-400">{t.contactSmall}</p><p className="mt-4 text-sm leading-7 text-slate-300">{t.contactPrompt}</p><a href={estimateMailto}><Button className="mt-6 w-full">{t.contactButton} <ExternalLink className="ml-2 h-4 w-4" /></Button></a></div></div></div></section>
       </main>
