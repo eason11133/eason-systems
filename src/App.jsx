@@ -103,6 +103,8 @@ const content = {
     upgradeNote: "小方案不包含客製後台、資料庫、Dashboard、定位查詢或複雜流程。若後續需要完整系統，可直接延伸成下方基礎 / 標準 / 進階版本。",
     smallPlanButton: "選這個方案來信討論",
     smallPlanMailSubject: "小方案合作詢問｜",
+    maintenancePlanButton: "選這個維護方案來信討論",
+    maintenanceMailSubject: "維護方案詢問｜",
     maintenanceLabel: "Maintenance Options",
     maintenanceTitle: "上線後也可以選擇單次修改或每月維護",
     maintenanceText: "小方案或完整系統完成後，如果需要後續調整、內容更新、穩定代管或使用數據整理，可以依需求選擇單次維護或月維護。維護費不等於主機費，主機、資料庫或外部平台費用會依實際使用另計。",
@@ -247,6 +249,8 @@ const content = {
     upgradeNote: "Small plans do not include custom admin panels, databases, dashboards, location search, or complex workflows. If needed, they can later be extended into the starter, standard, or advanced system plans below.",
     smallPlanButton: "Email about this plan",
     smallPlanMailSubject: "Small plan inquiry｜",
+    maintenancePlanButton: "Email about this maintenance plan",
+    maintenanceMailSubject: "Maintenance plan inquiry｜",
     maintenanceLabel: "Maintenance Options",
     maintenanceTitle: "After launch, choose one-time edits or monthly maintenance",
     maintenanceText: "After a small plan or full system is delivered, follow-up edits, content updates, stable hosting, or usage summaries can be handled through one-time maintenance or monthly maintenance. Maintenance fees are separate from hosting, database, or third-party platform costs.",
@@ -370,6 +374,26 @@ export default function App() {
       `${isEnglish ? "Brief description of my need" : "我想做的內容簡述"}：
 ` +
       `${t.mailPlaceholder}`
+    );
+    return `mailto:easonlsy1019@gmail.com?subject=${subject}&body=${body}`;
+  };
+
+  const buildMaintenancePlanMailto = (plan) => {
+    const subject = encodeURIComponent(`${t.maintenanceMailSubject}${plan.name}`);
+    const body = encodeURIComponent(
+      `${t.mailHello}
+
+` +
+      `${isEnglish ? "Selected maintenance plan" : "我想詢問的維護方案"}：${plan.name}
+` +
+      `${isEnglish ? "Price range" : "方案價格"}：${plan.price}
+` +
+      `${isEnglish ? "Suitable for" : "適合情境"}：${plan.subtitle}
+
+` +
+      `${isEnglish ? "Current system / website status" : "目前系統 / 網頁狀況"}：
+` +
+      `${isEnglish ? "(Please describe what has been launched and what needs to be updated or maintained.)" : "（請簡單說明目前已上線的內容，以及想修改、維護或定期處理的項目）"}`
     );
     return `mailto:easonlsy1019@gmail.com?subject=${subject}&body=${body}`;
   };
@@ -557,6 +581,9 @@ export default function App() {
                       <li key={item} className="flex gap-2"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" /><span>{item}</span></li>
                     ))}
                   </ul>
+                  <a href={buildMaintenancePlanMailto(plan)} className="mt-5 block">
+                    <Button className="w-full text-sm">{t.maintenancePlanButton} <ExternalLink className="ml-2 h-4 w-4" /></Button>
+                  </a>
                 </div>
               ))}
             </div>
