@@ -42,7 +42,7 @@ const content = {
     heroTop: "把你的想法，",
     heroHighlight: "做成真的能上線使用的系統",
     heroText:
-      "我協助有明確需求的個人、團隊與組織，將 LINE Bot、資料查詢、後台管理、定位搜尋或客製流程做成可以上線運作的系統。你不一定已經知道完整功能，只要有想解決的問題或想做的服務，我可以一起把需求拆成可執行的版本。",
+      "我協助有明確需求的個人、店家、活動團隊與組織，將一頁式網頁、LINE 官方帳號、資料查詢、後台管理、定位搜尋或客製流程做成可以上線運作的系統。你不一定已經知道完整功能，只要有想解決的問題、想整理的服務，或想讓客人更快找到資訊，我可以一起把需求拆成可執行的版本。",
     heroButton: "查看方案、價格與案例",
     stat1Title: "30,000+",
     stat1Text: "LINE 系統真實使用者案例",
@@ -69,10 +69,19 @@ const content = {
       "資料更新需要人工處理，維護成本高",
       "未來希望留下使用紀錄或成果數據",
     ],
+    audienceLabel: "Who It Fits",
+    audienceTitle: "不只協會或課程，店家、個人品牌、夜市攤商也可以用",
+    audienceText: "只要你的資訊分散、客人常常問重複問題，或需要把菜單、活動、服務、預約、報名與聯絡方式整理清楚，就可以先從小網頁或 LINE 整理開始。",
+    audienceGroups: [
+      ["活動 / 課程 / 營隊", "活動頁、報名連結、FAQ、行前資訊、LINE 導覽"],
+      ["餐廳 / 夜市 / 小店", "菜單、營業時間、地圖、預訂方式、LINE / IG 連結"],
+      ["個人品牌 / 自由工作者", "服務介紹、作品集、預約表單、價格說明、聯絡入口"],
+      ["公益 / 協會 / 地方團隊", "資料查詢、據點資訊、通報流程、後台管理、成果數據"],
+    ],
     buildLabel: "What I Build",
     buildTitle: "我不是只接固定功能，而是幫你把需求整理成可以開發與上線的版本",
     buildText:
-      "適合已經有初步想法、服務流程、資料清單、活動資訊、客戶詢問或管理需求的人。可以先做核心可用版，再依需求擴充後台、查詢、排序、統計或網站功能。",
+      "適合已經有初步想法、服務流程、資料清單、活動資訊、菜單/服務項目、客戶詢問或管理需求的人。不論是餐廳、夜市攤商、個人品牌、課程活動或公益組織，都可以先做核心可用版，再依需求擴充後台、查詢、排序、統計或網站功能。",
     features: [
       { icon: MapPin, title: "把據點查詢變簡單", text: "使用者不用翻網站或打電話，只要在 LINE 傳位置，就能找到附近合適的服務點。" },
       { icon: Database, title: "資料自己能維護", text: "服務據點、FAQ、分類資訊可放進後台管理，降低每次改資料都找工程師的成本。" },
@@ -90,17 +99,20 @@ const content = {
     outcomes: ["把模糊想法整理成清楚功能與流程", "讓使用者能真的在線上完成查詢或操作", "讓資料或內容可以由管理者自己維護", "讓系統未來能累積使用紀錄與成果數據"],
     packageLabel: "Plans & Pricing",
     packageTitle: "可以先從小網頁 / LINE 整理開始，再升級成完整系統",
-    packageText: "不一定一開始就做 3 萬以上的大系統。若只是想讓活動資訊更清楚、整理 LINE 官方帳號、放報名表與 FAQ，也可以先從小方案開始。目前價格以學生開發者優惠價呈現，會比一般市場客製行情低一些；若合作滿意，也希望能提供推薦語、推薦信或同意匿名案例回饋。",
+    packageText: "不一定一開始就做 3 萬以上的大系統。若只是想讓活動資訊、店家資訊、菜單服務、個人品牌、LINE 官方帳號、報名表或 FAQ 更清楚，也可以先從小方案開始。目前價格以學生開發者優惠價呈現，會比一般市場客製行情低一些；若合作滿意，也希望能提供推薦語、推薦信或同意匿名案例回饋。",
     smallPlanLabel: "Small Starter Plans",
     smallPlanTitle: "低門檻小方案，適合先改善現有流程",
-    smallPlanText: "這些方案是學生開發者優惠價，適合還不確定要不要做完整系統的客戶。先把網頁、LINE、FAQ、表單與資訊整理好，後續若需要資料查詢、後台或 Dashboard，再升級成完整系統。若合作滿意，歡迎提供推薦語或案例回饋，作為後續作品集與合作參考。",
+    smallPlanText: "這些方案是學生開發者優惠價，適合還不確定要不要做完整系統的客戶。先把網頁、LINE、FAQ、表單、菜單、服務項目與聯絡資訊整理好，後續若需要資料查詢、後台或 Dashboard，再升級成完整系統。若合作滿意，歡迎提供推薦語或案例回饋，作為後續作品集與合作參考。",
     smallPlans: [
       { name: "一頁式活動 / 課程網頁", price: "學生價 NT$ 5,000–12,000", subtitle: "適合活動、課程、營隊、講座、工作坊", items: ["活動介紹與重點整理", "報名連結 / 表單整合", "時間地點與注意事項", "FAQ 與聯絡資訊"] },
       { name: "LINE 官方帳號整理", price: "學生價 NT$ 3,000–8,000", subtitle: "適合已經有 LINE，但資訊分散或選單不好用", items: ["圖文選單規劃", "常見問題分類", "表單 / 官網 / 社群連結整理", "基礎回覆文字整理"] },
+      { name: "小店 / 餐飲資訊頁", price: "學生價 NT$ 3,000–8,000", subtitle: "適合餐廳、咖啡廳、夜市攤商、小吃店或市集品牌", items: ["店家介紹與招牌品項", "菜單 / 價格 / 營業時間", "Google 地圖與交通資訊", "LINE / IG / 電話連結"] },
+      { name: "個人品牌 / 服務預約頁", price: "學生價 NT$ 5,000–12,000", subtitle: "適合美業、家教、教練、攝影、芳療、講師或自由工作者", items: ["個人介紹與服務項目", "作品 / 案例 / 客戶回饋", "預約表單或諮詢連結", "LINE / IG / 社群整合"] },
+      { name: "市集 / 出攤資訊頁", price: "學生價 NT$ 5,000–12,000", subtitle: "適合會定期出攤、接預訂或需要公告活動資訊的品牌", items: ["出攤日期與地點", "商品介紹與預訂方式", "活動注意事項", "社群與聯絡連結整理"] },
       { name: "小型品牌 / 服務介紹頁", price: "學生價 NT$ 8,000–18,000", subtitle: "適合小店、個人品牌、服務頁或作品頁", items: ["品牌與服務介紹", "作品 / 案例區塊", "聯絡方式與社群連結", "基礎 RWD 版面"] },
       { name: "小型 FAQ / 資訊整理版", price: "學生價 NT$ 8,000–20,000", subtitle: "適合重複詢問很多，但暫時不需要後台的單位", items: ["5–10 個常見問題整理", "基本分流與按鈕導覽", "外部連結整合", "基礎測試與操作說明"] },
     ],
-    upgradeNote: "小方案不包含客製後台、資料庫、Dashboard、定位查詢或複雜流程。價格為學生開發者優惠價，範圍會在合作前確認；若後續需要完整系統，可直接延伸成下方基礎 / 標準 / 進階版本。",
+    upgradeNote: "小方案以資訊整理與簡單頁面/LINE 流程為主，不包含客製後台、資料庫、Dashboard、定位查詢或複雜流程。價格為學生開發者優惠價，範圍會在合作前確認；若後續需要完整系統，可直接延伸成下方基礎 / 標準 / 進階版本。",
     smallPlanButton: "選這個方案來信討論",
     smallPlanMailSubject: "小方案合作詢問｜",
     crmPlanButton: "選這個 CRM 方案來信討論",
@@ -206,7 +218,7 @@ const content = {
     heroTop: "Turn your idea",
     heroHighlight: "into a working online system",
     heroText:
-      "I help individuals, teams, and organizations turn LINE Bots, data search, admin dashboards, location-based search, and custom workflows into systems that can actually launch. You do not need a complete specification at the beginning — I can help break your idea into a buildable first version.",
+      "I help individuals, small businesses, event teams, and organizations turn one-page websites, LINE official accounts, data search, admin dashboards, location-based search, and custom workflows into systems that can actually launch. You do not need a complete specification at the beginning — I can help break your idea, service, or customer information flow into a buildable first version.",
     heroButton: "View plans, pricing, and cases",
     stat1Title: "30,000+",
     stat1Text: "Real users in a LINE system case",
@@ -233,10 +245,19 @@ const content = {
       "Updating information manually is costly and slow",
       "You want usage logs or outcome data in the future",
     ],
+    audienceLabel: "Who It Fits",
+    audienceTitle: "Not only organizations — shops, personal brands, and vendors can use this too",
+    audienceText: "If your information is scattered, customers repeatedly ask the same questions, or you need to organize menus, events, services, reservations, registrations, and contact links, you can start with a small web or LINE cleanup plan.",
+    audienceGroups: [
+      ["Events / courses / camps", "Event pages, registration links, FAQs, pre-event info, LINE navigation"],
+      ["Restaurants / vendors / small shops", "Menus, opening hours, maps, preorder info, LINE / IG links"],
+      ["Personal brands / freelancers", "Service pages, portfolios, booking forms, pricing, contact entry"],
+      ["Nonprofits / associations / local teams", "Data search, service points, reporting flows, admin panels, outcome data"],
+    ],
     buildLabel: "What I Build",
     buildTitle: "I do not only sell fixed features — I help turn requirements into a buildable and launchable version",
     buildText:
-      "This is suitable for people who already have an initial idea, service flow, data list, event information, customer questions, or management needs. Start with a usable core version, then expand search, admin panels, ranking, analytics, or web features later.",
+      "This is suitable for people who already have an initial idea, service flow, data list, event information, menu/service information, customer questions, or management needs. It can work for restaurants, night-market vendors, personal brands, course/event teams, or nonprofit organizations. Start with a usable core version, then expand search, admin panels, ranking, analytics, or web features later.",
     features: [
       { icon: MapPin, title: "Make location search easier", text: "Users can send their location in LINE and get suitable nearby service points without searching websites or calling." },
       { icon: Database, title: "Let admins maintain data", text: "Service points, FAQs, and categories can be managed in an admin panel, reducing repeated engineering changes." },
@@ -254,17 +275,20 @@ const content = {
     outcomes: ["Turn vague ideas into clear features and flows", "Let users complete real actions online", "Allow admins to maintain content and data", "Let the system accumulate usage and outcome data"],
     packageLabel: "Plans & Pricing",
     packageTitle: "Start with a small web / LINE cleanup plan, then upgrade into a full system",
-    packageText: "You do not need to start with a NT$30,000+ system. If you only need clearer event information, LINE official account cleanup, registration links, and FAQs, you can start with a small plan first. Current pricing is a student-developer rate, slightly lower than typical custom development market pricing. If the cooperation goes well, a testimonial, recommendation letter, or anonymized case feedback would be appreciated.",
+    packageText: "You do not need to start with a NT$30,000+ system. If you only need clearer event information, shop information, menu/service details, personal brand pages, LINE official account cleanup, registration links, and FAQs, you can start with a small plan first. Current pricing is a student-developer rate, slightly lower than typical custom development market pricing. If the cooperation goes well, a testimonial, recommendation letter, or anonymized case feedback would be appreciated.",
     smallPlanLabel: "Small Starter Plans",
     smallPlanTitle: "Low-entry plans for improving your current workflow first",
-    smallPlanText: "These are student-developer rates for clients who are not sure whether they need a full system yet. Start by organizing a webpage, LINE menu, FAQs, forms, and information. Later, it can be upgraded into data search, admin panels, or dashboards. If the cooperation goes well, a testimonial or case feedback would be appreciated.",
+    smallPlanText: "These are student-developer rates for clients who are not sure whether they need a full system yet. Start by organizing a webpage, LINE menu, FAQs, forms, menus, services, and contact information. Later, it can be upgraded into data search, admin panels, or dashboards. If the cooperation goes well, a testimonial or case feedback would be appreciated.",
     smallPlans: [
       { name: "One-page event / course page", price: "Student rate NT$ 5,000–12,000", subtitle: "For events, courses, camps, lectures, and workshops", items: ["Event introduction and key information", "Registration link / form integration", "Time, location, and reminders", "FAQ and contact information"] },
       { name: "LINE official account cleanup", price: "Student rate NT$ 3,000–8,000", subtitle: "For existing LINE accounts with scattered information or unclear menus", items: ["Rich menu planning", "FAQ categorization", "Form / website / social link organization", "Basic reply text cleanup"] },
+      { name: "Small shop / restaurant info page", price: "Student rate NT$ 3,000–8,000", subtitle: "For restaurants, cafés, night-market vendors, food stalls, or market brands", items: ["Shop intro and signature items", "Menu / pricing / opening hours", "Google Maps and directions", "LINE / IG / phone links"] },
+      { name: "Personal brand / service booking page", price: "Student rate NT$ 5,000–12,000", subtitle: "For beauty services, tutors, coaches, photographers, aromatherapy, lecturers, or freelancers", items: ["Personal intro and services", "Works / cases / testimonials", "Booking form or inquiry link", "LINE / IG / social integration"] },
+      { name: "Market booth / pop-up info page", price: "Student rate NT$ 5,000–12,000", subtitle: "For brands that attend markets, take preorders, or announce pop-up events", items: ["Booth dates and locations", "Product intro and preorder method", "Event reminders", "Social and contact links"] },
       { name: "Small brand / service page", price: "Student rate NT$ 8,000–18,000", subtitle: "For small shops, personal brands, service pages, or portfolio pages", items: ["Brand and service introduction", "Works / case section", "Contact and social links", "Basic responsive layout"] },
       { name: "Small FAQ / info cleanup", price: "Student rate NT$ 8,000–20,000", subtitle: "For teams with repeated questions but no need for admin panels yet", items: ["5–10 common questions", "Basic flow and button navigation", "External link integration", "Basic testing and usage guide"] },
     ],
-    upgradeNote: "Small plans do not include custom admin panels, databases, dashboards, location search, or complex workflows. Pricing is a student-developer rate and the exact scope will be confirmed before cooperation. If needed, these plans can later be extended into the starter, standard, or advanced system plans below.",
+    upgradeNote: "Small plans focus on information organization and simple web / LINE flows. They do not include custom admin panels, databases, dashboards, location search, or complex workflows. Pricing is a student-developer rate and the exact scope will be confirmed before cooperation. If needed, these plans can later be extended into the starter, standard, or advanced system plans below.",
     smallPlanButton: "Email about this plan",
     smallPlanMailSubject: "Small plan inquiry｜",
     crmPlanButton: "Email about this CRM plan",
@@ -560,6 +584,8 @@ export default function App() {
         <section className="mx-auto max-w-6xl px-6 pb-20"><div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:p-8"><div className="mb-8 max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.resultsLabel}</p><h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.resultsTitle}</h2><p className="mt-4 leading-7 text-slate-300">{t.resultsText}</p></div><div className="grid gap-5 md:grid-cols-3">{t.cases.map((item) => <Card key={item.title} className="bg-white/[0.05]"><CardContent className="flex h-full flex-col p-6"><div className="mb-4 inline-flex w-fit rounded-full bg-cyan-300/10 px-3 py-1 text-xs font-medium text-cyan-200">{item.tag}</div><h3 className="text-xl font-bold text-white">{item.title}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{item.text}</p><div className="mt-auto pt-5 space-y-2">{item.links?.map(([label, href]) => <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm text-slate-200 transition hover:border-cyan-300/30 hover:bg-cyan-300/10"><span>{label}</span><ExternalLink className="h-4 w-4 text-cyan-200" /></a>)}</div></CardContent></Card>)}</div></div></section>
 
         <section className="border-y border-white/10 bg-white/[0.03]"><div className="mx-auto max-w-6xl px-6 py-16"><div className="max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.problemLabel}</p><h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.problemTitle}</h2></div><div className="mt-8 grid gap-3 md:grid-cols-3">{t.painPoints.map((item) => <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-slate-300">{item}</div>)}</div></div></section>
+
+        <section className="mx-auto max-w-6xl px-6 py-20"><div className="mb-10 max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.audienceLabel}</p><h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.audienceTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.audienceText}</p></div><div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">{t.audienceGroups.map(([title, text]) => <Card key={title} className="bg-slate-900/70"><CardContent className="p-6"><p className="text-lg font-bold text-white">{title}</p><p className="mt-3 text-sm leading-6 text-slate-300">{text}</p></CardContent></Card>)}</div></section>
 
         <section id="solution" className="mx-auto max-w-6xl px-6 py-20"><div className="mb-10 max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.buildLabel}</p><h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.buildTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.buildText}</p></div><div className="grid gap-5 md:grid-cols-4">{t.features.map((feature) => { const Icon = feature.icon; return <Card key={feature.title}><CardContent className="p-6"><div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/10"><Icon className="h-6 w-6 text-cyan-300" /></div><h3 className="text-lg font-semibold text-white">{feature.title}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{feature.text}</p></CardContent></Card>; })}</div></section>
 
