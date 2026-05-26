@@ -42,7 +42,7 @@ const content = {
     heroTop: "把你的想法，",
     heroHighlight: "做成真的能上線使用的系統",
     heroText:
-      "我協助有明確需求的個人、店家、活動團隊與組織，將一頁式網頁、LINE 官方帳號、資料查詢、後台管理、定位搜尋或客製流程做成可以上線運作的系統。你不一定已經知道完整功能，只要有想解決的問題、想整理的服務，或想讓客人更快找到資訊，我可以一起把需求拆成可執行的版本。",
+      "我主要協助小型組織、公益單位、課程活動團隊與多據點服務，把原本分散在網站、表單、Excel、LINE 或社群上的資訊，整理成可查詢、可維護、可追蹤的 LINE / Web 系統。小方案可以作為入口，但主力是 LINE Bot、資料查詢、後台管理、Dashboard、據點搜尋與完整流程系統。",
     heroButton: "查看方案、價格與案例",
     stat1Title: "30,000+",
     stat1Text: "LINE 系統真實使用者案例",
@@ -98,11 +98,21 @@ const content = {
     ],
     outcomes: ["把模糊想法整理成清楚功能與流程", "讓使用者能真的在線上完成查詢或操作", "讓資料或內容可以由管理者自己維護", "讓系統未來能累積使用紀錄與成果數據"],
     packageLabel: "Plans & Pricing",
-    packageTitle: "可以先從小網頁 / LINE 整理開始，再升級成完整系統",
-    packageText: "不一定一開始就做 3 萬以上的大系統。若只是想讓活動資訊、店家資訊、菜單服務、個人品牌、LINE 官方帳號、報名表或 FAQ 更清楚，也可以先從小方案開始。目前價格以學生開發者優惠價呈現，會比一般市場客製行情低一些；若合作滿意，也希望能提供推薦語、推薦信或同意匿名案例回饋。",
+    packageTitle: "主力是 5–15 萬的中型系統，小方案只是合作入口",
+    packageText: "如果需求包含資料查詢、後台管理、LINE Bot 流程、據點搜尋、Dashboard、報名/服務流程或長期更新，通常會建議直接規劃成中型系統案。小方案仍可作為第一次合作入口，但真正適合長期使用的是可查詢、可維護、可追蹤的完整流程系統。",
+    mediumPlanLabel: "Main Focus",
+    mediumPlanTitle: "主力中型單：LINE Bot + 後台 + 查詢 / Dashboard",
+    mediumPlanText: "這些是目前最適合作為正式合作主軸的案型，適合公益 / 協會、課程活動、地方團隊、多據點服務與小型組織。若你需要的不只是漂亮頁面，而是讓使用者能查詢、填寫、收到回覆，並讓管理者能更新資料與查看紀錄，這類方案會比單純小網頁更適合。",
+    mediumPlans: [
+      { name: "LINE Bot + 後台資料管理", price: "學生價 NT$ 50,000–100,000 起", subtitle: "適合公益、協會、活動團隊與小型組織", items: ["LINE Bot 流程與 FAQ 分流", "後台新增 / 編輯資料", "資料查詢與基礎統計", "測試、上線與操作說明"] },
+      { name: "據點查詢 / 地圖推薦系統", price: "學生價 NT$ 60,000–150,000 起", subtitle: "適合救傷中心、社福據點、服務據點與地方資料", items: ["使用者定位與最近據點推薦", "Google Maps 導航連結", "據點資料後台管理", "查詢紀錄與成果追蹤"] },
+      { name: "活動 / 課程流程系統", price: "學生價 NT$ 50,000–120,000 起", subtitle: "適合營隊、課程中心、工作坊與親子活動", items: ["活動資訊與報名流程整理", "LINE 導覽與常見問題", "活動資料後台更新", "行前資訊與基礎統計"] },
+      { name: "小型 CRM / 內部管理工具", price: "學生價 NT$ 50,000–120,000 起", subtitle: "適合需要管理名單、案件、狀態與交付日期的團隊", items: ["名單 / 客戶 / 案件管理", "狀態追蹤與日期提醒", "金額統計與搜尋篩選", "可依流程客製欄位與版面"] },
+    ],
+    mediumPlanNote: "中型系統案會先用 Email 或 LINE 確認需求，再視情況安排 15–30 分鐘線上討論，確認功能範圍、時程、報價、付款節點、驗收方式與上線後維護。",
     smallPlanLabel: "Small Starter Plans",
-    smallPlanTitle: "小型入門方案，學生價 NT$ 6,000 起",
-    smallPlanText: "這些方案是學生開發者優惠價，但不以過低價格承接，會依資料量、頁面內容、修改次數與是否需要表單/預約/外部連結整合確認範圍。適合還不確定要不要做完整系統的客戶。先把網頁、LINE、FAQ、表單、菜單、服務項目與聯絡資訊整理好，後續若需要資料查詢、後台或 Dashboard，再升級成完整系統。若合作滿意，歡迎提供推薦語或案例回饋，作為後續作品集與合作參考。",
+    smallPlanTitle: "小型入門方案，適合作為第一次合作入口",
+    smallPlanText: "小方案保留給需求較單純、想先整理資訊或測試合作的客戶。若需求已經包含資料管理、查詢、後台、Dashboard、定位、長期更新或多角色流程，會建議直接改談上方中型系統案。",
     smallPlans: [
       { name: "一頁式活動 / 課程網頁", price: "學生價 NT$ 8,000–15,000", subtitle: "適合活動、課程、營隊、講座、工作坊", items: ["活動介紹與重點整理", "報名連結 / 表單整合", "時間地點與注意事項", "FAQ 與聯絡資訊"] },
       { name: "LINE 官方帳號整理", price: "學生價 NT$ 5,000–10,000", subtitle: "適合已經有 LINE，但資訊分散或選單不好用", items: ["圖文選單規劃", "常見問題分類", "表單 / 官網 / 社群連結整理", "基礎回覆文字整理"] },
@@ -218,7 +228,7 @@ const content = {
     heroTop: "Turn your idea",
     heroHighlight: "into a working online system",
     heroText:
-      "I help individuals, small businesses, event teams, and organizations turn one-page websites, LINE official accounts, data search, admin dashboards, location-based search, and custom workflows into systems that can actually launch. You do not need a complete specification at the beginning — I can help break your idea, service, or customer information flow into a buildable first version.",
+      "I mainly help small organizations, nonprofits, course/event teams, and multi-location services turn scattered information from websites, forms, spreadsheets, LINE, or social media into searchable, maintainable, trackable LINE / web systems. Small plans can be an entry point, but the main focus is LINE Bots, data search, admin panels, dashboards, location-based search, and complete workflow systems.",
     heroButton: "View plans, pricing, and cases",
     stat1Title: "30,000+",
     stat1Text: "Real users in a LINE system case",
@@ -274,11 +284,21 @@ const content = {
     ],
     outcomes: ["Turn vague ideas into clear features and flows", "Let users complete real actions online", "Allow admins to maintain content and data", "Let the system accumulate usage and outcome data"],
     packageLabel: "Plans & Pricing",
-    packageTitle: "Start with a small web / LINE cleanup plan, then upgrade into a full system",
-    packageText: "You do not need to start with a NT$30,000+ system. If you only need clearer event information, shop information, menu/service details, personal brand pages, LINE official account cleanup, registration links, and FAQs, you can start with a small plan first. Current pricing is a student-developer rate, slightly lower than typical custom development market pricing. If the cooperation goes well, a testimonial, recommendation letter, or anonymized case feedback would be appreciated.",
+    packageTitle: "Main focus: mid-sized systems from NT$50K–150K; small plans are only entry points",
+    packageText: "If your needs include data search, admin management, LINE Bot workflows, location-based service points, dashboards, registration/service flows, or long-term updates, it is usually better to plan a mid-sized system directly. Small plans can still be used as a first cooperation step, but a searchable, maintainable, and trackable workflow system is more suitable for long-term use.",
+    mediumPlanLabel: "Main Focus",
+    mediumPlanTitle: "Mid-sized projects: LINE Bot + admin panel + search / dashboard",
+    mediumPlanText: "These are the most suitable project types for formal cooperation, especially for nonprofits, associations, course/event teams, local groups, multi-location services, and small organizations. If you need more than a nice page — if users need to search, submit, receive replies, and admins need to update data or view records — these plans are more suitable than a simple one-page site.",
+    mediumPlans: [
+      { name: "LINE Bot + admin data management", price: "Student rate NT$ 50,000–100,000+", subtitle: "For nonprofits, associations, event teams, and small organizations", items: ["LINE Bot flow and FAQ routing", "Admin panel for adding / editing data", "Data search and basic analytics", "Testing, launch, and usage guide"] },
+      { name: "Service point search / map recommendation system", price: "Student rate NT$ 60,000–150,000+", subtitle: "For rescue centers, service points, local data, and multi-location services", items: ["User location and nearest-point recommendation", "Google Maps navigation links", "Admin management for locations", "Query logs and outcome tracking"] },
+      { name: "Event / course workflow system", price: "Student rate NT$ 50,000–120,000+", subtitle: "For camps, course centers, workshops, and parent-child events", items: ["Event information and registration flow", "LINE navigation and FAQs", "Admin updates for event data", "Pre-event info and basic analytics"] },
+      { name: "Small CRM / internal management tool", price: "Student rate NT$ 50,000–120,000+", subtitle: "For teams managing leads, projects, statuses, and delivery dates", items: ["Lead / client / project management", "Status tracking and date reminders", "Revenue summary, search, and filters", "Custom fields and layout by workflow"] },
+    ],
+    mediumPlanNote: "For mid-sized system projects, we can first confirm the direction by Email or LINE, then arrange a 15–30 minute online discussion if needed to define scope, timeline, pricing, payment milestones, acceptance criteria, and post-launch maintenance.",
     smallPlanLabel: "Small Starter Plans",
-    smallPlanTitle: "Small starter plans from NT$ 6,000",
-    smallPlanText: "These are student-developer rates, but the scope and pricing are still confirmed based on content volume, page structure, revision rounds, and whether forms, booking, or external links are needed. They are for clients who are not sure whether they need a full system yet. Start by organizing a webpage, LINE menu, FAQs, forms, menus, services, and contact information. Later, it can be upgraded into data search, admin panels, or dashboards. If the cooperation goes well, a testimonial or case feedback would be appreciated.",
+    smallPlanTitle: "Small starter plans as the first cooperation step",
+    smallPlanText: "Small plans remain available for simple needs or first-time cooperation. If the project already includes data management, search, admin panels, dashboards, location-based logic, long-term updates, or multi-role workflows, it is better to discuss the mid-sized system plans above.",
     smallPlans: [
       { name: "One-page event / course page", price: "Student rate NT$ 8,000–15,000", subtitle: "For events, courses, camps, lectures, and workshops", items: ["Event introduction and key information", "Registration link / form integration", "Time, location, and reminders", "FAQ and contact information"] },
       { name: "LINE official account cleanup", price: "Student rate NT$ 5,000–10,000", subtitle: "For existing LINE accounts with scattered information or unclear menus", items: ["Rich menu planning", "FAQ categorization", "Form / website / social link organization", "Basic reply text cleanup"] },
@@ -594,6 +614,35 @@ export default function App() {
         <section id="packages" className="mx-auto max-w-6xl px-6 py-20">
           <div className="mb-10 max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.packageLabel}</p><h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.packageTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.packageText}</p></div>
 
+          <div className="mb-12 rounded-3xl border border-cyan-300/25 bg-slate-900/80 p-6 shadow-2xl shadow-cyan-950/20 md:p-8">
+            <div className="mb-7 max-w-3xl">
+              <p className="text-sm font-semibold text-cyan-300">{t.mediumPlanLabel}</p>
+              <h3 className="mt-3 text-2xl font-bold text-white md:text-3xl">{t.mediumPlanTitle}</h3>
+              <p className="mt-4 leading-7 text-slate-300">{t.mediumPlanText}</p>
+            </div>
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+              {t.mediumPlans.map((item) => (
+                <Card key={item.name} className="border-cyan-300/20 bg-cyan-300/10">
+                  <CardContent className="flex h-full flex-col p-6">
+                    <h4 className="text-xl font-bold text-white">{item.name}</h4>
+                    <p className="mt-2 text-2xl font-bold leading-tight text-cyan-200">{item.price}</p>
+                    <p className="mt-4 text-sm leading-6 text-slate-300">{item.subtitle}</p>
+                    <div className="my-5 h-px bg-white/10" />
+                    <ul className="space-y-3 text-sm leading-6 text-slate-300">
+                      {item.items.map((feature) => (
+                        <li key={feature} className="flex gap-2"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" /><span>{feature}</span></li>
+                      ))}
+                    </ul>
+                    <a href={estimateMailto} className="mt-auto pt-5">
+                      <Button className="w-full text-sm">{t.discussButton} <ExternalLink className="ml-2 h-4 w-4" /></Button>
+                    </a>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <p className="mt-6 rounded-2xl border border-cyan-300/20 bg-slate-950/40 p-4 text-sm leading-6 text-cyan-50">{t.mediumPlanNote}</p>
+          </div>
+
           <div className="mb-12 rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-6 md:p-8">
             <div className="mb-7 max-w-3xl">
               <p className="text-sm font-semibold text-cyan-200">{t.smallPlanLabel}</p>
@@ -685,7 +734,7 @@ export default function App() {
             <p className="mt-6 rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4 text-sm leading-6 text-cyan-50">{t.crmNote}</p>
           </div>
 
-          <div className="mb-6 max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{isEnglish ? "Full System Plans" : "完整系統方案"}</p><h3 className="mt-3 text-2xl font-bold text-white md:text-3xl">{isEnglish ? "Full system plans" : "完整系統方案"}</h3></div>
+          <div className="mb-6 max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{isEnglish ? "Advanced / Full System Plans" : "進階 / 完整系統方案"}</p><h3 className="mt-3 text-2xl font-bold text-white md:text-3xl">{isEnglish ? "Advanced and full system plans" : "進階與完整系統方案"}</h3></div>
           <div className="mb-12 grid gap-6 md:grid-cols-3">{t.packages.map((item) => <Card key={item.name} className={item.featured ? "border-cyan-300/30 bg-cyan-300/10 shadow-2xl shadow-cyan-950/30" : "bg-slate-900/70"}><CardContent className="flex h-full min-h-[390px] flex-col p-7">
                   <div className="mb-6 flex min-h-8 items-center justify-between gap-3">
                     <div>
