@@ -39,10 +39,10 @@ const content = {
   zh: {
     navContact: "聯絡評估",
     badge: "3 萬+ 真實使用者驗證的 LINE 系統開發經驗",
-    heroTop: "把 LINE、活動與資料流程，",
-    heroHighlight: "整理成可上線系統",
+    heroTop: "把流程整理好，",
+    heroHighlight: "做成可上線系統",
     heroText:
-      "我協助公益協會、課程活動、論壇團隊、地方組織與小型品牌，把分散的活動資訊、LINE 詢問、報名表單、資料查詢與後台管理，整理成可以實際上線使用的 Web / LINE 系統。先釐清流程，再做出可執行、可交付、可維護的版本。",
+      "我協助公益協會、課程活動、論壇團隊與地方組織，把分散的活動資訊、LINE 詢問、報名表單、資料查詢與後台管理，整理成可以實際上線使用的 Web / LINE 系統。先釐清流程，再做出可執行、可交付、可維護的版本。",
     heroButton: "查看方案、價格與案例",
     stat1Title: "30,000+",
     stat1Text: "LINE 系統真實使用者案例",
@@ -52,7 +52,7 @@ const content = {
     stat3Text: "查詢、點擊與活動統計",
     rightBadge: "Real System Evidence",
     rightSmall: "我可以協助什麼",
-    rightTitle: "需求整理 → 開發上線 → 後續擴充",
+    rightTitle: "需求整理 → 開發上線",
     rightCards: [
       ["把需求拆成流程", "先釐清使用者會怎麼操作、管理者要維護什麼、哪些功能要先做，避免一開始就做成過大的系統。"],
       ["做出可上線版本", "依需求建立 LINE Bot、查詢流程、資料管理、後台或簡易網站，讓服務真的能被使用。"],
@@ -235,8 +235,8 @@ const content = {
   en: {
     navContact: "Contact",
     badge: "30,000+ real-user LINE system experience",
-    heroTop: "Turn LINE, events, and data flows",
-    heroHighlight: "into a launchable system",
+    heroTop: "Organize the flow,",
+    heroHighlight: "launch the system",
     heroText:
       "I help nonprofits, course and event teams, forum organizers, local organizations, and small brands turn scattered event information, LINE inquiries, registration forms, data search, and admin workflows into launchable Web / LINE systems. Start with the flow, then build a deliverable and maintainable version.",
     heroButton: "View plans, pricing, and cases",
@@ -584,19 +584,19 @@ export default function App() {
       </header>
 
       <main className="relative z-10">
-        <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-16 pt-14 md:grid-cols-[1fr_0.9fr] md:items-center md:pt-20">
+        <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-16 pt-14 lg:grid-cols-[0.9fr_0.85fr] md:items-center md:pt-16">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.6 }}>
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-200">
               <Sparkles className="h-4 w-4" />
               {t.badge}
             </div>
-            <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-white md:text-5xl lg:text-6xl">
+            <h1 className="max-w-2xl text-4xl font-bold leading-[1.12] tracking-tight text-white md:text-5xl lg:text-[4.6rem]">
               {t.heroTop}
               <span className="block text-cyan-300">{t.heroHighlight}</span>
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">{t.heroText}</p>
 
-            <div className="mt-7 grid gap-3 sm:grid-cols-3 md:max-w-2xl">
+            <div className="mt-7 grid max-w-xl gap-3 sm:grid-cols-3">
               {[[t.stat1Title, t.stat1Text, true], [t.stat2Title, t.stat2Text], [t.stat3Title, t.stat3Text]].map(([title, text, accent]) => (
                 <div key={title} className={`rounded-2xl border p-4 ${accent ? "border-cyan-300/20 bg-cyan-300/10" : "border-white/10 bg-white/[0.06]"}`}>
                   <p className="text-2xl font-bold text-white md:text-3xl">{title}</p>
@@ -645,7 +645,7 @@ export default function App() {
 
         <section className="border-y border-white/10 bg-white/[0.03]"><div className="mx-auto max-w-6xl px-6 py-16"><div className="max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.problemLabel}</p><h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.problemTitle}</h2></div><div className="mt-8 grid gap-3 md:grid-cols-3">{t.painPoints.map((item) => <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-slate-300">{item}</div>)}</div></div></section>
 
-        <section className="mx-auto max-w-6xl px-6 py-20"><div className="mb-10 max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.audienceLabel}</p><h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.audienceTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.audienceText}</p></div><div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">{t.audienceGroups.map(([title, text]) => <Card key={title} className="bg-slate-900/70"><CardContent className="p-6"><p className="text-lg font-bold text-white">{title}</p><p className="mt-3 text-sm leading-6 text-slate-300">{text}</p></CardContent></Card>)}</div></section>
+        <section className="mx-auto max-w-6xl px-6 py-20"><div className="mb-10 max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.audienceLabel}</p><h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.audienceTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.audienceText}</p></div><div className="grid gap-5 md:grid-cols-2">{t.audienceGroups.map(([title, text]) => <Card key={title} className="bg-slate-900/70"><CardContent className="p-6"><p className="text-lg font-bold text-white">{title}</p><p className="mt-3 text-sm leading-6 text-slate-300">{text}</p></CardContent></Card>)}</div></section>
 
         <section className="mx-auto max-w-6xl px-6 pb-20">
           <div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-6 md:p-8">
@@ -654,7 +654,7 @@ export default function App() {
               <h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.eventSystemTitle}</h2>
               <p className="mt-5 leading-7 text-slate-300">{t.eventSystemText}</p>
             </div>
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-5 lg:grid-cols-2 lg:grid-cols-3">
               {t.eventSystemPoints.map(([title, text]) => (
                 <Card key={title} className="bg-slate-950/35">
                   <CardContent className="p-5">
@@ -689,25 +689,25 @@ export default function App() {
               </div>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="grid gap-5 lg:grid-cols-2">
               {t.midPlans.map((item, index) => (
                 <Card key={item.name} className="group overflow-hidden border-white/10 bg-white/[0.055] transition hover:border-cyan-300/30 hover:bg-white/[0.075]">
-                  <CardContent className="flex h-full flex-col p-6">
+                  <CardContent className="flex h-full flex-col p-6 md:p-7">
                     <div className="flex items-start justify-between gap-4">
                       <div>
                         <p className="text-xs font-semibold tracking-wide text-cyan-200">方案 {String(index + 1).padStart(2, '0')}</p>
-                        <h4 className="mt-2 text-2xl font-bold leading-snug text-white">{item.name}</h4>
+                        <h4 className="mt-2 text-[1.45rem] font-bold leading-tight text-white md:whitespace-nowrap">{item.name}</h4>
                       </div>
                       <div className="shrink-0 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs font-semibold text-cyan-100">
                         中型系統
                       </div>
                     </div>
 
-                    <p className="mt-3 min-h-[3.25rem] text-sm leading-6 text-slate-300">{item.subtitle}</p>
+                    <p className="mt-3 min-h-[2.5rem] text-sm leading-6 text-slate-300">{item.subtitle}</p>
 
                     <div className="my-5 h-px bg-white/10" />
 
-                    <div className="grid gap-2 sm:grid-cols-2">
+                    <div className="grid gap-2 md:grid-cols-2">
                       {item.items.map((feature) => (
                         <div key={feature} className="rounded-2xl border border-white/10 bg-slate-950/25 px-3 py-2 text-sm leading-6 text-slate-300">
                           <span className="mr-2 text-cyan-300">•</span>{feature}
@@ -718,10 +718,10 @@ export default function App() {
                     <div className="mt-6 flex flex-col gap-3 rounded-2xl border border-white/10 bg-slate-950/35 p-4 sm:flex-row sm:items-center sm:justify-between">
                       <div>
                         <p className="text-xs font-semibold text-slate-400">預估價格</p>
-                        <p className="mt-1 text-xl font-bold leading-snug text-cyan-200">{item.price}</p>
+                        <p className="mt-1 whitespace-nowrap text-lg font-bold leading-tight text-cyan-200 md:text-xl">{item.price}</p>
                       </div>
                       <a href={buildMidPlanMailto(item)} className="shrink-0">
-                        <Button className="w-full px-5 py-3 text-sm sm:w-auto">{t.midPlanButton}</Button>
+                        <Button className="w-full whitespace-nowrap px-5 py-3 text-sm sm:w-auto">{t.midPlanButton}</Button>
                       </a>
                     </div>
                   </CardContent>
@@ -738,12 +738,12 @@ export default function App() {
               <h3 className="mt-3 text-2xl font-bold text-white md:text-3xl">{t.smallPlanTitle}</h3>
               <p className="mt-4 leading-7 text-slate-300">{t.smallPlanText}</p>
             </div>
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-5 md:grid-cols-2">
               {t.smallPlans.map((item) => (
                 <Card key={item.name} className="bg-slate-950/35">
                   <CardContent className="flex h-full flex-col p-5">
-                    <h4 className="text-lg font-bold text-white">{item.name}</h4>
-                    <p className="mt-2 text-xl font-bold text-cyan-200">{item.price}</p>
+                    <h4 className="text-lg font-bold leading-tight text-white md:whitespace-nowrap">{item.name}</h4>
+                    <p className="mt-2 whitespace-nowrap text-lg font-bold text-cyan-200 md:text-xl">{item.price}</p>
                     <p className="mt-3 text-sm leading-6 text-slate-300">{item.subtitle}</p>
                     <div className="my-4 h-px bg-white/10" />
                     <ul className="space-y-3 text-sm leading-6 text-slate-300">
@@ -752,7 +752,7 @@ export default function App() {
                       ))}
                     </ul>
                     <a href={buildSmallPlanMailto(item)} className="mt-auto pt-5">
-                      <Button className="w-full text-sm">{t.smallPlanButton} <ExternalLink className="ml-2 h-4 w-4" /></Button>
+                      <Button className="w-full whitespace-nowrap text-sm">{t.smallPlanButton} <ExternalLink className="ml-2 h-4 w-4" /></Button>
                     </a>
                   </CardContent>
                 </Card>
@@ -776,7 +776,7 @@ export default function App() {
               <h3 className="mt-3 text-2xl font-bold text-white md:text-3xl">{t.maintenanceTitle}</h3>
               <p className="mt-4 text-sm leading-7 text-slate-300">{t.maintenanceText}</p>
             </div>
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-5 lg:grid-cols-2 lg:grid-cols-4">
               {t.maintenancePlans.map((plan) => (
                 <div key={plan.name} className="flex h-full min-h-[430px] flex-col rounded-2xl border border-white/10 bg-white/[0.05] p-5">
                   <div className="space-y-4">
@@ -801,7 +801,7 @@ export default function App() {
 
           <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"><div className="max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.estimatorLabel}</p><h3 className="mt-3 text-2xl font-bold text-white md:text-3xl">{t.estimatorTitle}</h3><p className="mt-4 leading-7 text-slate-300">{t.estimatorText}</p></div><button type="button" onClick={clearEstimate} className="w-fit rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-3 text-sm text-slate-200 transition hover:border-cyan-300/30 hover:bg-cyan-300/10">{t.clearAll}</button></div>
           <div className="grid gap-6 lg:grid-cols-[1.25fr_0.75fr]">
-            <Card className="bg-slate-900/70"><CardContent className="p-5 md:p-7"><div className="grid gap-4 md:grid-cols-2">
+            <Card className="bg-slate-900/70"><CardContent className="p-5 md:p-7"><div className="grid gap-5 lg:grid-cols-2">
               {estimateOptions.map((item) => { const checked = selected.includes(item.id); return <button key={item.id} type="button" onClick={() => toggleOption(item.id)} className={`rounded-2xl border p-4 text-left transition ${checked ? "border-cyan-300/50 bg-cyan-300/10" : "border-white/10 bg-white/[0.04] hover:border-cyan-300/30 hover:bg-white/[0.07]"}`}><div className="flex items-start gap-3"><div className={`mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border ${checked ? "border-cyan-300 bg-cyan-300 text-slate-950" : "border-slate-500"}`}>{checked && <span className="text-xs font-black">✓</span>}</div><div><p className="font-semibold text-white">{item.label}</p><p className="mt-1 text-sm leading-6 text-slate-400">{item.desc}</p><p className="mt-3 text-sm font-semibold text-cyan-200">{t.modulePrice} {item.price.toLocaleString()} 起</p></div></div></button>; })}
               <button type="button" onClick={() => setOtherEnabled((value) => !value)} className={`rounded-2xl border p-4 text-left transition ${otherEnabled ? "border-cyan-300/50 bg-cyan-300/10" : "border-white/10 bg-white/[0.04] hover:border-cyan-300/30 hover:bg-white/[0.07]"}`}><div className="flex items-start gap-3"><div className={`mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border ${otherEnabled ? "border-cyan-300 bg-cyan-300 text-slate-950" : "border-slate-500"}`}>{otherEnabled && <span className="text-xs font-black">✓</span>}</div><div><p className="font-semibold text-white">{t.otherCustom}</p><p className="mt-1 text-sm leading-6 text-slate-400">{t.otherDesc}</p><p className="mt-3 text-sm font-semibold text-cyan-200">{t.otherPrice}</p></div></div></button>
             </div></CardContent></Card>
