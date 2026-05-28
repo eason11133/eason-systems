@@ -677,27 +677,41 @@ export default function App() {
         <section id="packages" className="mx-auto max-w-6xl px-6 py-20">
           <div className="mb-10 max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.packageLabel}</p><h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.packageTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.packageText}</p></div>
 
-          <div className="mb-12 rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-6 md:p-8">
-            <div className="mb-7 max-w-3xl">
+          <div className="mb-12 rounded-3xl border border-cyan-300/15 bg-white/[0.04] p-6 md:p-8">
+            <div className="mb-7 max-w-4xl">
               <p className="text-sm font-semibold text-cyan-200">{t.midPlanLabel}</p>
               <h3 className="mt-3 text-2xl font-bold text-white md:text-3xl">{t.midPlanTitle}</h3>
-              <p className="mt-4 leading-7 text-slate-300">{t.midPlanText}</p>
+              <p className="mt-4 max-w-3xl leading-7 text-slate-300">{t.midPlanText}</p>
             </div>
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-              {t.midPlans.map((item) => (
-                <Card key={item.name} className="bg-slate-950/35">
-                  <CardContent className="flex h-full flex-col p-5">
-                    <h4 className="text-lg font-bold text-white">{item.name}</h4>
-                    <p className="mt-2 text-xl font-bold text-cyan-200">{item.price}</p>
-                    <p className="mt-3 text-sm leading-6 text-slate-300">{item.subtitle}</p>
-                    <div className="my-4 h-px bg-white/10" />
-                    <ul className="space-y-3 text-sm leading-6 text-slate-300">
+            <div className="grid gap-4 lg:grid-cols-2">
+              {t.midPlans.map((item, index) => (
+                <Card key={item.name} className="group border-cyan-300/10 bg-slate-950/30 transition hover:border-cyan-300/30 hover:bg-slate-950/45">
+                  <CardContent className="flex h-full flex-col gap-5 p-5 md:p-6">
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                      <div className="min-w-0">
+                        <div className="mb-3 inline-flex rounded-full border border-cyan-300/15 bg-cyan-300/10 px-3 py-1 text-xs font-semibold text-cyan-200">
+                          系統方案 {String(index + 1).padStart(2, '0')}
+                        </div>
+                        <h4 className="text-xl font-bold leading-snug text-white">{item.name}</h4>
+                        <p className="mt-2 text-sm leading-6 text-slate-300">{item.subtitle}</p>
+                      </div>
+                      <div className="shrink-0 rounded-2xl border border-cyan-300/15 bg-cyan-300/10 px-4 py-3 text-left sm:w-[210px]">
+                        <p className="text-xs font-semibold text-cyan-100/80">預估價格</p>
+                        <p className="mt-1 text-lg font-bold leading-snug text-cyan-100">{item.price}</p>
+                      </div>
+                    </div>
+
+                    <div className="grid gap-2 sm:grid-cols-2">
                       {item.items.map((feature) => (
-                        <li key={feature} className="flex gap-2"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" /><span>{feature}</span></li>
+                        <div key={feature} className="flex items-start gap-2 rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2.5 text-sm leading-6 text-slate-300">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
+                          <span>{feature}</span>
+                        </div>
                       ))}
-                    </ul>
-                    <a href={buildMidPlanMailto(item)} className="mt-auto pt-5">
-                      <Button className="w-full text-sm">{t.midPlanButton} <ExternalLink className="ml-2 h-4 w-4" /></Button>
+                    </div>
+
+                    <a href={buildMidPlanMailto(item)} className="mt-auto">
+                      <Button className="w-full py-3 text-sm">{t.midPlanButton} <ExternalLink className="ml-2 h-4 w-4" /></Button>
                     </a>
                   </CardContent>
                 </Card>
