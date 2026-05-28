@@ -677,48 +677,59 @@ export default function App() {
         <section id="packages" className="mx-auto max-w-6xl px-6 py-20">
           <div className="mb-10 max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.packageLabel}</p><h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.packageTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.packageText}</p></div>
 
-          <div className="mb-12 rounded-3xl border border-cyan-300/15 bg-slate-950/35 p-5 md:p-8">
-            <div className="mb-8 max-w-4xl">
-              <p className="text-sm font-semibold text-cyan-200">{t.midPlanLabel}</p>
-              <h3 className="mt-3 text-2xl font-bold text-white md:text-3xl">{t.midPlanTitle}</h3>
-              <p className="mt-4 max-w-3xl leading-7 text-slate-300">{t.midPlanText}</p>
+          <div className="mb-14">
+            <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div className="max-w-3xl">
+                <p className="text-sm font-semibold text-cyan-200">{t.midPlanLabel}</p>
+                <h3 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.midPlanTitle}</h3>
+                <p className="mt-4 leading-7 text-slate-300">{t.midPlanText}</p>
+              </div>
+              <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 px-4 py-3 text-sm leading-6 text-cyan-50 md:max-w-xs">
+                中型案重點：先確認流程與資料，再決定功能範圍，不用一開始就做滿全部功能。
+              </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="grid gap-4 md:grid-cols-2">
               {t.midPlans.map((item, index) => (
-                <Card key={item.name} className="border-white/10 bg-slate-900/70 transition hover:border-cyan-300/25 hover:bg-slate-900/90">
-                  <CardContent className="p-5 md:p-6">
-                    <div className="grid gap-5 md:grid-cols-[1.05fr_0.95fr_auto] md:items-center">
+                <Card key={item.name} className="group overflow-hidden border-white/10 bg-white/[0.055] transition hover:border-cyan-300/30 hover:bg-white/[0.075]">
+                  <CardContent className="flex h-full flex-col p-6">
+                    <div className="flex items-start justify-between gap-4">
                       <div>
-                        <div className="mb-3 inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs font-semibold text-cyan-200">
-                          系統方案 {String(index + 1).padStart(2, '0')}
+                        <p className="text-xs font-semibold tracking-wide text-cyan-200">方案 {String(index + 1).padStart(2, '0')}</p>
+                        <h4 className="mt-2 text-2xl font-bold leading-snug text-white">{item.name}</h4>
+                      </div>
+                      <div className="shrink-0 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs font-semibold text-cyan-100">
+                        中型系統
+                      </div>
+                    </div>
+
+                    <p className="mt-3 min-h-[3.25rem] text-sm leading-6 text-slate-300">{item.subtitle}</p>
+
+                    <div className="my-5 h-px bg-white/10" />
+
+                    <div className="grid gap-2 sm:grid-cols-2">
+                      {item.items.map((feature) => (
+                        <div key={feature} className="rounded-2xl border border-white/10 bg-slate-950/25 px-3 py-2 text-sm leading-6 text-slate-300">
+                          <span className="mr-2 text-cyan-300">•</span>{feature}
                         </div>
-                        <h4 className="text-2xl font-bold leading-snug text-white">{item.name}</h4>
-                        <p className="mt-2 text-sm leading-6 text-slate-300">{item.subtitle}</p>
-                      </div>
+                      ))}
+                    </div>
 
-                      <div className="grid gap-2 sm:grid-cols-2">
-                        {item.items.map((feature) => (
-                          <div key={feature} className="flex items-start gap-2 text-sm leading-6 text-slate-300">
-                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
-                            <span>{feature}</span>
-                          </div>
-                        ))}
+                    <div className="mt-6 flex flex-col gap-3 rounded-2xl border border-white/10 bg-slate-950/35 p-4 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <p className="text-xs font-semibold text-slate-400">預估價格</p>
+                        <p className="mt-1 text-xl font-bold leading-snug text-cyan-200">{item.price}</p>
                       </div>
-
-                      <div className="rounded-2xl border border-cyan-300/15 bg-cyan-300/10 p-4 md:w-[220px]">
-                        <p className="text-xs font-semibold text-cyan-100/80">預估價格</p>
-                        <p className="mt-1 text-xl font-bold leading-snug text-cyan-100">{item.price}</p>
-                        <a href={buildMidPlanMailto(item)} className="mt-4 block">
-                          <Button className="w-full py-3 text-sm">{t.midPlanButton}</Button>
-                        </a>
-                      </div>
+                      <a href={buildMidPlanMailto(item)} className="shrink-0">
+                        <Button className="w-full px-5 py-3 text-sm sm:w-auto">{t.midPlanButton}</Button>
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
               ))}
             </div>
-            <p className="mt-6 rounded-2xl border border-white/10 bg-slate-950/40 p-4 text-sm leading-6 text-slate-300">{t.midPlanNote}</p>
+
+            <p className="mt-5 rounded-2xl border border-white/10 bg-slate-950/35 p-4 text-sm leading-6 text-slate-300">{t.midPlanNote}</p>
           </div>
 
           <div className="mb-12 rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:p-8">
