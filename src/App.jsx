@@ -42,14 +42,14 @@ const content = {
     heroTop: "把你的想法，",
     heroHighlight: "做成真的能上線使用的系統",
     heroText:
-      "我協助有明確需求的個人、店家、活動團隊與組織，將一頁式網頁、LINE 官方帳號、資料查詢、後台管理、定位搜尋或客製流程做成可以上線運作的系統。你不一定已經知道完整功能，只要有想解決的問題、想整理的服務，或想讓客人更快找到資訊，我可以一起把需求拆成可執行的版本。",
+      "我協助公益協會、課程活動、論壇團隊、地方組織與小型品牌，把分散的活動資訊、LINE 詢問、報名表單、資料查詢與後台管理，整理成可以實際上線使用的 Web / LINE 系統。你不需要一開始就想好完整功能，只要有想解決的流程問題，我可以一起拆成可執行、可交付、可維護的版本。",
     heroButton: "查看方案、價格與案例",
     stat1Title: "30,000+",
     stat1Text: "LINE 系統真實使用者案例",
-    stat2Title: "自助查詢",
-    stat2Text: "把想法整理成可執行流程",
-    stat3Title: "數據紀錄",
-    stat3Text: "可擴充查詢、點擊與成果追蹤",
+    stat2Title: "流程系統化",
+    stat2Text: "活動、表單、FAQ、後台整合",
+    stat3Title: "成果數據",
+    stat3Text: "可擴充查詢、點擊與活動統計",
     rightBadge: "Real System Evidence",
     rightSmall: "我可以協助什麼",
     rightTitle: "從想法、需求，到可以運作的系統",
@@ -60,28 +60,39 @@ const content = {
     ],
     miniStats: [["流程", "需求拆解"], ["系統", "開發上線"], ["擴充", "後續升級"]],
     problemLabel: "Problem",
-    problemTitle: "不一定是公益或學校，只要有想做的服務，就可以先拆成可執行系統",
+    problemTitle: "你的問題通常不是缺一個漂亮頁面，而是資訊、表單、LINE 詢問與資料管理太分散",
     painPoints: [
-      "有想法但還不知道要做成什麼功能",
-      "資料、名單、據點或內容需要被查詢",
-      "資料散在 Excel、網站、PDF 或表單中",
-      "LINE 官方帳號想變成真正服務入口",
+      "活動、課程、論壇資訊分散在不同頁面",
+      "報名表、FAQ、聯絡窗口與行前通知沒有集中",
+      "資料散在 Excel、網站、PDF、Google 表單或社群貼文中",
+      "LINE 官方帳號想變成真正的服務與查詢入口",
       "資料更新需要人工處理，維護成本高",
-      "未來希望留下使用紀錄或成果數據",
+      "希望留下查詢、點擊、報名或活動成果數據",
     ],
     audienceLabel: "Who It Fits",
-    audienceTitle: "不只協會或課程，店家、個人品牌、夜市攤商也可以用",
-    audienceText: "只要你的資訊分散、客人常常問重複問題，或需要把菜單、活動、服務、預約、報名與聯絡方式整理清楚，就可以先從小網頁或 LINE 整理開始。",
+    audienceTitle: "主力服務公益協會、課程活動、論壇與地方團隊，也能延伸到店家與個人品牌",
+    audienceText: "網站目前會優先呈現中型系統能力：活動 / 課程流程、LINE 導覽、資料查詢、後台管理與 Dashboard。小店、個人品牌與夜市攤商仍可作為小型入門合作，但不再讓低價小方案搶走主軸。",
     audienceGroups: [
       ["活動 / 課程 / 營隊", "活動頁、報名連結、FAQ、行前資訊、LINE 導覽"],
-      ["餐廳 / 夜市 / 小店", "菜單、營業時間、地圖、預訂方式、LINE / IG 連結"],
-      ["個人品牌 / 自由工作者", "服務介紹、作品集、預約表單、價格說明、聯絡入口"],
+      ["活動 / 論壇 / 研討會", "議程、講者、報名、簽到、問卷、成果統計"],
       ["公益 / 協會 / 地方團隊", "資料查詢、據點資訊、通報流程、後台管理、成果數據"],
+      ["餐廳 / 小店 / 個人品牌", "菜單、營業時間、作品集、預約表單、LINE / IG 連結"],
+    ],
+    eventSystemLabel: "Event / Forum Systems",
+    eventSystemTitle: "活動、論壇與研討會可以做成一套可上線使用的流程系統",
+    eventSystemText: "若單位正在籌備大型活動、論壇、研討會、營隊或系列課程，我可以協助把活動前、中、後的資訊流程整理成一套系統：讓參與者更快查到資訊，也讓主辦方更好管理資料與成果。",
+    eventSystemPoints: [
+      ["活動網站 / 論壇資訊頁", "議程、講者、時間地點、交通資訊、注意事項與聯絡窗口"],
+      ["報名流程整合", "串接既有報名表，或整理報名欄位、報名後通知與確認流程"],
+      ["LINE 導覽與 FAQ 分流", "活動資訊、交通、報到方式、常見問題、聯絡窗口快速查詢"],
+      ["名單管理 / 報到輔助", "報名資料整理、狀態分類、QR Code 或名單核對流程評估"],
+      ["問卷與成果統計", "活動後問卷、查詢數、點擊數、報名狀況或成果摘要整理"],
+      ["後台資料管理", "活動資訊、FAQ、連結、名單或資料內容可由管理者更新"],
     ],
     buildLabel: "What I Build",
-    buildTitle: "我不是只接固定功能，而是幫你把需求整理成可以開發與上線的版本",
+    buildTitle: "我不是只做網頁，而是把活動、LINE、資料與後台整理成可用系統",
     buildText:
-      "適合已經有初步想法、服務流程、資料清單、活動資訊、菜單/服務項目、客戶詢問或管理需求的人。不論是餐廳、夜市攤商、個人品牌、課程活動或公益組織，都可以先做核心可用版，再依需求擴充後台、查詢、排序、統計或網站功能。",
+      "適合已有活動流程、課程資訊、論壇需求、據點資料、表單資料、常見問題或管理需求的團隊。第一步會先整理使用者怎麼查、管理者怎麼更新、哪些資料需要後台、哪些數據要留下，再決定做成資訊頁、LINE 導覽、查詢系統、後台或 Dashboard。",
     features: [
       { icon: MapPin, title: "把據點查詢變簡單", text: "使用者不用翻網站或打電話，只要在 LINE 傳位置，就能找到附近合適的服務點。" },
       { icon: Database, title: "資料自己能維護", text: "服務據點、FAQ、分類資訊可放進後台管理，降低每次改資料都找工程師的成本。" },
@@ -200,9 +211,9 @@ const content = {
     discussButton: "帶著已選功能來討論",
     resultsLabel: "Real Results",
     resultsTitle: "先看已上線成果與實作經驗，再討論你的版本",
-    resultsText: "這裡優先放在前面，讓合作方先確認我有實際上線經驗。公廁 Bot 與 Dashboard 是已公開的真實使用成果；其他尚未正式完成的專案會標示為實作規劃經驗，不會包裝成已完成合作案例。",
+    resultsText: "這裡優先放在前面，讓合作方先確認我有真實上線、真實使用者、真實數據介面的經驗。公廁 Bot 與 Dashboard 是已公開的實作成果；規劃中專案會清楚標示為需求規劃或實作規劃經驗，不會包裝成已完成案例。",
     cases: [
-      { title: "公廁 Bot：公共服務據點查詢系統", tag: "真實使用者案例", text: "以 LINE 作為入口，整合定位查詢、公共廁所資料、候選點篩選與 NTS / Trust Score 版本比較，讓使用者不只找到附近地點，也能讓系統後台累積查詢、點擊與排序表現資料。", links: [["查看公廁介紹網站", "https://ytpeter777.github.io/ToiletMVP.DEV/"], ["查看 Dashboard", "https://school-i9co.onrender.com/dashboard"]] },
+      { title: "公廁 Bot：公共服務據點查詢系統", tag: "真實上線案例", text: "以 LINE 作為入口，整合定位查詢、公共廁所資料、候選點篩選與 NTS / Trust Score 版本比較。這個案例證明我能把開放資料、LINE 操作流程、查詢邏輯與 Dashboard 數據介面整理成可被真實使用者操作的系統。", links: [["查看公廁介紹網站", "https://ytpeter777.github.io/ToiletMVP.DEV/"], ["查看 Dashboard", "https://school-i9co.onrender.com/dashboard"]] },
       { title: "LINE Bot 實際上線入口", tag: "實際使用入口", text: "這是公廁 Bot 的實際上線入口，可讓潛在客戶直接體驗使用者如何透過 LINE 完成查詢、定位與結果回傳。", links: [["加入 / 體驗 LINE Bot", "https://line.me/R/ti/p/@439avyvf"]] },
       { title: "野生動物救傷 LINE Bot", tag: "實作規劃經驗", text: "目前屬於需求討論與流程規劃中的公益單位系統方向，包含動物分類、外來種判斷、救傷資訊、位置查詢與基礎資料管理。此處作為相關實作規劃經驗，不標示為已完成合作案例。", links: [] },
     ],
@@ -227,14 +238,14 @@ const content = {
     heroTop: "Turn your idea",
     heroHighlight: "into a working online system",
     heroText:
-      "I help individuals, small businesses, event teams, and organizations turn one-page websites, LINE official accounts, data search, admin dashboards, location-based search, and custom workflows into systems that can actually launch. You do not need a complete specification at the beginning — I can help break your idea, service, or customer information flow into a buildable first version.",
+      "I help nonprofits, course and event teams, forum organizers, local organizations, and small brands turn scattered event information, LINE inquiries, registration forms, data search, and admin workflows into launchable Web / LINE systems. You do not need a complete specification at the beginning — I can help turn the process problem into a buildable, deliverable, and maintainable system.",
     heroButton: "View plans, pricing, and cases",
     stat1Title: "30,000+",
     stat1Text: "Real users in a LINE system case",
-    stat2Title: "Self-service",
-    stat2Text: "Turn ideas into executable flows",
-    stat3Title: "Data logs",
-    stat3Text: "Expandable query, click, and outcome tracking",
+    stat2Title: "Workflow systems",
+    stat2Text: "Events, forms, FAQs, and admin panels",
+    stat3Title: "Outcome data",
+    stat3Text: "Expandable query, click, and event analytics",
     rightBadge: "Real System Evidence",
     rightSmall: "How I can help",
     rightTitle: "From idea and requirements to a working system",
@@ -245,28 +256,39 @@ const content = {
     ],
     miniStats: [["Flow", "Requirement breakdown"], ["System", "Build and launch"], ["Scale", "Future upgrades"]],
     problemLabel: "Problem",
-    problemTitle: "It does not have to be nonprofit or school related — any service idea can be turned into a buildable system",
+    problemTitle: "The problem is usually not a missing pretty page — it is scattered information, forms, LINE inquiries, and data management",
     painPoints: [
-      "You have an idea but not a clear feature list yet",
-      "Data, lists, locations, or content need to be searchable",
-      "Information is scattered across Excel, websites, PDFs, or forms",
+      "Event, course, or forum information is spread across pages",
+      "Registration forms, FAQs, contact windows, and reminders are not centralized",
+      "Information is scattered across Excel, websites, PDFs, Google Forms, or social posts",
       "You want a LINE official account to become a real service entry",
       "Updating information manually is costly and slow",
-      "You want usage logs or outcome data in the future",
+      "You want query, click, registration, or event outcome data in the future",
     ],
     audienceLabel: "Who It Fits",
-    audienceTitle: "Not only organizations — shops, personal brands, and vendors can use this too",
-    audienceText: "If your information is scattered, customers repeatedly ask the same questions, or you need to organize menus, events, services, reservations, registrations, and contact links, you can start with a small web or LINE cleanup plan.",
+    audienceTitle: "Mainly for nonprofits, course teams, events, forums, and local organizations — with small shop and personal brand support",
+    audienceText: "This site now emphasizes mid-sized system capabilities: event / course workflows, LINE navigation, data search, admin management, and dashboards. Shops and personal brands are still supported as starter projects, but they are no longer the main positioning.",
     audienceGroups: [
       ["Events / courses / camps", "Event pages, registration links, FAQs, pre-event info, LINE navigation"],
-      ["Restaurants / vendors / small shops", "Menus, opening hours, maps, preorder info, LINE / IG links"],
-      ["Personal brands / freelancers", "Service pages, portfolios, booking forms, pricing, contact entry"],
+      ["Events / forums / seminars", "Agendas, speakers, registration, check-in, surveys, outcome data"],
       ["Nonprofits / associations / local teams", "Data search, service points, reporting flows, admin panels, outcome data"],
+      ["Restaurants / shops / personal brands", "Menus, hours, portfolios, booking forms, LINE / IG links"],
+    ],
+    eventSystemLabel: "Event / Forum Systems",
+    eventSystemTitle: "Events, forums, and seminars can become launchable workflow systems",
+    eventSystemText: "For large events, forums, seminars, camps, or course series, I can help organize the before-during-after workflow into one system: participants find information faster, while organizers manage data and outcome records more easily.",
+    eventSystemPoints: [
+      ["Event website / forum page", "Agenda, speakers, time, location, transportation, notes, and contact windows"],
+      ["Registration flow integration", "Connect existing forms or organize fields, confirmation messages, and follow-up information"],
+      ["LINE navigation and FAQ routing", "Fast access to event info, transportation, check-in method, FAQs, and contact windows"],
+      ["Participant list / check-in support", "Organize registration data, statuses, QR code or list verification workflow"],
+      ["Survey and outcome analytics", "Post-event surveys, query logs, clicks, registration status, and outcome summary"],
+      ["Admin content management", "Allow organizers to update event info, FAQs, links, lists, or data content"],
     ],
     buildLabel: "What I Build",
-    buildTitle: "I do not only sell fixed features — I help turn requirements into a buildable and launchable version",
+    buildTitle: "I do not only build web pages — I organize events, LINE flows, data, and admin needs into usable systems",
     buildText:
-      "This is suitable for people who already have an initial idea, service flow, data list, event information, menu/service information, customer questions, or management needs. It can work for restaurants, night-market vendors, personal brands, course/event teams, or nonprofit organizations. Start with a usable core version, then expand search, admin panels, ranking, analytics, or web features later.",
+      "This is suitable for teams with event workflows, course information, forum needs, service point data, forms, FAQs, or management workflows. The first step is to clarify how users search, how admins update data, what needs an admin panel, and which records should be kept — then decide whether it should become an info page, LINE navigation, search system, admin panel, or dashboard.",
     features: [
       { icon: MapPin, title: "Make location search easier", text: "Users can send their location in LINE and get suitable nearby service points without searching websites or calling." },
       { icon: Database, title: "Let admins maintain data", text: "Service points, FAQs, and categories can be managed in an admin panel, reducing repeated engineering changes." },
@@ -385,9 +407,9 @@ const content = {
     discussButton: "Discuss with selected features",
     resultsLabel: "Real Results",
     resultsTitle: "View launched results and implementation experience first",
-    resultsText: "This section is moved earlier so potential partners can first see real launch experience. The public toilet Bot and dashboard are public real-use results; projects that are not formally completed yet are labeled as implementation planning experience rather than completed client cases.",
+    resultsText: "This section appears early so potential partners can first verify real launch experience, real users, and real dashboard/data interfaces. The public toilet Bot and dashboard are public implementation results; planning-stage projects are clearly labeled as requirement or implementation planning experience rather than completed client cases.",
     cases: [
-      { title: "Public Toilet Bot: public service location search system", tag: "Real-user case", text: "Using LINE as the entry, the system combines location search, public toilet data, candidate filtering, and NTS / Trust Score version comparison. It also accumulates query, click, and ranking performance data in the backend.", links: [["View toilet Bot site", "https://ytpeter777.github.io/ToiletMVP.DEV/"], ["View Dashboard", "https://school-i9co.onrender.com/dashboard"]] },
+      { title: "Public Toilet Bot: public service location search system", tag: "Live system case", text: "Using LINE as the entry, the system combines location search, public toilet data, candidate filtering, and NTS / Trust Score version comparison. This case shows that I can turn open data, LINE user flows, search logic, and dashboard analytics into a system used by real users.", links: [["View toilet Bot site", "https://ytpeter777.github.io/ToiletMVP.DEV/"], ["View Dashboard", "https://school-i9co.onrender.com/dashboard"]] },
       { title: "Live LINE Bot entry", tag: "Live system entry", text: "This is the public toilet Bot live entry, where potential clients can directly experience how users complete search, location sharing, and result retrieval in LINE.", links: [["Add / try the LINE Bot", "https://line.me/R/ti/p/@439avyvf"]] },
       { title: "Wildlife rescue LINE Bot", tag: "Implementation planning experience", text: "This is currently a nonprofit system direction under requirement discussion and process planning, including animal category guidance, invasive species logic, rescue information, location search, and basic data management. It is presented as implementation planning experience, not as a completed client case.", links: [] },
     ],
@@ -624,6 +646,29 @@ export default function App() {
         <section className="border-y border-white/10 bg-white/[0.03]"><div className="mx-auto max-w-6xl px-6 py-16"><div className="max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.problemLabel}</p><h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.problemTitle}</h2></div><div className="mt-8 grid gap-3 md:grid-cols-3">{t.painPoints.map((item) => <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-slate-300">{item}</div>)}</div></div></section>
 
         <section className="mx-auto max-w-6xl px-6 py-20"><div className="mb-10 max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.audienceLabel}</p><h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.audienceTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.audienceText}</p></div><div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">{t.audienceGroups.map(([title, text]) => <Card key={title} className="bg-slate-900/70"><CardContent className="p-6"><p className="text-lg font-bold text-white">{title}</p><p className="mt-3 text-sm leading-6 text-slate-300">{text}</p></CardContent></Card>)}</div></section>
+
+        <section className="mx-auto max-w-6xl px-6 pb-20">
+          <div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-6 md:p-8">
+            <div className="mb-8 max-w-3xl">
+              <p className="text-sm font-semibold text-cyan-200">{t.eventSystemLabel}</p>
+              <h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.eventSystemTitle}</h2>
+              <p className="mt-5 leading-7 text-slate-300">{t.eventSystemText}</p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {t.eventSystemPoints.map(([title, text]) => (
+                <Card key={title} className="bg-slate-950/35">
+                  <CardContent className="p-5">
+                    <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-300/10">
+                      <ShieldCheck className="h-5 w-5 text-cyan-200" />
+                    </div>
+                    <p className="font-bold text-white">{title}</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-300">{text}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <section id="solution" className="mx-auto max-w-6xl px-6 py-20"><div className="mb-10 max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.buildLabel}</p><h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">{t.buildTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.buildText}</p></div><div className="grid gap-5 md:grid-cols-4">{t.features.map((feature) => { const Icon = feature.icon; return <Card key={feature.title}><CardContent className="p-6"><div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/10"><Icon className="h-6 w-6 text-cyan-300" /></div><h3 className="text-lg font-semibold text-white">{feature.title}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{feature.text}</p></CardContent></Card>; })}</div></section>
 
