@@ -39,20 +39,20 @@ const content = {
   zh: {
     navContact: "聯絡評估",
     badge: "3 萬+ 真實使用者驗證的 LINE 系統開發經驗",
-    heroTop: "把你的想法，",
-    heroHighlight: "做成真的能上線使用的系統",
+    heroTop: "把 LINE、活動與資料流程，",
+    heroHighlight: "整理成可上線系統",
     heroText:
-      "我協助公益協會、課程活動、論壇團隊、地方組織與小型品牌，把分散的活動資訊、LINE 詢問、報名表單、資料查詢與後台管理，整理成可以實際上線使用的 Web / LINE 系統。你不需要一開始就想好完整功能，只要有想解決的流程問題，我可以一起拆成可執行、可交付、可維護的版本。",
+      "我協助公益協會、課程活動、論壇團隊、地方組織與小型品牌，把分散的活動資訊、LINE 詢問、報名表單、資料查詢與後台管理，整理成可以實際上線使用的 Web / LINE 系統。先釐清流程，再做出可執行、可交付、可維護的版本。",
     heroButton: "查看方案、價格與案例",
     stat1Title: "30,000+",
     stat1Text: "LINE 系統真實使用者案例",
-    stat2Title: "流程系統化",
-    stat2Text: "活動、表單、FAQ、後台整合",
-    stat3Title: "成果數據",
-    stat3Text: "可擴充查詢、點擊與活動統計",
+    stat2Title: "流程",
+    stat2Text: "活動、表單、FAQ 整合",
+    stat3Title: "數據",
+    stat3Text: "查詢、點擊與活動統計",
     rightBadge: "Real System Evidence",
     rightSmall: "我可以協助什麼",
-    rightTitle: "從想法、需求，到可以運作的系統",
+    rightTitle: "需求整理 → 開發上線 → 後續擴充",
     rightCards: [
       ["把需求拆成流程", "先釐清使用者會怎麼操作、管理者要維護什麼、哪些功能要先做，避免一開始就做成過大的系統。"],
       ["做出可上線版本", "依需求建立 LINE Bot、查詢流程、資料管理、後台或簡易網站，讓服務真的能被使用。"],
@@ -235,20 +235,20 @@ const content = {
   en: {
     navContact: "Contact",
     badge: "30,000+ real-user LINE system experience",
-    heroTop: "Turn your idea",
-    heroHighlight: "into a working online system",
+    heroTop: "Turn LINE, events, and data flows",
+    heroHighlight: "into a launchable system",
     heroText:
-      "I help nonprofits, course and event teams, forum organizers, local organizations, and small brands turn scattered event information, LINE inquiries, registration forms, data search, and admin workflows into launchable Web / LINE systems. You do not need a complete specification at the beginning — I can help turn the process problem into a buildable, deliverable, and maintainable system.",
+      "I help nonprofits, course and event teams, forum organizers, local organizations, and small brands turn scattered event information, LINE inquiries, registration forms, data search, and admin workflows into launchable Web / LINE systems. Start with the flow, then build a deliverable and maintainable version.",
     heroButton: "View plans, pricing, and cases",
     stat1Title: "30,000+",
     stat1Text: "Real users in a LINE system case",
-    stat2Title: "Workflow systems",
-    stat2Text: "Events, forms, FAQs, and admin panels",
-    stat3Title: "Outcome data",
-    stat3Text: "Expandable query, click, and event analytics",
+    stat2Title: "Flow",
+    stat2Text: "Events, forms, FAQs",
+    stat3Title: "Data",
+    stat3Text: "Query, click, and event analytics",
     rightBadge: "Real System Evidence",
     rightSmall: "How I can help",
-    rightTitle: "From idea and requirements to a working system",
+    rightTitle: "Scope → Build → Expand",
     rightCards: [
       ["Break requirements into flows", "Clarify how users operate, what admins maintain, and what must be built first — avoiding an oversized first version."],
       ["Build a launchable version", "Create LINE Bots, search flows, data management, dashboards, or simple web pages based on the actual need."],
@@ -584,22 +584,22 @@ export default function App() {
       </header>
 
       <main className="relative z-10">
-        <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-20 pt-16 md:grid-cols-[1.05fr_0.95fr] md:items-center md:pt-24">
+        <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-16 pt-14 md:grid-cols-[1fr_0.9fr] md:items-center md:pt-20">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.6 }}>
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-200">
               <Sparkles className="h-4 w-4" />
               {t.badge}
             </div>
-            <h1 className="text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl">
+            <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-white md:text-5xl lg:text-6xl">
               {t.heroTop}
               <span className="block text-cyan-300">{t.heroHighlight}</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">{t.heroText}</p>
+            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">{t.heroText}</p>
 
-            <div className="mt-7 grid gap-3 sm:grid-cols-3">
+            <div className="mt-7 grid gap-3 sm:grid-cols-3 md:max-w-2xl">
               {[[t.stat1Title, t.stat1Text, true], [t.stat2Title, t.stat2Text], [t.stat3Title, t.stat3Text]].map(([title, text, accent]) => (
                 <div key={title} className={`rounded-2xl border p-4 ${accent ? "border-cyan-300/20 bg-cyan-300/10" : "border-white/10 bg-white/[0.06]"}`}>
-                  <p className="text-3xl font-bold text-white">{title}</p>
+                  <p className="text-2xl font-bold text-white md:text-3xl">{title}</p>
                   <p className={`mt-1 text-sm ${accent ? "text-cyan-100" : "text-slate-300"}`}>{text}</p>
                 </div>
               ))}
@@ -610,17 +610,17 @@ export default function App() {
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.1 }}>
+          <motion.div className="w-full md:max-w-xl md:justify-self-end" initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.1 }}>
             <Card className="bg-white/10 shadow-2xl backdrop-blur">
-              <CardContent className="p-6 md:p-8">
+              <CardContent className="p-5 md:p-7">
                 <div className="mb-6 flex items-center justify-between gap-3">
                   <div className="flex items-center gap-3"><div className="h-3 w-3 rounded-full bg-red-400" /><div className="h-3 w-3 rounded-full bg-yellow-400" /><div className="h-3 w-3 rounded-full bg-green-400" /></div>
                   <span className="rounded-full bg-cyan-300/10 px-3 py-1 text-xs text-cyan-200">{t.rightBadge}</span>
                 </div>
                 <div className="rounded-3xl bg-slate-900/70 p-5 ring-1 ring-white/10">
                   <p className="text-sm font-semibold text-cyan-200">{t.rightSmall}</p>
-                  <h3 className="mt-3 text-2xl font-bold leading-tight text-white">{t.rightTitle}</h3>
-                  <div className="mt-6 space-y-4">
+                  <h3 className="mt-3 text-xl font-bold leading-tight text-white md:text-2xl">{t.rightTitle}</h3>
+                  <div className="mt-5 space-y-3">
                     {t.rightCards.map(([title, text], idx) => (
                       <div key={title} className={`rounded-2xl border p-4 ${idx === 2 ? "border-cyan-300/20 bg-cyan-300/10" : "border-white/10 bg-white/[0.06]"}`}>
                         <div className="flex items-start gap-3">
@@ -630,7 +630,7 @@ export default function App() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-6 grid grid-cols-3 gap-3 text-center text-sm">
+                  <div className="mt-5 grid grid-cols-3 gap-3 text-center text-sm">
                     {t.miniStats.map(([title, text]) => (
                       <div key={title} className="rounded-2xl bg-white/[0.08] p-3"><p className="text-lg font-bold text-white">{title}</p><p className="mt-1 text-xs text-slate-400">{text}</p></div>
                     ))}
@@ -775,7 +775,7 @@ export default function App() {
 
           <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"><div className="max-w-3xl"><p className="text-sm font-semibold text-cyan-300">{t.estimatorLabel}</p><h3 className="mt-3 text-2xl font-bold text-white md:text-3xl">{t.estimatorTitle}</h3><p className="mt-4 leading-7 text-slate-300">{t.estimatorText}</p></div><button type="button" onClick={clearEstimate} className="w-fit rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-3 text-sm text-slate-200 transition hover:border-cyan-300/30 hover:bg-cyan-300/10">{t.clearAll}</button></div>
           <div className="grid gap-6 lg:grid-cols-[1.25fr_0.75fr]">
-            <Card className="bg-slate-900/70"><CardContent className="p-6 md:p-8"><div className="grid gap-4 md:grid-cols-2">
+            <Card className="bg-slate-900/70"><CardContent className="p-5 md:p-7"><div className="grid gap-4 md:grid-cols-2">
               {estimateOptions.map((item) => { const checked = selected.includes(item.id); return <button key={item.id} type="button" onClick={() => toggleOption(item.id)} className={`rounded-2xl border p-4 text-left transition ${checked ? "border-cyan-300/50 bg-cyan-300/10" : "border-white/10 bg-white/[0.04] hover:border-cyan-300/30 hover:bg-white/[0.07]"}`}><div className="flex items-start gap-3"><div className={`mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border ${checked ? "border-cyan-300 bg-cyan-300 text-slate-950" : "border-slate-500"}`}>{checked && <span className="text-xs font-black">✓</span>}</div><div><p className="font-semibold text-white">{item.label}</p><p className="mt-1 text-sm leading-6 text-slate-400">{item.desc}</p><p className="mt-3 text-sm font-semibold text-cyan-200">{t.modulePrice} {item.price.toLocaleString()} 起</p></div></div></button>; })}
               <button type="button" onClick={() => setOtherEnabled((value) => !value)} className={`rounded-2xl border p-4 text-left transition ${otherEnabled ? "border-cyan-300/50 bg-cyan-300/10" : "border-white/10 bg-white/[0.04] hover:border-cyan-300/30 hover:bg-white/[0.07]"}`}><div className="flex items-start gap-3"><div className={`mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border ${otherEnabled ? "border-cyan-300 bg-cyan-300 text-slate-950" : "border-slate-500"}`}>{otherEnabled && <span className="text-xs font-black">✓</span>}</div><div><p className="font-semibold text-white">{t.otherCustom}</p><p className="mt-1 text-sm leading-6 text-slate-400">{t.otherDesc}</p><p className="mt-3 text-sm font-semibold text-cyan-200">{t.otherPrice}</p></div></div></button>
             </div></CardContent></Card>
