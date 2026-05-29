@@ -60,7 +60,7 @@ const content = {
     ],
     miniStats: [["流程", "需求拆解"], ["系統", "開發上線"], ["擴充", "後續升級"]],
     problemLabel: "Problem",
-    problemTitle: "你的問題通常不是缺一個漂亮頁面，而是資訊、表單、LINE 詢問與資料管理太分散",
+    problemTitle: "資訊、表單、LINE 與後台太分散，才是真正問題",
     painPoints: [
       "活動、課程、論壇資訊分散在不同頁面",
       "報名表、FAQ、聯絡窗口與行前通知沒有集中",
@@ -70,7 +70,7 @@ const content = {
       "希望留下查詢、點擊、報名或活動成果數據",
     ],
     audienceLabel: "Who It Fits",
-    audienceTitle: "主力服務公益協會、課程活動、論壇與地方團隊，也能延伸到店家與個人品牌",
+    audienceTitle: "主力服務公益協會、課程活動、論壇與地方團隊",
     audienceText: "網站目前會優先呈現中型系統能力：活動 / 課程流程、LINE 導覽、資料查詢、後台管理與 Dashboard。小店、個人品牌與夜市攤商仍可作為小型入門合作，但不再讓低價小方案搶走主軸。",
     audienceGroups: [
       ["活動 / 課程 / 營隊", "活動頁、報名連結、FAQ、行前資訊、LINE 導覽"],
@@ -79,7 +79,7 @@ const content = {
       ["餐廳 / 小店 / 個人品牌", "菜單、營業時間、作品集、預約表單、LINE / IG 連結"],
     ],
     eventSystemLabel: "Event / Forum Systems",
-    eventSystemTitle: "活動、論壇與研討會可以做成一套可上線使用的流程系統",
+    eventSystemTitle: "活動與論壇流程系統",
     eventSystemText: "若單位正在籌備大型活動、論壇、研討會、營隊或系列課程，我可以協助把活動前、中、後的資訊流程整理成一套系統：讓參與者更快查到資訊，也讓主辦方更好管理資料與成果。",
     eventSystemPoints: [
       ["活動網站 / 論壇資訊頁", "議程、講者、時間地點、交通資訊、注意事項與聯絡窗口"],
@@ -90,7 +90,7 @@ const content = {
       ["後台資料管理", "活動資訊、FAQ、連結、名單或資料內容可由管理者更新"],
     ],
     buildLabel: "What I Build",
-    buildTitle: "我不是只做網頁，而是把活動、LINE、資料與後台整理成可用系統",
+    buildTitle: "把活動、LINE、資料與後台整理成可用系統",
     buildText:
       "適合已有活動流程、課程資訊、論壇需求、據點資料、表單資料、常見問題或管理需求的團隊。第一步會先整理使用者怎麼查、管理者怎麼更新、哪些資料需要後台、哪些數據要留下，再決定做成資訊頁、LINE 導覽、查詢系統、後台或 Dashboard。",
     features: [
@@ -109,7 +109,7 @@ const content = {
     ],
     outcomes: ["把模糊想法整理成清楚功能與流程", "讓使用者能真的在線上完成查詢或操作", "讓資料或內容可以由管理者自己維護", "讓系統未來能累積使用紀錄與成果數據"],
     packageLabel: "Plans & Pricing",
-    packageTitle: "主力是 5–15 萬的中型系統，小方案只是合作入口",
+    packageTitle: "主力中型系統，小方案作為合作入口",
     packageText: "如果需求包含 LINE Bot、資料查詢、後台管理、據點搜尋、Dashboard、報名/服務流程或長期更新，會優先規劃成中型系統案。小方案仍可作為第一次合作入口，但網站不再把所有方案重複拆成多層分類，避免客戶看不懂。",
     midPlanLabel: "Main Focus",
     midPlanTitle: "主力中型系統案",
@@ -210,7 +210,7 @@ const content = {
     reminder: "提醒：這裡比較像功能配件表，用來抓預算量級；不是每個功能獨立成案的價格。以上為學生開發者優惠價，若合作滿意，歡迎提供推薦語或案例回饋。正式成案仍需把功能範圍、資料量、交付內容、測試期與後續維護一起確認。若系統需要穩定長期運行，主機費通常至少約 US$7 / 月起，屬於每月固定成本，與一次性開發費分開計算。",
     discussButton: "帶著已選功能來討論",
     resultsLabel: "Real Results",
-    resultsTitle: "先看已上線成果與實作經驗，再討論你的版本",
+    resultsTitle: "先看真實上線成果，再討論你的版本",
     resultsText: "這裡優先放在前面，讓合作方先確認我有真實上線、真實使用者、真實數據介面的經驗。公廁 Bot 與 Dashboard 是已公開的實作成果；規劃中專案會清楚標示為需求規劃或實作規劃經驗，不會包裝成已完成案例。",
     cases: [
       { title: "公廁 Bot：公共服務據點查詢系統", tag: "真實上線案例", text: "以 LINE 作為入口，整合定位查詢、公共廁所資料、候選點篩選與 NTS / Trust Score 版本比較。這個案例證明我能把開放資料、LINE 操作流程、查詢邏輯與 Dashboard 數據介面整理成可被真實使用者操作的系統。", links: [["查看公廁介紹網站", "https://ytpeter777.github.io/ToiletMVP.DEV/"], ["查看 Dashboard", "https://school-i9co.onrender.com/dashboard"]] },
@@ -256,7 +256,7 @@ const content = {
     ],
     miniStats: [["Flow", "Requirement breakdown"], ["System", "Build and launch"], ["Scale", "Future upgrades"]],
     problemLabel: "Problem",
-    problemTitle: "The problem is usually not a missing pretty page — it is scattered information, forms, LINE inquiries, and data management",
+    problemTitle: "The real issue is scattered information, LINE flows, forms, and admin work",
     painPoints: [
       "Event, course, or forum information is spread across pages",
       "Registration forms, FAQs, contact windows, and reminders are not centralized",
@@ -266,7 +266,7 @@ const content = {
       "You want query, click, registration, or event outcome data in the future",
     ],
     audienceLabel: "Who It Fits",
-    audienceTitle: "Mainly for nonprofits, course teams, events, forums, and local organizations — with small shop and personal brand support",
+    audienceTitle: "Built mainly for nonprofits, courses, forums, and local teams",
     audienceText: "This site now emphasizes mid-sized system capabilities: event / course workflows, LINE navigation, data search, admin management, and dashboards. Shops and personal brands are still supported as starter projects, but they are no longer the main positioning.",
     audienceGroups: [
       ["Events / courses / camps", "Event pages, registration links, FAQs, pre-event info, LINE navigation"],
@@ -275,7 +275,7 @@ const content = {
       ["Restaurants / shops / personal brands", "Menus, hours, portfolios, booking forms, LINE / IG links"],
     ],
     eventSystemLabel: "Event / Forum Systems",
-    eventSystemTitle: "Events, forums, and seminars can become launchable workflow systems",
+    eventSystemTitle: "Event and forum workflow systems",
     eventSystemText: "For large events, forums, seminars, camps, or course series, I can help organize the before-during-after workflow into one system: participants find information faster, while organizers manage data and outcome records more easily.",
     eventSystemPoints: [
       ["Event website / forum page", "Agenda, speakers, time, location, transportation, notes, and contact windows"],
@@ -286,7 +286,7 @@ const content = {
       ["Admin content management", "Allow organizers to update event info, FAQs, links, lists, or data content"],
     ],
     buildLabel: "What I Build",
-    buildTitle: "I do not only build web pages — I organize events, LINE flows, data, and admin needs into usable systems",
+    buildTitle: "Turning events, LINE flows, data, and admin work into usable systems",
     buildText:
       "This is suitable for teams with event workflows, course information, forum needs, service point data, forms, FAQs, or management workflows. The first step is to clarify how users search, how admins update data, what needs an admin panel, and which records should be kept — then decide whether it should become an info page, LINE navigation, search system, admin panel, or dashboard.",
     features: [
@@ -305,7 +305,7 @@ const content = {
     ],
     outcomes: ["Turn vague ideas into clear features and flows", "Let users complete real actions online", "Allow admins to maintain content and data", "Let the system accumulate usage and outcome data"],
     packageLabel: "Plans & Pricing",
-    packageTitle: "Mid-sized systems are the main focus; small plans are only an entry point",
+    packageTitle: "Mid-sized systems are the main focus",
     packageText: "If the project includes LINE Bot flows, data search, admin panels, location search, dashboards, registration/service workflows, or long-term updates, it is usually better to scope it as a mid-sized system. Small plans remain available as a first cooperation entry point, but this page keeps pricing simple instead of repeating the same features across multiple sections.",
     midPlanLabel: "Main Focus",
     midPlanTitle: "Mid-sized system projects",
@@ -406,7 +406,7 @@ const content = {
     reminder: "Reminder: this is a feature-module estimate for budgeting, not a standalone price for each feature. These are student-developer rates; if the cooperation goes well, a testimonial or case feedback would be appreciated. Final projects still need scope, data volume, deliverables, testing period, and maintenance terms confirmed. Stable long-term systems usually require hosting costs from about US$7/month, separate from one-time development fees.",
     discussButton: "Discuss with selected features",
     resultsLabel: "Real Results",
-    resultsTitle: "View launched results and implementation experience first",
+    resultsTitle: "View real launch results first",
     resultsText: "This section appears early so potential partners can first verify real launch experience, real users, and real dashboard/data interfaces. The public toilet Bot and dashboard are public implementation results; planning-stage projects are clearly labeled as requirement or implementation planning experience rather than completed client cases.",
     cases: [
       { title: "Public Toilet Bot: public service location search system", tag: "Live system case", text: "Using LINE as the entry, the system combines location search, public toilet data, candidate filtering, and NTS / Trust Score version comparison. This case shows that I can turn open data, LINE user flows, search logic, and dashboard analytics into a system used by real users.", links: [["View toilet Bot site", "https://ytpeter777.github.io/ToiletMVP.DEV/"], ["View Dashboard", "https://school-i9co.onrender.com/dashboard"]] },
@@ -590,7 +590,7 @@ export default function App() {
               <Sparkles className="h-4 w-4" />
               {t.badge}
             </div>
-            <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-white md:text-5xl lg:text-6xl xl:text-[4.4rem]">
+            <h1 style={{ textWrap: "balance" }} className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-white md:text-5xl lg:text-[3.7rem] xl:text-[4rem]">
               {t.heroTop}
               <span className="block text-cyan-300">{t.heroHighlight}</span>
             </h1>
@@ -641,44 +641,17 @@ export default function App() {
           </motion.div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-6 pb-20"><div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:p-8"><div className="mb-8 max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.resultsLabel}</p><h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-[2.6rem]">{t.resultsTitle}</h2><p className="mt-4 leading-7 text-slate-300">{t.resultsText}</p></div><div className="grid gap-5 md:grid-cols-3">{t.cases.map((item) => <Card key={item.title} className="bg-white/[0.05]"><CardContent className="flex h-full flex-col p-6"><div className="mb-4 inline-flex w-fit rounded-full bg-cyan-300/10 px-3 py-1 text-xs font-medium text-cyan-200">{item.tag}</div><h3 className="text-xl font-bold text-white">{item.title}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{item.text}</p><div className="mt-auto pt-5 space-y-2">{item.links?.map(([label, href]) => <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm text-slate-200 transition hover:border-cyan-300/30 hover:bg-cyan-300/10"><span>{label}</span><ExternalLink className="h-4 w-4 text-cyan-200" /></a>)}</div></CardContent></Card>)}</div></div></section>
+        <section className="mx-auto max-w-7xl px-6 pb-20"><div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:p-8"><div className="mb-8 max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.resultsLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.resultsTitle}</h2><p className="mt-4 leading-7 text-slate-300">{t.resultsText}</p></div><div className="grid gap-5 md:grid-cols-3">{t.cases.map((item) => <Card key={item.title} className="bg-white/[0.05]"><CardContent className="flex h-full flex-col p-6"><div className="mb-4 inline-flex w-fit rounded-full bg-cyan-300/10 px-3 py-1 text-xs font-medium text-cyan-200">{item.tag}</div><h3 className="text-xl font-bold text-white">{item.title}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{item.text}</p><div className="mt-auto pt-5 space-y-2">{item.links?.map(([label, href]) => <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm text-slate-200 transition hover:border-cyan-300/30 hover:bg-cyan-300/10"><span>{label}</span><ExternalLink className="h-4 w-4 text-cyan-200" /></a>)}</div></CardContent></Card>)}</div></div></section>
 
-        <section className="border-y border-white/10 bg-white/[0.03]">
-          <div className="mx-auto max-w-7xl px-6 py-16">
-            <div className="grid gap-8 lg:grid-cols-[1fr_0.42fr] lg:items-end">
-              <div className="max-w-5xl">
-                <p className="text-sm font-semibold text-cyan-300">{t.problemLabel}</p>
-                <h2 className="mt-3 max-w-4xl text-3xl font-bold leading-tight text-white md:text-[2.35rem] lg:text-[2.55rem]">{t.problemTitle}</h2>
-              </div>
-              <div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-5 text-sm leading-7 text-cyan-50">
-                <p className="font-semibold text-cyan-100">先處理資訊流，不急著做大系統</p>
-                <p className="mt-2 text-slate-300">把活動資訊、表單、LINE 問答、資料更新與成果紀錄先集中，後續才好擴充。</p>
-              </div>
-            </div>
-            <div className="mt-8 grid gap-3 md:grid-cols-3">{t.painPoints.map((item) => <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-slate-300">{item}</div>)}</div>
-          </div>
-        </section>
+        <section className="border-y border-white/10 bg-white/[0.03]"><div className="mx-auto max-w-7xl px-6 py-16"><div className="max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.problemLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.problemTitle}</h2></div><div className="mt-8 grid gap-3 md:grid-cols-3">{t.painPoints.map((item) => <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-slate-300">{item}</div>)}</div></div></section>
 
-        <section className="mx-auto max-w-7xl px-6 py-20">
-          <div className="mb-10 grid gap-8 lg:grid-cols-[1fr_0.42fr] lg:items-end">
-            <div className="max-w-5xl">
-              <p className="text-sm font-semibold text-cyan-300">{t.audienceLabel}</p>
-              <h2 className="mt-3 max-w-4xl text-3xl font-bold leading-tight text-white md:text-[2.35rem] lg:text-[2.55rem]">{t.audienceTitle}</h2>
-              <p className="mt-5 max-w-4xl leading-7 text-slate-300">{t.audienceText}</p>
-            </div>
-            <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-5 text-sm leading-7 text-slate-300">
-              <p className="font-semibold text-white">主軸優先順序</p>
-              <p className="mt-2">中型系統案優先：公益協會、活動課程、論壇研討會、地方團隊與多據點服務。</p>
-            </div>
-          </div>
-          <div className="grid gap-5 md:grid-cols-2">{t.audienceGroups.map(([title, text]) => <Card key={title} className="bg-slate-900/70"><CardContent className="p-6"><p className="text-lg font-bold text-white">{title}</p><p className="mt-3 text-sm leading-6 text-slate-300">{text}</p></CardContent></Card>)}</div>
-        </section>
+        <section className="mx-auto max-w-7xl px-6 py-20"><div className="mb-10 max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.audienceLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.audienceTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.audienceText}</p></div><div className="grid gap-5 md:grid-cols-2">{t.audienceGroups.map(([title, text]) => <Card key={title} className="bg-slate-900/70"><CardContent className="p-6"><p className="text-lg font-bold text-white">{title}</p><p className="mt-3 text-sm leading-6 text-slate-300">{text}</p></CardContent></Card>)}</div></section>
 
         <section className="mx-auto max-w-7xl px-6 pb-20">
           <div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-6 md:p-8">
             <div className="mb-8 max-w-5xl">
               <p className="text-sm font-semibold text-cyan-200">{t.eventSystemLabel}</p>
-              <h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-[2.6rem]">{t.eventSystemTitle}</h2>
+              <h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.eventSystemTitle}</h2>
               <p className="mt-5 leading-7 text-slate-300">{t.eventSystemText}</p>
             </div>
             <div className="grid gap-5 lg:grid-cols-2 lg:grid-cols-3">
@@ -697,44 +670,21 @@ export default function App() {
           </div>
         </section>
 
-        <section id="solution" className="mx-auto max-w-7xl px-6 py-20">
-          <div className="mb-10 grid gap-8 lg:grid-cols-[1fr_0.42fr] lg:items-end">
-            <div className="max-w-5xl">
-              <p className="text-sm font-semibold text-cyan-300">{t.buildLabel}</p>
-              <h2 className="mt-3 max-w-4xl text-3xl font-bold leading-tight text-white md:text-[2.35rem] lg:text-[2.55rem]">{t.buildTitle}</h2>
-              <p className="mt-5 max-w-4xl leading-7 text-slate-300">{t.buildText}</p>
-            </div>
-            <div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-5 text-sm leading-7 text-cyan-50">
-              <p className="font-semibold text-cyan-100">交付不是只有頁面</p>
-              <p className="mt-2 text-slate-300">可以包含 LINE 流程、資料查詢、後台更新、Dashboard 與操作說明。</p>
-            </div>
-          </div>
-          <div className="grid gap-5 md:grid-cols-4">{t.features.map((feature) => { const Icon = feature.icon; return <Card key={feature.title}><CardContent className="p-6"><div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/10"><Icon className="h-6 w-6 text-cyan-300" /></div><h3 className="text-lg font-semibold text-white">{feature.title}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{feature.text}</p></CardContent></Card>; })}</div>
-        </section>
+        <section id="solution" className="mx-auto max-w-7xl px-6 py-20"><div className="mb-10 max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.buildLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.buildTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.buildText}</p></div><div className="grid gap-5 md:grid-cols-4">{t.features.map((feature) => { const Icon = feature.icon; return <Card key={feature.title}><CardContent className="p-6"><div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/10"><Icon className="h-6 w-6 text-cyan-300" /></div><h3 className="text-lg font-semibold text-white">{feature.title}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{feature.text}</p></CardContent></Card>; })}</div></section>
 
-        <section className="border-y border-white/10 bg-white/[0.03]"><div className="mx-auto max-w-7xl px-6 py-20"><div className="mb-10 max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.flowLabel}</p><h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-[2.6rem]">{t.flowTitle}</h2></div><div className="grid gap-5 md:grid-cols-4">{t.offerSteps.map(([title, text]) => <Card key={title} className="bg-slate-900/70"><CardContent className="p-6"><p className="text-sm font-semibold text-cyan-300">{title}</p><p className="mt-4 text-sm leading-7 text-slate-300">{text}</p></CardContent></Card>)}</div><div className="mt-8 grid gap-3 md:grid-cols-4">{t.outcomes.map((item) => <div key={item} className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4 text-sm leading-6 text-cyan-50">{item}</div>)}</div></div></section>
+        <section className="border-y border-white/10 bg-white/[0.03]"><div className="mx-auto max-w-7xl px-6 py-20"><div className="mb-10 max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.flowLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.flowTitle}</h2></div><div className="grid gap-5 md:grid-cols-4">{t.offerSteps.map(([title, text]) => <Card key={title} className="bg-slate-900/70"><CardContent className="p-6"><p className="text-sm font-semibold text-cyan-300">{title}</p><p className="mt-4 text-sm leading-7 text-slate-300">{text}</p></CardContent></Card>)}</div><div className="mt-8 grid gap-3 md:grid-cols-4">{t.outcomes.map((item) => <div key={item} className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4 text-sm leading-6 text-cyan-50">{item}</div>)}</div></div></section>
 
         <section id="packages" className="mx-auto max-w-7xl px-6 py-20">
-          <div className="mb-10 grid gap-8 lg:grid-cols-[1fr_0.42fr] lg:items-end">
-            <div className="max-w-5xl">
-              <p className="text-sm font-semibold text-cyan-300">{t.packageLabel}</p>
-              <h2 className="mt-3 max-w-4xl text-3xl font-bold leading-tight text-white md:text-[2.35rem] lg:text-[2.55rem]">{t.packageTitle}</h2>
-              <p className="mt-5 max-w-4xl leading-7 text-slate-300">{t.packageText}</p>
-            </div>
-            <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-5 text-sm leading-7 text-slate-300">
-              <p className="font-semibold text-white">價格先看範圍</p>
-              <p className="mt-2">學生價保留，實際報價會依功能、資料量、時程、驗收與維護範圍確認。</p>
-            </div>
-          </div>
+          <div className="mb-10 max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.packageLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.packageTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.packageText}</p></div>
 
           <div className="mb-14">
-            <div className="mb-8 grid gap-6 lg:grid-cols-[1fr_0.42fr] lg:items-end">
+            <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div className="max-w-5xl">
                 <p className="text-sm font-semibold text-cyan-200">{t.midPlanLabel}</p>
-                <h3 className="mt-3 max-w-4xl text-3xl font-bold leading-tight text-white md:text-[2.35rem] lg:text-[2.55rem]">{t.midPlanTitle}</h3>
-                <p className="mt-4 max-w-4xl leading-7 text-slate-300">{t.midPlanText}</p>
+                <h3 className="mt-3 text-3xl font-bold leading-tight text-white md:text-[2.6rem]">{t.midPlanTitle}</h3>
+                <p className="mt-4 leading-7 text-slate-300">{t.midPlanText}</p>
               </div>
-              <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 px-4 py-3 text-sm leading-6 text-cyan-50">
+              <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 px-4 py-3 text-sm leading-6 text-cyan-50 md:max-w-xs">
                 中型案重點：先確認流程與資料，再決定功能範圍，不用一開始就做滿全部功能。
               </div>
             </div>
@@ -860,7 +810,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="contact" className="mx-auto max-w-7xl px-6 pb-24"><div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-8 md:p-10"><div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center"><div><p className="text-sm font-semibold text-cyan-200">{t.contactLabel}</p><h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-[2.6rem]">{t.contactTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.contactText}</p></div><div className="rounded-3xl bg-slate-950/60 p-6 ring-1 ring-white/10"><p className="text-sm text-slate-400">{t.contactSmall}</p><p className="mt-4 text-sm leading-7 text-slate-300">{t.contactPrompt}</p><a href={estimateMailto}><Button className="mt-6 w-full">{t.contactButton} <ExternalLink className="ml-2 h-4 w-4" /></Button></a></div></div></div></section>
+        <section id="contact" className="mx-auto max-w-7xl px-6 pb-24"><div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-8 md:p-10"><div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center"><div><p className="text-sm font-semibold text-cyan-200">{t.contactLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.contactTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.contactText}</p></div><div className="rounded-3xl bg-slate-950/60 p-6 ring-1 ring-white/10"><p className="text-sm text-slate-400">{t.contactSmall}</p><p className="mt-4 text-sm leading-7 text-slate-300">{t.contactPrompt}</p><a href={estimateMailto}><Button className="mt-6 w-full">{t.contactButton} <ExternalLink className="ml-2 h-4 w-4" /></Button></a></div></div></div></section>
       </main>
     </div>
   );
