@@ -564,7 +564,7 @@ export default function App() {
         <div className="absolute bottom-0 right-10 h-96 w-96 rounded-full bg-emerald-400/10 blur-3xl" />
       </div>
 
-      <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
+      <header className="relative z-10 mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-400/15 ring-1 ring-cyan-300/25">
             <Bot className="h-5 w-5 text-cyan-300" />
@@ -584,13 +584,13 @@ export default function App() {
       </header>
 
       <main className="relative z-10">
-        <section className="mx-auto grid max-w-7xl gap-10 px-6 pb-16 pt-14 lg:grid-cols-[0.95fr_0.8fr] md:items-center md:pt-16">
+        <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-16 pt-14 lg:grid-cols-[0.9fr_0.85fr] md:items-center md:pt-16">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.6 }}>
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-200">
               <Sparkles className="h-4 w-4" />
               {t.badge}
             </div>
-            <h1 className="max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-white md:text-5xl lg:text-[3.7rem] xl:text-[4rem]">
+            <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-white md:text-5xl lg:text-6xl xl:text-[4.4rem]">
               {t.heroTop}
               <span className="block text-cyan-300">{t.heroHighlight}</span>
             </h1>
@@ -641,17 +641,44 @@ export default function App() {
           </motion.div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-6 pb-20"><div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:p-8"><div className="mx-auto mb-8 max-w-5xl text-center"><p className="text-sm font-semibold text-cyan-300">{t.resultsLabel}</p><h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-[2.25rem] lg:text-[2.55rem]">{t.resultsTitle}</h2><p className="mt-4 leading-7 text-slate-300">{t.resultsText}</p></div><div className="grid gap-5 md:grid-cols-3">{t.cases.map((item) => <Card key={item.title} className="bg-white/[0.05]"><CardContent className="flex h-full flex-col p-6"><div className="mb-4 inline-flex w-fit rounded-full bg-cyan-300/10 px-3 py-1 text-xs font-medium text-cyan-200">{item.tag}</div><h3 className="text-xl font-bold text-white">{item.title}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{item.text}</p><div className="mt-auto pt-5 space-y-2">{item.links?.map(([label, href]) => <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm text-slate-200 transition hover:border-cyan-300/30 hover:bg-cyan-300/10"><span>{label}</span><ExternalLink className="h-4 w-4 text-cyan-200" /></a>)}</div></CardContent></Card>)}</div></div></section>
+        <section className="mx-auto max-w-7xl px-6 pb-20"><div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:p-8"><div className="mb-8 max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.resultsLabel}</p><h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-[2.6rem]">{t.resultsTitle}</h2><p className="mt-4 leading-7 text-slate-300">{t.resultsText}</p></div><div className="grid gap-5 md:grid-cols-3">{t.cases.map((item) => <Card key={item.title} className="bg-white/[0.05]"><CardContent className="flex h-full flex-col p-6"><div className="mb-4 inline-flex w-fit rounded-full bg-cyan-300/10 px-3 py-1 text-xs font-medium text-cyan-200">{item.tag}</div><h3 className="text-xl font-bold text-white">{item.title}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{item.text}</p><div className="mt-auto pt-5 space-y-2">{item.links?.map(([label, href]) => <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm text-slate-200 transition hover:border-cyan-300/30 hover:bg-cyan-300/10"><span>{label}</span><ExternalLink className="h-4 w-4 text-cyan-200" /></a>)}</div></CardContent></Card>)}</div></div></section>
 
-        <section className="border-y border-white/10 bg-white/[0.03]"><div className="mx-auto max-w-7xl px-6 py-16"><div className="mx-auto max-w-5xl text-center"><p className="text-sm font-semibold text-cyan-300">{t.problemLabel}</p><h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-[2.25rem] lg:text-[2.55rem]">{t.problemTitle}</h2></div><div className="mt-8 grid gap-3 md:grid-cols-3">{t.painPoints.map((item) => <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-slate-300">{item}</div>)}</div></div></section>
+        <section className="border-y border-white/10 bg-white/[0.03]">
+          <div className="mx-auto max-w-7xl px-6 py-16">
+            <div className="grid gap-8 lg:grid-cols-[1fr_0.42fr] lg:items-end">
+              <div className="max-w-5xl">
+                <p className="text-sm font-semibold text-cyan-300">{t.problemLabel}</p>
+                <h2 className="mt-3 max-w-4xl text-3xl font-bold leading-tight text-white md:text-[2.35rem] lg:text-[2.55rem]">{t.problemTitle}</h2>
+              </div>
+              <div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-5 text-sm leading-7 text-cyan-50">
+                <p className="font-semibold text-cyan-100">先處理資訊流，不急著做大系統</p>
+                <p className="mt-2 text-slate-300">把活動資訊、表單、LINE 問答、資料更新與成果紀錄先集中，後續才好擴充。</p>
+              </div>
+            </div>
+            <div className="mt-8 grid gap-3 md:grid-cols-3">{t.painPoints.map((item) => <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-slate-300">{item}</div>)}</div>
+          </div>
+        </section>
 
-        <section className="mx-auto max-w-7xl px-6 py-20"><div className="mx-auto mb-10 max-w-5xl text-center"><p className="text-sm font-semibold text-cyan-300">{t.audienceLabel}</p><h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-[2.25rem] lg:text-[2.55rem]">{t.audienceTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.audienceText}</p></div><div className="grid gap-5 md:grid-cols-2">{t.audienceGroups.map(([title, text]) => <Card key={title} className="bg-slate-900/70"><CardContent className="p-6"><p className="text-lg font-bold text-white">{title}</p><p className="mt-3 text-sm leading-6 text-slate-300">{text}</p></CardContent></Card>)}</div></section>
+        <section className="mx-auto max-w-7xl px-6 py-20">
+          <div className="mb-10 grid gap-8 lg:grid-cols-[1fr_0.42fr] lg:items-end">
+            <div className="max-w-5xl">
+              <p className="text-sm font-semibold text-cyan-300">{t.audienceLabel}</p>
+              <h2 className="mt-3 max-w-4xl text-3xl font-bold leading-tight text-white md:text-[2.35rem] lg:text-[2.55rem]">{t.audienceTitle}</h2>
+              <p className="mt-5 max-w-4xl leading-7 text-slate-300">{t.audienceText}</p>
+            </div>
+            <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-5 text-sm leading-7 text-slate-300">
+              <p className="font-semibold text-white">主軸優先順序</p>
+              <p className="mt-2">中型系統案優先：公益協會、活動課程、論壇研討會、地方團隊與多據點服務。</p>
+            </div>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2">{t.audienceGroups.map(([title, text]) => <Card key={title} className="bg-slate-900/70"><CardContent className="p-6"><p className="text-lg font-bold text-white">{title}</p><p className="mt-3 text-sm leading-6 text-slate-300">{text}</p></CardContent></Card>)}</div>
+        </section>
 
         <section className="mx-auto max-w-7xl px-6 pb-20">
           <div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-6 md:p-8">
-            <div className="mx-auto mb-8 max-w-5xl text-center">
+            <div className="mb-8 max-w-5xl">
               <p className="text-sm font-semibold text-cyan-200">{t.eventSystemLabel}</p>
-              <h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-[2.25rem] lg:text-[2.55rem]">{t.eventSystemTitle}</h2>
+              <h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-[2.6rem]">{t.eventSystemTitle}</h2>
               <p className="mt-5 leading-7 text-slate-300">{t.eventSystemText}</p>
             </div>
             <div className="grid gap-5 lg:grid-cols-2 lg:grid-cols-3">
@@ -670,21 +697,44 @@ export default function App() {
           </div>
         </section>
 
-        <section id="solution" className="mx-auto max-w-7xl px-6 py-20"><div className="mx-auto mb-10 max-w-5xl text-center"><p className="text-sm font-semibold text-cyan-300">{t.buildLabel}</p><h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-[2.25rem] lg:text-[2.55rem]">{t.buildTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.buildText}</p></div><div className="grid gap-5 md:grid-cols-4">{t.features.map((feature) => { const Icon = feature.icon; return <Card key={feature.title}><CardContent className="p-6"><div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/10"><Icon className="h-6 w-6 text-cyan-300" /></div><h3 className="text-lg font-semibold text-white">{feature.title}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{feature.text}</p></CardContent></Card>; })}</div></section>
+        <section id="solution" className="mx-auto max-w-7xl px-6 py-20">
+          <div className="mb-10 grid gap-8 lg:grid-cols-[1fr_0.42fr] lg:items-end">
+            <div className="max-w-5xl">
+              <p className="text-sm font-semibold text-cyan-300">{t.buildLabel}</p>
+              <h2 className="mt-3 max-w-4xl text-3xl font-bold leading-tight text-white md:text-[2.35rem] lg:text-[2.55rem]">{t.buildTitle}</h2>
+              <p className="mt-5 max-w-4xl leading-7 text-slate-300">{t.buildText}</p>
+            </div>
+            <div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-5 text-sm leading-7 text-cyan-50">
+              <p className="font-semibold text-cyan-100">交付不是只有頁面</p>
+              <p className="mt-2 text-slate-300">可以包含 LINE 流程、資料查詢、後台更新、Dashboard 與操作說明。</p>
+            </div>
+          </div>
+          <div className="grid gap-5 md:grid-cols-4">{t.features.map((feature) => { const Icon = feature.icon; return <Card key={feature.title}><CardContent className="p-6"><div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/10"><Icon className="h-6 w-6 text-cyan-300" /></div><h3 className="text-lg font-semibold text-white">{feature.title}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{feature.text}</p></CardContent></Card>; })}</div>
+        </section>
 
-        <section className="border-y border-white/10 bg-white/[0.03]"><div className="mx-auto max-w-7xl px-6 py-20"><div className="mx-auto mb-10 max-w-5xl text-center"><p className="text-sm font-semibold text-cyan-300">{t.flowLabel}</p><h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-[2.25rem] lg:text-[2.55rem]">{t.flowTitle}</h2></div><div className="grid gap-5 md:grid-cols-4">{t.offerSteps.map(([title, text]) => <Card key={title} className="bg-slate-900/70"><CardContent className="p-6"><p className="text-sm font-semibold text-cyan-300">{title}</p><p className="mt-4 text-sm leading-7 text-slate-300">{text}</p></CardContent></Card>)}</div><div className="mt-8 grid gap-3 md:grid-cols-4">{t.outcomes.map((item) => <div key={item} className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4 text-sm leading-6 text-cyan-50">{item}</div>)}</div></div></section>
+        <section className="border-y border-white/10 bg-white/[0.03]"><div className="mx-auto max-w-7xl px-6 py-20"><div className="mb-10 max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.flowLabel}</p><h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-[2.6rem]">{t.flowTitle}</h2></div><div className="grid gap-5 md:grid-cols-4">{t.offerSteps.map(([title, text]) => <Card key={title} className="bg-slate-900/70"><CardContent className="p-6"><p className="text-sm font-semibold text-cyan-300">{title}</p><p className="mt-4 text-sm leading-7 text-slate-300">{text}</p></CardContent></Card>)}</div><div className="mt-8 grid gap-3 md:grid-cols-4">{t.outcomes.map((item) => <div key={item} className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4 text-sm leading-6 text-cyan-50">{item}</div>)}</div></div></section>
 
         <section id="packages" className="mx-auto max-w-7xl px-6 py-20">
-          <div className="mx-auto mb-10 max-w-5xl text-center"><p className="text-sm font-semibold text-cyan-300">{t.packageLabel}</p><h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-[2.25rem] lg:text-[2.55rem]">{t.packageTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.packageText}</p></div>
+          <div className="mb-10 grid gap-8 lg:grid-cols-[1fr_0.42fr] lg:items-end">
+            <div className="max-w-5xl">
+              <p className="text-sm font-semibold text-cyan-300">{t.packageLabel}</p>
+              <h2 className="mt-3 max-w-4xl text-3xl font-bold leading-tight text-white md:text-[2.35rem] lg:text-[2.55rem]">{t.packageTitle}</h2>
+              <p className="mt-5 max-w-4xl leading-7 text-slate-300">{t.packageText}</p>
+            </div>
+            <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-5 text-sm leading-7 text-slate-300">
+              <p className="font-semibold text-white">價格先看範圍</p>
+              <p className="mt-2">學生價保留，實際報價會依功能、資料量、時程、驗收與維護範圍確認。</p>
+            </div>
+          </div>
 
           <div className="mb-14">
-            <div className="mb-8">
-              <div className="mx-auto max-w-5xl text-center">
+            <div className="mb-8 grid gap-6 lg:grid-cols-[1fr_0.42fr] lg:items-end">
+              <div className="max-w-5xl">
                 <p className="text-sm font-semibold text-cyan-200">{t.midPlanLabel}</p>
-                <h3 className="mt-3 text-3xl font-bold leading-tight text-white md:text-[2.25rem] lg:text-[2.55rem]">{t.midPlanTitle}</h3>
-                <p className="mt-4 leading-7 text-slate-300">{t.midPlanText}</p>
+                <h3 className="mt-3 max-w-4xl text-3xl font-bold leading-tight text-white md:text-[2.35rem] lg:text-[2.55rem]">{t.midPlanTitle}</h3>
+                <p className="mt-4 max-w-4xl leading-7 text-slate-300">{t.midPlanText}</p>
               </div>
-              <div className="mx-auto mt-5 max-w-3xl rounded-2xl border border-cyan-300/20 bg-cyan-300/10 px-4 py-3 text-center text-sm leading-6 text-cyan-50">
+              <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 px-4 py-3 text-sm leading-6 text-cyan-50">
                 中型案重點：先確認流程與資料，再決定功能範圍，不用一開始就做滿全部功能。
               </div>
             </div>
@@ -733,7 +783,7 @@ export default function App() {
           </div>
 
           <div className="mb-12 rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:p-8">
-            <div className="mx-auto mb-7 max-w-3xl text-center">
+            <div className="mb-7 max-w-3xl">
               <p className="text-sm font-semibold text-cyan-300">{t.smallPlanLabel}</p>
               <h3 className="mt-3 text-2xl font-bold leading-tight text-white md:text-3xl">{t.smallPlanTitle}</h3>
               <p className="mt-4 leading-7 text-slate-300">{t.smallPlanText}</p>
@@ -771,7 +821,7 @@ export default function App() {
           </div>
 
           <div className="mb-12 rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:p-8">
-            <div className="mx-auto mb-6 max-w-3xl text-center">
+            <div className="mb-6 max-w-3xl">
               <p className="text-sm font-semibold text-cyan-300">{t.maintenanceLabel}</p>
               <h3 className="mt-3 text-2xl font-bold leading-tight text-white md:text-3xl">{t.maintenanceTitle}</h3>
               <p className="mt-4 text-sm leading-7 text-slate-300">{t.maintenanceText}</p>
@@ -799,7 +849,7 @@ export default function App() {
             <p className="mt-6 rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4 text-sm leading-6 text-cyan-50">{t.maintenanceNote}</p>
           </div>
 
-          <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"><div className="mx-auto max-w-5xl text-center"><p className="text-sm font-semibold text-cyan-300">{t.estimatorLabel}</p><h3 className="mt-3 text-2xl font-bold leading-tight text-white md:text-3xl">{t.estimatorTitle}</h3><p className="mt-4 leading-7 text-slate-300">{t.estimatorText}</p></div><button type="button" onClick={clearEstimate} className="w-fit rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-3 text-sm text-slate-200 transition hover:border-cyan-300/30 hover:bg-cyan-300/10">{t.clearAll}</button></div>
+          <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"><div className="max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.estimatorLabel}</p><h3 className="mt-3 text-2xl font-bold leading-tight text-white md:text-3xl">{t.estimatorTitle}</h3><p className="mt-4 leading-7 text-slate-300">{t.estimatorText}</p></div><button type="button" onClick={clearEstimate} className="w-fit rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-3 text-sm text-slate-200 transition hover:border-cyan-300/30 hover:bg-cyan-300/10">{t.clearAll}</button></div>
           <div className="grid gap-6 lg:grid-cols-[1.25fr_0.75fr]">
             <Card className="bg-slate-900/70"><CardContent className="p-5 md:p-7"><div className="grid gap-5 lg:grid-cols-2">
               {estimateOptions.map((item) => { const checked = selected.includes(item.id); return <button key={item.id} type="button" onClick={() => toggleOption(item.id)} className={`rounded-2xl border p-4 text-left transition ${checked ? "border-cyan-300/50 bg-cyan-300/10" : "border-white/10 bg-white/[0.04] hover:border-cyan-300/30 hover:bg-white/[0.07]"}`}><div className="flex items-start gap-3"><div className={`mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border ${checked ? "border-cyan-300 bg-cyan-300 text-slate-950" : "border-slate-500"}`}>{checked && <span className="text-xs font-black">✓</span>}</div><div><p className="font-semibold text-white">{item.label}</p><p className="mt-1 text-sm leading-6 text-slate-400">{item.desc}</p><p className="mt-3 text-sm font-semibold text-cyan-200">{t.modulePrice} {item.price.toLocaleString()} 起</p></div></div></button>; })}
@@ -810,7 +860,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="contact" className="mx-auto max-w-7xl px-6 pb-24"><div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-8 md:p-10"><div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center"><div><p className="text-sm font-semibold text-cyan-200">{t.contactLabel}</p><h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-[2.25rem] lg:text-[2.55rem]">{t.contactTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.contactText}</p></div><div className="rounded-3xl bg-slate-950/60 p-6 ring-1 ring-white/10"><p className="text-sm text-slate-400">{t.contactSmall}</p><p className="mt-4 text-sm leading-7 text-slate-300">{t.contactPrompt}</p><a href={estimateMailto}><Button className="mt-6 w-full">{t.contactButton} <ExternalLink className="ml-2 h-4 w-4" /></Button></a></div></div></div></section>
+        <section id="contact" className="mx-auto max-w-7xl px-6 pb-24"><div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-8 md:p-10"><div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center"><div><p className="text-sm font-semibold text-cyan-200">{t.contactLabel}</p><h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-[2.6rem]">{t.contactTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.contactText}</p></div><div className="rounded-3xl bg-slate-950/60 p-6 ring-1 ring-white/10"><p className="text-sm text-slate-400">{t.contactSmall}</p><p className="mt-4 text-sm leading-7 text-slate-300">{t.contactPrompt}</p><a href={estimateMailto}><Button className="mt-6 w-full">{t.contactButton} <ExternalLink className="ml-2 h-4 w-4" /></Button></a></div></div></div></section>
       </main>
     </div>
   );
