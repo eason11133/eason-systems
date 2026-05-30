@@ -26,7 +26,7 @@ function CardContent({ children, className = "" }) {
 }
 
 function Button({ children, variant = "solid", className = "" }) {
-  const base = "inline-flex items-center justify-center rounded-2xl px-6 py-4 text-base font-medium transition";
+  const base = "inline-flex items-center justify-center rounded-2xl px-6 py-3.5 text-[0.98rem] font-medium transition";
   const styles =
     variant === "outline"
       ? "border border-slate-600 bg-transparent text-slate-100 hover:bg-white/10"
@@ -39,7 +39,7 @@ const content = {
   zh: {
     navContact: "聯絡評估",
     badge: "主攻活動、課程、公益與協會的中型流程系統",
-    heroTop: "把活動、課程與組織流程，",
+    heroTop: "把活動、課程與組織流程",
     heroHighlight: "整理成可上線系統",
     heroText:
       "我協助活動、課程、公益與小型組織，把分散的 LINE 詢問、報名流程、FAQ、資料管理與使用數據，整理成可上線、可維護、可追蹤的 Web / LINE 系統。主力不是低價小網頁，而是能解決實際流程問題的中型系統案。",
@@ -50,7 +50,7 @@ const content = {
     stat2Text: "活動、表單、FAQ 整合",
     stat3Title: "數據",
     stat3Text: "查詢、點擊與活動統計",
-    rightBadge: "Real System Evidence",
+    rightBadge: "Real system evidence",
     rightSmall: "我可以協助什麼",
     rightTitle: "需求整理 → 開發上線",
     rightCards: [
@@ -246,7 +246,7 @@ const content = {
     stat2Text: "Events, forms, FAQs",
     stat3Title: "Data",
     stat3Text: "Query, click, and event analytics",
-    rightBadge: "Real System Evidence",
+    rightBadge: "Real system evidence",
     rightSmall: "How I can help",
     rightTitle: "Scope → Build → Expand",
     rightCards: [
@@ -554,7 +554,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top_left,#0e7490_0%,transparent_28%),radial-gradient(circle_at_85%_12%,#312e81_0%,transparent_30%),linear-gradient(135deg,#020617_0%,#07111f_45%,#0f172a_100%)] text-slate-100">
+    <div className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top_left,#0e7490_0%,transparent_28%),radial-gradient(circle_at_85%_12%,#312e81_0%,transparent_30%),linear-gradient(135deg,#020617_0%,#07111f_45%,#0f172a_100%)] text-slate-100 antialiased [font-feature-settings:'palt']">
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.055)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:72px_72px] opacity-20" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(2,6,23,0.42)_58%,rgba(2,6,23,0.92)_100%)]" />
@@ -584,22 +584,22 @@ export default function App() {
       </header>
 
       <main className="relative z-10">
-        <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-16 pt-14 lg:grid-cols-[0.9fr_0.85fr] md:items-center md:pt-16">
+        <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-16 pt-14 lg:grid-cols-[0.82fr_0.9fr] md:items-center md:pt-16">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.6 }}>
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-200">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-[0.95rem] leading-none text-cyan-200">
               <Sparkles className="h-4 w-4" />
               {t.badge}
             </div>
-            <h1 style={{ textWrap: "balance" }} className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-white md:text-5xl lg:text-[3.7rem] xl:text-[4rem]">
-              {t.heroTop}
-              <span className="block text-cyan-300">{t.heroHighlight}</span>
+            <h1 className="max-w-[42rem] text-[2.65rem] font-semibold leading-[1.16] tracking-normal text-white md:text-[3.35rem] lg:text-[3.65rem] xl:text-[3.85rem]">
+              <span className="block whitespace-normal md:whitespace-nowrap">{t.heroTop}</span>
+              <span className="mt-1 block whitespace-normal text-cyan-300 md:whitespace-nowrap">{t.heroHighlight}</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">{t.heroText}</p>
+            <p className="mt-6 max-w-[39rem] text-base leading-8 text-slate-300 md:text-[1.05rem]">{t.heroText}</p>
 
-            <div className="mt-7 grid max-w-xl gap-3 sm:grid-cols-3">
+            <div className="mt-7 grid max-w-[37rem] gap-3 sm:grid-cols-3">
               {[[t.stat1Title, t.stat1Text, true], [t.stat2Title, t.stat2Text], [t.stat3Title, t.stat3Text]].map(([title, text, accent]) => (
                 <div key={title} className={`rounded-2xl border p-4 ${accent ? "border-cyan-300/20 bg-cyan-300/10" : "border-white/10 bg-white/[0.06]"}`}>
-                  <p className="text-2xl font-bold text-white md:text-3xl">{title}</p>
+                  <p className="text-[1.65rem] font-semibold leading-none text-white md:text-[1.85rem]">{title}</p>
                   <p className={`mt-1 text-sm ${accent ? "text-cyan-100" : "text-slate-300"}`}>{text}</p>
                 </div>
               ))}
@@ -617,15 +617,15 @@ export default function App() {
                   <div className="flex items-center gap-3"><div className="h-3 w-3 rounded-full bg-red-400" /><div className="h-3 w-3 rounded-full bg-yellow-400" /><div className="h-3 w-3 rounded-full bg-green-400" /></div>
                   <span className="rounded-full bg-cyan-300/10 px-3 py-1 text-xs text-cyan-200">{t.rightBadge}</span>
                 </div>
-                <div className="rounded-3xl bg-slate-900/70 p-5 ring-1 ring-white/10">
+                <div className="rounded-3xl bg-slate-900/70 p-5 ring-1 ring-white/10 md:p-6">
                   <p className="text-sm font-semibold text-cyan-200">{t.rightSmall}</p>
-                  <h3 className="mt-3 text-xl font-bold leading-tight text-white md:text-2xl">{t.rightTitle}</h3>
+                  <h3 className="mt-3 text-xl font-semibold leading-snug tracking-normal text-white md:text-[1.45rem]">{t.rightTitle}</h3>
                   <div className="mt-5 space-y-3">
                     {t.rightCards.map(([title, text], idx) => (
                       <div key={title} className={`rounded-2xl border p-4 ${idx === 2 ? "border-cyan-300/20 bg-cyan-300/10" : "border-white/10 bg-white/[0.06]"}`}>
                         <div className="flex items-start gap-3">
                           {idx === 2 ? <LineChart className="mt-0.5 h-5 w-5 text-cyan-200" /> : <div className="mt-1 h-2.5 w-2.5 rounded-full bg-cyan-300" />}
-                          <div><p className="font-semibold text-white">{title}</p><p className="mt-1 text-sm leading-6 text-slate-300">{text}</p></div>
+                          <div><p className="font-semibold text-white">{title}</p><p className="mt-1 text-sm leading-7 text-slate-300">{text}</p></div>
                         </div>
                       </div>
                     ))}
