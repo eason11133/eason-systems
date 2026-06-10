@@ -40,7 +40,7 @@ const content = {
     navContact: "聯絡評估",
     badge: "主攻有活動、有收入、有流程痛點的中型流程系統",
     heroTop: "不只是做網站",
-    heroHighlight: "而是整理不用每天人工救火的流程",
+    heroHighlight: "而是整理不再每天救火的流程",
     heroText:
       "我協助活動公司、課程品牌、營隊、地方創生、社會企業與有活動/課程的組織，把報名、FAQ、LINE 詢問、名單狀態、資料管理與成果統計整理成一套流程。重點不是取代 Google 表單，而是把 Google 工具做不到的後續通知、狀態追蹤與管理流程串起來。",
     heroButton: "查看中型方案與真實案例",
@@ -600,17 +600,17 @@ export default function App() {
       </header>
 
       <main className="relative z-10">
-        <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-16 pt-14 lg:grid-cols-[0.82fr_0.9fr] md:items-center md:pt-16">
-          <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.6 }}>
+        <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-16 pt-14 lg:grid-cols-[minmax(0,1fr)_minmax(360px,0.82fr)] md:items-center md:pt-16">
+          <motion.div className="min-w-0" initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.6 }}>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-[0.95rem] leading-none text-cyan-200">
               <Sparkles className="h-4 w-4" />
               {t.badge}
             </div>
-            <h1 className="max-w-[42rem] text-[2.65rem] font-semibold leading-[1.16] tracking-normal text-white md:text-[3.35rem] lg:text-[3.65rem] xl:text-[3.85rem]">
-              <span className="block whitespace-normal md:whitespace-nowrap">{t.heroTop}</span>
-              <span className="mt-1 block whitespace-normal text-cyan-300 md:whitespace-nowrap">{t.heroHighlight}</span>
+            <h1 className="max-w-[44rem] break-words text-[2.45rem] font-semibold leading-[1.18] tracking-normal text-white md:text-[3rem] lg:text-[3.25rem] xl:text-[3.45rem]">
+              <span className="block whitespace-normal">{t.heroTop}</span>
+              <span className="mt-1 block whitespace-normal text-cyan-300">{t.heroHighlight}</span>
             </h1>
-            <p className="mt-6 max-w-[39rem] text-base leading-8 text-slate-300 md:text-[1.05rem]">{t.heroText}</p>
+            <p className="mt-6 max-w-[40rem] break-words text-base leading-8 text-slate-300 md:text-[1.05rem]">{t.heroText}</p>
 
             <div className="mt-7 grid max-w-[37rem] gap-3 sm:grid-cols-3">
               {[[t.stat1Title, t.stat1Text, true], [t.stat2Title, t.stat2Text], [t.stat3Title, t.stat3Text]].map(([title, text, accent]) => (
@@ -626,7 +626,7 @@ export default function App() {
             </div>
           </motion.div>
 
-          <motion.div className="w-full md:max-w-xl md:justify-self-end" initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.1 }}>
+          <motion.div className="w-full min-w-0 md:max-w-xl md:justify-self-end" initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.1 }}>
             <Card className="bg-white/10 shadow-2xl backdrop-blur">
               <CardContent className="p-5 md:p-7">
                 <div className="mb-6 flex items-center justify-between gap-3">
@@ -635,7 +635,7 @@ export default function App() {
                 </div>
                 <div className="rounded-3xl bg-slate-900/70 p-5 ring-1 ring-white/10 md:p-6">
                   <p className="text-sm font-semibold text-cyan-200">{t.rightSmall}</p>
-                  <h3 className="mt-3 text-xl font-semibold leading-snug tracking-normal text-white md:text-[1.45rem]">{t.rightTitle}</h3>
+                  <h3 className="mt-3 break-words text-xl font-semibold leading-snug tracking-normal text-white md:text-[1.45rem]">{t.rightTitle}</h3>
                   <div className="mt-5 space-y-3">
                     {t.rightCards.map(([title, text], idx) => (
                       <div key={title} className={`rounded-2xl border p-4 ${idx === 2 ? "border-cyan-300/20 bg-cyan-300/10" : "border-white/10 bg-white/[0.06]"}`}>
