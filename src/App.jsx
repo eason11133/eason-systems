@@ -221,7 +221,7 @@ const content = {
     resultsTitle: "先看真實上線成果，再討論你的版本",
     resultsText: "這裡優先放在前面，讓合作方先確認我有真實上線、真實使用者、真實數據介面的經驗。公廁 Bot 與 Dashboard 是已公開的實作成果；規劃中專案會清楚標示為需求規劃或實作規劃經驗，不會包裝成已完成案例。",
     cases: [
-      { title: "公廁 Bot：公共服務據點查詢系統", tag: "真實上線案例", text: "以 LINE 作為入口，整合定位查詢、公共廁所資料、候選點篩選與 NTS / Trust Score 版本比較。這個案例證明我能把開放資料、LINE 操作流程、查詢邏輯與 Dashboard 數據介面整理成可被真實使用者操作的系統。", links: [["查看公廁介紹網站", "https://ytpeter777.github.io/ToiletMVP.DEV/"], ["查看 Dashboard", "https://school-i9co.onrender.com/dashboard"]] },
+      { title: "公廁 Bot：公共服務據點查詢系統", tag: "真實上線案例", text: "以 LINE 作為入口，整合定位查詢、公共廁所資料、候選點篩選與 NTS / Trust Score 版本比較。這個案例證明我能把開放資料、LINE 操作流程、查詢邏輯與 Dashboard 數據介面整理成可被真實使用者操作的系統。", links: [["查看公廁介紹網站", "https://toilet-mvp-dev.vercel.app/#media"], ["查看 Dashboard", "https://school-i9co.onrender.com/dashboard"]] },
       { title: "LINE Bot 實際上線入口", tag: "實際使用入口", text: "這是公廁 Bot 的實際上線入口，可讓潛在客戶直接體驗使用者如何透過 LINE 完成查詢、定位與結果回傳。", links: [["加入 / 體驗 LINE Bot", "https://line.me/R/ti/p/@439avyvf"]] },
       { title: "野生動物救傷 LINE Bot", tag: "實作規劃經驗", text: "目前屬於需求討論與流程規劃中的公益單位系統方向，包含動物分類、外來種判斷、救傷資訊、位置查詢與基礎資料管理。此處作為相關實作規劃經驗，不標示為已完成合作案例。", links: [] },
     ],
