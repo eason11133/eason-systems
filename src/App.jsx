@@ -38,9 +38,9 @@ function Button({ children, variant = "solid", className = "" }) {
 const content = {
   zh: {
     navContact: "聯絡評估",
-    badge: "主攻有活動、有收入、有流程痛點的中型流程系統",
-    heroTop: "我協助活動、課程與營隊團隊",
-    heroHighlight: "把分散資訊整理成 Web / LINE 系統",
+    badge: "課程、營隊、活動流程整理｜LINE / Web 系統開發",
+    heroTop: "我協助課程、營隊與活動團隊",
+    heroHighlight: "整理成可查詢、可報名、可管理的系統",
     heroText:
       "我協助把分散在 LINE、Google 表單、私訊與表格中的資訊，整理成可以查詢、報名、管理與追蹤的 Web / LINE 系統。適合有課程報名、活動資訊、家長詢問、FAQ、名單整理或成果紀錄需求，但目前還靠人工整理、Google 表單、社群私訊與表格處理的團隊。",
     heroButton: "看我能幫忙的場景",
@@ -87,8 +87,8 @@ const content = {
       ["早期合作彈性", "目前仍在累積案例階段，價格與合作方式會比一般客製系統更彈性。"],
     ],
     eventSystemLabel: "Event / Forum Systems",
-    eventSystemTitle: "活動與論壇流程系統",
-    eventSystemText: "若單位正在籌備大型活動、論壇、研討會、營隊或系列課程，我可以協助把活動前、中、後的資訊流程整理成一套系統：不是多做一個網頁，而是減少主辦方反覆回覆、手動整理名單與活動後補資料的壓力。",
+    eventSystemTitle: "課程、營隊與活動流程系統",
+    eventSystemText: "若單位正在經營課程、營隊、親子活動、工作坊或系列活動，我可以協助把活動前、中、後的資訊與報名流程整理成一套系統：不是多做一個網頁，而是減少主辦方反覆回覆、手動整理名單與活動後補資料的壓力。",
     eventSystemPoints: [
       ["活動網站 / 論壇資訊頁", "議程、講者、時間地點、交通資訊、注意事項與聯絡窗口"],
       ["報名流程整合", "串接既有報名表，或整理報名欄位、報名後通知與確認流程"],
@@ -117,16 +117,16 @@ const content = {
     ],
     outcomes: ["把模糊想法整理成清楚功能與流程", "讓使用者能真的在線上完成查詢或操作", "讓資料或內容可以由管理者自己維護", "讓系統未來能累積使用紀錄與成果數據"],
     packageLabel: "Plans & Pricing",
-    packageTitle: "主力是能省人工混亂的中型流程系統，小方案只是入口",
+    packageTitle: "主力是能減少重複詢問與人工整理的流程系統",
     packageText: "如果只是單純活動頁或報名表，我會建議用現成工具或小方案即可；如果需求包含報名後通知、LINE FAQ、名單狀態、資料查詢、後台管理、Dashboard 或長期更新，才會優先規劃成中型系統案。",
     midPlanLabel: "Main Focus",
-    midPlanTitle: "主力中型系統案",
+    midPlanTitle: "常見合作方向",
     midPlanText: "這是目前最適合作為正式合作主軸的案型，適合活動公司、課程品牌、營隊、地方創生、社會企業、教育新創，以及有勸募、活動或課程的 NGO。若你需要的不只是漂亮頁面，而是讓使用者能查詢、填寫、收到回覆，並讓管理者能更新資料、追蹤狀態與查看紀錄，這類方案會比單純小網頁更適合。",
     midPlans: [
-      { name: "LINE Bot + 後台資料管理", price: "早期合作價 NT$ 50,000–100,000 起", subtitle: "適合公益、協會、活動團隊與小型組織", items: ["LINE Bot 流程與 FAQ 分流", "後台新增 / 編輯資料", "資料查詢與基礎統計", "測試、上線與操作說明"] },
-      { name: "據點查詢 / 地圖推薦系統", price: "早期合作價 NT$ 60,000–150,000 起", subtitle: "適合救傷中心、社福據點、服務據點與地方資料", items: ["使用者定位與最近據點推薦", "Google Maps 導航連結", "據點資料後台管理", "查詢紀錄與成果追蹤"] },
-      { name: "活動 / 課程流程系統", price: "早期合作價 NT$ 50,000–120,000 起", subtitle: "適合營隊、課程中心、工作坊與親子活動", items: ["活動資訊與報名流程整理", "LINE 導覽與常見問題", "活動資料後台更新", "行前資訊與基礎統計"] },
-      { name: "小型 CRM / 內部管理工具", price: "早期合作價 NT$ 50,000–120,000 起", subtitle: "適合需要管理名單、案件、狀態與交付日期的團隊", items: ["名單 / 客戶 / 案件管理", "狀態追蹤與日期提醒", "金額統計與搜尋篩選", "可依流程客製欄位與版面"] },
+      { name: "LINE Bot + 後台資料管理", price: "NT$ 50,000–100,000 起", subtitle: "適合公益、協會、活動團隊與小型組織", items: ["LINE Bot 流程與 FAQ 分流", "後台新增 / 編輯資料", "資料查詢與基礎統計", "測試、上線與操作說明"] },
+      { name: "據點查詢 / 地圖推薦系統", price: "NT$ 60,000–150,000 起", subtitle: "適合救傷中心、社福據點、服務據點與地方資料", items: ["使用者定位與最近據點推薦", "Google Maps 導航連結", "據點資料後台管理", "查詢紀錄與成果追蹤"] },
+      { name: "活動 / 課程流程系統", price: "NT$ 50,000–120,000 起", subtitle: "適合營隊、課程中心、工作坊與親子活動", items: ["活動資訊與報名流程整理", "LINE 導覽與常見問題", "活動資料後台更新", "行前資訊與基礎統計"] },
+      { name: "小型 CRM / 內部管理工具", price: "NT$ 50,000–120,000 起", subtitle: "適合需要管理名單、案件、狀態與交付日期的團隊", items: ["名單 / 客戶 / 案件管理", "狀態追蹤與日期提醒", "金額統計與搜尋篩選", "可依流程客製欄位與版面"] },
     ],
     midPlanNote: "中型系統案會先用 Email 或 LINE 確認需求，再視情況安排 15–30 分鐘線上討論，確認功能範圍、時程、報價、付款節點、驗收方式與上線後維護。",
     midPlanButton: "詢問這個中型系統案",
@@ -135,10 +135,10 @@ const content = {
     smallPlanTitle: "小型入門方案（非主推）",
     smallPlanText: "小方案只保留給需求單純、想先整理資訊或測試合作的客戶。若需求包含資料管理、查詢、後台、Dashboard、定位、長期更新或多角色流程，會直接建議改談上方中型系統案。",
     smallPlans: [
-      { name: "一頁式活動 / 課程網頁", price: "早期合作價 NT$ 8,000–15,000", subtitle: "適合活動、課程、營隊、講座、工作坊", items: ["活動介紹與重點整理", "報名連結 / 表單整合", "時間地點與注意事項", "FAQ 與聯絡資訊"] },
-      { name: "LINE 官方帳號整理", price: "早期合作價 NT$ 5,000–10,000", subtitle: "適合已經有 LINE，但資訊分散或選單不好用", items: ["圖文選單規劃", "常見問題分類", "表單 / 官網 / 社群連結整理", "基礎回覆文字整理"] },
-      { name: "小店 / 個人品牌資訊頁", price: "早期合作價 NT$ 6,000–18,000", subtitle: "適合小店、餐飲、個人品牌、自由工作者或市集品牌", items: ["店家 / 個人介紹", "菜單 / 服務項目 / 價格整理", "Google 地圖 / 預約 / 表單連結", "LINE / IG / 電話整合"] },
-      { name: "FAQ / 資訊整理版", price: "早期合作價 NT$ 10,000–20,000", subtitle: "適合重複詢問很多，但暫時不需要後台的單位", items: ["5–10 個常見問題整理", "基本分流與按鈕導覽", "外部連結整合", "基礎測試與操作說明"] },
+      { name: "一頁式活動 / 課程網頁", price: "NT$ 8,000–15,000", subtitle: "適合活動、課程、營隊、講座、工作坊", items: ["活動介紹與重點整理", "報名連結 / 表單整合", "時間地點與注意事項", "FAQ 與聯絡資訊"] },
+      { name: "LINE 官方帳號整理", price: "NT$ 5,000–10,000", subtitle: "適合已經有 LINE，但資訊分散或選單不好用", items: ["圖文選單規劃", "常見問題分類", "表單 / 官網 / 社群連結整理", "基礎回覆文字整理"] },
+      { name: "小店 / 個人品牌資訊頁", price: "NT$ 6,000–18,000", subtitle: "適合小店、餐飲、個人品牌、自由工作者或市集品牌", items: ["店家 / 個人介紹", "菜單 / 服務項目 / 價格整理", "Google 地圖 / 預約 / 表單連結", "LINE / IG / 電話整合"] },
+      { name: "FAQ / 資訊整理版", price: "NT$ 10,000–20,000", subtitle: "適合重複詢問很多，但暫時不需要後台的單位", items: ["5–10 個常見問題整理", "基本分流與按鈕導覽", "外部連結整合", "基礎測試與操作說明"] },
     ],
     upgradeNote: "小方案以資訊整理與簡單頁面 / LINE 流程為主，不包含客製後台、資料庫、Dashboard、定位查詢或複雜流程。若合作過程中發現需要長期更新、資料管理或查詢功能，會改以中型系統案重新評估。",
     smallPlanButton: "選這個方案來信討論",
@@ -146,8 +146,8 @@ const content = {
     crmPlanButton: "選這個 CRM 方案來信討論",
     crmMailSubject: "接案 CRM / 管理系統詢問｜",
     crmLabel: "CRM / Internal Tools",
-    crmTitle: "也可以客製接案追蹤、客戶管理或內部工作系統",
-    crmText: "如果你平常用 Excel、Google Sheet 或記事本追蹤客戶、寄信、回覆、金額與交付日期，也可以做成一套自己的管理工具。CRM 簡單來說就是客戶與工作進度管理系統，幫你知道誰還沒聯絡、誰要追蹤、哪一案有機會成交、今天該做什麼。",
+    crmTitle: "其他可客製：接案追蹤、客戶管理或內部工作系統",
+    crmText: "這不是目前首頁主推方向，但如果你平常用 Excel、Google Sheet 或記事本追蹤客戶、寄信、回覆、金額與交付日期，也可以做成一套自己的管理工具。CRM 簡單來說就是客戶與工作進度管理系統，幫你知道誰還沒聯絡、誰要追蹤、哪一案有機會成交、今天該做什麼。",
     crmExplainTitle: "CRM 是什麼？",
     crmExplainText: "不用把它想得很企業。它可以只是把名單、Email、狀態、日期、方案、預計收入、實際收款與每日任務放在同一個畫面，讓你不用一直翻表格或忘記追蹤。",
     crmPreviewTitle: "實例預覽：接案名單追蹤系統",
@@ -155,9 +155,9 @@ const content = {
     crmPreviewStats: [["100", "客戶名單"], ["100", "已寄信"], ["500K", "預計收益"], ["今日", "任務檢查"]],
     crmPreviewRows: ["日期滾輪：寄信 / 追蹤 / 工作 / 交付", "名單一覽：狀態、方案、Email、下一步", "每日任務：達成或未達成延到明天"],
     crmPlans: [
-      { name: "個人本機管理工具", price: "早期合作價 NT$ 15,000 起", subtitle: "適合個人接案者、學生或小型業務自己使用", items: ["客戶名單與狀態追蹤", "日期滾輪與每日事項", "預計收益 / 實際收款", "資料存在使用者瀏覽器"] },
-      { name: "客製欄位管理工具", price: "早期合作價 NT$ 25,000–40,000 起", subtitle: "適合有固定流程、欄位與追蹤需求的工作室", items: ["客製狀態與欄位", "批量貼上與搜尋篩選", "進行中工作與交付日期", "依實際流程調整版面"] },
-      { name: "雲端團隊管理工具", price: "早期合作價 NT$ 50,000 起，依需求評估", subtitle: "適合多人共用，需要登入、資料庫或權限管理", items: ["登入與雲端資料庫", "多人共用與權限規劃", "備份與資料管理", "可加 Dashboard / 統計分析"] },
+      { name: "個人本機管理工具", price: "NT$ 15,000 起", subtitle: "適合個人接案者、學生或小型業務自己使用", items: ["客戶名單與狀態追蹤", "日期滾輪與每日事項", "預計收益 / 實際收款", "資料存在使用者瀏覽器"] },
+      { name: "客製欄位管理工具", price: "NT$ 25,000–40,000 起", subtitle: "適合有固定流程、欄位與追蹤需求的工作室", items: ["客製狀態與欄位", "批量貼上與搜尋篩選", "進行中工作與交付日期", "依實際流程調整版面"] },
+      { name: "雲端團隊管理工具", price: "NT$ 50,000 起，依需求評估", subtitle: "適合多人共用，需要登入、資料庫或權限管理", items: ["登入與雲端資料庫", "多人共用與權限規劃", "備份與資料管理", "可加 Dashboard / 統計分析"] },
     ],
     crmNote: "個人本機版適合自己使用，價格較低，但資料主要存在同一台電腦與瀏覽器。若需要多人登入、雲端同步、權限、正式資料庫、備份或長期維護，會建議改做雲端團隊版，價格也會依需求提高。",
     maintenancePlanButton: "選這個維護方案來信討論",
@@ -166,21 +166,21 @@ const content = {
     maintenanceTitle: "上線後也可以選擇單次修改或每月維護",
     maintenanceText: "小方案或完整系統完成後，如果需要後續調整、內容更新、穩定代管或使用數據整理，可以依需求選擇單次維護或月維護。維護費是處理、檢查與協助的服務費；主機費、資料庫費或外部平台費用則依實際平台另計。",
     maintenancePlans: [
-      { name: "單次修改 / 小維護", price: "早期合作價 NT$ 1,000–5,000 起 / 次", subtitle: "適合偶爾改文字、連結、圖片或小功能", items: ["文字、連結、FAQ 小幅更新", "表單或按鈕連結調整", "簡單錯誤修正", "不含大型功能重做"] },
-      { name: "每月基礎維護", price: "早期合作價 NT$ 1,500–6,000 起 / 月", subtitle: "適合希望系統有人定期檢查與小幅調整", items: ["每月小幅內容更新", "基礎問題排查", "簡易使用狀況整理", "LINE / 網站連結與功能檢查"] },
-      { name: "月報 / 資料更新維護", price: "早期合作價 NT$ 2,000–8,000 起 / 月", subtitle: "適合有後台、活動資料或 Dashboard 的系統", items: ["協助更新資料或活動資訊", "整理查詢、點擊或表單紀錄", "簡易月報或成果摘要", "依資料量與更新頻率調整"] },
-      { name: "主機與系統代管", price: "早期合作價 NT$ 300–500 起 / 月", subtitle: "主機費另計，適合需要長期穩定上線的系統", items: ["部署與環境設定協助", "每月基本上線檢查", "小型異常判斷與重啟協助", "平台費用另計，不含新增功能"] },
+      { name: "單次修改 / 小維護", price: "NT$ 1,000–5,000 起 / 次", subtitle: "適合偶爾改文字、連結、圖片或小功能", items: ["文字、連結、FAQ 小幅更新", "表單或按鈕連結調整", "簡單錯誤修正", "不含大型功能重做"] },
+      { name: "每月基礎維護", price: "NT$ 1,500–6,000 起 / 月", subtitle: "適合希望系統有人定期檢查與小幅調整", items: ["每月小幅內容更新", "基礎問題排查", "簡易使用狀況整理", "LINE / 網站連結與功能檢查"] },
+      { name: "月報 / 資料更新維護", price: "NT$ 2,000–8,000 起 / 月", subtitle: "適合有後台、活動資料或 Dashboard 的系統", items: ["協助更新資料或活動資訊", "整理查詢、點擊或表單紀錄", "簡易月報或成果摘要", "依資料量與更新頻率調整"] },
+      { name: "主機與系統代管", price: "NT$ 300–500 起 / 月", subtitle: "主機費另計，適合需要長期穩定上線的系統", items: ["部署與環境設定協助", "每月基本上線檢查", "小型異常判斷與重啟協助", "平台費用另計，不含新增功能"] },
     ],
     maintenanceNote: "實際維護範圍會在合作前確認。目前為早期案例累積階段，價格會比一般客製系統更彈性，但仍會正式確認功能範圍、時程、付款與驗收方式。若只是靜態一頁式網頁，通常不一定需要月維護；若有後台、資料庫、LINE Bot、Dashboard 或長期活動資料更新，建議至少保留基本維護與主機費預算。主機代管服務費通常是協助部署、檢查、重啟與基本問題排查，不等於平台本身收取的主機費。",
     cooperationNotes: [
       ["學生開發者，真實案例驗證", "目前由學生開發者接案與交付，已有公廁 Bot、Dashboard 與 LINE 系統實際上線經驗；其他規劃中專案會清楚標示為實作經驗，不會誤寫成完成案例。價格會比一般市場客製行情低一些，但合作前仍會先確認範圍、時程、付款與驗收方式。"],
-      ["早期合作價與推薦回饋", "因目前屬於早期案例累積階段與作品累積階段，若合作過程滿意，歡迎提供推薦語、推薦信、案例回饋或介紹其他可能需要協助的單位。"],
+      ["早期合作階段", "目前仍在累積正式案例，因此價格會比一般客製系統更彈性；但合作前仍會正式確認功能範圍、時程、付款、驗收與維護方式。"],
       ["UI 設計可彈性處理", "可由我協助做基礎介面與簡單視覺整理；若需要更完整品牌視覺、插圖或高階設計，也可由客戶提供設計稿或另找設計師。若需配合外部設計，開發時程可能會略微延長。"],
     ],
     packages: [
-      { name: "基礎導入版", price: "早期合作價 NT$ 30,000 起", timeline: "開發時程：約 1 個月", subtitle: "適合把初步想法做成第一個可用版本", items: ["LINE 基礎入口", "基本流程設計", "簡易資料/資訊頁", "表單或外部連結整合"] },
-      { name: "標準查詢版", price: "早期合作價 NT$ 50,000–90,000 起", timeline: "開發時程：約 2–3 個月", subtitle: "適合需要查詢流程、資料管理或後台的專案", items: ["LINE Bot 客製流程", "資料查詢或定位搜尋", "基礎後台資料管理", "測試、上線與操作說明"], featured: true },
-      { name: "進階系統版", price: "早期合作價 NT$ 100,000 起，依需求評估", timeline: "開發時程：約 4 個月以上", subtitle: "適合需要演算法、數據追蹤或長期擴充的專案", items: ["定位搜尋與推薦排序", "NTS / Trust Score 版本比較", "Dashboard 與使用行為紀錄", "權限、月報表或進階維護方案"] },
+      { name: "基礎導入版", price: "NT$ 30,000 起", timeline: "開發時程：約 1 個月", subtitle: "適合把初步想法做成第一個可用版本", items: ["LINE 基礎入口", "基本流程設計", "簡易資料/資訊頁", "表單或外部連結整合"] },
+      { name: "標準查詢版", price: "NT$ 50,000–90,000 起", timeline: "開發時程：約 2–3 個月", subtitle: "適合需要查詢流程、資料管理或後台的專案", items: ["LINE Bot 客製流程", "資料查詢或定位搜尋", "基礎後台資料管理", "測試、上線與操作說明"], featured: true },
+      { name: "進階系統版", price: "NT$ 100,000 起，依需求評估", timeline: "開發時程：約 4 個月以上", subtitle: "適合需要演算法、數據追蹤或長期擴充的專案", items: ["定位搜尋與推薦排序", "NTS / Trust Score 版本比較", "Dashboard 與使用行為紀錄", "權限、月報表或進階維護方案"] },
     ],
     featured: "常見起步版本",
     estimatorLabel: "Feature Estimator",
@@ -215,7 +215,7 @@ const content = {
     monthlyDesc: "主機、資料庫或外部平台費用會依實際架構調整，通常不包含在一次性開發費內。",
     selectedTitle: "已選功能",
     noneSelected: "尚未選擇功能。",
-    reminder: "提醒：這裡比較像功能配件表，用來抓預算量級；不是每個功能獨立成案的價格。以上為早期案例累積階段，若合作滿意，歡迎提供推薦語或案例回饋。正式成案仍需把功能範圍、資料量、交付內容、測試期與後續維護一起確認。若系統需要穩定長期運行，主機費通常至少約 US$7 / 月起，屬於每月固定成本，與一次性開發費分開計算。",
+    reminder: "提醒：這裡比較像功能配件表，用來抓預算量級；不是每個功能獨立成案的價格。目前為早期案例累積階段，價格會比一般客製系統更彈性。正式成案仍需把功能範圍、資料量、交付內容、測試期與後續維護一起確認。若系統需要穩定長期運行，主機費通常至少約 US$7 / 月起，屬於每月固定成本，與一次性開發費分開計算。",
     discussButton: "帶著已選功能來討論",
     resultsLabel: "Real Results",
     resultsTitle: "真實上線案例：公廁查詢 LINE Bot",
@@ -291,8 +291,8 @@ const content = {
       ["Flexible early cooperation", "I am still building case experience, so pricing and cooperation can be more flexible than typical custom systems."],
     ],
     eventSystemLabel: "Event / Forum Systems",
-    eventSystemTitle: "Event and forum workflow systems",
-    eventSystemText: "For large events, forums, seminars, camps, or course series, I can help organize the before-during-after workflow into one system: participants find information faster, while organizers manage data and outcome records more easily.",
+    eventSystemTitle: "Course, camp, and event workflow systems",
+    eventSystemText: "For courses, camps, parent-child activities, workshops, or event series, I can help organize the before-during-after information and registration workflow into one system: participants find information faster, while organizers manage data and outcome records more easily.",
     eventSystemPoints: [
       ["Event website / forum page", "Agenda, speakers, time, location, transportation, notes, and contact windows"],
       ["Registration flow integration", "Connect existing forms or organize fields, confirmation messages, and follow-up information"],
@@ -321,16 +321,16 @@ const content = {
     ],
     outcomes: ["Turn vague ideas into clear features and flows", "Let users complete real actions online", "Allow admins to maintain content and data", "Let the system accumulate usage and outcome data"],
     packageLabel: "Plans & Pricing",
-    packageTitle: "The main product is a workflow system that reduces manual chaos",
+    packageTitle: "Workflow systems that reduce repeated questions and manual cleanup",
     packageText: "If the need is only a simple event page or form, an existing tool or starter plan may be enough. If the need includes registration follow-up, LINE FAQ routing, list status tracking, data search, admin management, dashboards, or long-term updates, it is better scoped as a mid-sized system.",
     midPlanLabel: "Main Focus",
-    midPlanTitle: "Mid-sized system projects",
+    midPlanTitle: "Common cooperation directions",
     midPlanText: "These are the most suitable formal cooperation types: nonprofits, associations, course/event teams, local teams, multi-location services, and small organizations. If you need users to search, submit, receive responses, and let admins update data and view records, these plans are more suitable than a simple page.",
     midPlans: [
-      { name: "LINE Bot + admin data management", price: "Early cooperation rate NT$ 50,000–100,000+", subtitle: "For nonprofits, associations, event teams, and small organizations", items: ["LINE Bot flow and FAQ routing", "Admin add/edit data", "Data search and basic analytics", "Testing, launch, and usage guide"] },
-      { name: "Location search / map recommendation system", price: "Early cooperation rate NT$ 60,000–150,000+", subtitle: "For rescue centers, social service points, service locations, and local data", items: ["User location and nearest-point recommendation", "Google Maps navigation links", "Admin management for location data", "Search logs and outcome tracking"] },
-      { name: "Event / course workflow system", price: "Early cooperation rate NT$ 50,000–120,000+", subtitle: "For camps, course centers, workshops, and parent-child activities", items: ["Event info and registration flow", "LINE navigation and FAQ", "Admin updates for event data", "Pre-event info and basic stats"] },
-      { name: "Small CRM / internal management tool", price: "Early cooperation rate NT$ 50,000–120,000+", subtitle: "For teams managing leads, projects, statuses, and delivery dates", items: ["Lead / client / project management", "Status tracking and date reminders", "Revenue stats and search filters", "Custom fields and layout by workflow"] },
+      { name: "LINE Bot + admin data management", price: "NT$ 50,000–100,000+", subtitle: "For nonprofits, associations, event teams, and small organizations", items: ["LINE Bot flow and FAQ routing", "Admin add/edit data", "Data search and basic analytics", "Testing, launch, and usage guide"] },
+      { name: "Location search / map recommendation system", price: "NT$ 60,000–150,000+", subtitle: "For rescue centers, social service points, service locations, and local data", items: ["User location and nearest-point recommendation", "Google Maps navigation links", "Admin management for location data", "Search logs and outcome tracking"] },
+      { name: "Event / course workflow system", price: "NT$ 50,000–120,000+", subtitle: "For camps, course centers, workshops, and parent-child activities", items: ["Event info and registration flow", "LINE navigation and FAQ", "Admin updates for event data", "Pre-event info and basic stats"] },
+      { name: "Small CRM / internal management tool", price: "NT$ 50,000–120,000+", subtitle: "For teams managing leads, projects, statuses, and delivery dates", items: ["Lead / client / project management", "Status tracking and date reminders", "Revenue stats and search filters", "Custom fields and layout by workflow"] },
     ],
     midPlanNote: "Mid-sized system projects usually start with email or LINE requirement checks. If suitable, we can arrange a 15–30 minute online meeting to confirm scope, timeline, price, payment milestones, acceptance criteria, and post-launch maintenance.",
     midPlanButton: "Email about this system project",
@@ -339,10 +339,10 @@ const content = {
     smallPlanTitle: "Small starter plans",
     smallPlanText: "Small plans are for simple needs or first-time cooperation. If the project already involves data management, search, admin panels, dashboards, location search, long-term updates, or multi-role workflows, it should be scoped as a mid-sized system above.",
     smallPlans: [
-      { name: "One-page event / course page", price: "Early cooperation rate NT$ 8,000–15,000", subtitle: "For events, courses, camps, lectures, and workshops", items: ["Event introduction and key information", "Registration link / form integration", "Time, location, and reminders", "FAQ and contact information"] },
-      { name: "LINE official account cleanup", price: "Early cooperation rate NT$ 5,000–10,000", subtitle: "For existing LINE accounts with scattered information or unclear menus", items: ["Rich menu planning", "FAQ categorization", "Form / website / social link organization", "Basic reply text cleanup"] },
-      { name: "Small shop / personal brand info page", price: "Early cooperation rate NT$ 6,000–18,000", subtitle: "For shops, restaurants, personal brands, freelancers, or market brands", items: ["Shop / personal introduction", "Menu / services / pricing cleanup", "Map / booking / form links", "LINE / IG / phone integration"] },
-      { name: "FAQ / info cleanup", price: "Early cooperation rate NT$ 10,000–20,000", subtitle: "For teams with repeated questions but no admin panel yet", items: ["5–10 common questions", "Basic flow and button navigation", "External link integration", "Basic testing and usage guide"] },
+      { name: "One-page event / course page", price: "NT$ 8,000–15,000", subtitle: "For events, courses, camps, lectures, and workshops", items: ["Event introduction and key information", "Registration link / form integration", "Time, location, and reminders", "FAQ and contact information"] },
+      { name: "LINE official account cleanup", price: "NT$ 5,000–10,000", subtitle: "For existing LINE accounts with scattered information or unclear menus", items: ["Rich menu planning", "FAQ categorization", "Form / website / social link organization", "Basic reply text cleanup"] },
+      { name: "Small shop / personal brand info page", price: "NT$ 6,000–18,000", subtitle: "For shops, restaurants, personal brands, freelancers, or market brands", items: ["Shop / personal introduction", "Menu / services / pricing cleanup", "Map / booking / form links", "LINE / IG / phone integration"] },
+      { name: "FAQ / info cleanup", price: "NT$ 10,000–20,000", subtitle: "For teams with repeated questions but no admin panel yet", items: ["5–10 common questions", "Basic flow and button navigation", "External link integration", "Basic testing and usage guide"] },
     ],
     upgradeNote: "Small plans focus on information cleanup and simple web / LINE flows. They do not include custom admin panels, databases, dashboards, location search, or complex workflows. If long-term updates, data management, or search features are needed during discussion, the project will be re-scoped as a mid-sized system.",
     smallPlanButton: "Email about this plan",
@@ -350,7 +350,7 @@ const content = {
     crmPlanButton: "Email about this CRM plan",
     crmMailSubject: "CRM / internal tool inquiry｜",
     crmLabel: "CRM / Internal Tools",
-    crmTitle: "Custom lead tracking, client management, or internal workflow tools",
+    crmTitle: "Other custom work: lead tracking, client management, or internal tools",
     crmText: "If you currently use Excel, Google Sheets, or notes to track leads, emails, replies, revenue, and delivery dates, this can be turned into a simple internal tool. CRM simply means a client and workflow management system that helps you see who has not been contacted, who needs follow-up, which deal may close, and what needs to be done today.",
     crmExplainTitle: "What is a CRM?",
     crmExplainText: "It does not have to be an enterprise system. It can simply put leads, emails, statuses, dates, plans, estimated revenue, received payments, and daily tasks in one place so you do not need to keep switching spreadsheets.",
@@ -359,9 +359,9 @@ const content = {
     crmPreviewStats: [["100", "Leads"], ["100", "Emailed"], ["500K", "Projected"], ["Today", "Tasks"]],
     crmPreviewRows: ["Date wheel: email / follow-up / work / delivery", "Lead table: status, plan, email, next step", "Daily tasks: done or move unfinished work to tomorrow"],
     crmPlans: [
-      { name: "Personal local manager", price: "Early cooperation rate from NT$ 15,000", subtitle: "For individual freelancers, students, or small sales workflows", items: ["Lead and status tracking", "Date wheel and daily tasks", "Estimated / received revenue", "Data stored in the user's browser"] },
-      { name: "Custom-field manager", price: "Early cooperation rate from NT$ 25,000–40,000", subtitle: "For studios with fixed fields, processes, and tracking needs", items: ["Custom statuses and fields", "Bulk paste, search, and filters", "Work tasks and delivery dates", "Layout adjusted to the actual workflow"] },
-      { name: "Cloud team manager", price: "Early cooperation rate from NT$ 50,000, evaluated by scope", subtitle: "For teams that need login, cloud database, or permission management", items: ["Login and cloud database", "Team access and permission planning", "Backup and data management", "Optional dashboard / analytics"] },
+      { name: "Personal local manager", price: "From NT$ 15,000", subtitle: "For individual freelancers, students, or small sales workflows", items: ["Lead and status tracking", "Date wheel and daily tasks", "Estimated / received revenue", "Data stored in the user's browser"] },
+      { name: "Custom-field manager", price: "From NT$ 25,000–40,000", subtitle: "For studios with fixed fields, processes, and tracking needs", items: ["Custom statuses and fields", "Bulk paste, search, and filters", "Work tasks and delivery dates", "Layout adjusted to the actual workflow"] },
+      { name: "Cloud team manager", price: "From NT$ 50,000, evaluated by scope", subtitle: "For teams that need login, cloud database, or permission management", items: ["Login and cloud database", "Team access and permission planning", "Backup and data management", "Optional dashboard / analytics"] },
     ],
     crmNote: "The personal local version is suitable for individual use and costs less, but the data is mainly stored in the same computer and browser. If you need team login, cloud sync, permissions, a formal database, backups, or long-term maintenance, the cloud team version is recommended and will be priced by scope.",
     maintenancePlanButton: "Email about this maintenance plan",
@@ -370,21 +370,21 @@ const content = {
     maintenanceTitle: "After launch, choose one-time edits or monthly maintenance",
     maintenanceText: "After a small plan or full system is delivered, follow-up edits, content updates, stable hosting, or usage summaries can be handled through one-time maintenance or monthly maintenance. Maintenance is a service fee for handling, checking, and support; hosting, database, or third-party platform fees are charged separately by the actual platform.",
     maintenancePlans: [
-      { name: "One-time edit / small maintenance", price: "Early cooperation rate from NT$ 1,000–5,000 / time", subtitle: "For occasional text, link, image, or small feature updates", items: ["Small text, link, or FAQ updates", "Form or button link changes", "Simple bug fixes", "Does not include major feature rebuilds"] },
-      { name: "Basic monthly maintenance", price: "Early cooperation rate from NT$ 1,500–6,000 / month", subtitle: "For teams that want regular checks and minor updates", items: ["Monthly small content updates", "Basic issue checks", "Simple usage summary", "LINE / website link and function checks"] },
-      { name: "Monthly report / data maintenance", price: "Early cooperation rate from NT$ 2,000–8,000 / month", subtitle: "For systems with admin panels, event data, or dashboards", items: ["Update data or event information", "Organize query, click, or form records", "Simple monthly report or outcome summary", "Adjusted by data volume and update frequency"] },
-      { name: "Hosting and system management", price: "Early cooperation rate NT$ 300–500/month", subtitle: "Hosting fee separate. For systems that need stable long-term operation", items: ["Render / Vercel / database deployment and basic setup support", "Monthly basic uptime and environment checks", "Small incident diagnosis and restart / redeploy assistance", "Hosting, database, and third-party platform fees are charged separately by the platform", "Does not include new features, major redesigns, or large data updates"] },
+      { name: "One-time edit / small maintenance", price: "From NT$ 1,000–5,000 / time", subtitle: "For occasional text, link, image, or small feature updates", items: ["Small text, link, or FAQ updates", "Form or button link changes", "Simple bug fixes", "Does not include major feature rebuilds"] },
+      { name: "Basic monthly maintenance", price: "From NT$ 1,500–6,000 / month", subtitle: "For teams that want regular checks and minor updates", items: ["Monthly small content updates", "Basic issue checks", "Simple usage summary", "LINE / website link and function checks"] },
+      { name: "Monthly report / data maintenance", price: "From NT$ 2,000–8,000 / month", subtitle: "For systems with admin panels, event data, or dashboards", items: ["Update data or event information", "Organize query, click, or form records", "Simple monthly report or outcome summary", "Adjusted by data volume and update frequency"] },
+      { name: "Hosting and system management", price: "NT$ 300–500/month", subtitle: "Hosting fee separate. For systems that need stable long-term operation", items: ["Render / Vercel / database deployment and basic setup support", "Monthly basic uptime and environment checks", "Small incident diagnosis and restart / redeploy assistance", "Hosting, database, and third-party platform fees are charged separately by the platform", "Does not include new features, major redesigns, or large data updates"] },
     ],
     maintenanceNote: "The actual maintenance scope will be confirmed before cooperation. These are early cooperation rates, slightly lower than typical market pricing. If the cooperation goes well, a testimonial, recommendation letter, or case feedback would be appreciated. Static one-page websites may not need monthly maintenance, while admin panels, databases, LINE Bots, dashboards, or long-term content updates should reserve a basic maintenance and hosting budget. Hosting management service fees usually cover deployment support, checks, restarts, and basic issue diagnosis, not the platform hosting fee itself.",
     cooperationNotes: [
       ["Student developer with real cases", "The project is handled and delivered by a student developer with real public Toilet Bot, dashboard, and LINE system launch experience; projects still in planning will be clearly labeled as implementation experience rather than completed cases. Pricing is slightly lower than typical custom development market pricing, but scope, timeline, payment, and acceptance criteria will still be confirmed before development."],
-      ["Early cooperation rate and testimonial feedback", "Because this is a early cooperation rate and part of portfolio building, a testimonial, recommendation letter, case feedback, or referral would be appreciated if the cooperation goes well."],
+      ["Early-stage rate and testimonial feedback", "Because this is a early cooperation rate and part of portfolio building, a testimonial, recommendation letter, case feedback, or referral would be appreciated if the cooperation goes well."],
       ["Flexible UI design options", "Basic interface layout and simple visual refinement can be included. If a more complete brand identity, illustration, or advanced UI design is needed, the client may provide design files or work with an external designer. Coordinating with external design may slightly extend the timeline."],
     ],
     packages: [
-      { name: "Starter Version", price: "Early cooperation rate from NT$ 30,000", timeline: "Development time: about 1 month", subtitle: "For turning an initial idea into the first usable version", items: ["LINE basic entry", "Basic flow design", "Simple data/info page", "Form or external link integration"] },
-      { name: "Standard Search Version", price: "Early cooperation rate from NT$ 50,000–90,000", timeline: "Development time: about 2–3 months", subtitle: "For projects needing search flows, data management, or an admin panel", items: ["Custom LINE Bot flow", "Data search or location search", "Basic admin panel", "Testing, launch, and documentation"], featured: true },
-      { name: "Advanced System Version", price: "Early cooperation rate from NT$ 100,000, evaluated by scope", timeline: "Development time: about 4+ months", subtitle: "For projects needing algorithms, analytics, or long-term expansion", items: ["Location search and ranking", "NTS / Trust Score version comparison", "Dashboard and usage logs", "Permissions, reports, or maintenance plan"] },
+      { name: "Starter Version", price: "From NT$ 30,000", timeline: "Development time: about 1 month", subtitle: "For turning an initial idea into the first usable version", items: ["LINE basic entry", "Basic flow design", "Simple data/info page", "Form or external link integration"] },
+      { name: "Standard Search Version", price: "From NT$ 50,000–90,000", timeline: "Development time: about 2–3 months", subtitle: "For projects needing search flows, data management, or an admin panel", items: ["Custom LINE Bot flow", "Data search or location search", "Basic admin panel", "Testing, launch, and documentation"], featured: true },
+      { name: "Advanced System Version", price: "From NT$ 100,000, evaluated by scope", timeline: "Development time: about 4+ months", subtitle: "For projects needing algorithms, analytics, or long-term expansion", items: ["Location search and ranking", "NTS / Trust Score version comparison", "Dashboard and usage logs", "Permissions, reports, or maintenance plan"] },
     ],
     featured: "Common starting point",
     estimatorLabel: "Feature Estimator",
@@ -486,7 +486,7 @@ export default function App() {
 ` +
       `${isEnglish ? "Suitable for" : "適合情境"}：${plan.subtitle}
 ` +
-      `${isEnglish ? "Student-rate note" : "早期合作價說明"}：${isEnglish ? "This is a early cooperation rate. If the cooperation goes well, a testimonial, recommendation letter, or case feedback would be appreciated." : "目前為早期案例累積階段，若合作滿意，也希望能提供推薦語、推薦信或案例回饋。"}
+      `${isEnglish ? "Student-rate note" : "早期合作說明"}：${isEnglish ? "This is an early-stage cooperation rate, and the scope, timeline, payment, and acceptance criteria will still be confirmed formally." : "目前為早期案例累積階段，價格會比一般客製系統更彈性。"}
 
 ` +
       `${isEnglish ? "Brief description of my need" : "我想做的內容簡述"}：
@@ -528,7 +528,7 @@ export default function App() {
 ` +
       `${isEnglish ? "Suitable for" : "適合情境"}：${plan.subtitle}
 ` +
-      `${isEnglish ? "Student-rate note" : "早期合作價說明"}：${isEnglish ? "This is a early cooperation rate. If the cooperation goes well, a testimonial, recommendation letter, or case feedback would be appreciated." : "目前為早期案例累積階段，若合作滿意，也希望能提供推薦語、推薦信或案例回饋。"}
+      `${isEnglish ? "Student-rate note" : "早期合作說明"}：${isEnglish ? "This is an early-stage cooperation rate, and the scope, timeline, payment, and acceptance criteria will still be confirmed formally." : "目前為早期案例累積階段，價格會比一般客製系統更彈性。"}
 
 ` +
       `${isEnglish ? "Current workflow / tracking needs" : "目前想管理的流程或欄位"}：
@@ -830,7 +830,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="contact" className="mx-auto max-w-7xl px-6 pb-24"><div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-8 md:p-10"><div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center"><div><p className="text-sm font-semibold text-cyan-200">{t.contactLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.contactTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.contactText}</p></div><div className="rounded-3xl bg-slate-950/60 p-6 ring-1 ring-white/10"><p className="text-sm text-slate-400">{t.contactSmall}</p><p className="mt-4 text-sm leading-7 text-slate-300">{t.contactPrompt}</p><a href={estimateMailto}><Button className="mt-6 w-full">{t.contactButton} <ExternalLink className="ml-2 h-4 w-4" /></Button></a></div></div></div></section>
+        <section id="contact" className="mx-auto max-w-7xl px-6 pb-24"><div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-8 md:p-10"><div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center"><div><p className="text-sm font-semibold text-cyan-200">{t.contactLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.contactTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.contactText}</p></div><div className="rounded-3xl bg-slate-950/60 p-6 ring-1 ring-white/10"><p className="text-sm text-slate-400">{t.contactSmall}</p><p className="mt-4 text-sm leading-7 text-slate-300">{t.contactPrompt}</p><a href={estimateMailto}><Button className="mt-6 w-full">{t.contactButton} <ExternalLink className="ml-2 h-4 w-4" /></Button></a><div className="mt-5 rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4 text-sm leading-7 text-cyan-50"><p className="font-semibold text-white">{isEnglish ? "LINE contact" : "LINE 聯絡"}</p><p className="mt-1">LINE ID：1234567890eason60708</p><p className="text-xs text-cyan-100/80">{isEnglish ? "You can also email me through the button above." : "也可以直接用上方按鈕寄信說明目前流程。"}</p></div></div></div></div></section>
       </main>
     </div>
   );
