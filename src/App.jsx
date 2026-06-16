@@ -77,6 +77,16 @@ const content = {
       ["系統該解決什麼", "報名後自動通知、依狀態追蹤名單、LINE FAQ 分流、後台更新資料、活動後整理成果數據。"],
       ["我會先幫你判斷", "先確認哪些沿用 Google 就好，哪些真的值得客製，避免把預算花在不必要的功能上。"],
     ],
+    frontEntryLabel: "Frontend Entry",
+    frontEntryTitle: "不取代既有工具，而是補上前端導覽與流程分流",
+    frontEntryText:
+      "如果貴單位已經使用 netiCRM、Google 表單、活動報名系統、捐款系統或其他內部工具，我不會建議取代既有流程。我能補上的，是這些工具前面的 LINE / Web 導覽層，協助民眾更快找到正確活動、報名方式、捐款入口、志工資訊與常見問題，最後再導回原本的系統。",
+    frontEntryNote: "簡單來說，既有系統負責資料，我負責入口、導覽與分流。這類補強方式適合已經有工具，但民眾仍常透過 LINE、私訊或 Email 重複詢問的單位。",
+    frontEntryCards: [
+      ["LINE / Web 前端導覽", "整理活動分類、報名資格、常見問題、聯絡窗口與報名連結，讓民眾不用到處找資訊。"],
+      ["FAQ 與報名前分流", "讓民眾在進入表單前，先確認自己適合哪個活動、需要準備什麼資料、是否符合資格。"],
+      ["導回既有系統", "最後仍導回原本的 netiCRM、Google 表單、報名頁、捐款頁或官網，不需要一開始改動既有資料流程。"],
+    ],
     audienceLabel: "About",
     audienceTitle: "學生開發者，但已有真實上線系統經驗",
     audienceText: "我是黃元逸 Eason，目前是高中生，也是 Eason Systems 的開發者。我不是單純接案練習，而是已經做過實際上線、真實使用者使用的 LINE / Web 系統。目前主要協助活動、課程、公益與小型組織，把分散的資訊與人工流程整理成可使用、可維護的系統。",
@@ -280,6 +290,16 @@ const content = {
       ["What Google tools are good for", "Simple sign-ups, surveys, collecting spreadsheet data, and small amounts of manual processing."],
       ["What a system should solve", "Post-registration notifications, status tracking, LINE FAQ routing, admin updates, and outcome data summaries."],
       ["Start with an honest check", "We first decide what should stay in Google tools and what is worth custom-building, so budget is not wasted on unnecessary features."],
+    ],
+    frontEntryLabel: "Frontend Entry",
+    frontEntryTitle: "Not replacing existing tools — adding a frontend guide and workflow routing layer",
+    frontEntryText:
+      "If your organization already uses netiCRM, Google Forms, an event registration system, a donation system, or other internal tools, I would not recommend replacing the existing workflow. What I can add is the LINE / Web guidance layer in front of those tools: helping people find the right activity, registration method, donation entry, volunteer information, and FAQs before routing them back to the existing system.",
+    frontEntryNote: "Simply put: existing systems handle the data; I handle the entry, guidance, and routing layer. This is especially useful for teams that already have tools, but still receive repeated questions through LINE, DMs, or email.",
+    frontEntryCards: [
+      ["LINE / Web frontend guide", "Organize activity categories, eligibility, FAQs, contact windows, and registration links so users do not need to search everywhere."],
+      ["FAQ and pre-registration routing", "Before users enter a form, help them confirm which activity fits, what documents are needed, and whether they are eligible."],
+      ["Route back to existing systems", "Route users back to netiCRM, Google Forms, registration pages, donation pages, or the official website without changing the existing data workflow first."],
     ],
     audienceLabel: "About",
     audienceTitle: "Student developer with real live-system experience",
@@ -662,6 +682,30 @@ export default function App() {
         <section className="border-y border-white/10 bg-white/[0.03]"><div className="mx-auto max-w-7xl px-6 py-16"><div className="max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.problemLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.problemTitle}</h2></div><div className="mt-8 grid gap-3 md:grid-cols-3">{t.painPoints.map((item) => <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-slate-300">{item}</div>)}</div></div></section>
 
         <section className="mx-auto max-w-7xl px-6 py-20"><div className="grid gap-8 rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-6 md:grid-cols-[0.9fr_1.1fr] md:p-8"><div><p className="text-sm font-semibold text-cyan-200">{t.googleLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.googleTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.googleText}</p></div><div className="grid gap-4">{t.googlePoints.map(([title, text]) => <Card key={title} className="bg-slate-950/45"><CardContent className="flex gap-4 p-5"><div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-cyan-300/10"><ShieldCheck className="h-5 w-5 text-cyan-200" /></div><div><p className="font-semibold text-white">{title}</p><p className="mt-2 text-sm leading-6 text-slate-300">{text}</p></div></CardContent></Card>)}</div></div></section>
+
+        <section className="mx-auto max-w-7xl px-6 pb-20">
+          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:p-8">
+            <div className="mb-8 max-w-5xl">
+              <p className="text-sm font-semibold text-cyan-300">{t.frontEntryLabel}</p>
+              <h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.frontEntryTitle}</h2>
+              <p className="mt-5 leading-7 text-slate-300">{t.frontEntryText}</p>
+            </div>
+            <div className="grid gap-5 md:grid-cols-3">
+              {t.frontEntryCards.map(([title, text]) => (
+                <Card key={title} className="bg-slate-950/45">
+                  <CardContent className="p-5">
+                    <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-300/10">
+                      <ArrowRight className="h-5 w-5 text-cyan-200" />
+                    </div>
+                    <p className="font-semibold text-white">{title}</p>
+                    <p className="mt-3 text-sm leading-6 text-slate-300">{text}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <p className="mt-6 rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4 text-sm leading-7 text-cyan-50">{t.frontEntryNote}</p>
+          </div>
+        </section>
 
         <section className="mx-auto max-w-7xl px-6 py-20"><div className="mb-10 max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.audienceLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.audienceTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.audienceText}</p></div><div className="grid gap-5 md:grid-cols-2">{t.audienceGroups.map(([title, text]) => <Card key={title} className="bg-slate-900/70"><CardContent className="p-6"><p className="text-lg font-bold text-white">{title}</p><p className="mt-3 text-sm leading-6 text-slate-300">{text}</p></CardContent></Card>)}</div></section>
 
