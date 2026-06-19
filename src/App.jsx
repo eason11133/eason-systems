@@ -979,7 +979,7 @@ function MPFooter() {
   return (
     <footer className="border-t border-white/10 px-6 py-10">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
-        <p>© Eason Systems. 流程系統與 AI Gate，分頁整理服務內容。</p>
+        <p>© Eason Systems. 數位流程系統與 AI 對外輸出審核流程。</p>
         <div className="flex flex-wrap gap-4">
           <a className="hover:text-white" href="#/">首頁</a>
           <a className="hover:text-white" href="#/ai-gate">AI Gate</a>
@@ -1187,124 +1187,6 @@ function MPContactPage() {
   return <section className="mx-auto max-w-7xl px-6 pb-20 pt-12"><MPSectionTitle eyebrow="Contact" title="聯絡 / 申請試點" text="請先選擇你想討論的是 AI Gate，還是原本的流程系統。這樣比較不會混在一起。" /><div className="mt-10 grid gap-6 md:grid-cols-2"><MPCard className="p-6 md:p-8"><ShieldCheck className="mb-5 h-8 w-8 text-cyan-200" /><h2 className="text-2xl font-bold text-white">我想申請 AI Gate 試點</h2><p className="mt-5 text-sm leading-6 text-slate-300">請提供：團隊名稱、是否使用 AI 產出對外內容、主要內容類型、最擔心 AI 出什麼錯、是否願意提供 3 則內容免費測試、聯絡方式。</p><MPButton href={aiMail} className="mt-6">申請 AI Gate 試點 <Mail className="ml-2 h-4 w-4" /></MPButton></MPCard><MPCard className="p-6 md:p-8"><Workflow className="mb-5 h-8 w-8 text-cyan-200" /><h2 className="text-2xl font-bold text-white">我想討論流程系統</h2><p className="mt-5 text-sm leading-6 text-slate-300">請提供：單位名稱、目前流程問題、是否已有 Google 表單 / LINE / 官網 / CRM、想整理的流程、預算範圍、聯絡方式。</p><MPButton href={workflowMail} className="mt-6" variant="outline">討論流程系統 <Mail className="ml-2 h-4 w-4" /></MPButton></MPCard></div><MPCard className="mt-6 p-5"><p className="text-sm leading-7 text-slate-300">Email：<a className="text-cyan-200 hover:text-cyan-100" href="mailto:easonlsy1019@gmail.com">easonlsy1019@gmail.com</a><span className="mx-3 text-slate-600">|</span>LINE ID：1234567890eason60708</p></MPCard></section>;
 }
 
-
-function MPHomePage() {
-  const topCards = [
-    {
-      icon: Workflow,
-      title: "流程系統",
-      tag: "目前主力服務",
-      text: "LINE、報名、FAQ、名單與後台流程整理。適合活動、課程、營隊、公益與小型組織。",
-      to: "/workflow-systems",
-      button: "看流程系統",
-    },
-    {
-      icon: ShieldCheck,
-      title: "AI Gate",
-      tag: "New｜新服務試點",
-      text: "AI 產出的客戶回覆、社群貼文、合作信或提案內容，在送出前先經過風險審核與人工批准判斷。",
-      to: "/ai-gate",
-      button: "了解 AI Gate",
-    },
-  ];
-
-  const pageCards = [
-    ["案例與作品", "公廁 LINE Bot、野灣流程規劃、內部 CRM，集中放在案例頁建立信任。", "/cases"],
-    ["方案與試點", "AI Gate 用試點方案，流程系統保留台灣小團隊熟悉的專案報價。", "/pricing"],
-    ["聯絡 / 申請", "AI Gate 和流程系統分成兩個入口，避免新舊服務混在一起。", "/contact"],
-  ];
-
-  return (
-    <>
-      <section className="mx-auto grid max-w-7xl gap-10 px-6 pb-12 pt-12 lg:grid-cols-[1fr_0.95fr] lg:items-center">
-        <div>
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-100">
-            <Sparkles className="h-4 w-4" />
-            Eason Systems｜流程系統與 AI Gate
-          </div>
-          <h1 className="max-w-4xl text-4xl font-bold leading-tight text-white md:text-6xl">
-            把 LINE、報名、FAQ 與名單流程
-            <span className="block text-cyan-300">整理成可控管的系統</span>
-          </h1>
-          <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 md:text-lg">
-            Eason Systems 目前主力是協助活動、課程、營隊、公益與小型組織整理 LINE / Web 前端導覽、報名前分流、FAQ、名單與後台流程。新的 AI Gate 則獨立成另一個服務頁，作為 AI 對外輸出審核流程的試點。
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <MPButton to="/workflow-systems">
-              看流程系統服務 <ArrowRight className="ml-2 h-4 w-4" />
-            </MPButton>
-            <MPButton to="/ai-gate" variant="outline">
-              了解 AI Gate
-            </MPButton>
-          </div>
-        </div>
-
-        <MPCard className="p-6 md:p-7">
-          <p className="text-sm font-semibold text-cyan-200">New｜AI Gate</p>
-          <h2 className="mt-3 text-2xl font-bold leading-snug text-white md:text-3xl">
-            AI 對外內容送出前，多一道審核流程。
-          </h2>
-          <p className="mt-4 leading-7 text-slate-300">
-            如果團隊已經開始用 AI 寫客戶回覆、社群貼文、合作信、公告或提案內容，可以先讓 AI Gate 檢查是否亂承諾、資訊不完整、語氣不適合，或需要人工批准。
-          </p>
-          <div className="mt-6 grid gap-3">
-            {["可送出", "需修改後送出", "不建議送出", "需人工批准"].map((item) => (
-              <div key={item} className="flex gap-3 rounded-2xl bg-slate-950/45 p-4">
-                <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-cyan-200" />
-                <p className="text-sm font-semibold text-slate-200">{item}</p>
-              </div>
-            ))}
-          </div>
-          <MPButton to="/ai-gate" className="mt-6 w-full">
-            點開看 AI Gate 詳細頁 <ArrowRight className="ml-2 h-4 w-4" />
-          </MPButton>
-        </MPCard>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-10">
-        <div className="grid gap-5 md:grid-cols-2">
-          {topCards.map((item) => {
-            const Icon = item.icon;
-            return (
-              <MPCard key={item.title} className="p-6 md:p-7">
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/10">
-                  <Icon className="h-6 w-6 text-cyan-200" />
-                </div>
-                <p className="text-sm font-semibold text-cyan-200">{item.tag}</p>
-                <h2 className="mt-2 text-2xl font-bold text-white">{item.title}</h2>
-                <p className="mt-4 leading-7 text-slate-300">{item.text}</p>
-                <MPButton to={item.to} variant={item.title === "AI Gate" ? "outline" : "solid"} className="mt-6">
-                  {item.button} <ArrowRight className="ml-2 h-4 w-4" />
-                </MPButton>
-              </MPCard>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-10">
-        <MPSectionTitle
-          eyebrow="Site Map"
-          title="不要再把全部內容塞在同一頁"
-          text="首頁只負責讓人快速知道 Eason Systems 在做什麼；詳細內容拆到不同頁面，舊客戶看流程系統，新服務看 AI Gate。"
-        />
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
-          {pageCards.map(([title, text, to]) => (
-            <MPCard key={title} className="p-6">
-              <h3 className="text-xl font-bold text-white">{title}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-300">{text}</p>
-              <a href={`#${to}`} className="mt-5 inline-flex items-center text-sm font-semibold text-cyan-200">
-                前往頁面 <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </MPCard>
-          ))}
-        </div>
-      </section>
-    </>
-  );
-}
-
-
 function MPContent({ route }) {
   if (route === "/ai-gate") return <MPAiGatePage />;
   if (route === "/workflow-systems") return <MPWorkflowSystemsPage />;
@@ -1312,7 +1194,7 @@ function MPContent({ route }) {
   if (route === "/pricing") return <MPPricingPage />;
   if (route === "/about") return <MPAboutPage />;
   if (route === "/contact") return <MPContactPage />;
-  return <MPHomePage />;
+  return <LegacyHomePage />;
 }
 
 export default function App() {
@@ -1329,6 +1211,8 @@ export default function App() {
     };
     document.title = `${titles[route] || "Eason Systems"}｜Eason Systems`;
   }, [route]);
+
+  if (route === "/") return <LegacyHomePage />;
 
   return (
     <MPShell route={route}>
