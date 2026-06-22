@@ -611,30 +611,7 @@ function LegacyHomePage({ route = "/line-web-systems" } = {}) {
         <div className="absolute bottom-0 right-10 h-96 w-96 rounded-full bg-emerald-400/10 blur-3xl" />
       </div>
 
-      <header className="relative z-10 mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-400/15 ring-1 ring-cyan-300/25">
-            <Bot className="h-5 w-5 text-cyan-300" />
-          </div>
-          <div>
-            <p className="text-sm font-semibold tracking-wide text-white">Eason Systems</p>
-            <p className="text-xs text-slate-400">Custom LINE & Web Systems</p>
-          </div>
-        </div>
-        <div className="flex flex-wrap items-center justify-end gap-3">
-          <nav className="order-2 flex w-full items-center gap-1 rounded-full border border-white/10 bg-white/[0.05] p-1 text-xs md:order-1 md:w-auto">
-            {legacyNav.map(([to, label]) => (
-              <a key={to} href={`#${to}`} className={`flex-1 rounded-full px-3 py-2 text-center transition md:flex-none ${route === to ? "bg-cyan-300 text-slate-950" : "text-slate-300 hover:bg-white/10 hover:text-white"}`}>
-                {label}
-              </a>
-            ))}
-          </nav>
-          <div className="order-1 flex rounded-full border border-white/10 bg-white/[0.05] p-1 text-xs md:order-2">
-            <button type="button" onClick={() => setLanguage("zh")} className={`rounded-full px-3 py-1 transition ${!isEnglish ? "bg-cyan-300 text-slate-950" : "text-slate-300 hover:text-white"}`}>中文</button>
-            <button type="button" onClick={() => setLanguage("en")} className={`rounded-full px-3 py-1 transition ${isEnglish ? "bg-cyan-300 text-slate-950" : "text-slate-300 hover:text-white"}`}>EN</button>
-          </div>
-        </div>
-      </header>
+      <MPHeader route={route} language={language} setLanguage={setLanguage} />
 
       <main className="relative z-10">
         <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-16 pt-14 lg:grid-cols-[minmax(0,1fr)_minmax(360px,0.82fr)] md:items-center md:pt-16">
@@ -1160,7 +1137,7 @@ function MPHeader({ route, language, setLanguage }) {
   const nav = mpCopy[language].nav;
 
   return (
-    <header className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 md:flex-row md:items-center md:justify-between">
+    <header className="relative z-10 mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 md:flex-row md:items-center md:justify-between">
       <a href="#/" className="flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-400/15 ring-1 ring-cyan-300/25">
           <Bot className="h-5 w-5 text-cyan-300" />
@@ -1178,9 +1155,9 @@ function MPHeader({ route, language, setLanguage }) {
             </a>
           ))}
         </nav>
-        <div className="order-1 flex rounded-full border border-white/10 bg-white/[0.05] p-1 text-xs md:order-2">
-          <button type="button" onClick={() => setLanguage("zh")} className={`rounded-full px-3 py-1 transition ${!isEnglish ? "bg-cyan-300 text-slate-950" : "text-slate-300 hover:text-white"}`}>中文</button>
-          <button type="button" onClick={() => setLanguage("en")} className={`rounded-full px-3 py-1 transition ${isEnglish ? "bg-cyan-300 text-slate-950" : "text-slate-300 hover:text-white"}`}>EN</button>
+        <div className="order-1 flex rounded-full border border-white/10 bg-white/[0.05] p-1 text-sm md:order-2">
+          <button type="button" onClick={() => setLanguage("zh")} className={`rounded-full px-4 py-2.5 transition ${!isEnglish ? "bg-cyan-300 text-slate-950" : "text-slate-300 hover:text-white"}`}>中文</button>
+          <button type="button" onClick={() => setLanguage("en")} className={`rounded-full px-4 py-2.5 transition ${isEnglish ? "bg-cyan-300 text-slate-950" : "text-slate-300 hover:text-white"}`}>EN</button>
         </div>
       </div>
     </header>
