@@ -973,11 +973,14 @@ function MPFooter() {
 
 function MPShell({ children, route }) {
   return (
-    <div className="min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top_left,#0e7490_0%,transparent_30%),linear-gradient(135deg,#020617_0%,#07111f_48%,#0f172a_100%)] text-slate-100 antialiased [font-feature-settings:'palt']">
-      <div className="pointer-events-none fixed inset-0">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.055)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:76px_76px] opacity-20" />
-        <div className="absolute -right-32 -top-40 h-[30rem] w-[30rem] rounded-full bg-cyan-500/20 blur-3xl" />
-        <div className="absolute -left-28 top-96 h-96 w-96 rounded-full bg-blue-500/15 blur-3xl" />
+    <div className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top_left,#0e7490_0%,transparent_28%),radial-gradient(circle_at_85%_12%,#312e81_0%,transparent_30%),linear-gradient(135deg,#020617_0%,#07111f_45%,#0f172a_100%)] text-slate-100 antialiased [font-feature-settings:'palt']">
+      <div className="pointer-events-none fixed inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.055)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:72px_72px] opacity-20" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(2,6,23,0.42)_58%,rgba(2,6,23,0.92)_100%)]" />
+        <div className="absolute -right-32 -top-40 h-[30rem] w-[30rem] rounded-full bg-cyan-500/25 blur-3xl" />
+        <div className="absolute left-1/2 top-20 h-80 w-80 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
+        <div className="absolute -left-28 top-96 h-96 w-96 rounded-full bg-indigo-500/25 blur-3xl" />
+        <div className="absolute bottom-0 right-10 h-96 w-96 rounded-full bg-emerald-400/10 blur-3xl" />
       </div>
       <div className="relative z-10">
         <MPHeader route={route} />
