@@ -747,28 +747,6 @@ function LegacyHomePage() {
         <section className="border-y border-white/10 bg-white/[0.03]"><div className="mx-auto max-w-7xl px-6 py-20"><div className="mb-10 max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.flowLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.flowTitle}</h2></div><div className="grid gap-5 md:grid-cols-4">{t.offerSteps.map(([title, text]) => <Card key={title} className="bg-slate-900/70"><CardContent className="p-6"><p className="text-sm font-semibold text-cyan-300">{title}</p><p className="mt-4 text-sm leading-7 text-slate-300">{text}</p></CardContent></Card>)}</div><div className="mt-8 grid gap-3 md:grid-cols-4">{t.outcomes.map((item) => <div key={item} className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4 text-sm leading-6 text-cyan-50">{item}</div>)}</div></div></section>
 
 
-        <section className="mx-auto max-w-6xl px-6 py-12">
-          <Card className="border-cyan-300/20 bg-cyan-300/10">
-            <CardContent className="grid gap-6 p-6 md:grid-cols-[1fr_auto] md:items-center md:p-7">
-              <div>
-                <p className="text-sm font-semibold text-cyan-200">{isEnglish ? "New｜AI Gate" : "New｜AI Gate"}</p>
-                <h2 className="mt-2 text-2xl font-semibold text-white">
-                  {isEnglish ? "AI output review before messages are sent" : "AI 對外輸出送出前的審核流程"}
-                </h2>
-                <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-300 md:text-base">
-                  {isEnglish
-                    ? "If your team has started using AI to write customer replies, social posts, partnership emails, or proposals, Eason Systems is also testing a review flow that checks AI-generated content before it is sent."
-                    : "如果你的團隊已經開始用 AI 撰寫客戶回覆、社群貼文、合作信或提案內容，Eason Systems 也正在測試 AI 對外內容送出前的審核流程。"}
-                </p>
-              </div>
-              <a href="#/ai-gate" className="inline-flex items-center justify-center rounded-2xl bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200">
-                {isEnglish ? "Learn about AI Gate" : "了解 AI Gate"}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </CardContent>
-          </Card>
-        </section>
-
         <section id="packages" className="mx-auto max-w-7xl px-6 py-20">
           <div className="mb-10 max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.packageLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.packageTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.packageText}</p></div>
 
@@ -912,19 +890,26 @@ function LegacyHomePage() {
 }
 
 
-const MP_ROUTES = ["/", "/ai-gate", "/workflow-systems", "/cases", "/pricing", "/about", "/contact"];
+const MP_ROUTES = ["/", "/ai-process-desk", "/workflow-systems", "/cases", "/pricing", "/about", "/contact"];
 
 function getMPRoute() {
-  const route = window.location.hash.replace(/^#/, "") || "/";
-  return MP_ROUTES.includes(route) ? route : "/";
+  const hashRoute = window.location.hash.replace(/^#/, "") || "/";
+  const pathRoute = window.location.pathname.replace(/\/$/, "") || "/";
+  if (MP_ROUTES.includes(hashRoute)) return hashRoute;
+  if (MP_ROUTES.includes(pathRoute)) return pathRoute;
+  return "/";
 }
 
 function useMPRoute() {
   const [route, setRoute] = useState(getMPRoute());
   useEffect(() => {
-    const onHash = () => setRoute(getMPRoute());
-    window.addEventListener("hashchange", onHash);
-    return () => window.removeEventListener("hashchange", onHash);
+    const onRouteChange = () => setRoute(getMPRoute());
+    window.addEventListener("hashchange", onRouteChange);
+    window.addEventListener("popstate", onRouteChange);
+    return () => {
+      window.removeEventListener("hashchange", onRouteChange);
+      window.removeEventListener("popstate", onRouteChange);
+    };
   }, []);
   return route;
 }
@@ -943,8 +928,8 @@ function MPButton({ children, to, href, variant = "solid", className = "" }) {
 
 function MPHeader({ route }) {
   const nav = [
-    ["/", "首頁"],
-    ["/ai-gate", "AI Gate"],
+    ["/", "LINE / Web 主站"],
+    ["/ai-process-desk", "AI Process Desk"],
     ["/workflow-systems", "流程系統"],
     ["/cases", "案例"],
     ["/pricing", "方案"],
@@ -956,11 +941,11 @@ function MPHeader({ route }) {
     <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
       <a href="#/" className="flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-400/15 ring-1 ring-cyan-300/25">
-          <ShieldCheck className="h-5 w-5 text-cyan-300" />
+          <Bot className="h-5 w-5 text-cyan-300" />
         </div>
         <div>
           <p className="text-sm font-semibold tracking-wide text-white">Eason Systems</p>
-          <p className="text-xs text-slate-400">AI Workflow & Digital Process Safety</p>
+          <p className="text-xs text-slate-400">LINE / Web Systems · AI Process Desk Labs</p>
         </div>
       </a>
       <nav className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] p-1 lg:flex">
@@ -970,7 +955,7 @@ function MPHeader({ route }) {
           </a>
         ))}
       </nav>
-      <MPButton to="/contact" className="hidden md:inline-flex">聯絡 / 試點 <ArrowRight className="ml-2 h-4 w-4" /></MPButton>
+      <MPButton to="/contact" className="hidden md:inline-flex">聯絡討論 <ArrowRight className="ml-2 h-4 w-4" /></MPButton>
     </header>
   );
 }
@@ -979,10 +964,10 @@ function MPFooter() {
   return (
     <footer className="border-t border-white/10 px-6 py-10">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
-        <p>© Eason Systems. 數位流程系統與 AI 對外輸出審核流程。</p>
+        <p>© Eason Systems. LINE / Web 前端導覽系統與 AI Process Desk Labs。</p>
         <div className="flex flex-wrap gap-4">
-          <a className="hover:text-white" href="#/">首頁</a>
-          <a className="hover:text-white" href="#/ai-gate">AI Gate</a>
+          <a className="hover:text-white" href="#/">LINE / Web 主站</a>
+          <a className="hover:text-white" href="#/ai-process-desk">AI Process Desk</a>
           <a className="hover:text-white" href="#/workflow-systems">流程系統</a>
           <a className="hover:text-white" href="#/cases">案例</a>
           <a className="hover:text-white" href="mailto:easonlsy1019@gmail.com">easonlsy1019@gmail.com</a>
@@ -1019,92 +1004,146 @@ function MPSectionTitle({ eyebrow, title, text }) {
   );
 }
 
-function MPFlowDiagram() {
-  const steps = [
-    ["AI Draft", "AI 產出內容"],
-    ["Risk Review", "風險審核"],
-    ["Revise / Approve", "修正或批准"],
-    ["Send", "安全送出"],
-    ["Record Rules", "留下防錯規則"],
-  ];
-
+function MPInfoBlock({ title, items, icon: Icon }) {
   return (
-    <MPCard className="p-5">
-      <div className="grid gap-3 md:grid-cols-5">
-        {steps.map(([en, zh], index) => (
-          <div key={en} className="relative rounded-2xl border border-white/10 bg-slate-950/45 p-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">{en}</p>
-            <p className="mt-2 font-semibold text-white">{zh}</p>
-            {index < steps.length - 1 && <ArrowRight className="absolute -right-4 top-1/2 hidden h-5 w-5 -translate-y-1/2 text-cyan-200 md:block" />}
-          </div>
-        ))}
+    <MPCard className="h-full p-6">
+      <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-300/10"><Icon className="h-5 w-5 text-cyan-200" /></div>
+      <h3 className="text-xl font-bold text-white">{title}</h3>
+      <div className="mt-5 space-y-3">
+        {items.map((item) => <div key={item} className="flex gap-3 text-sm leading-6 text-slate-300"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-200" /><span>{item}</span></div>)}
       </div>
     </MPCard>
   );
 }
 
-function MPAiGatePage() {
-  const contentTypes = ["客戶回覆", "業務信", "合作邀約", "社群貼文", "活動公告", "提案內容", "報價說明", "客服訊息"];
-  const checks = ["是否有過度承諾", "是否可能讓客戶誤解服務範圍", "是否引用未確認資訊", "語氣是否太像罐頭訊息", "是否缺少明確下一步", "是否有品牌或公關風險", "是否需要人工批准後才能送出"];
-  const results = [
-    ["✅ 可送出", "內容風險低，可以直接採用。", "border-emerald-300/25 bg-emerald-300/10"],
-    ["⚠️ 需修改後送出", "內容方向可用，但需要調整語氣、資訊或承諾方式。", "border-amber-300/25 bg-amber-300/10"],
-    ["🚫 不建議送出", "內容可能有明顯風險，不建議直接代表團隊對外使用。", "border-red-300/25 bg-red-300/10"],
-    ["👤 需人工批准", "涉及價格、退款、法律、醫療、金融、合約、敏感資訊或高風險承諾時，需由負責人確認。", "border-blue-300/25 bg-blue-300/10"],
+function MPAIFunctionMockup() {
+  return (
+    <MPCard className="overflow-hidden border-cyan-300/20 bg-slate-950/50">
+      <div className="border-b border-white/10 bg-white/[0.04] px-5 py-4">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">AI Workspace Preview</p>
+        <h3 className="mt-1 text-xl font-bold text-white">活動資料 → 社群文案初稿</h3>
+      </div>
+      <div className="grid gap-5 p-5 md:grid-cols-[0.9fr_1.1fr]">
+        <div className="space-y-4">
+          {[
+            ["活動名稱", "春季品牌體驗日"],
+            ["活動資訊", "時間、地點、亮點、報名方式……"],
+            ["目標受眾", "企業客戶 / 年輕族群 / 親子家庭"],
+          ].map(([label, value]) => (
+            <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+              <p className="text-xs text-slate-400">{label}</p>
+              <p className="mt-2 text-sm text-slate-200">{value}</p>
+            </div>
+          ))}
+          <button className="w-full rounded-2xl bg-cyan-300 px-4 py-3 text-sm font-bold text-slate-950">產生 AI 初稿</button>
+        </div>
+        <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4">
+          <p className="text-sm font-semibold text-cyan-100">輸出結果</p>
+          <div className="mt-4 space-y-3 text-sm leading-7 text-slate-200">
+            <p><span className="font-semibold text-white">Facebook：</span>整理活動亮點、對象、CTA 與報名提醒。</p>
+            <p><span className="font-semibold text-white">Threads：</span>轉成較短、較口語的貼文初稿。</p>
+            <p><span className="font-semibold text-white">短版文案：</span>可放 LINE、EDM 或廣告素材。</p>
+          </div>
+          <div className="mt-5 flex gap-2 text-xs">
+            <span className="rounded-full bg-white/10 px-3 py-1 text-slate-200">複製結果</span>
+            <span className="rounded-full bg-white/10 px-3 py-1 text-slate-200">有用</span>
+            <span className="rounded-full bg-white/10 px-3 py-1 text-slate-200">需修改</span>
+          </div>
+        </div>
+      </div>
+    </MPCard>
+  );
+}
+
+function MPAIProcessDeskPage() {
+  const aiMail = "mailto:easonlsy1019@gmail.com?subject=AI%20%E8%BC%94%E5%8A%A9%E5%8A%9F%E8%83%BD%E5%90%88%E4%BD%9C%E8%A9%A2%E5%95%8F&body=%E5%85%AC%E5%8F%B8%2F%E5%9C%98%E9%9A%8A%E5%90%8D%E7%A8%B1%EF%BC%9A%0A%E7%9B%AE%E5%89%8D%E6%9C%80%E9%87%8D%E8%A4%87%E7%9A%84%E6%95%B4%E7%90%86%2F%E6%91%98%E8%A6%81%2F%E6%94%B9%E5%AF%AB%E5%B7%A5%E4%BD%9C%EF%BC%9A%0A%E6%83%B3%E8%A9%A6%E7%9A%84%20AI%20%E5%8A%9F%E8%83%BD%EF%BC%9A%0A%E7%9B%AE%E5%89%8D%E6%98%AF%E8%AA%B0%E5%9C%A8%E5%81%9A%EF%BC%8C%E6%AF%8F%E9%80%B1%E5%A4%A7%E7%B4%84%E5%B9%BE%E6%AC%A1%EF%BC%9A%0A%E8%81%AF%E7%B5%A1%E6%96%B9%E5%BC%8F%EF%BC%9A";
+  const modules = [
+    ["活動資料 → 社群文案初稿", "把活動簡報、亮點、報名資訊整理成 Facebook、Threads、LINE 宣傳文案初稿。"],
+    ["會議紀錄 → 追蹤信草稿", "把會議重點、待確認事項與下一步整理成可寄出的客戶追蹤信。"],
+    ["客戶資料 → 企劃摘要", "把客戶簡報、訪談內容或需求資料整理成企劃重點與提案方向。"],
+    ["履歷 + 職缺 → 候選人摘要", "把履歷與職缺條件整理成候選人推薦重點，適合少量測試。"],
+    ["課程資料 → FAQ / 報名前說明", "把課程資訊、注意事項與常見問題整理成報名前導覽內容。"],
+    ["民眾問題 → 回覆初稿", "把重複問題整理成一致、可人工確認的回覆草稿。"],
   ];
+  const audiences = [
+    ["行銷 / 內容 / 代營運", "活動資料、品牌資料、客戶簡報、產品資訊需要常常改寫成不同平台內容。"],
+    ["顧問 / 企業服務", "會議紀錄、客戶訪談、專案進度與提案內容需要整理成摘要與後續追蹤。"],
+    ["招募 / 獵頭", "履歷、職缺與面試紀錄需要整理成候選人摘要或客戶補充說明，第一階段先少量測。"],
+  ];
+  const scope = ["1 個專屬 AI 工作區 / 專屬功能頁", "1 個 AI 功能模組", "最多 3 個主要輸入欄位", "最多 1 個下拉 / 多選欄位", "1 種主要輸出格式", "1 次小幅 Prompt 或輸出格式微調"];
+  const notIncluded = ["客製 UI", "PDF / Word / 圖片解析", "OCR", "CRM / ERP / LINE OA / ATS 串接", "大型 Dashboard", "複雜權限", "多功能導入", "無限制 Prompt 修改"];
 
   return (
     <>
-      <section className="mx-auto max-w-7xl px-6 pb-12 pt-12">
-        <div className="max-w-4xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">AI Gate</p>
-          <h1 className="mt-4 text-4xl font-bold leading-tight text-white md:text-6xl">AI 產出送出前的最後一道審核流程</h1>
-          <p className="mt-6 text-lg leading-8 text-slate-300">AI 可以很快寫出客戶回覆、合作信、社群貼文、公告與提案內容，但 AI 產出的文字不應該未經檢查就直接代表團隊送出。</p>
-          <p className="mt-4 text-lg leading-8 text-slate-300">AI Gate 協助小團隊建立 AI 對外輸出審核流程，在內容送出前先檢查語氣、資訊、承諾、品牌風險與是否需要人工確認。</p>
+      <section className="mx-auto grid max-w-7xl gap-10 px-6 pb-16 pt-12 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+        <div>
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-200"><Sparkles className="h-4 w-4" />AI Process Desk Labs</div>
+          <h1 className="text-4xl font-bold leading-tight text-white md:text-6xl">固定 Dashboard + 客製 AI 功能模組</h1>
+          <p className="mt-6 text-lg leading-8 text-slate-300">幫團隊把重複的整理、摘要、改寫與初稿工作，做成固定介面的 AI 輔助功能。第一階段先設定 1 個最有感的 AI 功能，不需要更換原本系統，也不做大型 AI 導入。</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <MPButton href="mailto:easonlsy1019@gmail.com?subject=AI%20%E5%B0%8D%E5%A4%96%E5%85%A7%E5%AE%B9%E9%80%81%E5%87%BA%E5%89%8D%E5%AF%A9%E6%A0%B8%E8%A9%A6%E9%BB%9E%E7%94%B3%E8%AB%8B">申請 3 則免費審核 <ArrowRight className="ml-2 h-4 w-4" /></MPButton>
-            <MPButton to="/contact" variant="outline">預約 AI Gate 試點</MPButton>
+            <MPButton href={aiMail}>討論一個 AI 功能 <ArrowRight className="ml-2 h-4 w-4" /></MPButton>
+            <MPButton to="/cases" variant="outline">查看真實上線案例</MPButton>
           </div>
+          <p className="mt-5 text-sm leading-6 text-slate-400">Eason Systems 已有 LINE / Web 系統與流程整理經驗，包含累積超過 3 萬名使用者的公廁查詢 LINE Bot；AI Process Desk Labs 目前屬於第二產品線實驗。</p>
+        </div>
+        <MPAIFunctionMockup />
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-12">
+        <MPSectionTitle eyebrow="Why" title="不是多一個 AI 工具，而是把一段重複工作固定成可使用的 AI 功能" text="很多團隊已經會用 ChatGPT，但仍然是每個人自己貼資料、自己下 Prompt、自己整理結果。AI Process Desk Labs 的重點，是先把其中一段高頻工作整理成固定功能，讓輸入欄位、輸出格式與語氣要求可以重複使用。" />
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <MPCard className="p-6"><FileText className="mb-5 h-6 w-6 text-cyan-200" /><h3 className="text-xl font-bold text-white">重複初稿</h3><p className="mt-3 text-sm leading-7 text-slate-300">活動文案、追蹤信、企劃摘要、候選人重點，每次都從零整理很耗時。</p></MPCard>
+          <MPCard className="p-6"><Layers className="mb-5 h-6 w-6 text-cyan-200" /><h3 className="text-xl font-bold text-white">固定格式</h3><p className="mt-3 text-sm leading-7 text-slate-300">把欄位、語氣與輸出格式固定下來，避免每個人用 AI 的方式都不一樣。</p></MPCard>
+          <MPCard className="p-6"><Workflow className="mb-5 h-6 w-6 text-cyan-200" /><h3 className="text-xl font-bold text-white">可擴充工作區</h3><p className="mt-3 text-sm leading-7 text-slate-300">第一階段只做 1 個功能，是驗證策略；如果有用，後續可以擴成多 AI 功能工作區。</p></MPCard>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-12">
-        <MPSectionTitle eyebrow="Suitable Content" title="適用內容" text="只要是 AI 產出後可能代表團隊對外送出的內容，都可以先經過 AI Gate 審核。" />
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {contentTypes.map((item) => <MPCard key={item} className="p-5"><FileText className="mb-4 h-5 w-5 text-cyan-200" /><p className="font-semibold text-white">{item}</p></MPCard>)}
+        <MPSectionTitle eyebrow="Examples" title="可先測的 AI 功能方向" text="第一階段會根據公司公開服務內容，先提出 1 個最可能有感的 AI 功能方向。以下是常見類型。" />
+        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {modules.map(([title, text]) => <MPCard key={title} className="p-6"><p className="text-sm font-semibold text-cyan-200">AI 功能模組</p><h3 className="mt-2 text-xl font-bold text-white">{title}</h3><p className="mt-3 text-sm leading-7 text-slate-300">{text}</p></MPCard>)}
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-          <MPSectionTitle eyebrow="Risk Review" title="AI Gate 會檢查什麼？" text="重點不是把 AI 當成另一個寫手，而是確認 AI 內容是否可以安全代表團隊對外送出。" />
-          <div className="grid gap-3 md:grid-cols-2">
-            {checks.map((item) => <div key={item} className="flex gap-3 rounded-2xl border border-white/10 bg-slate-950/40 p-4"><ClipboardCheck className="mt-0.5 h-5 w-5 shrink-0 text-cyan-200" /><p className="text-sm leading-6 text-slate-300">{item}</p></div>)}
+          <MPSectionTitle eyebrow="Audience" title="第一批優先測 B 線客群" text="AI Process Desk Labs 第一批不主動大撒活動、公益與課程客群，而是先測更可能為 AI 工作效率付費的 B 線客群。" />
+          <div className="grid gap-4 md:grid-cols-3">
+            {audiences.map(([title, text]) => <MPCard key={title} className="p-5"><h3 className="font-bold text-white">{title}</h3><p className="mt-3 text-sm leading-7 text-slate-300">{text}</p></MPCard>)}
           </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-12">
-        <MPSectionTitle eyebrow="Decision Output" title="審核結果" text="AI Gate 不只給分數，而是直接給出可執行判斷。" />
-        <div className="mt-8 grid gap-5 md:grid-cols-2">
-          {results.map(([title, desc, className]) => <MPCard key={title} className={`p-6 ${className}`}><h3 className="text-xl font-bold text-white">{title}</h3><p className="mt-3 leading-7 text-slate-300">{desc}</p></MPCard>)}
+        <div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-6 md:p-8">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">Early Cooperation</p>
+              <h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl">專屬 AI 功能小試作</h2>
+              <p className="mt-4 text-base leading-8 text-slate-300">前 2 家早期合作價 NT$6,000–10,000，正式小試作價 NT$12,000–18,000。第一階段以 7–10 天、1 個明確 AI 功能為主，不做大型系統導入。</p>
+              <MPButton href={aiMail} className="mt-6">來信討論小試作 <Mail className="ml-2 h-4 w-4" /></MPButton>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              <MPCard className="bg-slate-950/35 p-5"><h3 className="font-bold text-white">包含</h3><div className="mt-4 space-y-2">{scope.map((item) => <p key={item} className="text-sm leading-6 text-slate-300">• {item}</p>)}</div></MPCard>
+              <MPCard className="bg-slate-950/35 p-5"><h3 className="font-bold text-white">不包含</h3><div className="mt-4 space-y-2">{notIncluded.map((item) => <p key={item} className="text-sm leading-6 text-slate-300">• {item}</p>)}</div></MPCard>
+            </div>
+          </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-12">
-        <MPSectionTitle eyebrow="Workflow" title="基本流程" />
-        <div className="mt-8"><MPFlowDiagram /></div>
-        <MPCard className="mt-8 p-6">
-          <p className="text-lg font-semibold text-white">試點合作</p>
-          <p className="mt-3 leading-8 text-slate-300">目前開放小團隊試點合作。可先免費提供 3 則 AI 對外內容審核，包含風險判斷、修正建議與下次防錯規則。適合正在使用 AI 撰寫客戶回覆、社群貼文、合作信、公告或提案內容的團隊。</p>
-        </MPCard>
+        <MPSectionTitle eyebrow="Build" title="技術 MVP：極薄工作區，不是完整 SaaS，也不是單頁玩具" text="第一版會保留專屬入口與固定 UI 骨架，但不做完整帳號系統、Dashboard、檔案解析或外部系統串接。客製集中在欄位、Prompt、輸出格式與功能邏輯。" />
+        <div className="mt-8 grid gap-5 md:grid-cols-2">
+          <MPInfoBlock title="第一版會做" icon={CheckCircle2} items={["專屬 AI 工作區 / 專屬功能入口", "單一 AI 功能頁", "動態欄位表單", "AI 產出與複製", "簡單回饋：有用 / 需修改 / 不適合", "內部功能設定"]} />
+          <MPInfoBlock title="第一版不做" icon={AlertTriangle} items={["完整 SaaS 帳號系統", "客戶自訂欄位", "表單拖拉設計器", "檔案解析 / OCR", "外部系統串接", "多功能列表與大型 Dashboard"]} />
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-12">
+        <MPSectionTitle eyebrow="Data" title="預設不儲存敏感原文，除錯需使用者同意" text="第一階段只記錄公司 ID、AI 功能 ID、使用時間、回饋狀態、token 用量與錯誤狀態；原始履歷、會議紀錄、客戶完整對話與 AI 完整輸出預設不落地。若使用者回報問題，才會在同意後保存該次輸入與輸出 7 天供除錯。" />
       </section>
     </>
   );
-}
-
-function MPInfoBlock({ title, items, icon: Icon }) {
-  return <MPCard className="h-full p-6"><div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-300/10"><Icon className="h-5 w-5 text-cyan-200" /></div><h3 className="text-xl font-bold text-white">{title}</h3><div className="mt-5 space-y-3">{items.map((item) => <div key={item} className="flex gap-3 text-sm leading-6 text-slate-300"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-200" /><span>{item}</span></div>)}</div></MPCard>;
 }
 
 function MPWorkflowSystemsPage() {
@@ -1121,7 +1160,7 @@ function MPWorkflowSystemsPage() {
   return (
     <>
       <section className="mx-auto max-w-7xl px-6 pb-12 pt-12">
-        <MPSectionTitle eyebrow="Workflow Systems" title="把分散的資訊、重複詢問與人工整理流程，做成可查詢、可維護、可追蹤的系統" text="這頁保留原本服務的整理版。首頁仍接住舊客戶；這裡放流程系統詳細說明。" />
+        <MPSectionTitle eyebrow="Workflow Systems" title="把分散的資訊、重複詢問與人工整理流程，做成可查詢、可維護、可追蹤的系統" text="這頁保留原本 LINE / Web 前端導覽服務的整理版。若寄給活動、課程、公益、營隊或社企客戶，可以直接給這個頁面。" />
       </section>
       <section className="mx-auto max-w-7xl px-6 py-10">
         <div className="grid gap-5 md:grid-cols-3">
@@ -1155,40 +1194,40 @@ function MPCasesPage() {
       links: [],
     },
     {
-      title: "內部名單追蹤與接案 CRM",
-      tag: "冷開發流程、寄信紀錄、追蹤日期、狀態與預估金額管理",
-      text: "用於整理名單、寄信、追蹤、回覆狀態與下一步任務，展示 Eason Systems 對流程管理與資料整理工具的實作能力。",
-      links: [],
+      title: "AI Process Desk Labs",
+      tag: "第二產品線實驗，尚在早期合作階段",
+      text: "固定 Dashboard + 客製 AI 功能模組。第一階段先幫 B 線團隊做 1 個可直接使用的 AI 功能，驗證重複整理、摘要與初稿工作是否值得產品化。",
+      links: [["查看 AI 服務頁", "#/ai-process-desk"]],
     },
   ];
 
-  return <section className="mx-auto max-w-7xl px-6 pb-20 pt-12"><MPSectionTitle eyebrow="Cases" title="案例與作品" text="信任素材不是只講願景，而是展示實際上線系統、Dashboard 與流程工具。" /><div className="mt-10 grid gap-6">{cases.map((item) => <MPCard key={item.title} className="p-6 md:p-8"><div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between"><div><p className="text-sm font-semibold text-cyan-200">{item.tag}</p><h2 className="mt-2 text-2xl font-bold text-white md:text-3xl">{item.title}</h2><p className="mt-4 max-w-4xl leading-8 text-slate-300">{item.text}</p></div>{item.links.length > 0 && <div className="flex shrink-0 flex-wrap gap-3">{item.links.map(([label, href]) => <MPButton key={label} href={href} variant="outline">{label} <ExternalLink className="ml-2 h-4 w-4" /></MPButton>)}</div>}</div></MPCard>)}</div></section>;
+  return <section className="mx-auto max-w-7xl px-6 pb-20 pt-12"><MPSectionTitle eyebrow="Cases" title="案例與作品" text="信任素材不是只講願景，而是展示實際上線系統、Dashboard 與流程工具；AI Process Desk Labs 目前清楚標示為第二產品線實驗。" /><div className="mt-10 grid gap-6">{cases.map((item) => <MPCard key={item.title} className="p-6 md:p-8"><div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between"><div><p className="text-sm font-semibold text-cyan-200">{item.tag}</p><h2 className="mt-2 text-2xl font-bold text-white md:text-3xl">{item.title}</h2><p className="mt-4 max-w-4xl leading-8 text-slate-300">{item.text}</p></div>{item.links.length > 0 && <div className="flex shrink-0 flex-wrap gap-3">{item.links.map(([label, href]) => <MPButton key={label} href={href} variant="outline">{label} <ExternalLink className="ml-2 h-4 w-4" /></MPButton>)}</div>}</div></MPCard>)}</div></section>;
 }
 
 function MPPricingPage() {
   const aiPlans = [
-    ["Pilot", "$199 / month 起", ["每月審核 30 則 AI 對外內容", "可送出 / 需修改 / 不建議送出 / 需人工批准判斷", "主要風險說明", "修正版或修正建議", "下次防錯規則", "每月一份 AI 輸出風險摘要"]],
-    ["Team", "$499 / month 起", ["每月審核 100 則 AI 對外內容", "團隊共用 AI 使用規則", "常見風險分類", "審核紀錄整理", "依團隊語氣與限制建立專屬規則", "每月 AI 使用風險摘要"]],
-    ["Custom Workflow", "客製報價", ["AI 對外輸出審核流程", "團隊規則庫", "人工批准流程", "審核紀錄", "既有工具整合", "Dashboard 或後台管理"]],
+    ["專屬 AI 功能小試作", "早期合作價 NT$ 6,000–10,000", ["1 個專屬 AI 工作區 / 專屬功能頁", "1 個 AI 功能模組", "7–10 天使用", "1 次小幅 Prompt 或輸出格式微調", "不含檔案解析、OCR、系統串接或客製 UI"]],
+    ["AI 功能 Sprint", "NT$ 24,800 起", ["1–2 個 AI 功能模組", "3–5 位使用者", "更完整使用紀錄與調整", "至少有 1–2 個小試作案例後再主推"]],
+    ["AI 工作區 Pilot", "NT$ 58,000 起", ["3–5 個 AI 功能模組", "5–10 位使用者", "基礎 Dashboard 與使用紀錄", "至少有 2–3 個 AI 功能案例後再推"]],
   ];
   const workflowPlans = [["LINE Bot + 後台資料管理", "NT$ 50,000–100,000 起"], ["據點查詢 / 地圖推薦系統", "NT$ 60,000–150,000 起"], ["活動 / 課程流程系統", "NT$ 50,000–120,000 起"], ["簡易後台 / 名單整理工具", "NT$ 50,000–120,000 起"]];
 
-  return <section className="mx-auto max-w-7xl px-6 pb-20 pt-12"><MPSectionTitle eyebrow="Pricing" title="方案與試點合作" text="AI Gate 採月費試點方案，流程系統保留台灣小團隊熟悉的一次性專案報價。" /><div className="mt-10 grid gap-5 lg:grid-cols-3">{aiPlans.map(([name, price, items]) => <MPCard key={name} className="p-6"><p className="text-sm font-semibold text-cyan-200">AI Gate</p><h2 className="mt-2 text-2xl font-bold text-white">{name}</h2><p className="mt-3 text-2xl font-bold text-cyan-200">{price}</p><div className="mt-6 space-y-3">{items.map((item) => <div key={item} className="flex gap-3 text-sm leading-6 text-slate-300"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-200" /><span>{item}</span></div>)}</div></MPCard>)}</div><div className="mt-14"><MPSectionTitle eyebrow="Workflow Systems" title="原本流程系統價格" text="這些服務仍可合作，但不再放在首頁主推。" /><div className="mt-8 grid gap-4 md:grid-cols-2">{workflowPlans.map(([name, price]) => <MPCard key={name} className="flex items-center justify-between gap-4 p-5"><p className="font-semibold text-white">{name}</p><p className="text-sm font-semibold text-cyan-200">{price}</p></MPCard>)}</div></div></section>;
+  return <section className="mx-auto max-w-7xl px-6 pb-20 pt-12"><MPSectionTitle eyebrow="Pricing" title="方案與早期合作" text="AI Process Desk Labs 目前只適合小範圍早期合作；LINE / Web 流程系統保留原本一次性專案報價。" /><div className="mt-10 grid gap-5 lg:grid-cols-3">{aiPlans.map(([name, price, items]) => <MPCard key={name} className="p-6"><p className="text-sm font-semibold text-cyan-200">AI Process Desk Labs</p><h2 className="mt-2 text-2xl font-bold text-white">{name}</h2><p className="mt-3 text-2xl font-bold text-cyan-200">{price}</p><div className="mt-6 space-y-3">{items.map((item) => <div key={item} className="flex gap-3 text-sm leading-6 text-slate-300"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-200" /><span>{item}</span></div>)}</div></MPCard>)}</div><div className="mt-14"><MPSectionTitle eyebrow="Workflow Systems" title="LINE / Web 流程系統價格" text="這些是 Eason Systems 原本主業，適合活動、課程、公益、營隊與小型組織。" /><div className="mt-8 grid gap-4 md:grid-cols-2">{workflowPlans.map(([name, price]) => <MPCard key={name} className="flex items-center justify-between gap-4 p-5"><p className="font-semibold text-white">{name}</p><p className="text-sm font-semibold text-cyan-200">{price}</p></MPCard>)}</div></div></section>;
 }
 
 function MPAboutPage() {
-  return <section className="mx-auto max-w-5xl px-6 pb-20 pt-12"><MPSectionTitle eyebrow="About" title="關於 Eason Systems" /><MPCard className="mt-8 p-6 md:p-8"><div className="space-y-5 text-base leading-8 text-slate-300"><p>我是黃元逸 Eason，Eason Systems 的開發者。</p><p>我目前仍是學生，但已經實作過真實上線的 LINE / Web 系統，包括累積超過 30,000 名使用者的公廁查詢 LINE Bot，以及資料查詢、Dashboard、流程整理與後台管理工具。</p><p>Eason Systems 原本方向是協助小團隊把容易混亂的數位流程整理成可使用、可維護、可追蹤的系統。</p><p>現在新增 AI Gate 作為新服務試點：當團隊開始用 AI 撰寫客戶回覆、社群貼文、合作信與提案內容時，我希望協助團隊建立 AI 產出送出前的審核流程，讓 AI 不只是提高效率，也能被安全地使用。</p><div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-5 text-cyan-50">年輕、快、懂 AI，並且已有實作經驗。仍在累積案例，所以合作方式可以更彈性，但功能範圍、時程、付款與驗收仍會正式確認。</div></div></MPCard></section>;
+  return <section className="mx-auto max-w-5xl px-6 pb-20 pt-12"><MPSectionTitle eyebrow="About" title="關於 Eason Systems" /><MPCard className="mt-8 p-6 md:p-8"><div className="space-y-5 text-base leading-8 text-slate-300"><p>我是黃元逸 Eason，Eason Systems 的開發者。</p><p>我目前仍是學生，但已經實作過真實上線的 LINE / Web 系統，包括累積超過 30,000 名使用者的公廁查詢 LINE Bot，以及資料查詢、Dashboard、流程整理與後台管理工具。</p><p>Eason Systems 目前主力是協助小團隊把容易混亂的 LINE / Web 入口、FAQ、報名流程、資料查詢與後台維護整理成可使用、可維護、可追蹤的系統。</p><p>AI Process Desk Labs 是第二產品線實驗：當行銷、顧問、招募與內容團隊開始使用 AI，我希望協助他們把重複的整理、摘要、改寫與初稿工作，整理成固定介面的 AI 功能模組。</p><div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-5 text-cyan-50">主業與新方向會分開溝通：LINE / Web 客戶看流程系統頁，AI 客戶直接看 AI Process Desk Labs 頁。仍在累積案例，所以合作方式可以更彈性，但功能範圍、時程、付款與驗收仍會正式確認。</div></div></MPCard></section>;
 }
 
 function MPContactPage() {
-  const aiMail = "mailto:easonlsy1019@gmail.com?subject=AI%20%E5%B0%8D%E5%A4%96%E5%85%A7%E5%AE%B9%E9%80%81%E5%87%BA%E5%89%8D%E5%AF%A9%E6%A0%B8%E8%A9%A6%E9%BB%9E%E7%94%B3%E8%AB%8B&body=%E5%9C%98%E9%9A%8A%E5%90%8D%E7%A8%B1%EF%BC%9A%0A%E7%9B%AE%E5%89%8D%E6%98%AF%E5%90%A6%E4%BD%BF%E7%94%A8%20AI%20%E7%94%A2%E5%87%BA%E5%B0%8D%E5%A4%96%E5%85%A7%E5%AE%B9%EF%BC%9A%0A%E4%B8%BB%E8%A6%81%E5%85%A7%E5%AE%B9%E9%A1%9E%E5%9E%8B%EF%BC%9A%0A%E6%9C%80%E6%93%94%E5%BF%83%20AI%20%E5%87%BA%E4%BB%80%E9%BA%BC%E9%8C%AF%EF%BC%9A%0A%E6%98%AF%E5%90%A6%E9%A1%98%E6%84%8F%E6%8F%90%E4%BE%9B%203%20%E5%89%87%E5%85%A7%E5%AE%B9%E5%85%8D%E8%B2%BB%E6%B8%AC%E8%A9%A6%EF%BC%9A%0A%E8%81%AF%E7%B5%A1%E6%96%B9%E5%BC%8F%EF%BC%9A";
+  const aiMail = "mailto:easonlsy1019@gmail.com?subject=AI%20%E8%BC%94%E5%8A%A9%E5%8A%9F%E8%83%BD%E5%90%88%E4%BD%9C%E8%A9%A2%E5%95%8F&body=%E5%85%AC%E5%8F%B8%2F%E5%9C%98%E9%9A%8A%E5%90%8D%E7%A8%B1%EF%BC%9A%0A%E7%9B%AE%E5%89%8D%E6%9C%80%E9%87%8D%E8%A4%87%E7%9A%84%E6%95%B4%E7%90%86%2F%E6%91%98%E8%A6%81%2F%E6%94%B9%E5%AF%AB%E5%B7%A5%E4%BD%9C%EF%BC%9A%0A%E6%83%B3%E8%A9%A6%E7%9A%84%20AI%20%E5%8A%9F%E8%83%BD%EF%BC%9A%0A%E7%9B%AE%E5%89%8D%E6%98%AF%E8%AA%B0%E5%9C%A8%E5%81%9A%EF%BC%8C%E6%AF%8F%E9%80%B1%E5%A4%A7%E7%B4%84%E5%B9%BE%E6%AC%A1%EF%BC%9A%0A%E8%81%AF%E7%B5%A1%E6%96%B9%E5%BC%8F%EF%BC%9A";
   const workflowMail = "mailto:easonlsy1019@gmail.com?subject=%E6%B5%81%E7%A8%8B%E7%B3%BB%E7%B5%B1%E5%90%88%E4%BD%9C%E8%A8%8E%E8%AB%96&body=%E5%96%AE%E4%BD%8D%E5%90%8D%E7%A8%B1%EF%BC%9A%0A%E7%9B%AE%E5%89%8D%E6%B5%81%E7%A8%8B%E5%95%8F%E9%A1%8C%EF%BC%9A%0A%E6%98%AF%E5%90%A6%E5%B7%B2%E6%9C%89%20Google%20%E8%A1%A8%E5%96%AE%20%2F%20LINE%20%2F%20%E5%AE%98%E7%B6%B2%20%2F%20CRM%EF%BC%9A%0A%E6%83%B3%E6%95%B4%E7%90%86%E7%9A%84%E6%B5%81%E7%A8%8B%EF%BC%9A%0A%E9%A0%90%E7%AE%97%E7%AF%84%E5%9C%8D%EF%BC%9A%0A%E8%81%AF%E7%B5%A1%E6%96%B9%E5%BC%8F%EF%BC%9A";
 
-  return <section className="mx-auto max-w-7xl px-6 pb-20 pt-12"><MPSectionTitle eyebrow="Contact" title="聯絡 / 申請試點" text="請先選擇你想討論的是 AI Gate，還是原本的流程系統。這樣比較不會混在一起。" /><div className="mt-10 grid gap-6 md:grid-cols-2"><MPCard className="p-6 md:p-8"><ShieldCheck className="mb-5 h-8 w-8 text-cyan-200" /><h2 className="text-2xl font-bold text-white">我想申請 AI Gate 試點</h2><p className="mt-5 text-sm leading-6 text-slate-300">請提供：團隊名稱、是否使用 AI 產出對外內容、主要內容類型、最擔心 AI 出什麼錯、是否願意提供 3 則內容免費測試、聯絡方式。</p><MPButton href={aiMail} className="mt-6">申請 AI Gate 試點 <Mail className="ml-2 h-4 w-4" /></MPButton></MPCard><MPCard className="p-6 md:p-8"><Workflow className="mb-5 h-8 w-8 text-cyan-200" /><h2 className="text-2xl font-bold text-white">我想討論流程系統</h2><p className="mt-5 text-sm leading-6 text-slate-300">請提供：單位名稱、目前流程問題、是否已有 Google 表單 / LINE / 官網 / CRM、想整理的流程、預算範圍、聯絡方式。</p><MPButton href={workflowMail} className="mt-6" variant="outline">討論流程系統 <Mail className="ml-2 h-4 w-4" /></MPButton></MPCard></div><MPCard className="mt-6 p-5"><p className="text-sm leading-7 text-slate-300">Email：<a className="text-cyan-200 hover:text-cyan-100" href="mailto:easonlsy1019@gmail.com">easonlsy1019@gmail.com</a><span className="mx-3 text-slate-600">|</span>LINE ID：1234567890eason60708</p></MPCard></section>;
+  return <section className="mx-auto max-w-7xl px-6 pb-20 pt-12"><MPSectionTitle eyebrow="Contact" title="聯絡 / 討論合作" text="如果是行銷、顧問、招募或內容團隊，請直接討論 AI 輔助功能；如果是活動、課程、公益或 LINE / Web 導覽需求，請討論流程系統。" /><div className="mt-10 grid gap-6 md:grid-cols-2"><MPCard className="p-6 md:p-8"><Sparkles className="mb-5 h-8 w-8 text-cyan-200" /><h2 className="text-2xl font-bold text-white">我想討論 AI 輔助功能</h2><p className="mt-5 text-sm leading-6 text-slate-300">請提供：團隊名稱、目前最重複的整理 / 摘要 / 改寫工作、想試的 AI 功能、目前誰在做、每週大約幾次、聯絡方式。</p><MPButton href={aiMail} className="mt-6">討論 AI 功能 <Mail className="ml-2 h-4 w-4" /></MPButton></MPCard><MPCard className="p-6 md:p-8"><Workflow className="mb-5 h-8 w-8 text-cyan-200" /><h2 className="text-2xl font-bold text-white">我想討論 LINE / Web 流程系統</h2><p className="mt-5 text-sm leading-6 text-slate-300">請提供：單位名稱、目前流程問題、是否已有 Google 表單 / LINE / 官網 / CRM、想整理的流程、預算範圍、聯絡方式。</p><MPButton href={workflowMail} className="mt-6" variant="outline">討論流程系統 <Mail className="ml-2 h-4 w-4" /></MPButton></MPCard></div><MPCard className="mt-6 p-5"><p className="text-sm leading-7 text-slate-300">Email：<a className="text-cyan-200 hover:text-cyan-100" href="mailto:easonlsy1019@gmail.com">easonlsy1019@gmail.com</a><span className="mx-3 text-slate-600">|</span>LINE ID：1234567890eason60708</p></MPCard></section>;
 }
 
 function MPContent({ route }) {
-  if (route === "/ai-gate") return <MPAiGatePage />;
+  if (route === "/ai-process-desk") return <MPAIProcessDeskPage />;
   if (route === "/workflow-systems") return <MPWorkflowSystemsPage />;
   if (route === "/cases") return <MPCasesPage />;
   if (route === "/pricing") return <MPPricingPage />;
@@ -1202,8 +1241,8 @@ export default function App() {
   useEffect(() => {
     const titles = {
       "/": "Eason Systems",
-      "/ai-gate": "AI Gate",
-      "/workflow-systems": "流程系統",
+      "/ai-process-desk": "AI Process Desk Labs",
+      "/workflow-systems": "LINE / Web 流程系統",
       "/cases": "案例",
       "/pricing": "方案",
       "/about": "關於",
