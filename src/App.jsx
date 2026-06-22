@@ -890,7 +890,7 @@ function LegacyHomePage() {
 }
 
 
-const MP_ROUTES = ["/", "/ai-process-desk", "/workflow-systems", "/cases", "/pricing", "/about", "/contact"];
+const MP_ROUTES = ["/", "/line-web-systems", "/ai-process-desk"];
 
 function getMPRoute() {
   const hashRoute = window.location.hash.replace(/^#/, "") || "/";
@@ -928,34 +928,29 @@ function MPButton({ children, to, href, variant = "solid", className = "" }) {
 
 function MPHeader({ route }) {
   const nav = [
-    ["/", "LINE / Web 主站"],
+    ["/", "主頁介紹"],
+    ["/line-web-systems", "LINE / Web 主站"],
     ["/ai-process-desk", "AI Process Desk"],
-    ["/workflow-systems", "流程系統"],
-    ["/cases", "案例"],
-    ["/pricing", "方案"],
-    ["/about", "關於"],
-    ["/contact", "聯絡"],
   ];
 
   return (
-    <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
+    <header className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 md:flex-row md:items-center md:justify-between">
       <a href="#/" className="flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-400/15 ring-1 ring-cyan-300/25">
           <Bot className="h-5 w-5 text-cyan-300" />
         </div>
         <div>
           <p className="text-sm font-semibold tracking-wide text-white">Eason Systems</p>
-          <p className="text-xs text-slate-400">LINE / Web Systems · AI Process Desk Labs</p>
+          <p className="text-xs text-slate-400">流程整理 · LINE / Web 系統 · AI 輔助功能</p>
         </div>
       </a>
-      <nav className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] p-1 lg:flex">
+      <nav className="flex w-full items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] p-1 md:w-auto">
         {nav.map(([to, label]) => (
-          <a key={to} href={`#${to}`} className={`rounded-full px-4 py-2 text-sm transition ${route === to ? "bg-cyan-300 text-slate-950" : "text-slate-300 hover:bg-white/10 hover:text-white"}`}>
+          <a key={to} href={`#${to}`} className={`flex-1 rounded-full px-4 py-2.5 text-center text-sm transition md:flex-none ${route === to ? "bg-cyan-300 text-slate-950" : "text-slate-300 hover:bg-white/10 hover:text-white"}`}>
             {label}
           </a>
         ))}
       </nav>
-      <MPButton to="/contact" className="hidden md:inline-flex">聯絡討論 <ArrowRight className="ml-2 h-4 w-4" /></MPButton>
     </header>
   );
 }
@@ -964,12 +959,11 @@ function MPFooter() {
   return (
     <footer className="border-t border-white/10 px-6 py-10">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
-        <p>© Eason Systems. LINE / Web 前端導覽系統與 AI Process Desk Labs。</p>
+        <p>© Eason Systems. 把混亂流程整理成可使用、可維護、可追蹤的系統。</p>
         <div className="flex flex-wrap gap-4">
-          <a className="hover:text-white" href="#/">LINE / Web 主站</a>
+          <a className="hover:text-white" href="#/">主頁介紹</a>
+          <a className="hover:text-white" href="#/line-web-systems">LINE / Web 主站</a>
           <a className="hover:text-white" href="#/ai-process-desk">AI Process Desk</a>
-          <a className="hover:text-white" href="#/workflow-systems">流程系統</a>
-          <a className="hover:text-white" href="#/cases">案例</a>
           <a className="hover:text-white" href="mailto:easonlsy1019@gmail.com">easonlsy1019@gmail.com</a>
         </div>
       </div>
@@ -1013,6 +1007,101 @@ function MPInfoBlock({ title, items, icon: Icon }) {
         {items.map((item) => <div key={item} className="flex gap-3 text-sm leading-6 text-slate-300"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-200" /><span>{item}</span></div>)}
       </div>
     </MPCard>
+  );
+}
+
+function MPOverviewPage() {
+  const serviceLines = [
+    {
+      title: "LINE / Web 前端導覽系統",
+      subtitle: "給活動、課程、公益、營隊與小型組織",
+      text: "整理活動資訊、FAQ、報名入口、捐款入口、志工資訊與既有系統連結，讓民眾可以更清楚找到正確入口。",
+      points: ["LINE / Web 導覽", "FAQ 與報名前分流", "導回 Google 表單、netiCRM、官網或報名頁", "後台資料管理與基礎統計"],
+      to: "/line-web-systems",
+      button: "查看 LINE / Web 主站",
+      icon: Workflow,
+    },
+    {
+      title: "AI Process Desk Labs",
+      subtitle: "給行銷、顧問、招募、課程與內容團隊",
+      text: "把重複的資料整理、摘要、改寫與初稿工作，做成固定介面的 AI 功能模組，先針對一段明確流程做出可用版本。",
+      points: ["活動資料 → 社群文案初稿", "會議紀錄 → 追蹤信草稿", "客戶資料 → 企劃摘要", "履歷與職缺 → 候選人摘要"],
+      to: "/ai-process-desk",
+      button: "查看 AI 輔助功能",
+      icon: Sparkles,
+    },
+  ];
+
+  const direction = [
+    ["第一階段", "用 LINE / Web 流程系統建立現金流、案例與交付能力。"],
+    ["第二階段", "測試 AI Process Desk Labs，把客戶重複工作沉澱成可重用 AI 功能模組。"],
+    ["長期方向", "不是只做單次接案，而是把常見流程整理成可複製的系統與產品線。"],
+  ];
+
+  return (
+    <>
+      <section className="mx-auto grid max-w-7xl gap-10 px-6 pb-14 pt-12 lg:grid-cols-[minmax(0,1fr)_0.85fr] lg:items-center">
+        <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.55 }}>
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-200">
+            <Sparkles className="h-4 w-4" />Eason Systems
+          </div>
+          <h1 className="max-w-4xl text-4xl font-semibold leading-tight text-white md:text-6xl">
+            把混亂的資訊入口、重複流程與 AI 使用方式，整理成可執行的系統
+          </h1>
+          <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 md:text-lg">
+            我是黃元逸 Eason，Eason Systems 的開發者。目前主力是 LINE / Web 前端導覽與流程系統，同時正在測試 AI Process Desk Labs。核心方向不是追流行工具，而是把團隊每天卡住的資訊、入口、回覆、整理與初稿流程，整理成可使用、可維護、可追蹤的系統。
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <MPButton to="/line-web-systems">LINE / Web 主站 <ArrowRight className="ml-2 h-4 w-4" /></MPButton>
+            <MPButton to="/ai-process-desk" variant="outline">AI Process Desk <ArrowRight className="ml-2 h-4 w-4" /></MPButton>
+          </div>
+        </motion.div>
+
+        <MPCard className="p-6 md:p-8">
+          <p className="text-sm font-semibold text-cyan-200">Real system evidence</p>
+          <h2 className="mt-3 text-3xl font-bold text-white">公廁查詢 LINE Bot：30,000+ 使用者</h2>
+          <p className="mt-5 leading-7 text-slate-300">
+            目前最重要的信任素材，是已實際上線的公廁查詢 LINE Bot。它整合 LINE Bot、定位查詢、公廁資料、候選點排序與 Dashboard，證明 Eason Systems 不是只停留在想法，而是已經做過真實使用者會用的系統。
+          </p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            {[["30,000+", "真實使用者"], ["LINE / Web", "實際上線入口"], ["Dashboard", "查詢與使用紀錄"]].map(([num, label]) => (
+              <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                <p className="text-2xl font-bold text-cyan-200">{num}</p>
+                <p className="mt-1 text-xs text-slate-400">{label}</p>
+              </div>
+            ))}
+          </div>
+        </MPCard>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-10">
+        <MPSectionTitle eyebrow="Business Lines" title="目前分成兩條服務線，客戶連結會直接分流" text="不是讓客戶進來自己選，而是寄信前先判斷對方屬於哪一類。活動、課程、公益客戶看 LINE / Web 主站；行銷、顧問、招募與內容團隊看 AI Process Desk Labs。" />
+        <div className="mt-8 grid gap-6 lg:grid-cols-2">
+          {serviceLines.map((item) => {
+            const Icon = item.icon;
+            return (
+              <MPCard key={item.title} className="p-6 md:p-8">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/10"><Icon className="h-6 w-6 text-cyan-200" /></div>
+                <p className="text-sm font-semibold text-cyan-200">{item.subtitle}</p>
+                <h2 className="mt-2 text-3xl font-bold text-white">{item.title}</h2>
+                <p className="mt-4 leading-7 text-slate-300">{item.text}</p>
+                <div className="mt-6 space-y-3">
+                  {item.points.map((point) => <div key={point} className="flex gap-3 text-sm leading-6 text-slate-300"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-200" /><span>{point}</span></div>)}
+                </div>
+                <MPButton to={item.to} className="mt-7" variant={item.to === "/ai-process-desk" ? "outline" : "solid"}>{item.button} <ArrowRight className="ml-2 h-4 w-4" /></MPButton>
+              </MPCard>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-12">
+        <MPSectionTitle eyebrow="Direction" title="我的方向：先用可交付系統建立案例，再把重複需求產品化" text="Eason Systems 不是只做漂亮頁面，也不是突然轉成大型 AI 公司。現在的策略是把已經能交付的 LINE / Web 系統穩住，同時用 AI Process Desk Labs 小範圍測市場。" />
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          {direction.map(([title, text]) => <MPCard key={title} className="p-6"><p className="text-sm font-semibold text-cyan-200">{title}</p><p className="mt-3 leading-7 text-slate-300">{text}</p></MPCard>)}
+        </div>
+      </section>
+    </>
   );
 }
 
@@ -1082,7 +1171,7 @@ function MPAIProcessDeskPage() {
           <p className="mt-6 text-lg leading-8 text-slate-300">幫團隊把重複的整理、摘要、改寫與初稿工作，做成固定介面的 AI 輔助功能。第一階段先設定 1 個最有感的 AI 功能，不需要更換原本系統，也不做大型 AI 導入。</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <MPButton href={aiMail}>討論一個 AI 功能 <ArrowRight className="ml-2 h-4 w-4" /></MPButton>
-            <MPButton to="/cases" variant="outline">查看真實上線案例</MPButton>
+            <MPButton href="https://toilet-mvp-dev.vercel.app/#media" variant="outline">查看公廁 Bot 案例 <ExternalLink className="ml-2 h-4 w-4" /></MPButton>
           </div>
           <p className="mt-5 text-sm leading-6 text-slate-400">Eason Systems 已有 LINE / Web 系統與流程整理經驗，包含累積超過 3 萬名使用者的公廁查詢 LINE Bot；AI Process Desk Labs 目前屬於第二產品線實驗。</p>
         </div>
@@ -1227,31 +1316,22 @@ function MPContactPage() {
 }
 
 function MPContent({ route }) {
+  if (route === "/") return <MPOverviewPage />;
+  if (route === "/line-web-systems") return <MPWorkflowSystemsPage />;
   if (route === "/ai-process-desk") return <MPAIProcessDeskPage />;
-  if (route === "/workflow-systems") return <MPWorkflowSystemsPage />;
-  if (route === "/cases") return <MPCasesPage />;
-  if (route === "/pricing") return <MPPricingPage />;
-  if (route === "/about") return <MPAboutPage />;
-  if (route === "/contact") return <MPContactPage />;
-  return <LegacyHomePage />;
+  return <MPOverviewPage />;
 }
 
 export default function App() {
   const route = useMPRoute();
   useEffect(() => {
     const titles = {
-      "/": "Eason Systems",
+      "/": "Eason Systems 主頁介紹",
+      "/line-web-systems": "LINE / Web 主站",
       "/ai-process-desk": "AI Process Desk Labs",
-      "/workflow-systems": "LINE / Web 流程系統",
-      "/cases": "案例",
-      "/pricing": "方案",
-      "/about": "關於",
-      "/contact": "聯絡",
     };
     document.title = `${titles[route] || "Eason Systems"}｜Eason Systems`;
   }, [route]);
-
-  if (route === "/") return <LegacyHomePage />;
 
   return (
     <MPShell route={route}>
