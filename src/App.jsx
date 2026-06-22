@@ -1236,37 +1236,364 @@ function MPAIProcessDeskPage() {
 }
 
 function MPWorkflowSystemsPage() {
-  const audiences = ["活動團隊", "課程品牌", "營隊 / 工作坊", "公益協會", "地方創生團隊", "小型組織", "教育團隊"];
-  const problems = ["活動資訊散在不同頁面", "LINE、私訊、Email 一直重複問", "民眾不知道該從哪個入口開始", "已有 Google 表單或 netiCRM，但進入前仍然混亂", "活動後還要整理查詢、點擊、名單或成果資料"];
-  const solutions = ["LINE / Web 導覽", "FAQ 分流", "報名前導覽", "表單 / 官網 / 社群連結整合", "後台資料管理", "查詢紀錄與 Dashboard"];
-  const plans = [
-    ["LINE Bot + 後台資料管理", "NT$ 50,000–100,000 起", "適合公益、協會、活動團隊與小型組織。"],
-    ["據點查詢 / 地圖推薦系統", "NT$ 60,000–150,000 起", "適合救傷中心、社福據點、服務據點與地方資料。"],
-    ["活動 / 課程流程系統", "NT$ 50,000–120,000 起", "適合營隊、課程中心、工作坊與親子活動。"],
-    ["簡易後台 / 名單整理工具", "NT$ 50,000–120,000 起", "適合尚未有既有工具、需要先整理名單或狀態的團隊。"],
+  const t = content.zh;
+  const [selected, setSelected] = useState(["line-entry", "menu-flow", "faq"]);
+  const [otherEnabled, setOtherEnabled] = useState(false);
+
+  const estimateOptions = useMemo(
+    () => t.estimateOptions.map(([id, label, price, desc]) => ({ id, label, price, desc })),
+    [t]
+  );
+  const selectedItems = useMemo(
+    () => estimateOptions.filter((item) => selected.includes(item.id)),
+    [estimateOptions, selected]
+  );
+  const subtotal = selectedItems.reduce((sum, item) => sum + item.price, 0) + (otherEnabled ? 6000 : 0);
+  const estimatedHigh = subtotal === 0 ? 0 : Math.round((subtotal * 1.2) / 1000) * 1000;
+  const estimateLabel = subtotal === 0 ? "請先勾選功能" : `NT$ ${subtotal.toLocaleString()} – ${estimatedHigh.toLocaleString()}`;
+
+  const scrollTo = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const toggleOption = (id) => {
+    setSelected((current) =>
+      current.includes(id) ? current.filter((item) => item !== id) : [...current, id]
+    );
+  };
+
+  const topButtons = [
+    ["服務內容", "workflow-main", "痛點、解法、LINE / Web 導覽、活動流程"],
+    ["方案與估價", "workflow-pricing", "中型案、小方案、CRM、維護與功能估價"],
+    ["案例與聯絡", "workflow-proof", "真實案例、上線經驗與聯絡入口"],
   ];
+
+  const contactMail = `mailto:easonlsy1019@gmail.com?subject=${encodeURIComponent("LINE / Web 流程系統合作討論")}&body=${encodeURIComponent("您好，我想討論 LINE / Web 流程系統合作。\n\n單位名稱：\n目前流程問題：\n是否已有 Google 表單 / LINE / 官網 / netiCRM：\n想整理的流程：\n預算範圍：\n聯絡方式：")}`;
 
   return (
     <>
       <section className="mx-auto max-w-7xl px-6 pb-12 pt-12">
-        <MPSectionTitle eyebrow="Workflow Systems" title="把分散的資訊、重複詢問與人工整理流程，做成可查詢、可維護、可追蹤的系統" text="這頁保留原本 LINE / Web 前端導覽服務的整理版。若寄給活動、課程、公益、營隊或社企客戶，可以直接給這個頁面。" />
-      </section>
-      <section className="mx-auto max-w-7xl px-6 py-10">
-        <div className="grid gap-5 md:grid-cols-3">
-          <MPInfoBlock title="適合誰" items={audiences} icon={UserCheck} />
-          <MPInfoBlock title="常見問題" items={problems} icon={AlertTriangle} />
-          <MPInfoBlock title="可以怎麼解" items={solutions} icon={CheckCircle2} />
+        <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-300">LINE / Web Systems</p>
+            <h1 className="mt-4 max-w-4xl text-4xl font-bold leading-tight text-white md:text-6xl">
+              把民眾進入系統前的那段流程，
+              <span className="block text-cyan-300">整理成可查詢、可維護、可追蹤的系統</span>
+            </h1>
+            <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 md:text-lg">
+              {t.heroText}
+            </p>
+          </div>
+
+          <MPCard className="p-6 md:p-7">
+            <p className="text-sm font-semibold text-cyan-200">這頁不是一頁式長文，而是分三塊看</p>
+            <h2 className="mt-3 text-2xl font-bold text-white">先選你想看的部分</h2>
+            <div className="mt-6 grid gap-3">
+              {topButtons.map(([label, target, desc]) => (
+                <button
+                  key={target}
+                  type="button"
+                  onClick={() => scrollTo(target)}
+                  className="group rounded-2xl border border-white/10 bg-slate-950/45 p-4 text-left transition hover:border-cyan-300/40 hover:bg-cyan-300/10"
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="font-semibold text-white">{label}</p>
+                    <ArrowRight className="h-4 w-4 text-cyan-200 transition group-hover:translate-x-1" />
+                  </div>
+                  <p className="mt-2 text-sm leading-6 text-slate-400">{desc}</p>
+                </button>
+              ))}
+            </div>
+          </MPCard>
         </div>
       </section>
-      <section className="mx-auto max-w-7xl px-6 py-12">
-        <MPSectionTitle eyebrow="Plans" title="常見合作方向" text="中型案保留，小方案弱化。先看流程，再決定第一版要補哪一段。" />
-        <div className="mt-8 grid gap-5 md:grid-cols-2">
-          {plans.map(([name, price, desc]) => <MPCard key={name} className="p-6"><p className="text-sm font-semibold text-cyan-200">{price}</p><h3 className="mt-2 text-2xl font-bold text-white">{name}</h3><p className="mt-3 leading-7 text-slate-300">{desc}</p></MPCard>)}
+
+      <section id="workflow-main" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-12">
+        <MPSectionTitle
+          eyebrow={t.problemLabel}
+          title={t.problemTitle}
+          text="這一段保留原本首頁的核心說法：不是先賣系統，而是先說清楚為什麼民眾會一直問、同仁會一直重複回覆。"
+        />
+
+        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {t.painPoints.map((point) => (
+            <MPCard key={point} className="p-5">
+              <AlertTriangle className="mb-4 h-5 w-5 text-cyan-200" />
+              <p className="text-sm leading-7 text-slate-300">{point}</p>
+            </MPCard>
+          ))}
         </div>
+
+        <div className="mt-12 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
+          <MPCard className="p-6 md:p-8">
+            <p className="text-sm font-semibold text-cyan-200">{t.googleLabel}</p>
+            <h2 className="mt-3 text-3xl font-bold leading-tight text-white">{t.googleTitle}</h2>
+            <p className="mt-5 leading-8 text-slate-300">{t.googleText}</p>
+          </MPCard>
+
+          <div className="grid gap-4">
+            {t.googlePoints.map(([title, desc]) => (
+              <MPCard key={title} className="p-5">
+                <h3 className="font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm leading-7 text-slate-300">{desc}</p>
+              </MPCard>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-12">
+          <MPSectionTitle eyebrow={t.frontEntryLabel} title={t.frontEntryTitle} text={t.frontEntryText} />
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {t.frontEntryCards.map(([title, desc]) => (
+              <MPCard key={title} className="p-6">
+                <h3 className="text-xl font-bold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-300">{desc}</p>
+              </MPCard>
+            ))}
+          </div>
+          <MPCard className="mt-5 border-cyan-300/20 bg-cyan-300/10 p-5">
+            <p className="text-sm leading-7 text-cyan-50">{t.frontEntryNote}</p>
+          </MPCard>
+        </div>
+
+        <div className="mt-12">
+          <MPSectionTitle eyebrow={t.eventSystemLabel} title={t.eventSystemTitle} text={t.eventSystemText} />
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {t.eventSystemPoints.map(([title, desc]) => (
+              <MPCard key={title} className="p-5">
+                <CheckCircle2 className="mb-4 h-5 w-5 text-cyan-200" />
+                <h3 className="font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm leading-7 text-slate-300">{desc}</p>
+              </MPCard>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-12 grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <MPSectionTitle eyebrow={t.buildLabel} title={t.buildTitle} text={t.buildText} />
+          <div className="grid gap-4 md:grid-cols-2">
+            {t.features.map((feature) => {
+              const Icon = feature.icon || CheckCircle2;
+              return (
+                <MPCard key={feature.title} className="p-5">
+                  <Icon className="mb-4 h-5 w-5 text-cyan-200" />
+                  <h3 className="font-semibold text-white">{feature.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-slate-300">{feature.text}</p>
+                </MPCard>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="mt-12">
+          <MPSectionTitle eyebrow={t.flowLabel} title={t.flowTitle} />
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {t.offerSteps.map(([title, desc]) => (
+              <MPCard key={title} className="p-5">
+                <p className="text-sm font-semibold text-cyan-200">{title}</p>
+                <p className="mt-3 text-sm leading-7 text-slate-300">{desc}</p>
+              </MPCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="workflow-pricing" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-12">
+        <MPSectionTitle eyebrow={t.packageLabel} title={t.packageTitle} text={t.packageText} />
+
+        <div className="mt-10">
+          <MPSectionTitle eyebrow={t.midPlanLabel} title={t.midPlanTitle} text={t.midPlanText} />
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {t.midPlans.map((plan) => (
+              <MPCard key={plan.name} className={`p-6 ${plan.featured ? "border-cyan-300/40 bg-cyan-300/10" : ""}`}>
+                <p className="text-sm font-semibold text-cyan-200">{plan.price}</p>
+                <h3 className="mt-2 text-2xl font-bold text-white">{plan.name}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-400">{plan.subtitle}</p>
+                <div className="mt-5 space-y-3">
+                  {plan.items.map((item) => (
+                    <div key={item} className="flex gap-3 text-sm leading-6 text-slate-300">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-200" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </MPCard>
+            ))}
+          </div>
+          <p className="mt-5 text-sm leading-7 text-slate-400">{t.midPlanNote}</p>
+        </div>
+
+        <div className="mt-14">
+          <MPSectionTitle eyebrow={t.smallPlanLabel} title={t.smallPlanTitle} text={t.smallPlanText} />
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {t.smallPlans.map((plan) => (
+              <MPCard key={plan.name} className="p-5">
+                <p className="text-sm font-semibold text-cyan-200">{plan.price}</p>
+                <h3 className="mt-2 text-xl font-bold text-white">{plan.name}</h3>
+                <p className="mt-2 text-xs leading-6 text-slate-400">{plan.subtitle}</p>
+                <div className="mt-4 space-y-2">
+                  {plan.items.map((item) => (
+                    <div key={item} className="flex gap-2 text-xs leading-5 text-slate-300">
+                      <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-200" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </MPCard>
+            ))}
+          </div>
+          <p className="mt-5 text-sm leading-7 text-slate-400">{t.upgradeNote}</p>
+        </div>
+
+        <div className="mt-14">
+          <MPSectionTitle eyebrow={t.crmLabel} title={t.crmTitle} text={t.crmText} />
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {t.crmPlans.map((plan) => (
+              <MPCard key={plan.name} className="p-5">
+                <p className="text-sm font-semibold text-cyan-200">{plan.price}</p>
+                <h3 className="mt-2 text-xl font-bold text-white">{plan.name}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-400">{plan.subtitle}</p>
+                <div className="mt-4 space-y-2">
+                  {plan.items.map((item) => (
+                    <div key={item} className="flex gap-2 text-xs leading-5 text-slate-300">
+                      <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-200" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </MPCard>
+            ))}
+          </div>
+          <p className="mt-5 text-sm leading-7 text-slate-400">{t.crmNote}</p>
+        </div>
+
+        <div className="mt-14">
+          <MPSectionTitle eyebrow={t.maintenanceLabel} title={t.maintenanceTitle} text={t.maintenanceText} />
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {t.maintenancePlans.map((plan) => (
+              <MPCard key={plan.name} className="p-5">
+                <p className="text-sm font-semibold text-cyan-200">{plan.price}</p>
+                <h3 className="mt-2 text-xl font-bold text-white">{plan.name}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-400">{plan.subtitle}</p>
+                <div className="mt-4 space-y-2">
+                  {plan.items.map((item) => (
+                    <div key={item} className="flex gap-2 text-xs leading-5 text-slate-300">
+                      <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-200" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </MPCard>
+            ))}
+          </div>
+          <p className="mt-5 text-sm leading-7 text-slate-400">{t.maintenanceNote}</p>
+        </div>
+
+        <div className="mt-14">
+          <MPSectionTitle eyebrow={t.estimatorLabel} title={t.estimatorTitle} text={t.estimatorText} />
+          <div className="mt-8 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+            <MPCard className="p-6">
+              <div className="grid gap-3 md:grid-cols-2">
+                {estimateOptions.map((item) => (
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={() => toggleOption(item.id)}
+                    className={`rounded-2xl border p-4 text-left transition ${selected.includes(item.id) ? "border-cyan-300/50 bg-cyan-300/10" : "border-white/10 bg-slate-950/35 hover:bg-white/[0.06]"}`}
+                  >
+                    <p className="font-semibold text-white">{item.label}</p>
+                    <p className="mt-2 text-xs leading-5 text-slate-400">{item.desc}</p>
+                    <p className="mt-3 text-sm font-semibold text-cyan-200">+ NT$ {item.price.toLocaleString()} 起</p>
+                  </button>
+                ))}
+              </div>
+              <button
+                type="button"
+                onClick={() => setOtherEnabled((v) => !v)}
+                className={`mt-4 w-full rounded-2xl border p-4 text-left transition ${otherEnabled ? "border-cyan-300/50 bg-cyan-300/10" : "border-white/10 bg-slate-950/35 hover:bg-white/[0.06]"}`}
+              >
+                <p className="font-semibold text-white">{t.otherCustom}</p>
+                <p className="mt-2 text-xs leading-5 text-slate-400">{t.otherDesc}</p>
+                <p className="mt-3 text-sm font-semibold text-cyan-200">{t.otherPrice}</p>
+              </button>
+            </MPCard>
+
+            <MPCard className="p-6">
+              <p className="text-sm font-semibold text-cyan-200">{t.estimateTitle}</p>
+              <p className="mt-3 text-4xl font-bold text-white">{estimateLabel}</p>
+              <p className="mt-4 text-sm leading-7 text-slate-400">{t.estimateDesc}</p>
+              <div className="mt-6 rounded-2xl border border-white/10 bg-slate-950/40 p-4">
+                <p className="text-sm font-semibold text-white">{t.selectedTitle}</p>
+                <div className="mt-3 space-y-2">
+                  {selectedItems.length === 0 && !otherEnabled ? (
+                    <p className="text-sm text-slate-400">{t.noneSelected}</p>
+                  ) : (
+                    <>
+                      {selectedItems.map((item) => <p key={item.id} className="text-sm text-slate-300">- {item.label}</p>)}
+                      {otherEnabled && <p className="text-sm text-slate-300">- {t.otherCustom}</p>}
+                    </>
+                  )}
+                </div>
+              </div>
+              <button type="button" onClick={() => { setSelected([]); setOtherEnabled(false); }} className="mt-4 rounded-2xl border border-white/10 px-4 py-3 text-sm text-slate-300 hover:bg-white/10">
+                {t.clearAll}
+              </button>
+            </MPCard>
+          </div>
+        </div>
+      </section>
+
+      <section id="workflow-proof" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-12">
+        <MPSectionTitle eyebrow={t.audienceLabel} title={t.audienceTitle} text={t.audienceText} />
+        <div className="mt-8 grid gap-5 md:grid-cols-4">
+          {t.audienceGroups.map(([title, desc]) => (
+            <MPCard key={title} className="p-5">
+              <h3 className="font-semibold text-white">{title}</h3>
+              <p className="mt-2 text-sm leading-7 text-slate-300">{desc}</p>
+            </MPCard>
+          ))}
+        </div>
+
+        <div className="mt-14">
+          <MPSectionTitle eyebrow={t.resultsLabel} title={t.resultsTitle} text={t.resultsText} />
+          <div className="mt-8 grid gap-6">
+            {t.cases.map((item) => (
+              <MPCard key={item.title} className="p-6 md:p-8">
+                <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-cyan-200">{item.tag}</p>
+                    <h3 className="mt-2 text-2xl font-bold text-white">{item.title}</h3>
+                    <p className="mt-4 max-w-4xl leading-8 text-slate-300">{item.text}</p>
+                  </div>
+                  {item.links?.length > 0 && (
+                    <div className="flex shrink-0 flex-wrap gap-3">
+                      {item.links.map(([label, href]) => (
+                        <MPButton key={label} href={href} variant="outline">
+                          {label} <ExternalLink className="ml-2 h-4 w-4" />
+                        </MPButton>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </MPCard>
+            ))}
+          </div>
+        </div>
+
+        <MPCard className="mt-14 border-cyan-300/20 bg-cyan-300/10 p-6 md:p-8">
+          <p className="text-sm font-semibold text-cyan-200">{t.contactLabel}</p>
+          <h2 className="mt-3 text-3xl font-bold text-white">{t.contactTitle}</h2>
+          <p className="mt-4 max-w-4xl leading-8 text-slate-300">{t.contactText}</p>
+          <p className="mt-5 rounded-2xl border border-white/10 bg-slate-950/35 p-4 text-sm leading-7 text-slate-300">{t.contactPrompt}</p>
+          <MPButton href={contactMail} className="mt-6">
+            {t.contactButton} <Mail className="ml-2 h-4 w-4" />
+          </MPButton>
+        </MPCard>
       </section>
     </>
   );
 }
+
 
 function MPCasesPage() {
   const cases = [
@@ -1332,12 +1659,6 @@ export default function App() {
     };
     document.title = `${titles[route] || "Eason Systems"}｜Eason Systems`;
   }, [route]);
-
-  // 流程系統分頁直接使用原本完整一頁式內容。
-  // 這樣舊客戶點進 LINE / Web 主站時，會看到完整的流程系統介紹、方案、案例與聯絡內容。
-  if (route === "/line-web-systems") {
-    return <LegacyHomePage />;
-  }
 
   return (
     <MPShell route={route}>
