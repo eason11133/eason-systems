@@ -1333,6 +1333,12 @@ export default function App() {
     document.title = `${titles[route] || "Eason Systems"}｜Eason Systems`;
   }, [route]);
 
+  // 流程系統分頁直接使用原本完整一頁式內容。
+  // 這樣舊客戶點進 LINE / Web 主站時，會看到完整的流程系統介紹、方案、案例與聯絡內容。
+  if (route === "/line-web-systems") {
+    return <LegacyHomePage />;
+  }
+
   return (
     <MPShell route={route}>
       <MPContent route={route} />
