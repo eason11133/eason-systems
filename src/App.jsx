@@ -474,12 +474,9 @@ const content = {
   },
 };
 
-function LegacyHomePage({ route = "/line-web-systems" } = {}) {
+function LegacyHomePage() {
   const [language, setLanguage] = useState("zh");
   const isEnglish = language === "en";
-  const legacyNav = isEnglish
-    ? [["/", "Overview"], ["/line-web-systems", "LINE / Web Systems"], ["/ai-process-desk", "AI Process Desk"]]
-    : [["/", "主頁介紹"], ["/line-web-systems", "LINE / Web 系統"], ["/ai-process-desk", "AI Process Desk"]];
   const t = content[language];
   const estimateOptions = useMemo(
     () => t.estimateOptions.map(([id, label, price, desc]) => ({ id, label, price, desc })),
@@ -601,7 +598,7 @@ function LegacyHomePage({ route = "/line-web-systems" } = {}) {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top_left,#0e7490_0%,transparent_28%),radial-gradient(circle_at_85%_12%,#312e81_0%,transparent_30%),linear-gradient(135deg,#020617_0%,#07111f_45%,#0f172a_100%)] text-slate-100 antialiased [font-feature-settings:'palt']">
+    <div id="top" className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top_left,#0e7490_0%,transparent_28%),radial-gradient(circle_at_85%_12%,#312e81_0%,transparent_30%),linear-gradient(135deg,#020617_0%,#07111f_45%,#0f172a_100%)] text-slate-100 antialiased [font-feature-settings:'palt']">
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.055)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:72px_72px] opacity-20" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(2,6,23,0.42)_58%,rgba(2,6,23,0.92)_100%)]" />
@@ -611,7 +608,38 @@ function LegacyHomePage({ route = "/line-web-systems" } = {}) {
         <div className="absolute bottom-0 right-10 h-96 w-96 rounded-full bg-emerald-400/10 blur-3xl" />
       </div>
 
-      <MPHeader route={route} language={language} setLanguage={setLanguage} />
+      <header className="relative z-20 mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 md:flex-row md:items-center md:justify-between">
+        <a href="#top" className="flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-400/15 ring-1 ring-cyan-300/25">
+            <Bot className="h-5 w-5 text-cyan-300" />
+          </div>
+          <div>
+            <p className="text-sm font-semibold tracking-wide text-white">Eason Systems</p>
+            <p className="text-xs text-slate-400">LINE / Web 前端導覽與流程系統</p>
+          </div>
+        </a>
+
+        <div className="flex flex-wrap items-center justify-end gap-3">
+          <nav className="order-2 flex w-full flex-wrap items-center gap-1 rounded-full border border-white/10 bg-white/[0.05] p-1 md:order-1 md:w-auto">
+            {[
+              ["#problem", "問題"],
+              ["#solution", "解法"],
+              ["#packages", "方案"],
+              ["#results", "案例"],
+              ["#estimate", "估價"],
+              ["#contact", "聯絡"],
+            ].map(([href, label]) => (
+              <a key={href} href={href} className="rounded-full px-3 py-2 text-sm text-slate-300 transition hover:bg-white/10 hover:text-white md:px-4">
+                {label}
+              </a>
+            ))}
+          </nav>
+          <div className="order-1 flex rounded-full border border-white/10 bg-white/[0.05] p-1 text-sm md:order-2">
+            <button type="button" onClick={() => setLanguage("zh")} className={`rounded-full px-4 py-2.5 transition ${!isEnglish ? "bg-cyan-300 text-slate-950" : "text-slate-300 hover:text-white"}`}>中文</button>
+            <button type="button" onClick={() => setLanguage("en")} className={`rounded-full px-4 py-2.5 transition ${isEnglish ? "bg-cyan-300 text-slate-950" : "text-slate-300 hover:text-white"}`}>EN</button>
+          </div>
+        </div>
+      </header>
 
       <main className="relative z-10">
         <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-16 pt-14 lg:grid-cols-[minmax(0,1fr)_minmax(360px,0.82fr)] md:items-center md:pt-16">
@@ -673,7 +701,7 @@ function LegacyHomePage({ route = "/line-web-systems" } = {}) {
 
         
 
-        <section className="border-y border-white/10 bg-white/[0.03]"><div className="mx-auto max-w-7xl px-6 py-16"><div className="max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.problemLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.problemTitle}</h2></div><div className="mt-8 grid gap-3 md:grid-cols-3">{t.painPoints.map((item) => <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-slate-300">{item}</div>)}</div></div></section>
+        <section id="problem" className="scroll-mt-24 border-y border-white/10 bg-white/[0.03]"><div className="mx-auto max-w-7xl px-6 py-16"><div className="max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.problemLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.problemTitle}</h2></div><div className="mt-8 grid gap-3 md:grid-cols-3">{t.painPoints.map((item) => <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-slate-300">{item}</div>)}</div></div></section>
 
         <section className="mx-auto max-w-7xl px-6 py-20"><div className="grid gap-8 rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-6 md:grid-cols-[0.9fr_1.1fr] md:p-8"><div><p className="text-sm font-semibold text-cyan-200">{t.googleLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.googleTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.googleText}</p></div><div className="grid gap-4">{t.googlePoints.map(([title, text]) => <Card key={title} className="bg-slate-950/45"><CardContent className="flex gap-4 p-5"><div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-cyan-300/10"><ShieldCheck className="h-5 w-5 text-cyan-200" /></div><div><p className="font-semibold text-white">{title}</p><p className="mt-2 text-sm leading-6 text-slate-300">{text}</p></div></CardContent></Card>)}</div></div></section>
 
@@ -726,9 +754,9 @@ function LegacyHomePage({ route = "/line-web-systems" } = {}) {
           </div>
         </section>
 
-        <section id="solution" className="mx-auto max-w-7xl px-6 py-20"><div className="mb-10 max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.buildLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.buildTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.buildText}</p></div><div className="grid gap-5 md:grid-cols-4">{t.features.map((feature) => { const Icon = feature.icon; return <Card key={feature.title}><CardContent className="p-6"><div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/10"><Icon className="h-6 w-6 text-cyan-300" /></div><h3 className="text-lg font-semibold text-white">{feature.title}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{feature.text}</p></CardContent></Card>; })}</div></section>
+        <section id="solution" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-20"><div className="mb-10 max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.buildLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.buildTitle}</h2><p className="mt-5 leading-7 text-slate-300">{t.buildText}</p></div><div className="grid gap-5 md:grid-cols-4">{t.features.map((feature) => { const Icon = feature.icon; return <Card key={feature.title}><CardContent className="p-6"><div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/10"><Icon className="h-6 w-6 text-cyan-300" /></div><h3 className="text-lg font-semibold text-white">{feature.title}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{feature.text}</p></CardContent></Card>; })}</div></section>
 
-        <section className="mx-auto max-w-7xl px-6 pb-20"><div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:p-8"><div className="mb-8 max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.resultsLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.resultsTitle}</h2><p className="mt-4 leading-7 text-slate-300">{t.resultsText}</p></div><div className="grid gap-5 md:grid-cols-3">{t.cases.map((item) => <Card key={item.title} className="bg-white/[0.05]"><CardContent className="flex h-full flex-col p-6"><div className="mb-4 inline-flex w-fit rounded-full bg-cyan-300/10 px-3 py-1 text-xs font-medium text-cyan-200">{item.tag}</div><h3 className="text-xl font-bold text-white">{item.title}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{item.text}</p><div className="mt-auto pt-5 space-y-2">{item.links?.map(([label, href]) => <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm text-slate-200 transition hover:border-cyan-300/30 hover:bg-cyan-300/10"><span>{label}</span><ExternalLink className="h-4 w-4 text-cyan-200" /></a>)}</div></CardContent></Card>)}</div></div></section>
+        <section id="results" className="mx-auto max-w-7xl scroll-mt-24 px-6 pb-20"><div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:p-8"><div className="mb-8 max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.resultsLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.resultsTitle}</h2><p className="mt-4 leading-7 text-slate-300">{t.resultsText}</p></div><div className="grid gap-5 md:grid-cols-3">{t.cases.map((item) => <Card key={item.title} className="bg-white/[0.05]"><CardContent className="flex h-full flex-col p-6"><div className="mb-4 inline-flex w-fit rounded-full bg-cyan-300/10 px-3 py-1 text-xs font-medium text-cyan-200">{item.tag}</div><h3 className="text-xl font-bold text-white">{item.title}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{item.text}</p><div className="mt-auto pt-5 space-y-2">{item.links?.map(([label, href]) => <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm text-slate-200 transition hover:border-cyan-300/30 hover:bg-cyan-300/10"><span>{label}</span><ExternalLink className="h-4 w-4 text-cyan-200" /></a>)}</div></CardContent></Card>)}</div></div></section>
 
         <section className="border-y border-white/10 bg-white/[0.03]"><div className="mx-auto max-w-7xl px-6 py-20"><div className="mb-10 max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.flowLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.flowTitle}</h2></div><div className="grid gap-5 md:grid-cols-4">{t.offerSteps.map(([title, text]) => <Card key={title} className="bg-slate-900/70"><CardContent className="p-6"><p className="text-sm font-semibold text-cyan-300">{title}</p><p className="mt-4 text-sm leading-7 text-slate-300">{text}</p></CardContent></Card>)}</div><div className="mt-8 grid gap-3 md:grid-cols-4">{t.outcomes.map((item) => <div key={item} className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4 text-sm leading-6 text-cyan-50">{item}</div>)}</div></div></section>
 
@@ -877,544 +905,10 @@ function LegacyHomePage({ route = "/line-web-systems" } = {}) {
 
 
 
-const mpCopy = {
-  zh: {
-    nav: [
-      ["/", "主頁介紹"],
-      ["/line-web-systems", "LINE / Web 系統"],
-      ["/ai-process-desk", "AI Process Desk"],
-    ],
-    headerSubtitle: "流程整理 · LINE / Web 系統 · AI 輔助功能",
-    footerText: "© Eason Systems. 把混亂流程整理成可使用、可維護、可追蹤的系統。",
-    titles: {
-      "/": "Eason Systems 主頁介紹",
-      "/line-web-systems": "LINE / Web 系統",
-      "/ai-process-desk": "AI Process Desk",
-    },
-    overview: {
-      badge: "Eason Systems",
-      titleA: "把混亂的資訊入口與重複工作，",
-      titleB: "整理成真的能用的系統",
-      intro: "我是黃元逸 Eason，Eason Systems 的開發者。目前業務分成兩條線：一條是已經有實作基礎的 LINE / Web 前端導覽系統，另一條是正在發展的 AI Process Desk。兩者底層其實是同一件事：先看清楚人怎麼找資訊、怎麼重複處理工作，再把那段流程整理成可使用、可維護、可追蹤的系統。",
-      lineButton: "LINE / Web 系統",
-      aiButton: "AI Process Desk",
-      evidenceEyebrow: "Real system evidence",
-      evidenceTitle: "公廁查詢 LINE Bot｜30,000+ 使用者",
-      evidenceText: "這是目前最重要的信任素材：一個已實際上線的 LINE / Web 系統。使用者可以透過 LINE 完成定位查詢，取得附近公廁資訊；管理端也能查看查詢紀錄與使用數據。這個案例證明 Eason Systems 不只是寫介紹頁，而是能把真實使用者流程做成可上線的系統。",
-      evidenceStats: [["30,000+", "真實使用者"], ["LINE / Web", "實際上線入口"], ["Dashboard", "查詢紀錄"]],
-      caseButton: "查看案例",
-      tryButton: "體驗 LINE Bot",
-      businessEyebrow: "Business Lines",
-      businessTitle: "兩條服務線，分開溝通，但方向一致",
-      businessText: "客戶不需要先理解所有產品架構。這裡只分成兩條清楚入口：一條處理對外資訊與 LINE / Web 導覽，一條處理重複整理、摘要、改寫與初稿工作。",
-      serviceLines: [
-        {
-          title: "LINE / Web 前端導覽系統",
-          subtitle: "把外部入口整理清楚",
-          text: "當資訊散在官網、Google 表單、LINE、社群貼文、報名頁或既有系統時，我協助把民眾進入系統前的那段路整理清楚。重點不是取代原本工具，而是讓使用者更快找到正確入口，讓管理者減少重複回覆與人工整理。",
-          points: ["活動資訊、FAQ、報名前說明", "LINE / Web 查詢與分流入口", "導回既有表單、官網、報名頁或內部系統", "後台資料管理與基礎使用紀錄"],
-          to: "/line-web-systems",
-          button: "查看 LINE / Web 系統",
-        },
-        {
-          title: "AI Process Desk",
-          subtitle: "把內部重複工作整理成 AI 工作區",
-          text: "當工作流程開始使用 AI，但仍是每次自己貼資料、自己下指令、自己整理格式時，我協助把其中一段高頻工作整理成固定入口與可重複使用的 AI 工作流程。它不是大型 AI 導入，而是先從一段明確、常發生、能節省時間的工作開始。",
-          points: ["資料整理與摘要", "文案、回覆、企劃初稿", "會議重點與追蹤內容", "固定欄位、固定輸出格式、人工確認"],
-          to: "/ai-process-desk",
-          button: "查看 AI Process Desk",
-        },
-      ],
-      directionEyebrow: "Direction",
-      directionTitle: "轉型不是換題目，而是把同一種能力做深",
-      directionText: "Eason Systems 的核心不是某個單一工具，而是流程整理能力：把分散的資訊、重複的回覆、人工整理的步驟，變成清楚入口、固定格式與可維護系統。",
-      direction: [
-        ["現在的基礎", "Eason Systems 先以 LINE / Web 流程系統建立真實案例、交付能力與客戶信任。公廁查詢 LINE Bot 已累積超過 3 萬名使用者，這是目前最重要的實作證明。"],
-        ["新的延伸", "AI Process Desk 不是把原本業務丟掉，而是把同一種能力延伸到重複整理與初稿工作：把混亂、重複、靠人工整理的流程，整理成固定入口與可操作系統。"],
-        ["長期方向", "我想做的不是一次性的漂亮頁面，而是把反覆出現的資訊入口、查詢、整理、摘要、回覆與初稿流程，逐步沉澱成可以複製、可以維護、可以擴充的產品線。"],
-      ],
-    },
-    mockup: {
-      eyebrow: "AI Workspace Preview",
-      title: "活動資料 → 社群文案初稿",
-      fields: [["活動名稱", "春季品牌體驗日"], ["活動資訊", "時間、地點、亮點、報名方式……"], ["目標受眾", "企業客戶 / 年輕族群 / 親子家庭"]],
-      button: "產生 AI 初稿",
-      outputTitle: "輸出結果",
-      outputs: [["Facebook", "整理活動亮點、對象、CTA 與報名提醒。"], ["Threads", "轉成較短、較口語的貼文初稿。"], ["短版文案", "可放 LINE、EDM 或廣告素材。"]],
-      chips: ["複製結果", "有用", "需修改"],
-    },
-    ai: {
-      mailSubject: "AI Process Desk 合作討論",
-      mailBody: "公司/團隊名稱：\n目前最重複的整理/摘要/改寫工作：\n現在怎麼處理：\n希望 AI 協助的部分：\n聯絡方式：",
-      badge: "AI Process Desk",
-      titleA: "把重複的整理、摘要與初稿工作，",
-      titleB: "整理成可固定使用的 AI 工作區",
-      intro: "很多工作已經開始使用 AI，但實際上仍常是每次自己開 ChatGPT、自己貼資料、自己下指令、自己整理結果。AI Process Desk 想解決的是這中間的混亂：把一段常發生、可重複、需要固定格式的工作，整理成一個清楚入口，讓 AI 先產出可修改初稿，再由人確認與調整。",
-      discussButton: "討論一段重複工作",
-      caseButton: "查看 Eason Systems 實作案例",
-      note: "AI Process Desk 是 Eason Systems 的新方向；它延續原本的流程整理能力，但處理的是重複整理、摘要、改寫與初稿工作，而不是民眾進入系統前的導覽入口。",
-      whyEyebrow: "Why",
-      whyTitle: "不是把 AI 丟進公司，而是先整理一段真的會重複發生的工作",
-      whyText: "AI 工具本身不是問題，真正的問題是：每次問法不同、輸出格式不同、好用的做法很難累積成固定流程。AI Process Desk 會先把一段明確工作整理成固定入口、固定欄位與固定輸出格式。",
-      whyCards: [["減少從零開始", "重複的整理、摘要、改寫與初稿工作，不必每次重新想 Prompt、重新排格式。"], ["讓輸出更穩定", "把輸入欄位、語氣、格式與人工確認點固定下來，減少每個人各做各的狀況。"], ["保留人的判斷", "AI 先產出初稿，人再確認、修改與採用；重點是減少重複勞動，不是完全取代判斷。"]],
-      examplesEyebrow: "Examples",
-      examplesTitle: "可以從哪些工作開始？",
-      examplesText: "這裡不是限制誰能用，而是展示常見的起點。只要你的工作裡有大量重複整理、摘要、改寫、轉格式或初稿產出，都可以先挑一段流程評估。",
-      exampleLabel: "可整理的工作",
-      examples: [
-        ["資料 → 摘要", "把客戶資料、會議紀錄、活動資訊或內部文件，整理成固定格式的重點摘要。"],
-        ["資料 → 初稿", "把原始資料轉成社群文案、追蹤信、企劃摘要、回覆草稿或其他可人工確認的初稿。"],
-        ["問題 → 回覆", "把常見問題、客戶訊息或服務詢問整理成一致、可修改、可複製使用的回覆內容。"],
-        ["紀錄 → 下一步", "把會議紀錄、訪談內容或專案更新整理成待辦事項、追蹤重點與後續信件。"],
-        ["內容 → 多版本", "同一份資料可以依不同平台、受眾或語氣，整理成不同版本的輸出。"],
-        ["流程 → 固定入口", "把原本每次都要重新問 AI 的工作，整理成欄位清楚、輸出穩定的工作頁。"],
-      ],
-      howEyebrow: "How",
-      howTitle: "合作會從一段具體流程開始",
-      howText: "不需要一開始就做成大型 AI 平台，也不需要先更換原本工具。比較好的方式，是先找一段現在真的常常發生、又很耗時間的工作，確認它值不值得做成 AI 工作區。",
-      process: [
-        ["01｜先確認一段重複工作", "不從大型導入開始，而是先找出目前最常重複整理、摘要、改寫或產出初稿的那段流程。"],
-        ["02｜整理輸入與輸出格式", "確認使用者要貼哪些資料、希望產出什麼格式、哪些內容需要人工確認、哪些語氣或限制要固定。"],
-        ["03｜做成可使用的 AI 工作區", "把這段工作整理成固定入口，讓使用者不用每次重想指令，也不用每次用不同格式產出。"],
-        ["04｜依使用結果調整", "實際使用後，再根據輸出品質與使用回饋，調整欄位、格式、語氣與流程。"],
-      ],
-      startEyebrow: "Start small",
-      startTitle: "先讓一段工作變快、變穩、變好交接",
-      startText: "不需要一開始就做成大型平台，也不需要一次串接所有系統。先確認一段明確工作，做出能實際使用的版本；如果真的有價值，再討論是否擴大到更多流程。",
-      questionTitle: "可以先討論的問題",
-      questions: ["哪一段工作每週都會重複發生？", "現在是誰在整理、摘要、改寫或產出初稿？", "目前最浪費時間的是速度、格式一致性，還是交接困難？", "如果 AI 先產出初稿，誰會負責確認與修改？"],
-      contactButton: "來信討論",
-    },
-  },
-  en: {
-    nav: [
-      ["/", "Overview"],
-      ["/line-web-systems", "LINE / Web Systems"],
-      ["/ai-process-desk", "AI Process Desk"],
-    ],
-    headerSubtitle: "Process design · LINE / Web systems · AI-assisted workflows",
-    footerText: "© Eason Systems. Turning messy workflows into usable, maintainable, trackable systems.",
-    titles: {
-      "/": "Eason Systems Overview",
-      "/line-web-systems": "LINE / Web Systems",
-      "/ai-process-desk": "AI Process Desk",
-    },
-    overview: {
-      badge: "Eason Systems",
-      titleA: "Turning messy information entries and repeated work",
-      titleB: "into systems people can actually use",
-      intro: "I am Eason Huang, the developer behind Eason Systems. The business now has two lines: LINE / Web guidance systems with real implementation experience, and AI Process Desk as a new direction. Both come from the same core ability: understand how people find information or repeat work, then turn that workflow into something usable, maintainable, and trackable.",
-      lineButton: "LINE / Web Systems",
-      aiButton: "AI Process Desk",
-      evidenceEyebrow: "Real system evidence",
-      evidenceTitle: "Public Toilet LINE Bot｜30,000+ users",
-      evidenceText: "This is the strongest trust signal for Eason Systems: a live LINE / Web system used by real users. People can search nearby public toilets through LINE location sharing, while the admin side can review query records and usage data. It proves that Eason Systems can build more than introduction pages — it can ship real user workflows.",
-      evidenceStats: [["30,000+", "Real users"], ["LINE / Web", "Live entry"], ["Dashboard", "Query records"]],
-      caseButton: "View case",
-      tryButton: "Try LINE Bot",
-      businessEyebrow: "Business Lines",
-      businessTitle: "Two service lines, separate messages, same direction",
-      businessText: "Clients do not need to understand the full product architecture. The website simply separates two entrances: one for public-facing information and LINE / Web guidance, and one for repeated internal summarizing, rewriting, and drafting work.",
-      serviceLines: [
-        {
-          title: "LINE / Web Guidance Systems",
-          subtitle: "Organizing the path before users enter your tools",
-          text: "When information is scattered across websites, Google Forms, LINE, social posts, registration pages, or existing systems, I organize the path before users enter those tools. The goal is not to replace existing systems, but to help users find the right entry faster and reduce repeated replies and manual cleanup.",
-          points: ["Activity info, FAQs, and pre-registration guidance", "LINE / Web search and routing entry", "Route back to forms, websites, registration pages, or internal systems", "Admin data management and basic usage records"],
-          to: "/line-web-systems",
-          button: "View LINE / Web Systems",
-        },
-        {
-          title: "AI Process Desk",
-          subtitle: "Organizing repeated work into an AI workspace",
-          text: "When a workflow starts using AI but still depends on people pasting data, rewriting prompts, and fixing formats every time, I help turn one high-frequency task into a clear entry and repeatable AI-assisted workflow. It is not a large AI transformation project; it starts with one specific recurring task that can save time.",
-          points: ["Data cleanup and summaries", "Copy, replies, proposal drafts", "Meeting notes and follow-up content", "Fixed fields, fixed output format, human review"],
-          to: "/ai-process-desk",
-          button: "View AI Process Desk",
-        },
-      ],
-      directionEyebrow: "Direction",
-      directionTitle: "This is not changing topics — it is deepening the same ability",
-      directionText: "The core of Eason Systems is not a single tool. It is process design: turning scattered information, repeated replies, and manual work into clear entries, fixed formats, and maintainable systems.",
-      direction: [
-        ["Current foundation", "Eason Systems first builds trust and delivery capability through LINE / Web workflow systems. The public toilet LINE Bot has accumulated 30,000+ users and is the strongest implementation proof so far."],
-        ["New extension", "AI Process Desk does not replace the original business. It extends the same workflow-design ability into repeated summarizing and drafting work: turning messy, repetitive manual work into a fixed entry and usable process."],
-        ["Long-term direction", "The goal is not one-off landing pages. It is to gradually turn recurring entries, searches, summaries, replies, and draft workflows into service lines that can be maintained, reused, and expanded."],
-      ],
-    },
-    mockup: {
-      eyebrow: "AI Workspace Preview",
-      title: "Event info → social copy draft",
-      fields: [["Event name", "Spring brand experience day"], ["Event info", "Time, location, highlights, registration method..."], ["Target audience", "Business clients / young audience / families"]],
-      button: "Generate AI draft",
-      outputTitle: "Output",
-      outputs: [["Facebook", "Organizes highlights, audience, CTA, and registration reminder."], ["Threads", "Turns it into a shorter, more conversational draft."], ["Short copy", "Can be reused for LINE, EDM, or ad materials."]],
-      chips: ["Copy result", "Useful", "Needs revision"],
-    },
-    ai: {
-      mailSubject: "AI Process Desk Discussion",
-      mailBody: "Company / team name:\nMost repeated summarizing / rewriting / drafting task:\nCurrent process:\nWhat you hope AI can help with:\nContact method:",
-      badge: "AI Process Desk",
-      titleA: "Turn repeated organizing, summarizing, and drafting work",
-      titleB: "into a reusable AI workspace",
-      intro: "Many teams already use AI, but in practice people still open ChatGPT, paste data, write prompts, and clean up the results every time. AI Process Desk focuses on that messy middle layer: turning a recurring task with a predictable format into a clear entry where AI produces an editable draft and people review it before use.",
-      discussButton: "Discuss one repeated workflow",
-      caseButton: "View Eason Systems case",
-      note: "AI Process Desk is a new direction under Eason Systems. It extends the original process-design ability into repeated summarizing, rewriting, and drafting work, rather than public-facing LINE / Web guidance before users enter existing systems.",
-      whyEyebrow: "Why",
-      whyTitle: "Not just adding AI — first organize one workflow that really repeats",
-      whyText: "The AI tool itself is not the main problem. The real issue is inconsistent prompts, inconsistent output formats, and good practices that stay in one person's hands. AI Process Desk first turns one clear task into a fixed entry, fixed fields, and a stable output format.",
-      whyCards: [["Stop starting from zero", "Repeated organizing, summarizing, rewriting, and drafting work should not require a new prompt and new format every time."], ["Make output more stable", "Fix the input fields, tone, format, and review points so different people do not all work differently."], ["Keep human judgment", "AI creates the first draft; people still review, revise, and decide what to use. The point is reducing repeated labor, not replacing judgment."]],
-      examplesEyebrow: "Examples",
-      examplesTitle: "What kind of work can start here?",
-      examplesText: "This is not limiting who can use it. These are common starting points. If your work has repeated organizing, summarizing, rewriting, formatting, or first-draft creation, one workflow can be evaluated first.",
-      exampleLabel: "Work that can be organized",
-      examples: [
-        ["Data → Summary", "Turn client materials, meeting notes, event information, or internal documents into a fixed-format summary."],
-        ["Data → Draft", "Turn raw information into social copy, follow-up emails, proposal summaries, reply drafts, or other human-reviewed drafts."],
-        ["Question → Reply", "Turn common questions, client messages, or service inquiries into consistent, editable, reusable replies."],
-        ["Notes → Next steps", "Turn meeting notes, interview records, or project updates into tasks, follow-up points, and next-step emails."],
-        ["Content → Variants", "Turn the same material into different versions based on platform, audience, or tone."],
-        ["Process → Fixed entry", "Turn work that repeatedly starts with a new AI prompt into a page with clear fields and stable output."],
-      ],
-      howEyebrow: "How",
-      howTitle: "Cooperation starts from one concrete workflow",
-      howText: "It does not need to become a large AI platform from day one, and it does not require replacing existing tools first. A better start is to find one recurring, time-consuming workflow and evaluate whether it is worth turning into an AI workspace.",
-      process: [
-        ["01｜Identify one repeated task", "Instead of a large rollout, first find the task that is most often repeated: organizing, summarizing, rewriting, or drafting."],
-        ["02｜Clarify input and output", "Define what users paste in, what output format is needed, what requires human review, and what tone or limits should stay fixed."],
-        ["03｜Turn it into an AI workspace", "Create a fixed entry so users do not need to rethink prompts or deal with different output formats every time."],
-        ["04｜Adjust based on use", "After real use, refine fields, format, tone, and workflow based on output quality and feedback."],
-      ],
-      startEyebrow: "Start small",
-      startTitle: "Make one workflow faster, steadier, and easier to hand off",
-      startText: "There is no need to build a large platform or connect every system at the beginning. Start with one clear workflow and make it usable. If it proves valuable, then discuss expanding to more workflows.",
-      questionTitle: "Questions we can discuss first",
-      questions: ["Which task repeats every week?", "Who currently organizes, summarizes, rewrites, or drafts it?", "Is the biggest problem speed, consistency, or handoff?", "If AI creates the first draft, who reviews and revises it?"],
-      contactButton: "Email to discuss",
-    },
-  },
-};
-
-const MP_ROUTES = ["/", "/line-web-systems", "/ai-process-desk"];
-
-function getMPRoute() {
-  const hashRoute = window.location.hash.replace(/^#/, "") || "/";
-  const pathRoute = window.location.pathname.replace(/\/$/, "") || "/";
-  if (MP_ROUTES.includes(hashRoute)) return hashRoute;
-  if (MP_ROUTES.includes(pathRoute)) return pathRoute;
-  return "/";
-}
-
-function useMPRoute() {
-  const [route, setRoute] = useState(getMPRoute());
-  useEffect(() => {
-    const onRouteChange = () => setRoute(getMPRoute());
-    window.addEventListener("hashchange", onRouteChange);
-    window.addEventListener("popstate", onRouteChange);
-    return () => {
-      window.removeEventListener("hashchange", onRouteChange);
-      window.removeEventListener("popstate", onRouteChange);
-    };
-  }, []);
-  return route;
-}
-
-function MPCard({ children, className = "" }) {
-  return <div className={`rounded-3xl border border-white/10 bg-white/[0.07] shadow-sm backdrop-blur ${className}`}>{children}</div>;
-}
-
-function MPButton({ children, to, href, variant = "solid", className = "" }) {
-  const styles = variant === "outline"
-    ? "border border-white/15 bg-white/[0.03] text-slate-100 hover:bg-white/10"
-    : "bg-cyan-300 text-slate-950 hover:bg-cyan-200";
-  const props = to ? { href: `#${to}` } : { href: href || "#" };
-  return <a {...props} className={`inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold transition ${styles} ${className}`}>{children}</a>;
-}
-
-function MPHeader({ route, language, setLanguage }) {
-  const isEnglish = language === "en";
-  const nav = mpCopy[language].nav;
-
-  return (
-    <header className="relative z-10 mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 md:flex-row md:items-center md:justify-between">
-      <a href="#/" className="flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-400/15 ring-1 ring-cyan-300/25">
-          <Bot className="h-5 w-5 text-cyan-300" />
-        </div>
-        <div>
-          <p className="text-sm font-semibold tracking-wide text-white">Eason Systems</p>
-          <p className="text-xs text-slate-400">{mpCopy[language].headerSubtitle}</p>
-        </div>
-      </a>
-      <div className="flex flex-wrap items-center justify-end gap-3">
-        <nav className="order-2 flex w-full items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] p-1 md:order-1 md:w-auto">
-          {nav.map(([to, label]) => (
-            <a key={to} href={`#${to}`} className={`flex-1 rounded-full px-4 py-2.5 text-center text-sm transition md:flex-none ${route === to ? "bg-cyan-300 text-slate-950" : "text-slate-300 hover:bg-white/10 hover:text-white"}`}>
-              {label}
-            </a>
-          ))}
-        </nav>
-        <div className="order-1 flex rounded-full border border-white/10 bg-white/[0.05] p-1 text-sm md:order-2">
-          <button type="button" onClick={() => setLanguage("zh")} className={`rounded-full px-4 py-2.5 transition ${!isEnglish ? "bg-cyan-300 text-slate-950" : "text-slate-300 hover:text-white"}`}>中文</button>
-          <button type="button" onClick={() => setLanguage("en")} className={`rounded-full px-4 py-2.5 transition ${isEnglish ? "bg-cyan-300 text-slate-950" : "text-slate-300 hover:text-white"}`}>EN</button>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-function MPFooter({ language }) {
-  const nav = mpCopy[language].nav;
-  return (
-    <footer className="border-t border-white/10 px-6 py-10">
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
-        <p>{mpCopy[language].footerText}</p>
-        <div className="flex flex-wrap gap-4">
-          {nav.map(([to, label]) => <a key={to} className="hover:text-white" href={`#${to}`}>{label}</a>)}
-          <a className="hover:text-white" href="mailto:easonlsy1019@gmail.com">easonlsy1019@gmail.com</a>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-function MPShell({ children, route, language, setLanguage }) {
-  return (
-    <div className="min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top_left,#0e7490_0%,transparent_30%),linear-gradient(135deg,#020617_0%,#07111f_48%,#0f172a_100%)] text-slate-100 antialiased [font-feature-settings:'palt']">
-      <div className="pointer-events-none fixed inset-0">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.055)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:76px_76px] opacity-20" />
-        <div className="absolute -right-32 -top-40 h-[30rem] w-[30rem] rounded-full bg-cyan-500/20 blur-3xl" />
-        <div className="absolute -left-28 top-96 h-96 w-96 rounded-full bg-blue-500/15 blur-3xl" />
-      </div>
-      <div className="relative z-10">
-        <MPHeader route={route} language={language} setLanguage={setLanguage} />
-        <main>{children}</main>
-        <MPFooter language={language} />
-      </div>
-    </div>
-  );
-}
-
-function MPSectionTitle({ eyebrow, title, text }) {
-  return (
-    <div className="max-w-3xl">
-      <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-300">{eyebrow}</p>
-      <h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl">{title}</h2>
-      {text && <p className="mt-4 text-base leading-8 text-slate-300">{text}</p>}
-    </div>
-  );
-}
-
-function MPInfoBlock({ title, items, icon: Icon }) {
-  return (
-    <MPCard className="h-full p-6">
-      <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-300/10"><Icon className="h-5 w-5 text-cyan-200" /></div>
-      <h3 className="text-xl font-bold text-white">{title}</h3>
-      <div className="mt-5 space-y-3">
-        {items.map((item) => <div key={item} className="flex gap-3 text-sm leading-6 text-slate-300"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-200" /><span>{item}</span></div>)}
-      </div>
-    </MPCard>
-  );
-}
-
-function MPOverviewPage({ language }) {
-  const t = mpCopy[language].overview;
-  const serviceLines = t.serviceLines.map((item, index) => ({ ...item, icon: index === 0 ? Workflow : Sparkles }));
-
-  return (
-    <>
-      <section className="mx-auto grid max-w-7xl gap-10 px-6 pb-14 pt-12 lg:grid-cols-[minmax(0,1fr)_0.85fr] lg:items-center">
-        <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.55 }}>
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-200">
-            <Sparkles className="h-4 w-4" />{t.badge}
-          </div>
-          <h1 className="max-w-5xl text-4xl font-bold leading-tight text-white md:text-6xl">
-            {t.titleA}
-            <span className="block text-cyan-300">{t.titleB}</span>
-          </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">{t.intro}</p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <MPButton to="/line-web-systems">{t.lineButton} <ArrowRight className="ml-2 h-4 w-4" /></MPButton>
-            <MPButton to="/ai-process-desk" variant="outline">{t.aiButton} <ArrowRight className="ml-2 h-4 w-4" /></MPButton>
-          </div>
-        </motion.div>
-
-        <MPCard className="p-6 md:p-8">
-          <p className="text-sm font-semibold text-cyan-200">{t.evidenceEyebrow}</p>
-          <h2 className="mt-3 text-3xl font-bold text-white">{t.evidenceTitle}</h2>
-          <p className="mt-5 leading-8 text-slate-300">{t.evidenceText}</p>
-          <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            {t.evidenceStats.map(([num, label]) => (
-              <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                <p className="text-2xl font-bold text-cyan-200">{num}</p>
-                <p className="mt-1 text-xs text-slate-400">{label}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <MPButton href="https://toilet-mvp-dev.vercel.app/#media" variant="outline">{t.caseButton} <ExternalLink className="ml-2 h-4 w-4" /></MPButton>
-            <MPButton href="https://line.me/R/ti/p/@439avyvf" variant="outline">{t.tryButton} <ExternalLink className="ml-2 h-4 w-4" /></MPButton>
-          </div>
-        </MPCard>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-12">
-        <MPSectionTitle eyebrow={t.businessEyebrow} title={t.businessTitle} text={t.businessText} />
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          {serviceLines.map((item) => {
-            const Icon = item.icon;
-            return (
-              <MPCard key={item.title} className="p-6 md:p-8">
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/10"><Icon className="h-6 w-6 text-cyan-200" /></div>
-                <p className="text-sm font-semibold text-cyan-200">{item.subtitle}</p>
-                <h2 className="mt-2 text-3xl font-bold text-white">{item.title}</h2>
-                <p className="mt-4 leading-8 text-slate-300">{item.text}</p>
-                <div className="mt-6 space-y-3">
-                  {item.points.map((point) => <div key={point} className="flex gap-3 text-sm leading-6 text-slate-300"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-200" /><span>{point}</span></div>)}
-                </div>
-                <MPButton to={item.to} className="mt-7" variant={item.to === "/ai-process-desk" ? "outline" : "solid"}>{item.button} <ArrowRight className="ml-2 h-4 w-4" /></MPButton>
-              </MPCard>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-12">
-        <MPSectionTitle eyebrow={t.directionEyebrow} title={t.directionTitle} text={t.directionText} />
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
-          {t.direction.map(([title, text]) => <MPCard key={title} className="p-6"><p className="text-sm font-semibold text-cyan-200">{title}</p><p className="mt-3 leading-7 text-slate-300">{text}</p></MPCard>)}
-        </div>
-      </section>
-    </>
-  );
-}
-
-function MPAIFunctionMockup({ language }) {
-  const t = mpCopy[language].mockup;
-  return (
-    <MPCard className="overflow-hidden border-cyan-300/20 bg-slate-950/50">
-      <div className="border-b border-white/10 bg-white/[0.04] px-5 py-4">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">{t.eyebrow}</p>
-        <h3 className="mt-1 text-xl font-bold text-white">{t.title}</h3>
-      </div>
-      <div className="grid gap-5 p-5 md:grid-cols-[0.9fr_1.1fr]">
-        <div className="space-y-4">
-          {t.fields.map(([label, value]) => (
-            <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-              <p className="text-xs text-slate-400">{label}</p>
-              <p className="mt-2 text-sm text-slate-200">{value}</p>
-            </div>
-          ))}
-          <button className="w-full rounded-2xl bg-cyan-300 px-4 py-3 text-sm font-bold text-slate-950">{t.button}</button>
-        </div>
-        <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4">
-          <p className="text-sm font-semibold text-cyan-100">{t.outputTitle}</p>
-          <div className="mt-4 space-y-3 text-sm leading-7 text-slate-200">
-            {t.outputs.map(([label, value]) => <p key={label}><span className="font-semibold text-white">{label}：</span>{value}</p>)}
-          </div>
-          <div className="mt-5 flex gap-2 text-xs">
-            {t.chips.map((chip) => <span key={chip} className="rounded-full bg-white/10 px-3 py-1 text-slate-200">{chip}</span>)}
-          </div>
-        </div>
-      </div>
-    </MPCard>
-  );
-}
-
-function MPAIProcessDeskPage({ language }) {
-  const t = mpCopy[language].ai;
-  const aiMail = `mailto:easonlsy1019@gmail.com?subject=${encodeURIComponent(t.mailSubject)}&body=${encodeURIComponent(t.mailBody)}`;
-  const whyIcons = [FileText, Layers, Workflow];
-
-  return (
-    <>
-      <section className="mx-auto grid max-w-7xl gap-10 px-6 pb-16 pt-12 lg:grid-cols-[1fr_0.9fr] lg:items-center">
-        <div>
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-200"><Sparkles className="h-4 w-4" />{t.badge}</div>
-          <h1 className="text-4xl font-bold leading-tight text-white md:text-6xl">
-            {t.titleA}
-            <span className="block text-cyan-300">{t.titleB}</span>
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-slate-300">{t.intro}</p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <MPButton href={aiMail}>{t.discussButton} <ArrowRight className="ml-2 h-4 w-4" /></MPButton>
-            <MPButton href="https://toilet-mvp-dev.vercel.app/#media" variant="outline">{t.caseButton} <ExternalLink className="ml-2 h-4 w-4" /></MPButton>
-          </div>
-          <p className="mt-5 text-sm leading-6 text-slate-400">{t.note}</p>
-        </div>
-        <MPAIFunctionMockup language={language} />
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-12">
-        <MPSectionTitle eyebrow={t.whyEyebrow} title={t.whyTitle} text={t.whyText} />
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
-          {t.whyCards.map(([title, text], index) => {
-            const Icon = whyIcons[index];
-            return <MPCard key={title} className="p-6"><Icon className="mb-5 h-6 w-6 text-cyan-200" /><h3 className="text-xl font-bold text-white">{title}</h3><p className="mt-3 text-sm leading-7 text-slate-300">{text}</p></MPCard>;
-          })}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-12">
-        <MPSectionTitle eyebrow={t.examplesEyebrow} title={t.examplesTitle} text={t.examplesText} />
-        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {t.examples.map(([title, text]) => <MPCard key={title} className="p-6"><p className="text-sm font-semibold text-cyan-200">{t.exampleLabel}</p><h3 className="mt-2 text-xl font-bold text-white">{title}</h3><p className="mt-3 text-sm leading-7 text-slate-300">{text}</p></MPCard>)}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-12">
-        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-          <MPSectionTitle eyebrow={t.howEyebrow} title={t.howTitle} text={t.howText} />
-          <div className="grid gap-4 md:grid-cols-2">
-            {t.process.map(([title, text]) => <MPCard key={title} className="p-5"><h3 className="font-bold text-white">{title}</h3><p className="mt-3 text-sm leading-7 text-slate-300">{text}</p></MPCard>)}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-12">
-        <div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-6 md:p-8">
-          <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-center">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">{t.startEyebrow}</p>
-              <h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl">{t.startTitle}</h2>
-              <p className="mt-4 text-base leading-8 text-slate-300">{t.startText}</p>
-            </div>
-            <div className="rounded-3xl border border-white/10 bg-slate-950/40 p-6">
-              <p className="text-sm font-semibold text-cyan-200">{t.questionTitle}</p>
-              <div className="mt-5 space-y-3 text-sm leading-7 text-slate-300">
-                {t.questions.map((question) => <p key={question}>• {question}</p>)}
-              </div>
-              <MPButton href={aiMail} className="mt-6 w-full">{t.contactButton} <Mail className="ml-2 h-4 w-4" /></MPButton>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-}
-
-function MPContent({ route, language }) {
-  if (route === "/") return <MPOverviewPage language={language} />;
-  if (route === "/ai-process-desk") return <MPAIProcessDeskPage language={language} />;
-  return <MPOverviewPage language={language} />;
-}
-
 export default function App() {
-  const route = useMPRoute();
-  const [mpLanguage, setMPLanguage] = useState("zh");
   useEffect(() => {
-    const titles = mpCopy[mpLanguage].titles;
-    document.title = `${titles[route] || "Eason Systems"}｜Eason Systems`;
-  }, [route, mpLanguage]);
+    document.title = "Eason Systems｜LINE / Web 前端導覽與流程系統";
+  }, []);
 
-  if (route === "/line-web-systems") {
-    return <LegacyHomePage route={route} />;
-  }
-
-  return (
-    <MPShell route={route} language={mpLanguage} setLanguage={setMPLanguage}>
-      <MPContent route={route} language={mpLanguage} />
-    </MPShell>
-  );
+  return <LegacyHomePage />;
 }
