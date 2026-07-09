@@ -46,27 +46,38 @@ function Button({ children, variant = "solid", className = "" }) {
 const content = {
   zh: {
     navContact: "聯絡評估",
-    badge: "把民眾找資訊的路整理清楚｜LINE / Web 前端導覽",
-    heroTop: "活動資訊散在各處時",
-    heroHighlight: "我幫你整理民眾進入系統前的那段路",
+    badge: "學生開發者提供的小型流程系統服務",
+    heroTop: "Eason Systems",
+    heroHighlight: "學生開發者提供的小型流程系統服務",
     heroText:
-      "很多組織其實已經有官網、Google 表單、netiCRM、報名頁或捐款系統。真正卡住的，常常是民眾進去之前找不到正確入口，只好一直問 LINE、私訊或 Email。我協助把活動資訊、FAQ、報名方式、捐款入口、志工資訊與既有連結整理成清楚的 LINE / Web 導覽流程。",
-    heroButton: "看我怎麼整理入口與分流",
-    stat1Title: "30,000+",
-    stat1Text: "LINE 系統真實使用者案例",
-    stat2Title: "流程",
-    stat2Text: "活動、表單、FAQ 整合",
-    stat3Title: "數據",
-    stat3Text: "查詢、點擊與活動統計",
-    rightBadge: "Real system evidence",
-    rightSmall: "我的定位",
-    rightTitle: "既有系統負責資料，我負責入口、導覽與分流。",
+      "我協助協會、課程單位與小型組織，把分散在 LINE、Google 表單、Excel、社群私訊中的資訊與流程，整理成可以查詢、管理、維護的小型 Web / LINE 工具。",
+    heroButton: "看什麼情況適合找我",
+    stat1Title: "負責人",
+    stat1Text: "黃元逸 Eason",
+    stat2Title: "身分",
+    stat2Text: "高中生 / 學生開發者",
+    stat3Title: "案例",
+    stat3Text: "公廁 Bot 3 萬+ 使用者",
+    rightBadge: "Who / What / Pricing",
+    rightSmall: "先把合作方式講清楚",
+    rightTitle: "不是大公司業務，也不是免費志工；我是做小型流程工具的學生開發者。",
     rightCards: [
-      ["發現問題", "活動資訊、FAQ、報名連結、捐款入口與志工資訊常常散在不同地方。"],
-      ["真正缺口", "組織不一定需要重做系統，常常只是缺民眾進入系統前的清楚入口。"],
-      ["我的解法", "把 LINE / Web 導覽、FAQ 分流、報名前說明與既有連結整理成一條清楚路徑。"],
+      ["負責人", "黃元逸 Eason"],
+      ["身分", "高中生 / Eason Systems 學生開發者"],
+      ["服務方式", "前期需求了解不收費，確認適合開發後依功能範圍報價。"],
+      ["代表案例", "公共廁所查詢 LINE Bot，累積 3 萬+ 使用者。"],
     ],
-    miniStats: [["問題", "資訊分散"], ["缺口", "入口不清"], ["解法", "導覽分流"]],
+    miniStats: [["身份", "學生開發者"], ["收費", "先了解不收費"], ["案例", "3萬+使用者"]],
+    fitLabel: "適合情況",
+    fitTitle: "我適合協助的狀況",
+    fitText: "如果貴單位目前遇到以下狀況，我比較適合協助。重點不是先做大型系統，而是先把分散資訊與重複流程整理成可查詢、可管理、可維護的第一版工具。",
+    fitSituations: [
+      "活動資訊、報名資料、常見問題分散在不同平台",
+      "名單資料長期用 Google 表單 / Excel 人工整理",
+      "民眾或家長常重複詢問相同問題",
+      "服務據點、資源清單或活動資訊需要定期更新",
+      "想先做一個小型第一版工具，而不是大型系統",
+    ],
     problemLabel: "發現問題",
     problemTitle: "民眾找不到資訊，同仁就會一直重複回覆",
     painPoints: [
@@ -96,8 +107,8 @@ const content = {
       ["導回既有系統", "最後仍導回原本的 netiCRM、Google 表單、報名頁、捐款頁或官網，不需要一開始改動既有資料流程。"],
     ],
     audienceLabel: "About",
-    audienceTitle: "學生開發者，但已有真實上線系統經驗",
-    audienceText: "我是黃元逸 Eason，目前是高中生，也是 Eason Systems 的開發者。我不是單純接案練習，而是已經做過實際上線、真實使用者使用的 LINE / Web 系統。目前主要協助活動、課程、公益與小型組織，把分散的資訊與人工流程整理成可使用、可維護的系統。",
+    audienceTitle: "是的，我是學生開發者，主要做小型流程工具",
+    audienceText: "我是黃元逸 Eason，目前還是高中生，也是 Eason Systems 的學生開發者。我擅長的方向不是單純形象網站，而是協助小型組織把分散在 LINE、Google 表單、Excel 或社群私訊中的資訊，整理成比較好查詢、好維護的小型 Web / LINE 工具。前期簡單了解需求與初步判斷不收費；若後續確認有適合開發的方向，才會依實際功能範圍報價。",
     audienceGroups: [
       ["真實上線經驗", "公廁查詢 LINE Bot 已實際上線，累積超過 3 萬名使用者。"],
       ["LINE / Web 系統", "熟悉 LINE Bot、查詢流程、資料整理、後台與 Dashboard 的整合。"],
@@ -249,8 +260,8 @@ const content = {
     contactSmall: "可以先簡單聊聊",
     contactPrompt: "你現在想做什麼？使用者會怎麼操作？有哪些資料需要被查詢或管理？第一版最重要的功能是什麼？",
     contactButton: "先寄信討論流程",
-    mailSubject: "系統開發構想討論｜初步功能估價",
-    mailHello: "您好，我有一個系統開發構想想初步討論。",
+    mailSubject: "服務資訊與流程整理初步詢問",
+    mailHello: "您好，我想先簡單了解是否適合整理服務資訊、名單資料或重複流程。",
     mailSelected: "我目前勾選的功能：",
     mailSubtotal: "功能項目加總：",
     mailEstimate: "初步估價區間：",
@@ -280,7 +291,17 @@ const content = {
       ["Registration and data cleanup", "Turn Google Forms, participant lists, and registration status into flows that are easier to search and manage."],
       ["Admin and outcome records", "Let internal teams update data, view lists, track query records, or organize event outcomes."],
     ],
-    miniStats: [["Web", "Info pages"], ["LINE", "FAQ/Search"], ["Admin", "Data/Stats"]],
+    miniStats: [["Identity", "Student dev"], ["Pricing", "Free first check"], ["Case", "30k+ users"]],
+    fitLabel: "Best Fit",
+    fitTitle: "When I can help",
+    fitText: "I am a better fit when a small organization needs a first usable workflow tool, rather than a large enterprise system.",
+    fitSituations: [
+      "Event info, registration data, and FAQs are scattered across different platforms",
+      "Lists are still managed manually through Google Forms or Excel",
+      "Participants, parents, or users repeatedly ask the same questions",
+      "Service locations, resource lists, or event information need regular updates",
+      "You want a small first-version tool before building a large system",
+    ],
     problemLabel: "發現問題",
     problemTitle: "The problem is usually not a prettier page — it is too much scattered manual work",
     painPoints: [
@@ -615,13 +636,14 @@ function LegacyHomePage() {
           </div>
           <div>
             <p className="text-sm font-semibold tracking-wide text-white">Eason Systems</p>
-            <p className="text-xs text-slate-400">LINE / Web 前端導覽與流程系統</p>
+            <p className="text-xs text-slate-400">學生開發者提供的小型流程系統服務</p>
           </div>
         </a>
 
         <div className="flex flex-wrap items-center justify-end gap-3">
           <nav className="order-2 flex w-full flex-wrap items-center gap-1 rounded-full border border-white/10 bg-white/[0.05] p-1 md:order-1 md:w-auto">
             {[
+              ["#fit", "適合情況"],
               ["#problem", "問題"],
               ["#solution", "解法"],
               ["#packages", "方案"],
@@ -664,7 +686,7 @@ function LegacyHomePage() {
             </div>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#packages"><Button>{t.heroButton} <ArrowRight className="ml-2 h-4 w-4" /></Button></a>
+              <a href="#fit"><Button>{t.heroButton} <ArrowRight className="ml-2 h-4 w-4" /></Button></a>
             </div>
           </motion.div>
 
@@ -680,9 +702,9 @@ function LegacyHomePage() {
                   <h3 className="mt-3 break-words text-xl font-semibold leading-snug tracking-normal text-white md:text-[1.45rem]">{t.rightTitle}</h3>
                   <div className="mt-5 space-y-3">
                     {t.rightCards.map(([title, text], idx) => (
-                      <div key={title} className={`rounded-2xl border p-4 ${idx === 2 ? "border-cyan-300/20 bg-cyan-300/10" : "border-white/10 bg-white/[0.06]"}`}>
+                      <div key={title} className={`rounded-2xl border p-4 ${idx >= 2 ? "border-cyan-300/20 bg-cyan-300/10" : "border-white/10 bg-white/[0.06]"}`}>
                         <div className="flex items-start gap-3">
-                          {idx === 2 ? <LineChart className="mt-0.5 h-5 w-5 text-cyan-200" /> : <div className="mt-1 h-2.5 w-2.5 rounded-full bg-cyan-300" />}
+                          {idx >= 2 ? <LineChart className="mt-0.5 h-5 w-5 text-cyan-200" /> : <div className="mt-1 h-2.5 w-2.5 rounded-full bg-cyan-300" />}
                           <div><p className="font-semibold text-white">{title}</p><p className="mt-1 text-sm leading-7 text-slate-300">{text}</p></div>
                         </div>
                       </div>
@@ -700,6 +722,29 @@ function LegacyHomePage() {
         </section>
 
         
+
+
+        <section id="fit" className="scroll-mt-24 border-y border-white/10 bg-white/[0.04]">
+          <div className="mx-auto max-w-7xl px-6 py-16">
+            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+              <div>
+                <p className="text-sm font-semibold text-cyan-300">{t.fitLabel}</p>
+                <h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.fitTitle}</h2>
+                <p className="mt-5 leading-7 text-slate-300">{t.fitText}</p>
+              </div>
+              <div className="grid gap-3 md:grid-cols-2">
+                {t.fitSituations.map((item, idx) => (
+                  <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+                    <div className="flex gap-4">
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-cyan-300/10 text-sm font-bold text-cyan-200">{idx + 1}</div>
+                      <p className="text-sm leading-7 text-slate-200">{item}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section id="problem" className="scroll-mt-24 border-y border-white/10 bg-white/[0.03]"><div className="mx-auto max-w-7xl px-6 py-16"><div className="max-w-5xl"><p className="text-sm font-semibold text-cyan-300">{t.problemLabel}</p><h2 style={{ textWrap: "balance" }} className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[2.35rem]">{t.problemTitle}</h2></div><div className="mt-8 grid gap-3 md:grid-cols-3">{t.painPoints.map((item) => <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-slate-300">{item}</div>)}</div></div></section>
 
