@@ -24,7 +24,7 @@ This file is the visual source of truth for the public Eason Systems website.
 
 Color: background `#f6f5f1`, surface `#ffffff`, foreground `#191b1f`, muted `#5f646c`, border `#d9d9d4`, strong border `#aeb1b5`, cobalt `#2054d8`, cobalt soft `#e9eefc`, success `#16724f`, warning `#9a4f22`.
 
-Typography uses Inter with a system sans fallback. Body is 16px/1.6. Display/H1 is `clamp(2.5rem, 4.2vw, 3.5rem)` at 1.1 line-height and no tighter than `-0.025em`. H2 is `clamp(1.75rem, 2.7vw, 2.5rem)` at 1.18. H3 is 1.25rem/1.3. Labels are 12–13px. Let headings wrap naturally; never insert decorative line breaks or narrow measures to manufacture short lines.
+Typography uses the native system UI sans stack so the site reads like maintained software, loads without a webfont, and avoids the generic Inter-led SaaS look. Body is 16px/1.6. Display/H1 is `clamp(2.5rem, 4.2vw, 3.5rem)` at 1.1 line-height and no tighter than `-0.025em`. H2 is `clamp(1.75rem, 2.7vw, 2.5rem)` at 1.18. H3 is 1.25rem/1.3. Small labels are reserved for real status, sequence, or source information. Let headings wrap naturally; never insert decorative line breaks or narrow measures to manufacture short lines.
 
 Spacing uses an 8px rhythm: `4, 8, 12, 16, 24, 32, 48, 64`. Desktop container is 1160px with 32px gutters; mobile gutters are 20px. Page intros use 64px/56px desktop and 48px/40px mobile. Section intervals are 64px desktop and 48px mobile. Avoid fixed minimum heights.
 
