@@ -1,0 +1,4 @@
+import { Link2, MessageCircleMore } from "lucide-react";
+import { Link } from "react-router";
+import { Status } from "./Ui";
+export default function ProductCard({ product, featured = false }) { const Icon = product.key === "lta" ? Link2 : MessageCircleMore; return <Link className={`product-card ${featured ? "featured" : ""}`} to={product.href}><div className="card-head"><span className={`product-icon ${product.key}`}><Icon size={23}/></span><Status live={product.status === "Live"}>{product.status}</Status></div><div className="card-copy"><p className="product-name">{product.name}</p><h2>{product.tagline}</h2><p>{product.description}</p></div><div className="tag-row">{product.meta.map(item => <span key={item}>{item}</span>)}</div><span className="card-action">View product <span aria-hidden="true">→</span></span></Link>; }
