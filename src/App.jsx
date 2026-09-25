@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, Layers3, Link2, Sparkles, TerminalSquare } from "lucide-react";
+import { ArrowUpRight, Layers3, Link2, Sparkles, TerminalSquare } from "lucide-react";
 import "./App.css";
 
 const LTA_URL = "https://api-production-0383e.up.railway.app/";
@@ -27,7 +27,7 @@ function Pill({ children, tone = "neutral" }) {
 
 export default function App() {
   useEffect(() => {
-    document.title = "Eason Systems — Building useful AI products";
+    document.title = "Eason Systems ??Building useful AI products";
   }, []);
 
   return (
@@ -43,7 +43,7 @@ export default function App() {
             <a href="#principles">Principles</a>
             <a href="#story">Story</a>
             <a className="nav-github" href={GITHUB_URL} target="_blank" rel="noreferrer">
-              <Github size={16} /> GitHub
+              GitHub
             </a>
           </div>
         </nav>
@@ -55,7 +55,7 @@ export default function App() {
             <motion.div variants={fadeUp}><Pill tone="blue">Independent product studio</Pill></motion.div>
             <motion.h1 variants={fadeUp}>Building useful<br /><span>AI products.</span></motion.h1>
             <motion.p className="hero-lede" variants={fadeUp}>
-              Eason Systems builds focused tools around real workflows — starting with the parts AI products still make people handle manually.
+              Eason Systems builds focused tools around real workflows ??starting with the parts AI products still make people handle manually.
             </motion.p>
             <motion.div className="hero-actions" variants={fadeUp}>
               <a className="button primary" href="#products">Explore products <ArrowUpRight size={18} /></a>
@@ -133,15 +133,15 @@ export default function App() {
 
           <div className="timeline">
             <article>
-              <div className="timeline-meta">01 · Public utility</div>
+              <div className="timeline-meta">01 繚 Public utility</div>
               <div><h3>Toilet Bot</h3><p>A LINE-based public toilet finder grew past 35,000 users and became the first lesson in distribution, data quality, and real-world product maintenance.</p><ArrowLink href="https://github.com/eason11133/toilet-bot" subtle>View project</ArrowLink></div>
             </article>
             <article>
-              <div className="timeline-meta">02 · Service phase</div>
-              <div><h3>LINE / Web systems</h3><p>Eason Systems then tested custom workflow tools for organizations and learned where service work repeated — and where it did not.</p><ArrowLink href={LEGACY_URL} subtle>View legacy website</ArrowLink></div>
+              <div className="timeline-meta">02 繚 Service phase</div>
+              <div><h3>LINE / Web systems</h3><p>Eason Systems then tested custom workflow tools for organizations and learned where service work repeated ??and where it did not.</p><ArrowLink href={LEGACY_URL} subtle>View legacy website</ArrowLink></div>
             </article>
             <article>
-              <div className="timeline-meta">03 · Product phase</div>
+              <div className="timeline-meta">03 繚 Product phase</div>
               <div><h3>Independent AI products</h3><p>The focus shifted from broad custom development to narrower products that can solve the same recurring problem for many users.</p></div>
             </article>
             <article className="active">
@@ -170,8 +170,9 @@ export default function App() {
 
       <footer className="footer">
         <div><strong>Eason Systems</strong><span>Building useful AI products.</span></div>
-        <div><span>© 2026</span><a href={GITHUB_URL} target="_blank" rel="noreferrer">GitHub</a></div>
+        <div><span>穢 2026</span><a href={GITHUB_URL} target="_blank" rel="noreferrer">GitHub</a></div>
       </footer>
     </div>
   );
 }
+
