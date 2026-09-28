@@ -1,8 +1,8 @@
 name: Portfolio README verification
 
 on:
-  pull_request:
-    branches: [main]
+  push:
+    branches: [chore/portfolio-readme-ci]
 
 jobs:
   verify:
