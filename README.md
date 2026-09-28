@@ -1,134 +1,169 @@
-# Eason Systems｜從客製開發到產品方向驗證
+# Eason Systems
 
-Eason Systems 是我在 2026 年建立的一個實作型專案。這個版本的網站主要用來測試一件事：**中小型組織在 LINE、網站、表單與既有系統之間，是否真的存在「使用者找不到資訊、窗口重複回覆、資料難以維護」的問題，以及這些問題能不能被整理成一個可以實際上線的產品或服務。**
+**Eason Systems 是由 Eason Huang 建立的 independent product studio。**  
+它從真實使用者與實際軟體合作中累積問題，再把重複出現的需求收斂成自主產品；目前不再以客製 LINE / Web 接案作為主要定位。
 
-因此，這個網站不是單純的個人作品集，也不只是形象頁。它同時被設計成：
+**Founder:** Eason Huang — designer and developer behind Eason Systems, LTA, English Output Trainer, and Toilet Bot.
 
-- 對外說明 Eason Systems 當時聚焦的問題與服務範圍。
-- 把模糊的「做網站／做系統」拆成可理解的 LINE / Web 查詢、導覽、FAQ 分流與資料回報流程。
-- 透過方案、價格區間與功能估算器，測試市場對不同需求與服務範圍的反應。
-- 作為冷開發與需求訪談時，可以直接給潛在使用者查看的 Landing Page。
-- 累積從真實使用者問題出發、再把需求整理成產品功能的經驗。
+**發展路徑：** Toilet Bot（35,000+ LINE users） → Custom LINE / Web systems → Independent products  
+**現在：** **LTA — Live** · **EOT — In development**
 
-> 這個版本記錄的是 Eason Systems 早期以客製 LINE / Web 系統進行市場驗證的階段，後續方向再逐步轉向自主 AI 產品。
+[Live site](https://eason-systems.vercel.app/) · [LTA](https://api-production-0383e.up.railway.app/) · [Legacy archive](https://github.com/eason11133/eason-systems-legacy)
 
-## 當時想解決的問題
+> 這個 repository 是 **current Eason Systems website**。早期以客製系統與市場驗證為主的版本已移至 legacy archive。
 
-很多單位其實已經有 Google 表單、報名系統、官網、LINE 官方帳號或 CRM，但使用者在真正進入這些工具以前，仍常遇到：
+## Current products
 
-- 不知道資訊放在哪裡。
-- 相同問題一直透過 LINE、私訊或 Email 重複詢問。
-- 活動、課程、服務據點或申請資訊散落在不同頁面。
-- 已有後台或表單，但缺少清楚的前端入口與分流。
-- 資料過期或錯誤時，沒有簡單的回報與維護流程。
-- 活動結束後，查詢、點擊與常見問題缺少整理。
+### LTA — Live
 
-Eason Systems 當時的做法不是先重做整套系統，而是先補上「使用者進入既有工具以前」最混亂的那一段。
+**Your AI got the link. LTA brings the source.**
 
-## 網站呈現的主要方向
+LTA 是目前 Eason Systems 的主要 public product。它把使用者已經選定的 supported public URL 轉成 AI workflow 可以使用的 source context，並處理來源辨識、內容續讀、source reuse、completeness 與 provenance 等 retrieval 細節。
 
-### 1. LINE / Web 查詢與導覽
+目前網站呈現的整合方式包括：
 
-把常見問題、活動分類、聯絡窗口、服務資訊與外部連結整理成一個清楚入口，降低使用者到處找資訊的成本。
+- MCP for Claude
+- REST API for product integrations
+- Source reuse
+- Long-source continuation
+- Source identity / provenance
 
-### 2. FAQ 與報名／申請分流
+Live product: [LTA](https://api-production-0383e.up.railway.app/)
 
-讓使用者在進入表單以前，先確認資格、流程、需要準備的資料與常見問題，再導回原本的報名或申請系統。
+### EOT — In development
 
-### 3. 資源與據點查詢
+**English Output Trainer** 正在開發中。
 
-針對服務地點、合作單位、社福資源、課程或其他清單型資料，提供搜尋、條件篩選、距離或位置導覽等功能。
+EOT 聚焦在一個簡單的練習循環：
 
-### 4. 資料回報與維護
+1. Produce English
+2. Receive useful feedback
+3. Try again
 
-當使用者發現資料錯誤、缺漏或過期時，提供回報入口，再由管理者確認與更新。
+它的方向不是再做一套被動內容庫，而是讓使用者持續產出英文、得到可以直接改善下一次輸出的回饋，再重新嘗試。
 
-### 5. 功能與價格估算
+## Development story
 
-網站中加入方案與模組估算器，讓訪客可以直接理解不同功能會如何影響專案範圍，而不是只留下「歡迎來信詢價」。
+Eason Systems 的方向不是一次決定的，而是從幾個真實階段逐步收斂。
 
-## 代表案例：公共廁所 LINE Bot
+### 01 — Toilet Bot
 
-Eason Systems 早期最重要的實作案例之一，是公共廁所查詢 LINE Bot。
+公共廁所 LINE Bot 是最早的重要實作。它服務超過 **35,000 名 LINE 使用者**，讓我第一次直接面對：
 
-這個系統以 LINE 作為入口，讓使用者傳送位置後查詢附近公共廁所，並整合政府開放資料、OpenStreetMap 與使用者回報。系統後續也加入資料可信度排序、狀態回報與缺口分析 Dashboard。
+- 真實使用者分布與 adoption
+- 公開資料品質
+- 系統維護
+- 使用者回報
+- 長期運行後才會出現的產品問題
 
-網站製作時，這個專案已累積超過 **30,000 名使用者**，也成為我後續思考「真實使用流程、資料品質、回報機制與系統維護」的重要起點。
+[View Toilet Bot](https://github.com/eason11133/toilet-bot)
 
-完整專案：
+### 02 — Custom systems
 
-- [Toilet Bot GitHub](https://github.com/eason11133/toilet-bot)
+之後 Eason Systems 做過 LINE 與 Web workflow systems，與不同組織的實際需求互動。
 
-## 這個網站本身也在做市場驗證
+這個階段的重要價值不是「接案本身」，而是看見哪些問題只是單一客戶需求、哪些 workflow pattern 會一再出現，也實際測試過服務範圍、需求拆解與市場反應。
 
-這個版本刻意沒有只放「我們可以幫你做系統」這種抽象描述，而是把服務拆成不同層級，並公開：
+這段歷史已獨立保留在：
 
-- 適合的使用情境。
-- 第一版可以先做哪些功能。
-- 中型系統與小型方案的差別。
-- 維護與代管方式。
-- 功能模組與預估價格。
-- 合作流程與聯絡入口。
+[Visit eason-systems-legacy](https://github.com/eason11133/eason-systems-legacy)
 
-當時真正想驗證的，不只是「能不能把網站做出來」，而是：
+### 03 — Independent products
 
-1. 使用者是否能快速理解問題與解法。
-2. 哪一類需求最常被提出。
-3. 客製開發能不能被整理成較清楚、可重複的產品化服務。
-4. 哪些工作值得繼續做，哪些其實不應該靠客製開發解決。
+在反覆出現的需求中，方向逐漸從 broad custom development 收斂到 focused software products。
 
-這些經驗也成為 Eason Systems 後續轉向自主產品開發的重要背景。
+目前：
 
-## 技術
+- **LTA** 是第一個主要 public product，已上線。
+- **EOT** 仍在 development / testing 階段。
 
-這個網站使用：
+這也是 current Eason Systems 與 legacy service phase 最主要的差別。
+
+## Website architecture
+
+Current website 是一個 multi-page React application，主要 routes：
+
+| Route | Purpose |
+| --- | --- |
+| `/` | Eason Systems 與目前產品總覽 |
+| `/products` | Current product catalog |
+| `/products/lta` | LTA product page |
+| `/products/eot` | EOT development page |
+| `/story` | Toilet Bot → custom systems → independent products |
+| `/about` | Studio / founder context |
+
+主要程式結構：
+
+```text
+src/
+├── components/       Shared site UI and layout
+├── data/site.js      Product and external-link data
+├── pages/            Route-level pages
+├── App.jsx           Routing
+├── App.css           Site styles
+└── main.jsx          React entry
+
+tests/
+└── site.spec.js      Playwright route / navigation / overflow checks
+
+public/               Public static assets
+```
+
+## Tech stack
 
 - React 19
+- React Router
 - Vite 8
 - Tailwind CSS 4
 - Framer Motion
 - Lucide React
+- Playwright
 - Vercel
 
-網站以單頁式 React 應用呈現，包含中英文內容、服務說明、案例、方案、維護方式、功能估算器與聯絡流程。
+## Local run
 
-## 專案結構
-
-```text
-src/
-├── App.jsx       主要頁面、內容與互動邏輯
-├── App.css       頁面樣式
-├── index.css     全域樣式
-├── main.jsx      React 入口
-└── assets/       網站素材
-
-public/           公開靜態資源
-index.html        Vite HTML 入口
-package.json      專案依賴與 scripts
-vite.config.js    Vite 設定
-```
-
-## 本機執行
-
-需求：Node.js 與 npm。
+Requirements: Node.js + npm.
 
 ```powershell
 npm install
 npm run dev
 ```
 
-建立正式版本：
+Production build:
 
 ```powershell
 npm run build
 ```
 
-## 線上版本
+Lint:
 
-- [Eason Systems](https://eason-systems.vercel.app/)
+```powershell
+npm run lint
+```
 
-## 版本定位
+Existing browser tests:
 
-這份程式碼保留 Eason Systems 早期的發展階段：從實際做過的 LINE Bot 與 Web 系統出發，嘗試把客製開發整理成可被理解、可報價、可驗證的服務。
+```powershell
+npx playwright test
+```
 
-後續 Eason Systems 的重心逐步從「替不同客戶製作系統」轉向「建立自己的產品」，因此這個版本的重要性不只在網站本身，而在於它記錄了一次產品方向與商業模式的實際探索。
+If Chromium is not installed for Playwright:
+
+```powershell
+npx playwright install chromium
+```
+
+## Live site
+
+- Eason Systems: https://eason-systems.vercel.app/
+- LTA: https://api-production-0383e.up.railway.app/
+
+## Legacy archive
+
+The earlier Eason Systems phase focused on custom LINE / Web systems, service packaging, pricing experiments, and market validation.
+
+That version is intentionally separated from the current product-studio site:
+
+- https://github.com/eason11133/eason-systems-legacy
+
+The current repository should be read as the next phase: **building independent products from problems first encountered through real users and real software work.**
