@@ -31,7 +31,7 @@ test("navigation, history, refresh, and mobile menu work", async ({ page }) => {
   await expect(page.getByRole("navigation").getByRole("link", { name: "Products" })).toBeVisible();
   await page.getByRole("navigation").getByRole("link", { name: "Products" }).click();
   await expect(page).toHaveURL(/\/products$/);
-  await page.getByRole("link", { name: /Your AI got the link/ }).click();
+  await page.locator('.product-catalog a[href="/products/lta"]').click();
   await expect(page).toHaveURL(/\/products\/lta$/);
   await page.goBack();
   await expect(page).toHaveURL(/\/products$/);
