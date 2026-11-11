@@ -2,7 +2,7 @@ export const links = {
   lta: "https://api-production-0383e.up.railway.app/",
   github: "https://github.com/eason11133",
   toiletBot: "https://github.com/eason11133/toilet-bot",
-  legacy: "https://github.com/eason11133/eason-systems-legacy",
+  legacy: "https://eason-systems.vercel.app/",
 };
 
 export const products = [
