@@ -8,7 +8,7 @@
 **發展路徑：** Toilet Bot（35,000+ LINE users） → Custom LINE / Web systems → Independent products  
 **現在：** **LTA — Live** · **EOT — In development**
 
-[Live site](https://eason-systems.vercel.app/) · [LTA](https://api-production-0383e.up.railway.app/) · [Legacy archive](https://github.com/eason11133/eason-systems-legacy)
+[Live site](https://eason-systems-studio.vercel.app/) · [LTA](https://api-production-0383e.up.railway.app/) · [Legacy archive](https://github.com/eason11133/eason-systems-legacy)
 
 > 這個 repository 是 **current Eason Systems website**。早期以客製系統與市場驗證為主的版本已移至 legacy archive。
 
@@ -155,7 +155,7 @@ npx playwright install chromium
 
 ## Live site
 
-- Eason Systems: https://eason-systems.vercel.app/
+- Eason Systems: https://eason-systems-studio.vercel.app/
 - LTA: https://api-production-0383e.up.railway.app/
 
 ## Legacy archive
